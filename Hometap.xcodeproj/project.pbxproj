@@ -16,6 +16,8 @@
 		43EF36D21F1704E30013FA8A /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF36D11F1704E30013FA8A /* extensions.swift */; };
 		43EF36D41F17050B0013FA8A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF36D31F17050B0013FA8A /* Constants.swift */; };
 		43EF36D61F1708070013FA8A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43EF36D51F1708070013FA8A /* GoogleService-Info.plist */; };
+		43EF36D81F1800AE0013FA8A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF36D71F1800AE0013FA8A /* User.swift */; };
+		43EF36DA1F1807640013FA8A /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF36D91F1807640013FA8A /* Client.swift */; };
 		D2AEE9A00BDCD00A6AE0B646 /* Pods_Hometap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DD91A8EF45F8D8BC4721D4 /* Pods_Hometap.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,8 @@
 		43EF36D11F1704E30013FA8A /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		43EF36D31F17050B0013FA8A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		43EF36D51F1708070013FA8A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		43EF36D71F1800AE0013FA8A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		43EF36D91F1807640013FA8A /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		D4DD91A8EF45F8D8BC4721D4 /* Pods_Hometap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hometap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12207F516A8590C3EA62B6B /* Pods-Hometap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hometap.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hometap/Pods-Hometap.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +109,8 @@
 			children = (
 				43EF36D11F1704E30013FA8A /* extensions.swift */,
 				43EF36D31F17050B0013FA8A /* Constants.swift */,
+				43EF36D71F1800AE0013FA8A /* User.swift */,
+				43EF36D91F1807640013FA8A /* Client.swift */,
 			);
 			name = entities;
 			sourceTree = "<group>";
@@ -244,7 +250,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				43EF36D41F17050B0013FA8A /* Constants.swift in Sources */,
+				43EF36DA1F1807640013FA8A /* Client.swift in Sources */,
 				43EF36BA1F16F9D70013FA8A /* ViewController.swift in Sources */,
+				43EF36D81F1800AE0013FA8A /* User.swift in Sources */,
 				43EF36CF1F1703C50013FA8A /* Threading.swift in Sources */,
 				43EF36B81F16F9D70013FA8A /* AppDelegate.swift in Sources */,
 				43EF36D21F1704E30013FA8A /* extensions.swift in Sources */,

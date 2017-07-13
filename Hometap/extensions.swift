@@ -123,3 +123,37 @@ extension Array where Element: Equatable {
     }
 }
 
+extension Date {
+    enum DateFormat {
+        case Default
+        case Long
+        case Try
+    }
+    
+    init?(fromString: String, withFormat: DateFormat) {
+        let dtf = DateFormatter()
+        switch withFormat {
+        case .Default:
+            dtf.dateFormat = K.Helper.fb_date_format
+        case .Long:
+            dtf.dateFormat = K.Helper.fb_long_date_format
+        case .Try:
+            dtf.dateFormat = K.Helper.fb_date_format
+            if let tst_dt = dtf.date(from: fromString) {
+                self = tst_dt
+                return
+            }
+            dtf.dateFormat = K.Helper.fb_long_date_format
+            if let tst_dt = dtf.date(from: fromString) {
+                self = tst_dt
+                return
+            }
+            else {
+                return nil
+            }
+        }
+        
+        self = dtf.date(from: fromString)!
+    }
+}
+
