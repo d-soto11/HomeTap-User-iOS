@@ -7,7 +7,12 @@
 //
 
 import UIKit
+import AFNetworking
+import MBProgressHUD
 import Firebase
+import FirebaseAuth
+import FBSDKCoreKit
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +21,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         // Override point for customization after application launch.
+        // Configurar Firebase
+        FIRApp.configure()
+        
+        // Configurar Google
+        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()!.options.clientID
+        
+        // Configurar Facebook
+        // FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        // Configuracion de GMaps
+        // GMSServices.provideAPIKey("AIzaSyAM2e7EaL92l9aMC9u1oFVhbwq5ygC4_qM")
+        
+        // Private configurations
+        // ...
+        
+        
         return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        let handled_by_fb = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+        
+        let handled_by_google = GIDSignIn.sharedInstance().handle(url,
+                                                                  sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                                                  annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        
+        return handled_by_fb || handled_by_google
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -40,6 +73,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func setStatusBarBackgroundColor(color: UIColor) {
+        
+        guard let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView else { return }
+        
+        statusBar.backgroundColor = color
     }
 
 
