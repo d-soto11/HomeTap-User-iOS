@@ -127,6 +127,7 @@ extension Date {
     enum DateFormat {
         case Default
         case Long
+        case Time
         case Try
     }
     
@@ -137,6 +138,8 @@ extension Date {
             dtf.dateFormat = K.Helper.fb_date_format
         case .Long:
             dtf.dateFormat = K.Helper.fb_long_date_format
+        case .Time:
+            dtf.dateFormat = K.Helper.fb_time_format
         case .Try:
             dtf.dateFormat = K.Helper.fb_date_format
             if let tst_dt = dtf.date(from: fromString) {
@@ -148,12 +151,50 @@ extension Date {
                 self = tst_dt
                 return
             }
+            dtf.dateFormat = K.Helper.fb_time_format
+            if let tst_dt = dtf.date(from: fromString) {
+                self = tst_dt
+                return
+            }
             else {
                 return nil
             }
         }
         
         self = dtf.date(from: fromString)!
+    }
+    
+    func toString(format: DateFormat) -> String? {
+        let dtf = DateFormatter()
+        switch format {
+        case .Default:
+            dtf.dateFormat = K.Helper.fb_date_format
+        case .Long:
+            dtf.dateFormat = K.Helper.fb_long_date_format
+        case .Time:
+            dtf.dateFormat = K.Helper.fb_time_format
+        case .Try:
+            dtf.dateFormat = K.Helper.fb_date_format
+            var str = dtf.string(from: self)
+            if str != "" {
+                return str
+            }
+            dtf.dateFormat = K.Helper.fb_long_date_format
+            str = dtf.string(from: self)
+            if str != "" {
+                return str
+            }
+            dtf.dateFormat = K.Helper.fb_time_format
+            str = dtf.string(from: self)
+            if str != "" {
+                return str
+            }
+            else {
+                return nil
+            }
+        }
+        let str = dtf.string(from: self)
+        return str
     }
 }
 

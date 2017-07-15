@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		439F14021F195A1B009DABF8 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14011F195A1B009DABF8 /* Place.swift */; };
+		439F14041F19683F009DABF8 /* AdditionalServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14031F19683F009DABF8 /* AdditionalServices.swift */; };
+		439F14061F198574009DABF8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14051F198574009DABF8 /* Product.swift */; };
+		439F14081F19A698009DABF8 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14071F19A698009DABF8 /* Calendar.swift */; };
 		43EF36B81F16F9D70013FA8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF36B71F16F9D70013FA8A /* AppDelegate.swift */; };
 		43EF36BA1F16F9D70013FA8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF36B91F16F9D70013FA8A /* ViewController.swift */; };
 		43EF36BD1F16F9D70013FA8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43EF36BB1F16F9D70013FA8A /* Main.storyboard */; };
@@ -18,11 +22,18 @@
 		43EF36E11F192B2A0013FA8A /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF36DD1F192B2A0013FA8A /* extensions.swift */; };
 		43EF36E21F192B2A0013FA8A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF36DE1F192B2A0013FA8A /* User.swift */; };
 		43EF36E41F192B4D0013FA8A /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF36E31F192B4D0013FA8A /* Threading.swift */; };
+		43EF36E61F192B880013FA8A /* Homie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF36E51F192B880013FA8A /* Homie.swift */; };
+		43EF36E81F192C010013FA8A /* HometapObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF36E71F192C010013FA8A /* HometapObject.swift */; };
+		43EF36EA1F194F600013FA8A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF36E91F194F600013FA8A /* Service.swift */; };
 		D2AEE9A00BDCD00A6AE0B646 /* Pods_Hometap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DD91A8EF45F8D8BC4721D4 /* Pods_Hometap.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		41EE0E6489CEC26245E3FF96 /* Pods-Hometap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hometap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hometap/Pods-Hometap.debug.xcconfig"; sourceTree = "<group>"; };
+		439F14011F195A1B009DABF8 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = entities/Place.swift; sourceTree = "<group>"; };
+		439F14031F19683F009DABF8 /* AdditionalServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdditionalServices.swift; path = entities/AdditionalServices.swift; sourceTree = "<group>"; };
+		439F14051F198574009DABF8 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Product.swift; path = entities/Product.swift; sourceTree = "<group>"; };
+		439F14071F19A698009DABF8 /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Calendar.swift; path = entities/Calendar.swift; sourceTree = "<group>"; };
 		43EF36B41F16F9D70013FA8A /* Hometap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hometap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43EF36B71F16F9D70013FA8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43EF36B91F16F9D70013FA8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +48,9 @@
 		43EF36DD1F192B2A0013FA8A /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = extensions.swift; path = entities/extensions.swift; sourceTree = "<group>"; };
 		43EF36DE1F192B2A0013FA8A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = entities/User.swift; sourceTree = "<group>"; };
 		43EF36E31F192B4D0013FA8A /* Threading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Threading.swift; path = libs/Threading.swift; sourceTree = "<group>"; };
+		43EF36E51F192B880013FA8A /* Homie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Homie.swift; path = entities/Homie.swift; sourceTree = "<group>"; };
+		43EF36E71F192C010013FA8A /* HometapObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HometapObject.swift; path = entities/HometapObject.swift; sourceTree = "<group>"; };
+		43EF36E91F194F600013FA8A /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = entities/Service.swift; sourceTree = "<group>"; };
 		D4DD91A8EF45F8D8BC4721D4 /* Pods_Hometap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hometap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12207F516A8590C3EA62B6B /* Pods-Hometap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hometap.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hometap/Pods-Hometap.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,10 +121,17 @@
 		43EF36D01F1704CF0013FA8A /* entities */ = {
 			isa = PBXGroup;
 			children = (
-				43EF36DB1F192B2A0013FA8A /* Client.swift */,
-				43EF36DC1F192B2A0013FA8A /* Constants.swift */,
 				43EF36DD1F192B2A0013FA8A /* extensions.swift */,
+				43EF36DC1F192B2A0013FA8A /* Constants.swift */,
+				43EF36E71F192C010013FA8A /* HometapObject.swift */,
 				43EF36DE1F192B2A0013FA8A /* User.swift */,
+				43EF36DB1F192B2A0013FA8A /* Client.swift */,
+				43EF36E51F192B880013FA8A /* Homie.swift */,
+				43EF36E91F194F600013FA8A /* Service.swift */,
+				439F14011F195A1B009DABF8 /* Place.swift */,
+				439F14031F19683F009DABF8 /* AdditionalServices.swift */,
+				439F14051F198574009DABF8 /* Product.swift */,
+				439F14071F19A698009DABF8 /* Calendar.swift */,
 			);
 			name = entities;
 			sourceTree = "<group>";
@@ -249,13 +270,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				439F14041F19683F009DABF8 /* AdditionalServices.swift in Sources */,
+				43EF36E81F192C010013FA8A /* HometapObject.swift in Sources */,
+				43EF36E61F192B880013FA8A /* Homie.swift in Sources */,
 				43EF36E11F192B2A0013FA8A /* extensions.swift in Sources */,
 				43EF36BA1F16F9D70013FA8A /* ViewController.swift in Sources */,
 				43EF36E21F192B2A0013FA8A /* User.swift in Sources */,
 				43EF36B81F16F9D70013FA8A /* AppDelegate.swift in Sources */,
 				43EF36DF1F192B2A0013FA8A /* Client.swift in Sources */,
+				43EF36EA1F194F600013FA8A /* Service.swift in Sources */,
 				43EF36E41F192B4D0013FA8A /* Threading.swift in Sources */,
+				439F14021F195A1B009DABF8 /* Place.swift in Sources */,
 				43EF36E01F192B2A0013FA8A /* Constants.swift in Sources */,
+				439F14061F198574009DABF8 /* Product.swift in Sources */,
+				439F14081F19A698009DABF8 /* Calendar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
