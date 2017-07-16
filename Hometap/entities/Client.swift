@@ -30,41 +30,14 @@ class Client: User {
         })
     }
     
-    public func save() -> Bool {
-        if self.name != nil {
-            original_dictionary["name"] = self.name as AnyObject
+    public func save() {
+        if self.preferences != nil {
+            original_dictionary["preferences"] = self.preferences as AnyObject
         }
-        if self.birth != nil {
-            original_dictionary["birth"] = self.birth!.toString(format: .Default) as AnyObject
+        if self.credits != nil {
+            original_dictionary["credits"] = self.credits as AnyObject
         }
-        if self.joined != nil {
-            original_dictionary["joined"] = self.joined!.toString(format: .Long) as AnyObject
-        }
-        if self.gender != nil {
-            original_dictionary["gender"] = self.gender as AnyObject
-        }
-        if self.provider != nil {
-            original_dictionary["provider"] = self.provider as AnyObject
-        }
-        if self.photo != nil {
-            original_dictionary["photo"] = self.photo as AnyObject
-        }
-        if self.email != nil {
-            original_dictionary["email"] = self.email as AnyObject
-        }
-        if self.rating != nil {
-            original_dictionary["rating"] = self.rating as AnyObject
-        }
-        if self.phone != nil {
-            original_dictionary["phone"] = self.phone as AnyObject
-        }
-        if self.votes != nil {
-            original_dictionary["votes"] = self.votes as AnyObject
-        }
-        
         super.save(route: "clients")
-        
-        return true
     }
     
     var preferences: NSDictionary?
@@ -113,5 +86,27 @@ class Client: User {
             }
         }
         return nil
+    }
+    
+    public func savePlace(place: Place) {
+        if place.uid == nil {
+            place.uid = K.Database.ref?.child("clients").child(self.uid!).child("places").childByAutoId().key
+        }
+        let plc_dict = place.prepareForSave()
+        var org_places_dict:[String:[String:AnyObject]] = original_dictionary["places"] as? [String:[String:AnyObject]] ?? [:]
+        org_places_dict[place.uid!] = plc_dict
+        original_dictionary["places"] = org_places_dict as AnyObject
+    }
+    
+    public func saveFavorite(favorite: Homie) -> Bool {
+        if favorite.uid == nil {
+            return false
+        }
+        let fav_dict = favorite.prepareForBriefSave()
+        var org_fav_dict:[String:[String:AnyObject]] = original_dictionary["favorites"] as? [String:[String:AnyObject]] ?? [:]
+        org_fav_dict[favorite.uid!] = fav_dict
+        original_dictionary["favorites"] = org_fav_dict as AnyObject
+        
+        return true
     }
 }

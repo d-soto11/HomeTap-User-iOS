@@ -30,10 +30,21 @@ class Homie: User {
         })
     }
     
+    public func save() {
+        if self.preferences != nil {
+            original_dictionary["preferences"] = self.preferences as AnyObject
+        }
+        if self.folder != nil {
+            original_dictionary["folder"] = self.folder as AnyObject
+        }
+        
+        super.save(route: "homies")
+    }
+    
     var preferences: NSDictionary?
     var folder: String?    
     
-    public func schedule() -> HometapObject? {
+    public func schedule() -> HTCalendar? {
         return nil
     }
     

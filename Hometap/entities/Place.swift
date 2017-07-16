@@ -41,6 +41,38 @@ class Place: HometapObject {
         }
     }
     
+    public func prepareForSave() -> [String:AnyObject] {
+        if self.lat != nil {
+            original_dictionary["lat"] = self.lat as AnyObject
+        }
+        if self.long != nil {
+            original_dictionary["long"] = self.long as AnyObject
+        }
+        if self.address != nil {
+            original_dictionary["address"] = self.address as AnyObject
+        }
+        if self.area != nil {
+            original_dictionary["area"] = self.area as AnyObject
+        }
+        if self.pets != nil {
+            original_dictionary["pets"] = self.pets as AnyObject
+        }
+        if self.wifi != nil {
+            original_dictionary["wifi"] = self.wifi as AnyObject
+        }
+        if self.rooms != nil {
+            original_dictionary["rooms"] = self.rooms as AnyObject
+        }
+        if self.bathrooms != nil {
+            original_dictionary["bathrooms"] = self.bathrooms as AnyObject
+        }
+        if self.basement != nil {
+            original_dictionary["basement"] = self.basement as AnyObject
+        }
+        
+        return original_dictionary
+    }
+    
     var lat: Double?
     var long: Double?
     var address: String?

@@ -152,4 +152,18 @@ class User: HometapObject {
         return nil
     }
     
+    public func prepareForBriefSave() -> [String:AnyObject] {
+        var brief: [String:AnyObject] = ["id":(self.uid! as AnyObject)]
+        if self.name != nil {
+            brief["name"] = self.name as AnyObject
+        }
+        if self.photo != nil {
+            brief["photo"] = self.photo as AnyObject
+        }
+        if self.rating != nil {
+            brief["rating"] = self.rating as AnyObject
+        }
+        return brief
+    }
+    
 }
