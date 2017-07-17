@@ -29,6 +29,20 @@ struct K {
         static var ref: FIRDatabaseReference? = nil
     }
     
+    struct UI {
+        static let main_color: UIColor = UIColor(netHex: 0xbad041)
+        static let alert_color: UIColor = UIColor(netHex: 0xf94f4f)
+        static let second_color: UIColor = UIColor(netHex: 0xffda29)
+        static let tab_color: UIColor = UIColor(netHex: 0xcccccc)
+        static let history_color: UIColor = UIColor(netHex: 0x808080)
+        static let booking_color: UIColor = UIColor(netHex: 0xb8b8b8)
+        static let form_color: UIColor = UIColor(netHex: 0x8d8d8d)
+        static let select_box_color: UIColor = UIColor(netHex: 0xe5e5e5)
+        static let round_px: CGFloat = 25.0
+        static let special_round_px: CGFloat = 20.0
+        static let light_round_px: CGFloat = 5.0
+    }
+    
     struct User {
         
         static let email:String = "email"

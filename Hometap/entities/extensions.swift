@@ -36,6 +36,15 @@ extension UIView {
         self.layer.shadowPath = shadowPath.cgPath
     }
     
+    func addInvertedShadow() {
+        let shadowPath = UIBezierPath(rect: self.bounds)
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 0.0, height: -2.0)
+        self.layer.shadowOpacity = 0.1
+        self.layer.shadowPath = shadowPath.cgPath
+    }
+    
     func addSpecialShadow(size: CGSize) {
         let shadowPath = UIBezierPath(rect: self.bounds)
         self.layer.masksToBounds = false
@@ -55,11 +64,12 @@ extension UIView {
     }
     
     func clearShadows() {
-        self.layer.shadowOpacity = 0.0;
+        self.layer.shadowOpacity = 0.0
     }
     
     func roundCorners(radius: CGFloat) {
-        self.layer.cornerRadius = radius;
+        self.layer.cornerRadius = radius
+        self.layer.shadowRadius = radius
     }
     
     func bordered(color:UIColor) {
@@ -111,6 +121,29 @@ extension UIImageView {
     }
 }
 
+extension NSLayoutConstraint {
+    
+    func setMultiplier(multiplier:CGFloat) -> NSLayoutConstraint {
+        
+        NSLayoutConstraint.deactivate([self])
+        
+        let newConstraint = NSLayoutConstraint(
+            item: firstItem,
+            attribute: firstAttribute,
+            relatedBy: relation,
+            toItem: secondItem,
+            attribute: secondAttribute,
+            multiplier: multiplier,
+            constant: constant)
+        
+        newConstraint.priority = priority
+        newConstraint.shouldBeArchived = self.shouldBeArchived
+        newConstraint.identifier = self.identifier
+        
+        NSLayoutConstraint.activate([newConstraint])
+        return newConstraint
+    }
+}
 // Logical
 
 extension Array where Element: Equatable {

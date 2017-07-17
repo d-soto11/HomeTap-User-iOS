@@ -11,8 +11,59 @@
 		439F14041F19683F009DABF8 /* AdditionalServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14031F19683F009DABF8 /* AdditionalServices.swift */; };
 		439F14061F198574009DABF8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14051F198574009DABF8 /* Product.swift */; };
 		439F14081F19A698009DABF8 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14071F19A698009DABF8 /* Calendar.swift */; };
+		439F14151F1C3B20009DABF8 /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 439F140B1F1C3B00009DABF8 /* Rubik-Black.ttf */; };
+		439F14161F1C3B23009DABF8 /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 439F140C1F1C3B00009DABF8 /* Rubik-BlackItalic.ttf */; };
+		439F14171F1C3B26009DABF8 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 439F140D1F1C3B00009DABF8 /* Rubik-Bold.ttf */; };
+		439F14181F1C3B28009DABF8 /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 439F140E1F1C3B00009DABF8 /* Rubik-BoldItalic.ttf */; };
+		439F14191F1C3B2A009DABF8 /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 439F140F1F1C3B00009DABF8 /* Rubik-Italic.ttf */; };
+		439F141A1F1C3B2C009DABF8 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 439F14101F1C3B00009DABF8 /* Rubik-Light.ttf */; };
+		439F141B1F1C3B2E009DABF8 /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 439F14111F1C3B00009DABF8 /* Rubik-LightItalic.ttf */; };
+		439F141C1F1C3B30009DABF8 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 439F14121F1C3B00009DABF8 /* Rubik-Medium.ttf */; };
+		439F141D1F1C3B32009DABF8 /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 439F14131F1C3B00009DABF8 /* Rubik-MediumItalic.ttf */; };
+		439F141E1F1C3B34009DABF8 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 439F14141F1C3B00009DABF8 /* Rubik-Regular.ttf */; };
+		439F14431F1C3E7A009DABF8 /* iconAddService.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F141F1F1C3E79009DABF8 /* iconAddService.png */; };
+		439F14441F1C3E7A009DABF8 /* iconAdressGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14201F1C3E79009DABF8 /* iconAdressGreen.png */; };
+		439F14451F1C3E7A009DABF8 /* iconAdressGrey.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14211F1C3E79009DABF8 /* iconAdressGrey.png */; };
+		439F14461F1C3E7A009DABF8 /* iconApartment.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14221F1C3E79009DABF8 /* iconApartment.png */; };
+		439F14471F1C3E7A009DABF8 /* iconCreditCard.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14231F1C3E79009DABF8 /* iconCreditCard.png */; };
+		439F14481F1C3E7A009DABF8 /* iconCurtainsGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14241F1C3E79009DABF8 /* iconCurtainsGreen.png */; };
+		439F14491F1C3E7A009DABF8 /* iconCurtainsWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14251F1C3E79009DABF8 /* iconCurtainsWhite.png */; };
+		439F144A1F1C3E7A009DABF8 /* iconDivisionWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14261F1C3E79009DABF8 /* iconDivisionWhite.png */; };
+		439F144B1F1C3E7A009DABF8 /* iconDivisonGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14271F1C3E79009DABF8 /* iconDivisonGreen.png */; };
+		439F144C1F1C3E7A009DABF8 /* iconFavorite.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14281F1C3E79009DABF8 /* iconFavorite.png */; };
+		439F144D1F1C3E7A009DABF8 /* iconFridgeGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14291F1C3E79009DABF8 /* iconFridgeGreen.png */; };
+		439F144E1F1C3E7A009DABF8 /* iconFridgeWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F142A1F1C3E79009DABF8 /* iconFridgeWhite.png */; };
+		439F144F1F1C3E7A009DABF8 /* iconHistoryGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F142B1F1C3E79009DABF8 /* iconHistoryGreen.png */; };
+		439F14501F1C3E7A009DABF8 /* iconHistoryGrey.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F142C1F1C3E79009DABF8 /* iconHistoryGrey.png */; };
+		439F14511F1C3E7A009DABF8 /* iconHouseBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F142D1F1C3E79009DABF8 /* iconHouseBlack.png */; };
+		439F14521F1C3E7A009DABF8 /* iconHouseGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F142E1F1C3E79009DABF8 /* iconHouseGreen.png */; };
+		439F14531F1C3E7A009DABF8 /* iconHouseGrey.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F142F1F1C3E79009DABF8 /* iconHouseGrey.png */; };
+		439F14541F1C3E7A009DABF8 /* iconNoPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14301F1C3E79009DABF8 /* iconNoPhoto.png */; };
+		439F14551F1C3E7A009DABF8 /* iconNoPhotoSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14311F1C3E79009DABF8 /* iconNoPhotoSmall.png */; };
+		439F14561F1C3E7A009DABF8 /* iconProfileGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14321F1C3E79009DABF8 /* iconProfileGreen.png */; };
+		439F14571F1C3E7A009DABF8 /* iconProfileGrey.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14331F1C3E79009DABF8 /* iconProfileGrey.png */; };
+		439F14581F1C3E7A009DABF8 /* iconServiceBooked.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14341F1C3E79009DABF8 /* iconServiceBooked.png */; };
+		439F14591F1C3E7A009DABF8 /* iconServiceChecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14351F1C3E79009DABF8 /* iconServiceChecked.png */; };
+		439F145A1F1C3E7A009DABF8 /* iconSofaGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14361F1C3E79009DABF8 /* iconSofaGreen.png */; };
+		439F145B1F1C3E7A009DABF8 /* iconSofaWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14371F1C3E79009DABF8 /* iconSofaWhite.png */; };
+		439F145C1F1C3E7A009DABF8 /* iconStarEmpty.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14381F1C3E79009DABF8 /* iconStarEmpty.png */; };
+		439F145D1F1C3E7A009DABF8 /* iconStarFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14391F1C3E79009DABF8 /* iconStarFilled.png */; };
+		439F145E1F1C3E7A009DABF8 /* iconStoveGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F143A1F1C3E79009DABF8 /* iconStoveGreen.png */; };
+		439F145F1F1C3E7A009DABF8 /* iconStoveWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F143B1F1C3E7A009DABF8 /* iconStoveWhite.png */; };
+		439F14601F1C3E7A009DABF8 /* iconWallGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F143C1F1C3E7A009DABF8 /* iconWallGreen.png */; };
+		439F14611F1C3E7A009DABF8 /* iconWallWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F143D1F1C3E7A009DABF8 /* iconWallWhite.png */; };
+		439F14621F1C3E7A009DABF8 /* iconWindowGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F143E1F1C3E7A009DABF8 /* iconWindowGreen.png */; };
+		439F14631F1C3E7A009DABF8 /* iconWindowWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F143F1F1C3E7A009DABF8 /* iconWindowWhite.png */; };
+		439F14641F1C3E7A009DABF8 /* illustrationCreditCard.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14401F1C3E7A009DABF8 /* illustrationCreditCard.png */; };
+		439F14651F1C3E7A009DABF8 /* illustrationGeneralService.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14411F1C3E7A009DABF8 /* illustrationGeneralService.png */; };
+		439F14661F1C3E7A009DABF8 /* illustrationNoBookings.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14421F1C3E7A009DABF8 /* illustrationNoBookings.png */; };
+		439F14691F1C4A0B009DABF8 /* MaterialTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14681F1C4A0B009DABF8 /* MaterialTabBarViewController.swift */; };
+		439F146C1F1C9D3C009DABF8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F146B1F1C9D3C009DABF8 /* HomeViewController.swift */; };
+		43DC564B1F1D2A9800C68B17 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC564A1F1D2A9800C68B17 /* HistoryViewController.swift */; };
+		43DC564D1F1D2E5000C68B17 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC564C1F1D2E5000C68B17 /* ProfileViewController.swift */; };
+		43DC564F1F1D381200C68B17 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC564E1F1D381200C68B17 /* LocationsViewController.swift */; };
+		43DC56521F1D393800C68B17 /* HTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC56511F1D393800C68B17 /* HTTableViewCell.swift */; };
 		43EF36B81F16F9D70013FA8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF36B71F16F9D70013FA8A /* AppDelegate.swift */; };
-		43EF36BA1F16F9D70013FA8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF36B91F16F9D70013FA8A /* ViewController.swift */; };
 		43EF36BD1F16F9D70013FA8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43EF36BB1F16F9D70013FA8A /* Main.storyboard */; };
 		43EF36BF1F16F9D70013FA8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43EF36BE1F16F9D70013FA8A /* Assets.xcassets */; };
 		43EF36C21F16F9D70013FA8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43EF36C01F16F9D70013FA8A /* LaunchScreen.storyboard */; };
@@ -34,9 +85,60 @@
 		439F14031F19683F009DABF8 /* AdditionalServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdditionalServices.swift; path = entities/AdditionalServices.swift; sourceTree = "<group>"; };
 		439F14051F198574009DABF8 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Product.swift; path = entities/Product.swift; sourceTree = "<group>"; };
 		439F14071F19A698009DABF8 /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Calendar.swift; path = entities/Calendar.swift; sourceTree = "<group>"; };
+		439F140B1F1C3B00009DABF8 /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Black.ttf"; path = "assets/typo/Rubik-Black.ttf"; sourceTree = "<group>"; };
+		439F140C1F1C3B00009DABF8 /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-BlackItalic.ttf"; path = "assets/typo/Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
+		439F140D1F1C3B00009DABF8 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Bold.ttf"; path = "assets/typo/Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		439F140E1F1C3B00009DABF8 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-BoldItalic.ttf"; path = "assets/typo/Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
+		439F140F1F1C3B00009DABF8 /* Rubik-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Italic.ttf"; path = "assets/typo/Rubik-Italic.ttf"; sourceTree = "<group>"; };
+		439F14101F1C3B00009DABF8 /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Light.ttf"; path = "assets/typo/Rubik-Light.ttf"; sourceTree = "<group>"; };
+		439F14111F1C3B00009DABF8 /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-LightItalic.ttf"; path = "assets/typo/Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
+		439F14121F1C3B00009DABF8 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Medium.ttf"; path = "assets/typo/Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		439F14131F1C3B00009DABF8 /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-MediumItalic.ttf"; path = "assets/typo/Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
+		439F14141F1C3B00009DABF8 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Regular.ttf"; path = "assets/typo/Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		439F141F1F1C3E79009DABF8 /* iconAddService.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconAddService.png; path = assets/iconAddService.png; sourceTree = "<group>"; };
+		439F14201F1C3E79009DABF8 /* iconAdressGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconAdressGreen.png; path = assets/iconAdressGreen.png; sourceTree = "<group>"; };
+		439F14211F1C3E79009DABF8 /* iconAdressGrey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconAdressGrey.png; path = assets/iconAdressGrey.png; sourceTree = "<group>"; };
+		439F14221F1C3E79009DABF8 /* iconApartment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconApartment.png; path = assets/iconApartment.png; sourceTree = "<group>"; };
+		439F14231F1C3E79009DABF8 /* iconCreditCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconCreditCard.png; path = assets/iconCreditCard.png; sourceTree = "<group>"; };
+		439F14241F1C3E79009DABF8 /* iconCurtainsGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconCurtainsGreen.png; path = assets/iconCurtainsGreen.png; sourceTree = "<group>"; };
+		439F14251F1C3E79009DABF8 /* iconCurtainsWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconCurtainsWhite.png; path = assets/iconCurtainsWhite.png; sourceTree = "<group>"; };
+		439F14261F1C3E79009DABF8 /* iconDivisionWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconDivisionWhite.png; path = assets/iconDivisionWhite.png; sourceTree = "<group>"; };
+		439F14271F1C3E79009DABF8 /* iconDivisonGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconDivisonGreen.png; path = assets/iconDivisonGreen.png; sourceTree = "<group>"; };
+		439F14281F1C3E79009DABF8 /* iconFavorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconFavorite.png; path = assets/iconFavorite.png; sourceTree = "<group>"; };
+		439F14291F1C3E79009DABF8 /* iconFridgeGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconFridgeGreen.png; path = assets/iconFridgeGreen.png; sourceTree = "<group>"; };
+		439F142A1F1C3E79009DABF8 /* iconFridgeWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconFridgeWhite.png; path = assets/iconFridgeWhite.png; sourceTree = "<group>"; };
+		439F142B1F1C3E79009DABF8 /* iconHistoryGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconHistoryGreen.png; path = assets/iconHistoryGreen.png; sourceTree = "<group>"; };
+		439F142C1F1C3E79009DABF8 /* iconHistoryGrey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconHistoryGrey.png; path = assets/iconHistoryGrey.png; sourceTree = "<group>"; };
+		439F142D1F1C3E79009DABF8 /* iconHouseBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconHouseBlack.png; path = assets/iconHouseBlack.png; sourceTree = "<group>"; };
+		439F142E1F1C3E79009DABF8 /* iconHouseGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconHouseGreen.png; path = assets/iconHouseGreen.png; sourceTree = "<group>"; };
+		439F142F1F1C3E79009DABF8 /* iconHouseGrey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconHouseGrey.png; path = assets/iconHouseGrey.png; sourceTree = "<group>"; };
+		439F14301F1C3E79009DABF8 /* iconNoPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconNoPhoto.png; path = assets/iconNoPhoto.png; sourceTree = "<group>"; };
+		439F14311F1C3E79009DABF8 /* iconNoPhotoSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconNoPhotoSmall.png; path = assets/iconNoPhotoSmall.png; sourceTree = "<group>"; };
+		439F14321F1C3E79009DABF8 /* iconProfileGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconProfileGreen.png; path = assets/iconProfileGreen.png; sourceTree = "<group>"; };
+		439F14331F1C3E79009DABF8 /* iconProfileGrey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconProfileGrey.png; path = assets/iconProfileGrey.png; sourceTree = "<group>"; };
+		439F14341F1C3E79009DABF8 /* iconServiceBooked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconServiceBooked.png; path = assets/iconServiceBooked.png; sourceTree = "<group>"; };
+		439F14351F1C3E79009DABF8 /* iconServiceChecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconServiceChecked.png; path = assets/iconServiceChecked.png; sourceTree = "<group>"; };
+		439F14361F1C3E79009DABF8 /* iconSofaGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconSofaGreen.png; path = assets/iconSofaGreen.png; sourceTree = "<group>"; };
+		439F14371F1C3E79009DABF8 /* iconSofaWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconSofaWhite.png; path = assets/iconSofaWhite.png; sourceTree = "<group>"; };
+		439F14381F1C3E79009DABF8 /* iconStarEmpty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconStarEmpty.png; path = assets/iconStarEmpty.png; sourceTree = "<group>"; };
+		439F14391F1C3E79009DABF8 /* iconStarFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconStarFilled.png; path = assets/iconStarFilled.png; sourceTree = "<group>"; };
+		439F143A1F1C3E79009DABF8 /* iconStoveGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconStoveGreen.png; path = assets/iconStoveGreen.png; sourceTree = "<group>"; };
+		439F143B1F1C3E7A009DABF8 /* iconStoveWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconStoveWhite.png; path = assets/iconStoveWhite.png; sourceTree = "<group>"; };
+		439F143C1F1C3E7A009DABF8 /* iconWallGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconWallGreen.png; path = assets/iconWallGreen.png; sourceTree = "<group>"; };
+		439F143D1F1C3E7A009DABF8 /* iconWallWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconWallWhite.png; path = assets/iconWallWhite.png; sourceTree = "<group>"; };
+		439F143E1F1C3E7A009DABF8 /* iconWindowGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconWindowGreen.png; path = assets/iconWindowGreen.png; sourceTree = "<group>"; };
+		439F143F1F1C3E7A009DABF8 /* iconWindowWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconWindowWhite.png; path = assets/iconWindowWhite.png; sourceTree = "<group>"; };
+		439F14401F1C3E7A009DABF8 /* illustrationCreditCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = illustrationCreditCard.png; path = assets/illustrationCreditCard.png; sourceTree = "<group>"; };
+		439F14411F1C3E7A009DABF8 /* illustrationGeneralService.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = illustrationGeneralService.png; path = assets/illustrationGeneralService.png; sourceTree = "<group>"; };
+		439F14421F1C3E7A009DABF8 /* illustrationNoBookings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = illustrationNoBookings.png; path = assets/illustrationNoBookings.png; sourceTree = "<group>"; };
+		439F14681F1C4A0B009DABF8 /* MaterialTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MaterialTabBarViewController.swift; path = CustomViews/MaterialTabBarViewController.swift; sourceTree = "<group>"; };
+		439F146B1F1C9D3C009DABF8 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = MainViews/HomeViewController.swift; sourceTree = "<group>"; };
+		43DC564A1F1D2A9800C68B17 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = MainViews/HistoryViewController.swift; sourceTree = "<group>"; };
+		43DC564C1F1D2E5000C68B17 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = MainViews/ProfileViewController.swift; sourceTree = "<group>"; };
+		43DC564E1F1D381200C68B17 /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsViewController.swift; path = MainViews/LocationsViewController.swift; sourceTree = "<group>"; };
+		43DC56511F1D393800C68B17 /* HTTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTableViewCell.swift; path = CustomViews/HTTableViewCell.swift; sourceTree = "<group>"; };
 		43EF36B41F16F9D70013FA8A /* Hometap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hometap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43EF36B71F16F9D70013FA8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		43EF36B91F16F9D70013FA8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		43EF36BC1F16F9D70013FA8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43EF36BE1F16F9D70013FA8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43EF36C11F16F9D70013FA8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,6 +177,87 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		439F14091F1C3AE8009DABF8 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				439F141F1F1C3E79009DABF8 /* iconAddService.png */,
+				439F14201F1C3E79009DABF8 /* iconAdressGreen.png */,
+				439F14211F1C3E79009DABF8 /* iconAdressGrey.png */,
+				439F14221F1C3E79009DABF8 /* iconApartment.png */,
+				439F14231F1C3E79009DABF8 /* iconCreditCard.png */,
+				439F14241F1C3E79009DABF8 /* iconCurtainsGreen.png */,
+				439F14251F1C3E79009DABF8 /* iconCurtainsWhite.png */,
+				439F14261F1C3E79009DABF8 /* iconDivisionWhite.png */,
+				439F14271F1C3E79009DABF8 /* iconDivisonGreen.png */,
+				439F14281F1C3E79009DABF8 /* iconFavorite.png */,
+				439F14291F1C3E79009DABF8 /* iconFridgeGreen.png */,
+				439F142A1F1C3E79009DABF8 /* iconFridgeWhite.png */,
+				439F142B1F1C3E79009DABF8 /* iconHistoryGreen.png */,
+				439F142C1F1C3E79009DABF8 /* iconHistoryGrey.png */,
+				439F142D1F1C3E79009DABF8 /* iconHouseBlack.png */,
+				439F142E1F1C3E79009DABF8 /* iconHouseGreen.png */,
+				439F142F1F1C3E79009DABF8 /* iconHouseGrey.png */,
+				439F14301F1C3E79009DABF8 /* iconNoPhoto.png */,
+				439F14311F1C3E79009DABF8 /* iconNoPhotoSmall.png */,
+				439F14321F1C3E79009DABF8 /* iconProfileGreen.png */,
+				439F14331F1C3E79009DABF8 /* iconProfileGrey.png */,
+				439F14341F1C3E79009DABF8 /* iconServiceBooked.png */,
+				439F14351F1C3E79009DABF8 /* iconServiceChecked.png */,
+				439F14361F1C3E79009DABF8 /* iconSofaGreen.png */,
+				439F14371F1C3E79009DABF8 /* iconSofaWhite.png */,
+				439F14381F1C3E79009DABF8 /* iconStarEmpty.png */,
+				439F14391F1C3E79009DABF8 /* iconStarFilled.png */,
+				439F143A1F1C3E79009DABF8 /* iconStoveGreen.png */,
+				439F143B1F1C3E7A009DABF8 /* iconStoveWhite.png */,
+				439F143C1F1C3E7A009DABF8 /* iconWallGreen.png */,
+				439F143D1F1C3E7A009DABF8 /* iconWallWhite.png */,
+				439F143E1F1C3E7A009DABF8 /* iconWindowGreen.png */,
+				439F143F1F1C3E7A009DABF8 /* iconWindowWhite.png */,
+				439F14401F1C3E7A009DABF8 /* illustrationCreditCard.png */,
+				439F14411F1C3E7A009DABF8 /* illustrationGeneralService.png */,
+				439F14421F1C3E7A009DABF8 /* illustrationNoBookings.png */,
+				439F140A1F1C3AF0009DABF8 /* typo */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
+		439F140A1F1C3AF0009DABF8 /* typo */ = {
+			isa = PBXGroup;
+			children = (
+				439F140B1F1C3B00009DABF8 /* Rubik-Black.ttf */,
+				439F140C1F1C3B00009DABF8 /* Rubik-BlackItalic.ttf */,
+				439F140D1F1C3B00009DABF8 /* Rubik-Bold.ttf */,
+				439F140E1F1C3B00009DABF8 /* Rubik-BoldItalic.ttf */,
+				439F140F1F1C3B00009DABF8 /* Rubik-Italic.ttf */,
+				439F14101F1C3B00009DABF8 /* Rubik-Light.ttf */,
+				439F14111F1C3B00009DABF8 /* Rubik-LightItalic.ttf */,
+				439F14121F1C3B00009DABF8 /* Rubik-Medium.ttf */,
+				439F14131F1C3B00009DABF8 /* Rubik-MediumItalic.ttf */,
+				439F14141F1C3B00009DABF8 /* Rubik-Regular.ttf */,
+			);
+			name = typo;
+			sourceTree = "<group>";
+		};
+		439F14671F1C49BF009DABF8 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				439F14681F1C4A0B009DABF8 /* MaterialTabBarViewController.swift */,
+				43DC56511F1D393800C68B17 /* HTTableViewCell.swift */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		439F146A1F1C9D0B009DABF8 /* MainViews */ = {
+			isa = PBXGroup;
+			children = (
+				43DC564E1F1D381200C68B17 /* LocationsViewController.swift */,
+				439F146B1F1C9D3C009DABF8 /* HomeViewController.swift */,
+				43DC564A1F1D2A9800C68B17 /* HistoryViewController.swift */,
+				43DC564C1F1D2E5000C68B17 /* ProfileViewController.swift */,
+			);
+			name = MainViews;
+			sourceTree = "<group>";
+		};
 		43EF36AB1F16F9D70013FA8A = {
 			isa = PBXGroup;
 			children = (
@@ -96,10 +279,12 @@
 		43EF36B61F16F9D70013FA8A /* Hometap */ = {
 			isa = PBXGroup;
 			children = (
+				439F146A1F1C9D0B009DABF8 /* MainViews */,
+				439F14671F1C49BF009DABF8 /* CustomViews */,
+				439F14091F1C3AE8009DABF8 /* assets */,
 				43EF36D01F1704CF0013FA8A /* entities */,
 				43EF36CD1F1703960013FA8A /* libs */,
 				43EF36B71F16F9D70013FA8A /* AppDelegate.swift */,
-				43EF36B91F16F9D70013FA8A /* ViewController.swift */,
 				43EF36BB1F16F9D70013FA8A /* Main.storyboard */,
 				43EF36BE1F16F9D70013FA8A /* Assets.xcassets */,
 				43EF36C01F16F9D70013FA8A /* LaunchScreen.storyboard */,
@@ -208,10 +393,56 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				439F14501F1C3E7A009DABF8 /* iconHistoryGrey.png in Resources */,
+				439F14471F1C3E7A009DABF8 /* iconCreditCard.png in Resources */,
 				43EF36C21F16F9D70013FA8A /* LaunchScreen.storyboard in Resources */,
+				439F141E1F1C3B34009DABF8 /* Rubik-Regular.ttf in Resources */,
+				439F14661F1C3E7A009DABF8 /* illustrationNoBookings.png in Resources */,
+				439F144F1F1C3E7A009DABF8 /* iconHistoryGreen.png in Resources */,
+				439F144E1F1C3E7A009DABF8 /* iconFridgeWhite.png in Resources */,
+				439F14581F1C3E7A009DABF8 /* iconServiceBooked.png in Resources */,
+				439F14481F1C3E7A009DABF8 /* iconCurtainsGreen.png in Resources */,
+				439F14531F1C3E7A009DABF8 /* iconHouseGrey.png in Resources */,
+				439F145D1F1C3E7A009DABF8 /* iconStarFilled.png in Resources */,
+				439F14441F1C3E7A009DABF8 /* iconAdressGreen.png in Resources */,
+				439F14651F1C3E7A009DABF8 /* illustrationGeneralService.png in Resources */,
+				439F14461F1C3E7A009DABF8 /* iconApartment.png in Resources */,
+				439F14621F1C3E7A009DABF8 /* iconWindowGreen.png in Resources */,
+				439F145B1F1C3E7A009DABF8 /* iconSofaWhite.png in Resources */,
+				439F14431F1C3E7A009DABF8 /* iconAddService.png in Resources */,
+				439F14181F1C3B28009DABF8 /* Rubik-BoldItalic.ttf in Resources */,
 				43EF36D61F1708070013FA8A /* GoogleService-Info.plist in Resources */,
+				439F141C1F1C3B30009DABF8 /* Rubik-Medium.ttf in Resources */,
+				439F145A1F1C3E7A009DABF8 /* iconSofaGreen.png in Resources */,
+				439F145F1F1C3E7A009DABF8 /* iconStoveWhite.png in Resources */,
+				439F141B1F1C3B2E009DABF8 /* Rubik-LightItalic.ttf in Resources */,
+				439F144B1F1C3E7A009DABF8 /* iconDivisonGreen.png in Resources */,
+				439F14561F1C3E7A009DABF8 /* iconProfileGreen.png in Resources */,
+				439F14601F1C3E7A009DABF8 /* iconWallGreen.png in Resources */,
+				439F14571F1C3E7A009DABF8 /* iconProfileGrey.png in Resources */,
+				439F144C1F1C3E7A009DABF8 /* iconFavorite.png in Resources */,
+				439F145C1F1C3E7A009DABF8 /* iconStarEmpty.png in Resources */,
+				439F14161F1C3B23009DABF8 /* Rubik-BlackItalic.ttf in Resources */,
+				439F14541F1C3E7A009DABF8 /* iconNoPhoto.png in Resources */,
+				439F14451F1C3E7A009DABF8 /* iconAdressGrey.png in Resources */,
+				439F14591F1C3E7A009DABF8 /* iconServiceChecked.png in Resources */,
 				43EF36BF1F16F9D70013FA8A /* Assets.xcassets in Resources */,
+				439F14191F1C3B2A009DABF8 /* Rubik-Italic.ttf in Resources */,
+				439F145E1F1C3E7A009DABF8 /* iconStoveGreen.png in Resources */,
+				439F144D1F1C3E7A009DABF8 /* iconFridgeGreen.png in Resources */,
+				439F14631F1C3E7A009DABF8 /* iconWindowWhite.png in Resources */,
+				439F14491F1C3E7A009DABF8 /* iconCurtainsWhite.png in Resources */,
+				439F14171F1C3B26009DABF8 /* Rubik-Bold.ttf in Resources */,
+				439F14611F1C3E7A009DABF8 /* iconWallWhite.png in Resources */,
+				439F141D1F1C3B32009DABF8 /* Rubik-MediumItalic.ttf in Resources */,
+				439F141A1F1C3B2C009DABF8 /* Rubik-Light.ttf in Resources */,
+				439F14521F1C3E7A009DABF8 /* iconHouseGreen.png in Resources */,
+				439F14151F1C3B20009DABF8 /* Rubik-Black.ttf in Resources */,
 				43EF36BD1F16F9D70013FA8A /* Main.storyboard in Resources */,
+				439F14641F1C3E7A009DABF8 /* illustrationCreditCard.png in Resources */,
+				439F144A1F1C3E7A009DABF8 /* iconDivisionWhite.png in Resources */,
+				439F14551F1C3E7A009DABF8 /* iconNoPhotoSmall.png in Resources */,
+				439F14511F1C3E7A009DABF8 /* iconHouseBlack.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,19 +502,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				439F14041F19683F009DABF8 /* AdditionalServices.swift in Sources */,
+				43DC56521F1D393800C68B17 /* HTTableViewCell.swift in Sources */,
 				43EF36E81F192C010013FA8A /* HometapObject.swift in Sources */,
 				43EF36E61F192B880013FA8A /* Homie.swift in Sources */,
 				43EF36E11F192B2A0013FA8A /* extensions.swift in Sources */,
-				43EF36BA1F16F9D70013FA8A /* ViewController.swift in Sources */,
 				43EF36E21F192B2A0013FA8A /* User.swift in Sources */,
+				439F146C1F1C9D3C009DABF8 /* HomeViewController.swift in Sources */,
 				43EF36B81F16F9D70013FA8A /* AppDelegate.swift in Sources */,
+				43DC564D1F1D2E5000C68B17 /* ProfileViewController.swift in Sources */,
+				43DC564B1F1D2A9800C68B17 /* HistoryViewController.swift in Sources */,
 				43EF36DF1F192B2A0013FA8A /* Client.swift in Sources */,
 				43EF36EA1F194F600013FA8A /* Service.swift in Sources */,
+				43DC564F1F1D381200C68B17 /* LocationsViewController.swift in Sources */,
 				43EF36E41F192B4D0013FA8A /* Threading.swift in Sources */,
 				439F14021F195A1B009DABF8 /* Place.swift in Sources */,
 				43EF36E01F192B2A0013FA8A /* Constants.swift in Sources */,
 				439F14061F198574009DABF8 /* Product.swift in Sources */,
 				439F14081F19A698009DABF8 /* Calendar.swift in Sources */,
+				439F14691F1C4A0B009DABF8 /* MaterialTabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
