@@ -20,8 +20,9 @@ struct K {
     }
     
     struct Helper {
-        static let fb_date_format:String = "YYYY-MM-DDThh:mmTZD"
-        static let fb_long_date_format: String = "YYYY-MM-DDThh:mm:ss.sTZD"
+        static let fb_date_format:String = "yyyy-MM-dd'T'HH:mmZZZZZ"
+        static let fb_date_medium_format:String = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+        static let fb_long_date_format: String = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
         static let fb_time_format: String = "hh:mm a"
     }
     
@@ -45,18 +46,9 @@ struct K {
     
     struct User {
         
-        static let email:String = "email"
-        static let materias:String = "materiasADictar"
-        static let nombre:String = "nombre"
-        static let photo:String = "foto"
-        static let rating_cramer:String = "ratingCramer"
-        static let rating_estudiante: String = "ratingEstudiante"
-        static let saldo: String = "saldo"
-        static let celular:String = "celular"
-        
         static let default_ph: String = "default"
         
-        static var loaded_user:[String:Any]?
+        static var client:Client?
         static var loaded_user_name_tmp:String?
         
         static func logged_user () -> FIRUser?{
@@ -71,18 +63,10 @@ struct K {
         }
     }
     
-    struct Menu {
-        static let inicio: Int = 1
-        static let crames: Int = 2
-        static let coins: Int = 3
-        static let ajustes: Int = 4
-        static let ayuda: Int = 5
-    }
-    
 }
 
 func getCurrentUserUid()->String?{
-    return K.User.logged_user()?.uid
+    return K.User.client!.uid
 }
 
 //func rand() -> UInt32{

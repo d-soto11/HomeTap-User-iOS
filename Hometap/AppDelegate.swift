@@ -38,7 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Private configurations
         // ...
         
-        
         return true
     }
     

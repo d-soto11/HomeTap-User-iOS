@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		430B83711F1DDB7B007585F2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B83701F1DDB7B007585F2 /* LoginViewController.swift */; };
 		439F14021F195A1B009DABF8 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14011F195A1B009DABF8 /* Place.swift */; };
 		439F14041F19683F009DABF8 /* AdditionalServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14031F19683F009DABF8 /* AdditionalServices.swift */; };
 		439F14061F198574009DABF8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14051F198574009DABF8 /* Product.swift */; };
@@ -59,6 +60,12 @@
 		439F14661F1C3E7A009DABF8 /* illustrationNoBookings.png in Resources */ = {isa = PBXBuildFile; fileRef = 439F14421F1C3E7A009DABF8 /* illustrationNoBookings.png */; };
 		439F14691F1C4A0B009DABF8 /* MaterialTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14681F1C4A0B009DABF8 /* MaterialTabBarViewController.swift */; };
 		439F146C1F1C9D3C009DABF8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F146B1F1C9D3C009DABF8 /* HomeViewController.swift */; };
+		43AC4C861F23F18E007D638E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AC4C851F23F18E007D638E /* RegisterViewController.swift */; };
+		43AC4C881F23F19F007D638E /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AC4C871F23F19F007D638E /* SetUpViewController.swift */; };
+		43B610D21F1E77D2003425BD /* LOGO.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 43B610D11F1E77D2003425BD /* LOGO.bmp */; };
+		43B610D41F1E7D44003425BD /* photo-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 43B610D31F1E7D44003425BD /* photo-camera.png */; };
+		43B610D81F1E80C1003425BD /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = 43B610D61F1E80C1003425BD /* fb.png */; };
+		43B610D91F1E80C1003425BD /* google_c_b.png in Resources */ = {isa = PBXBuildFile; fileRef = 43B610D71F1E80C1003425BD /* google_c_b.png */; };
 		43DC564B1F1D2A9800C68B17 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC564A1F1D2A9800C68B17 /* HistoryViewController.swift */; };
 		43DC564D1F1D2E5000C68B17 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC564C1F1D2E5000C68B17 /* ProfileViewController.swift */; };
 		43DC564F1F1D381200C68B17 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC564E1F1D381200C68B17 /* LocationsViewController.swift */; };
@@ -81,6 +88,7 @@
 
 /* Begin PBXFileReference section */
 		41EE0E6489CEC26245E3FF96 /* Pods-Hometap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hometap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hometap/Pods-Hometap.debug.xcconfig"; sourceTree = "<group>"; };
+		430B83701F1DDB7B007585F2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = AuthViews/LoginViewController.swift; sourceTree = "<group>"; };
 		439F14011F195A1B009DABF8 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = entities/Place.swift; sourceTree = "<group>"; };
 		439F14031F19683F009DABF8 /* AdditionalServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdditionalServices.swift; path = entities/AdditionalServices.swift; sourceTree = "<group>"; };
 		439F14051F198574009DABF8 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Product.swift; path = entities/Product.swift; sourceTree = "<group>"; };
@@ -133,6 +141,12 @@
 		439F14421F1C3E7A009DABF8 /* illustrationNoBookings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = illustrationNoBookings.png; path = assets/illustrationNoBookings.png; sourceTree = "<group>"; };
 		439F14681F1C4A0B009DABF8 /* MaterialTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MaterialTabBarViewController.swift; path = CustomViews/MaterialTabBarViewController.swift; sourceTree = "<group>"; };
 		439F146B1F1C9D3C009DABF8 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = MainViews/HomeViewController.swift; sourceTree = "<group>"; };
+		43AC4C851F23F18E007D638E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = AuthViews/RegisterViewController.swift; sourceTree = "<group>"; };
+		43AC4C871F23F19F007D638E /* SetUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetUpViewController.swift; path = AuthViews/SetUpViewController.swift; sourceTree = "<group>"; };
+		43B610D11F1E77D2003425BD /* LOGO.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = LOGO.bmp; path = assets/icons/LOGO.bmp; sourceTree = "<group>"; };
+		43B610D31F1E7D44003425BD /* photo-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "photo-camera.png"; path = "assets/photo-camera.png"; sourceTree = "<group>"; };
+		43B610D61F1E80C1003425BD /* fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fb.png; path = assets/social/fb.png; sourceTree = "<group>"; };
+		43B610D71F1E80C1003425BD /* google_c_b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = google_c_b.png; path = assets/social/google_c_b.png; sourceTree = "<group>"; };
 		43DC564A1F1D2A9800C68B17 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = MainViews/HistoryViewController.swift; sourceTree = "<group>"; };
 		43DC564C1F1D2E5000C68B17 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = MainViews/ProfileViewController.swift; sourceTree = "<group>"; };
 		43DC564E1F1D381200C68B17 /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsViewController.swift; path = MainViews/LocationsViewController.swift; sourceTree = "<group>"; };
@@ -177,10 +191,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		430B836F1F1DDB3F007585F2 /* AuthViews */ = {
+			isa = PBXGroup;
+			children = (
+				430B83701F1DDB7B007585F2 /* LoginViewController.swift */,
+				43AC4C851F23F18E007D638E /* RegisterViewController.swift */,
+				43AC4C871F23F19F007D638E /* SetUpViewController.swift */,
+			);
+			name = AuthViews;
+			sourceTree = "<group>";
+		};
 		439F14091F1C3AE8009DABF8 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				43B610D51F1E80B3003425BD /* social */,
+				43B610D01F1E77C9003425BD /* icons */,
 				439F141F1F1C3E79009DABF8 /* iconAddService.png */,
+				43B610D31F1E7D44003425BD /* photo-camera.png */,
 				439F14201F1C3E79009DABF8 /* iconAdressGreen.png */,
 				439F14211F1C3E79009DABF8 /* iconAdressGrey.png */,
 				439F14221F1C3E79009DABF8 /* iconApartment.png */,
@@ -258,6 +285,23 @@
 			name = MainViews;
 			sourceTree = "<group>";
 		};
+		43B610D01F1E77C9003425BD /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				43B610D11F1E77D2003425BD /* LOGO.bmp */,
+			);
+			name = icons;
+			sourceTree = "<group>";
+		};
+		43B610D51F1E80B3003425BD /* social */ = {
+			isa = PBXGroup;
+			children = (
+				43B610D61F1E80C1003425BD /* fb.png */,
+				43B610D71F1E80C1003425BD /* google_c_b.png */,
+			);
+			name = social;
+			sourceTree = "<group>";
+		};
 		43EF36AB1F16F9D70013FA8A = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +323,7 @@
 		43EF36B61F16F9D70013FA8A /* Hometap */ = {
 			isa = PBXGroup;
 			children = (
+				430B836F1F1DDB3F007585F2 /* AuthViews */,
 				439F146A1F1C9D0B009DABF8 /* MainViews */,
 				439F14671F1C49BF009DABF8 /* CustomViews */,
 				439F14091F1C3AE8009DABF8 /* assets */,
@@ -404,6 +449,8 @@
 				439F14481F1C3E7A009DABF8 /* iconCurtainsGreen.png in Resources */,
 				439F14531F1C3E7A009DABF8 /* iconHouseGrey.png in Resources */,
 				439F145D1F1C3E7A009DABF8 /* iconStarFilled.png in Resources */,
+				43B610D91F1E80C1003425BD /* google_c_b.png in Resources */,
+				43B610D41F1E7D44003425BD /* photo-camera.png in Resources */,
 				439F14441F1C3E7A009DABF8 /* iconAdressGreen.png in Resources */,
 				439F14651F1C3E7A009DABF8 /* illustrationGeneralService.png in Resources */,
 				439F14461F1C3E7A009DABF8 /* iconApartment.png in Resources */,
@@ -420,6 +467,7 @@
 				439F14561F1C3E7A009DABF8 /* iconProfileGreen.png in Resources */,
 				439F14601F1C3E7A009DABF8 /* iconWallGreen.png in Resources */,
 				439F14571F1C3E7A009DABF8 /* iconProfileGrey.png in Resources */,
+				43B610D81F1E80C1003425BD /* fb.png in Resources */,
 				439F144C1F1C3E7A009DABF8 /* iconFavorite.png in Resources */,
 				439F145C1F1C3E7A009DABF8 /* iconStarEmpty.png in Resources */,
 				439F14161F1C3B23009DABF8 /* Rubik-BlackItalic.ttf in Resources */,
@@ -436,6 +484,7 @@
 				439F14611F1C3E7A009DABF8 /* iconWallWhite.png in Resources */,
 				439F141D1F1C3B32009DABF8 /* Rubik-MediumItalic.ttf in Resources */,
 				439F141A1F1C3B2C009DABF8 /* Rubik-Light.ttf in Resources */,
+				43B610D21F1E77D2003425BD /* LOGO.bmp in Resources */,
 				439F14521F1C3E7A009DABF8 /* iconHouseGreen.png in Resources */,
 				439F14151F1C3B20009DABF8 /* Rubik-Black.ttf in Resources */,
 				43EF36BD1F16F9D70013FA8A /* Main.storyboard in Resources */,
@@ -509,6 +558,8 @@
 				43EF36E21F192B2A0013FA8A /* User.swift in Sources */,
 				439F146C1F1C9D3C009DABF8 /* HomeViewController.swift in Sources */,
 				43EF36B81F16F9D70013FA8A /* AppDelegate.swift in Sources */,
+				430B83711F1DDB7B007585F2 /* LoginViewController.swift in Sources */,
+				43AC4C861F23F18E007D638E /* RegisterViewController.swift in Sources */,
 				43DC564D1F1D2E5000C68B17 /* ProfileViewController.swift in Sources */,
 				43DC564B1F1D2A9800C68B17 /* HistoryViewController.swift in Sources */,
 				43EF36DF1F192B2A0013FA8A /* Client.swift in Sources */,
@@ -519,6 +570,7 @@
 				43EF36E01F192B2A0013FA8A /* Constants.swift in Sources */,
 				439F14061F198574009DABF8 /* Product.swift in Sources */,
 				439F14081F19A698009DABF8 /* Calendar.swift in Sources */,
+				43AC4C881F23F19F007D638E /* SetUpViewController.swift in Sources */,
 				439F14691F1C4A0B009DABF8 /* MaterialTabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

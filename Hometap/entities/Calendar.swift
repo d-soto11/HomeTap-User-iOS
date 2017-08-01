@@ -85,7 +85,7 @@ class HTCBlock: HometapObject {
     var startHour: Date?
     var endHour: Date?
     
-    public func service(callback: @escaping (_:Service)->Void){
+    public func service(callback: @escaping (_:Service?)->Void){
         if let id_service = original_dictionary["serviceID"] as? String {
             Service.withID(id: id_service, callback: {(service) in
                 callback(service)

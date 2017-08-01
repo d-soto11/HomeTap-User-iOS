@@ -136,7 +136,6 @@ class MaterialTabBarViewController: UIViewController {
             selected_vc.view.frame = self.mainView.bounds
         })
         
-        
     }
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer)

@@ -31,7 +31,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         paymentB.addLightShadow()
-        paymentB.roundCorners(radius: K.UI.round_px)
+        paymentB.roundCorners(radius: K.UI.light_round_px)
     }
 
     /*

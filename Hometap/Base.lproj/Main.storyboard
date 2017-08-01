@@ -11,6 +11,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
         <array key="Rubik-Light.ttf">
             <string>Rubik-Light</string>
         </array>
@@ -22,6 +25,460 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Set Up View Controller-->
+        <scene sceneID="eY3-QV-ztY">
+            <objects>
+                <viewController storyboardIdentifier="RegisterForm" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Eh-ij-nWy" customClass="SetUpViewController" customModule="Hometap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7th-1S-oxd"/>
+                        <viewControllerLayoutGuide type="bottom" id="4ZA-2c-FnT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Aas-O2-4hh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirma tus datos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25b-4n-kvL">
+                                <rect key="frame" x="107.5" y="35" width="159" height="21.5"/>
+                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
+                                <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8n-IG-SCY">
+                                <rect key="frame" x="117" y="76.5" width="140" height="149.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconNoPhoto.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xaw-v2-yiY">
+                                        <rect key="frame" x="0.0" y="0.0" width="140" height="149.5"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cambiar" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="xm2-di-fMT">
+                                        <rect key="frame" x="0.0" y="132.5" width="140" height="17"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDy-IJ-eA8">
+                                        <rect key="frame" x="0.0" y="0.0" width="140" height="149.5"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Xaw-v2-yiY" firstAttribute="top" secondItem="d8n-IG-SCY" secondAttribute="top" id="DS2-U1-285"/>
+                                    <constraint firstItem="Xaw-v2-yiY" firstAttribute="leading" secondItem="d8n-IG-SCY" secondAttribute="leading" id="H4K-H7-nvo"/>
+                                    <constraint firstItem="xm2-di-fMT" firstAttribute="leading" secondItem="Xaw-v2-yiY" secondAttribute="leading" id="HON-Pf-2Cb"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xaw-v2-yiY" secondAttribute="bottom" id="Swl-sE-B51"/>
+                                    <constraint firstAttribute="width" secondItem="d8n-IG-SCY" secondAttribute="height" multiplier="15:16" id="UJx-1R-kdr"/>
+                                    <constraint firstItem="KDy-IJ-eA8" firstAttribute="leading" secondItem="Xaw-v2-yiY" secondAttribute="leading" id="XSk-1S-4EU"/>
+                                    <constraint firstAttribute="width" constant="140" id="ZLa-eV-TM9"/>
+                                    <constraint firstItem="xm2-di-fMT" firstAttribute="trailing" secondItem="Xaw-v2-yiY" secondAttribute="trailing" id="oba-IR-HJy"/>
+                                    <constraint firstItem="xm2-di-fMT" firstAttribute="bottom" secondItem="Xaw-v2-yiY" secondAttribute="bottom" id="qzV-im-a7N"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xaw-v2-yiY" secondAttribute="trailing" id="rLK-K7-iEv"/>
+                                    <constraint firstItem="KDy-IJ-eA8" firstAttribute="bottom" secondItem="Xaw-v2-yiY" secondAttribute="bottom" id="s14-0R-CKk"/>
+                                    <constraint firstItem="KDy-IJ-eA8" firstAttribute="trailing" secondItem="Xaw-v2-yiY" secondAttribute="trailing" id="sLG-VE-k63"/>
+                                    <constraint firstItem="KDy-IJ-eA8" firstAttribute="top" secondItem="Xaw-v2-yiY" secondAttribute="top" id="y6v-0K-zfG"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Jgp-Zv-QpK">
+                                <rect key="frame" x="31" y="246" width="313" height="326"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDf-BN-LUN">
+                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="18"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
+                                        <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Juan Perez" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zhs-FJ-eU6">
+                                        <rect key="frame" x="0.0" y="26" width="313" height="32.5"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="9Eh-ij-nWy" id="mdc-pT-FB4"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hg3-F9-Fsr">
+                                        <rect key="frame" x="0.0" y="66.5" width="47" height="18"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
+                                        <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="juan@micorreo.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qe7-l7-xm4">
+                                        <rect key="frame" x="0.0" y="92.5" width="313" height="33.5"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="9Eh-ij-nWy" id="PMw-GR-qlV"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celular" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjf-BY-f6S">
+                                        <rect key="frame" x="0.0" y="134" width="48.5" height="18"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
+                                        <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="300898972" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FGY-Ts-1oY">
+                                        <rect key="frame" x="0.0" y="160" width="313" height="32.5"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="9Eh-ij-nWy" id="C1a-Ag-e5b"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha de Nacimiento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbW-UB-DU5">
+                                        <rect key="frame" x="0.0" y="200.5" width="147" height="18"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
+                                        <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="28/07/1995" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9xk-xH-EVi">
+                                        <rect key="frame" x="0.0" y="226.5" width="313" height="33.5"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="9Eh-ij-nWy" id="PHh-eD-tFv"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Género" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmi-0E-6g8">
+                                        <rect key="frame" x="0.0" y="268" width="50.5" height="18"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
+                                        <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="-----" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mUo-jG-tHT">
+                                        <rect key="frame" x="0.0" y="294" width="313" height="32"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="9Eh-ij-nWy" id="UvU-em-ZRd"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="FGY-Ts-1oY" secondAttribute="trailing" id="GNb-GN-YHL"/>
+                                    <constraint firstAttribute="trailing" secondItem="9xk-xH-EVi" secondAttribute="trailing" id="GyP-tW-VkK"/>
+                                    <constraint firstItem="9xk-xH-EVi" firstAttribute="height" secondItem="zhs-FJ-eU6" secondAttribute="height" id="Pc0-Mz-qjp"/>
+                                    <constraint firstItem="mUo-jG-tHT" firstAttribute="height" secondItem="zhs-FJ-eU6" secondAttribute="height" id="Sa6-2b-gNU"/>
+                                    <constraint firstAttribute="trailing" secondItem="mUo-jG-tHT" secondAttribute="trailing" id="UBR-mj-6NX"/>
+                                    <constraint firstItem="FGY-Ts-1oY" firstAttribute="height" secondItem="zhs-FJ-eU6" secondAttribute="height" id="Y2x-WS-u2C"/>
+                                    <constraint firstAttribute="trailing" secondItem="qe7-l7-xm4" secondAttribute="trailing" id="mdZ-Rf-VfD"/>
+                                    <constraint firstItem="qe7-l7-xm4" firstAttribute="height" secondItem="zhs-FJ-eU6" secondAttribute="height" id="n7J-Yo-Gjf"/>
+                                    <constraint firstAttribute="trailing" secondItem="zhs-FJ-eU6" secondAttribute="trailing" id="zwQ-8M-lwj"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWe-5t-CrU">
+                                <rect key="frame" x="31" y="597" width="313" height="50"/>
+                                <color key="backgroundColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="mex-y0-HwQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="18"/>
+                                <state key="normal" title="Listo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="done:" destination="9Eh-ij-nWy" eventType="touchUpInside" id="QCW-DH-QBr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="d8n-IG-SCY" firstAttribute="centerX" secondItem="Aas-O2-4hh" secondAttribute="centerX" id="3TC-t1-X6Q"/>
+                            <constraint firstItem="XWe-5t-CrU" firstAttribute="top" secondItem="Jgp-Zv-QpK" secondAttribute="bottom" constant="25" id="5Q2-UQ-PyV"/>
+                            <constraint firstItem="XWe-5t-CrU" firstAttribute="leading" secondItem="Aas-O2-4hh" secondAttribute="leadingMargin" constant="15" id="DO2-bn-F5O"/>
+                            <constraint firstItem="Jgp-Zv-QpK" firstAttribute="centerX" secondItem="Aas-O2-4hh" secondAttribute="centerX" id="Pat-Sr-q7E"/>
+                            <constraint firstItem="25b-4n-kvL" firstAttribute="top" secondItem="7th-1S-oxd" secondAttribute="bottom" constant="15" id="Ysw-9K-GI9"/>
+                            <constraint firstItem="Jgp-Zv-QpK" firstAttribute="leading" secondItem="Aas-O2-4hh" secondAttribute="leadingMargin" constant="15" id="aAQ-ds-c7q"/>
+                            <constraint firstItem="25b-4n-kvL" firstAttribute="centerX" secondItem="Aas-O2-4hh" secondAttribute="centerX" id="aLj-WJ-7Bd"/>
+                            <constraint firstItem="d8n-IG-SCY" firstAttribute="top" secondItem="25b-4n-kvL" secondAttribute="bottom" constant="20" id="bXx-Dr-3Wg"/>
+                            <constraint firstItem="Jgp-Zv-QpK" firstAttribute="top" secondItem="d8n-IG-SCY" secondAttribute="bottom" constant="20" id="r2S-Uh-xuu"/>
+                            <constraint firstItem="XWe-5t-CrU" firstAttribute="centerX" secondItem="Aas-O2-4hh" secondAttribute="centerX" id="te9-kd-Tb3"/>
+                            <constraint firstItem="4ZA-2c-FnT" firstAttribute="top" secondItem="XWe-5t-CrU" secondAttribute="bottom" constant="20" id="whT-nd-Lmf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="c13-wk-Z0k"/>
+                    <connections>
+                        <outlet property="birthField" destination="9xk-xH-EVi" id="Ncf-4e-hNs"/>
+                        <outlet property="doneB" destination="XWe-5t-CrU" id="oyP-2r-rhj"/>
+                        <outlet property="genreField" destination="mUo-jG-tHT" id="jON-Th-3LU"/>
+                        <outlet property="mailField" destination="qe7-l7-xm4" id="Z8b-MA-xIf"/>
+                        <outlet property="nameField" destination="zhs-FJ-eU6" id="Qfq-0G-QV0"/>
+                        <outlet property="phoneField" destination="FGY-Ts-1oY" id="6KM-iE-PPf"/>
+                        <outlet property="profileContainer" destination="d8n-IG-SCY" id="bqN-UB-sFY"/>
+                        <outlet property="profileImageView" destination="Xaw-v2-yiY" id="u1Q-HZ-EUA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yPk-nF-Jt4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2946.4000000000001" y="115.59220389805098"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="rBo-HQ-Ydn">
+            <objects>
+                <viewController id="5mQ-iq-O4q" customClass="RegisterViewController" customModule="Hometap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D02-6n-Xdt"/>
+                        <viewControllerLayoutGuide type="bottom" id="aXS-WD-fIm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7U4-C1-JPo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¡Bienvenido a HomeTap!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUz-5i-PuQ">
+                                <rect key="frame" x="89.5" y="35" width="197.5" height="21.5"/>
+                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
+                                <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ywY-9w-VMT">
+                                <rect key="frame" x="36" y="106.5" width="303" height="266"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypz-j7-jUM">
+                                        <rect key="frame" x="0.0" y="0.0" width="59" height="19"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
+                                        <color key="textColor" red="0.55294117647058827" green="0.55294117647058827" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Juan Perez" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N90-Os-o0g">
+                                        <rect key="frame" x="0.0" y="29" width="303" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="5mQ-iq-O4q" id="537-dV-v2j"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycv-OM-BjD">
+                                        <rect key="frame" x="0.0" y="69" width="50" height="19"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
+                                        <color key="textColor" red="0.55294117647058827" green="0.55294117647058827" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="juan@micorreo.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eaO-V9-ChI">
+                                        <rect key="frame" x="0.0" y="98" width="303" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="5mQ-iq-O4q" id="Gv1-Mq-39E"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfJ-oM-MBs">
+                                        <rect key="frame" x="0.0" y="138" width="86.5" height="19"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
+                                        <color key="textColor" red="0.55294117647058827" green="0.55294117647058827" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="**********" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SLg-lz-Ypf">
+                                        <rect key="frame" x="0.0" y="167" width="303" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="5mQ-iq-O4q" id="TVT-X7-OCr"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmar contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uws-RX-5dU">
+                                        <rect key="frame" x="0.0" y="207" width="161.5" height="19"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
+                                        <color key="textColor" red="0.55294117647058827" green="0.55294117647058827" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="**********" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bZA-Ym-juB">
+                                        <rect key="frame" x="0.0" y="236" width="303" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="5mQ-iq-O4q" id="jSy-Bz-f17"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="eaO-V9-ChI" secondAttribute="trailing" id="M95-kR-MX0"/>
+                                    <constraint firstAttribute="trailing" secondItem="bZA-Ym-juB" secondAttribute="trailing" id="m1J-SX-Xg2"/>
+                                    <constraint firstAttribute="trailing" secondItem="N90-Os-o0g" secondAttribute="trailing" id="nei-yj-uSr"/>
+                                    <constraint firstAttribute="trailing" secondItem="SLg-lz-Ypf" secondAttribute="trailing" id="vas-FK-CTh"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Fg-xQ-OGy">
+                                <rect key="frame" x="36" y="407" width="303" height="50"/>
+                                <color key="backgroundColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="26A-ba-SD9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="18"/>
+                                <state key="normal" title="Siguiente">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextStep:" destination="5mQ-iq-O4q" eventType="touchUpInside" id="2HR-RU-oNu"/>
+                                    <segue destination="9Eh-ij-nWy" kind="show" identifier="Setup" id="R3Z-A3-x7z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8Fg-xQ-OGy" firstAttribute="centerX" secondItem="7U4-C1-JPo" secondAttribute="centerX" id="5YK-1b-ldI"/>
+                            <constraint firstItem="ywY-9w-VMT" firstAttribute="centerX" secondItem="7U4-C1-JPo" secondAttribute="centerX" id="ApI-H7-oO8"/>
+                            <constraint firstItem="CUz-5i-PuQ" firstAttribute="centerX" secondItem="7U4-C1-JPo" secondAttribute="centerX" id="CE0-qh-8Eg"/>
+                            <constraint firstItem="8Fg-xQ-OGy" firstAttribute="leading" secondItem="7U4-C1-JPo" secondAttribute="leadingMargin" constant="20" id="Jfj-CH-wQg"/>
+                            <constraint firstItem="ywY-9w-VMT" firstAttribute="top" secondItem="CUz-5i-PuQ" secondAttribute="bottom" constant="50" id="Omw-d8-NcV"/>
+                            <constraint firstItem="ywY-9w-VMT" firstAttribute="leading" secondItem="7U4-C1-JPo" secondAttribute="leadingMargin" constant="20" id="mTO-zI-lbL"/>
+                            <constraint firstItem="8Fg-xQ-OGy" firstAttribute="top" secondItem="ywY-9w-VMT" secondAttribute="bottom" constant="35" id="nkP-JR-amd"/>
+                            <constraint firstItem="CUz-5i-PuQ" firstAttribute="top" secondItem="D02-6n-Xdt" secondAttribute="bottom" constant="15" id="zH7-io-emQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="confirmPasswordField" destination="bZA-Ym-juB" id="LEC-lH-Wh2"/>
+                        <outlet property="mailField" destination="eaO-V9-ChI" id="w8G-wu-w61"/>
+                        <outlet property="nameField" destination="N90-Os-o0g" id="cQn-E2-pNr"/>
+                        <outlet property="nextB" destination="8Fg-xQ-OGy" id="xch-3G-UdK"/>
+                        <outlet property="passwordField" destination="SLg-lz-Ypf" id="nnS-5t-Vo5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hmT-gT-eu3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2143.1999999999998" y="115.59220389805098"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="eVo-z9-htf">
+            <objects>
+                <viewController storyboardIdentifier="LoginView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TSO-Ys-xq8" customClass="LoginViewController" customModule="Hometap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aMD-oo-BAv"/>
+                        <viewControllerLayoutGuide type="bottom" id="AyT-oL-bkJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fc9-g9-y7g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO.bmp" translatesAutoresizingMaskIntoConstraints="NO" id="UOu-yP-cZS">
+                                <rect key="frame" x="96" y="35" width="183" height="183"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UOu-yP-cZS" secondAttribute="height" multiplier="1:1" id="FVJ-Bj-Su7"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FRb-eP-Bpl">
+                                <rect key="frame" x="41" y="258" width="293" height="30"/>
+                                <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="TSO-Ys-xq8" id="BCl-Ld-v6e"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WCz-Kk-5r5">
+                                <rect key="frame" x="41" y="308" width="293" height="30"/>
+                                <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="TSO-Ys-xq8" id="Vh7-hr-u0a"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nck-lK-Nln">
+                                <rect key="frame" x="96" y="368" width="183" height="50"/>
+                                <color key="backgroundColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fHk-hz-1ze"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="18"/>
+                                <state key="normal" title="Iniciar sesión">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginWithHT:" destination="TSO-Ys-xq8" eventType="touchUpInside" id="4Yz-eR-zh1"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ZUO-gU-dfg">
+                                <rect key="frame" x="63" y="433" width="250.5" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿No tienes cuenta?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9X-Nt-p6J">
+                                        <rect key="frame" x="0.0" y="0.0" width="142.5" height="31"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yn7-kv-paG">
+                                        <rect key="frame" x="144.5" y="0.0" width="106" height="31"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
+                                        <state key="normal" title="¡Regístrate ya!">
+                                            <color key="titleColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="register:" destination="TSO-Ys-xq8" eventType="touchUpInside" id="Aww-av-ydN"/>
+                                            <segue destination="5mQ-iq-O4q" kind="showDetail" identifier="Register" action="showViewController:sender:" id="0YO-eu-nXe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HnH-pd-u6h">
+                                <rect key="frame" x="41" y="574" width="293" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="jgW-gE-U1h"/>
+                                </constraints>
+                                <state key="normal" image="fb.png"/>
+                                <connections>
+                                    <action selector="loginWithFB:" destination="TSO-Ys-xq8" eventType="touchUpInside" id="bjb-rU-ciR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qL7-RK-g8h">
+                                <rect key="frame" x="41" y="484" width="294" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="w5u-Xe-VzN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="20"/>
+                                <state key="normal" image="google_c_b.png">
+                                    <color key="titleColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginWithGoogle:" destination="TSO-Ys-xq8" eventType="touchUpInside" id="a17-nX-DyM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HnH-pd-u6h" firstAttribute="centerX" secondItem="fc9-g9-y7g" secondAttribute="centerX" id="1fp-hp-qz3"/>
+                            <constraint firstItem="ZUO-gU-dfg" firstAttribute="top" secondItem="Nck-lK-Nln" secondAttribute="bottom" constant="15" id="4H1-LI-LN1"/>
+                            <constraint firstItem="FRb-eP-Bpl" firstAttribute="top" secondItem="UOu-yP-cZS" secondAttribute="bottom" constant="40" id="5tE-rF-49B"/>
+                            <constraint firstItem="WCz-Kk-5r5" firstAttribute="top" secondItem="FRb-eP-Bpl" secondAttribute="bottom" constant="20" id="9Op-7T-A7b"/>
+                            <constraint firstItem="WCz-Kk-5r5" firstAttribute="centerX" secondItem="fc9-g9-y7g" secondAttribute="centerX" id="9h7-uX-F9x"/>
+                            <constraint firstItem="FRb-eP-Bpl" firstAttribute="leading" secondItem="fc9-g9-y7g" secondAttribute="leadingMargin" constant="25" id="D3O-Fj-n09"/>
+                            <constraint firstItem="HnH-pd-u6h" firstAttribute="top" secondItem="qL7-RK-g8h" secondAttribute="bottom" constant="25" id="DO9-4Y-0db"/>
+                            <constraint firstItem="ZUO-gU-dfg" firstAttribute="centerX" secondItem="fc9-g9-y7g" secondAttribute="centerX" id="F8d-05-1LJ"/>
+                            <constraint firstItem="qL7-RK-g8h" firstAttribute="top" secondItem="ZUO-gU-dfg" secondAttribute="bottom" constant="20" id="G26-E7-2mc"/>
+                            <constraint firstItem="Nck-lK-Nln" firstAttribute="top" secondItem="WCz-Kk-5r5" secondAttribute="bottom" constant="30" id="IGN-eD-fOf"/>
+                            <constraint firstItem="WCz-Kk-5r5" firstAttribute="leading" secondItem="fc9-g9-y7g" secondAttribute="leadingMargin" constant="25" id="L35-Gk-mEH"/>
+                            <constraint firstItem="HnH-pd-u6h" firstAttribute="leading" secondItem="fc9-g9-y7g" secondAttribute="leadingMargin" constant="25" id="Q0Y-Dt-qM0"/>
+                            <constraint firstItem="UOu-yP-cZS" firstAttribute="top" secondItem="aMD-oo-BAv" secondAttribute="bottom" constant="15" id="UyJ-00-t8E"/>
+                            <constraint firstItem="qL7-RK-g8h" firstAttribute="centerX" secondItem="fc9-g9-y7g" secondAttribute="centerX" id="cRi-ke-mr3"/>
+                            <constraint firstItem="FRb-eP-Bpl" firstAttribute="centerX" secondItem="fc9-g9-y7g" secondAttribute="centerX" id="fqd-21-GxY"/>
+                            <constraint firstItem="Nck-lK-Nln" firstAttribute="leading" secondItem="fc9-g9-y7g" secondAttribute="leadingMargin" constant="80" id="gZc-OM-HH4"/>
+                            <constraint firstItem="Nck-lK-Nln" firstAttribute="centerX" secondItem="fc9-g9-y7g" secondAttribute="centerX" id="los-aw-Aw7"/>
+                            <constraint firstItem="UOu-yP-cZS" firstAttribute="centerX" secondItem="fc9-g9-y7g" secondAttribute="centerX" id="o8b-br-swg"/>
+                            <constraint firstItem="qL7-RK-g8h" firstAttribute="leading" secondItem="fc9-g9-y7g" secondAttribute="leadingMargin" constant="25" id="oTM-9k-sGL"/>
+                            <constraint firstItem="AyT-oL-bkJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="HnH-pd-u6h" secondAttribute="bottom" constant="10" id="r6I-gh-8rq"/>
+                            <constraint firstItem="ZUO-gU-dfg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fc9-g9-y7g" secondAttribute="leadingMargin" constant="25" id="xlo-hU-gLS"/>
+                            <constraint firstItem="UOu-yP-cZS" firstAttribute="leading" secondItem="fc9-g9-y7g" secondAttribute="leadingMargin" constant="80" id="yPl-BL-Kc8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fb" destination="HnH-pd-u6h" id="wvw-RQ-PCA"/>
+                        <outlet property="google" destination="qL7-RK-g8h" id="vnO-ag-0kB"/>
+                        <outlet property="logoImageView" destination="UOu-yP-cZS" id="LVv-fy-zIs"/>
+                        <outlet property="password" destination="WCz-Kk-5r5" id="xEh-jW-hnv"/>
+                        <outlet property="signInB" destination="Nck-lK-Nln" id="uej-nG-k4A"/>
+                        <outlet property="username" destination="FRb-eP-Bpl" id="3Ax-yi-nDD"/>
+                        <segue destination="9Eh-ij-nWy" kind="show" identifier="Setup" id="4zX-5S-j3D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XAZ-oh-Jkp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1287.2" y="116.49175412293854"/>
+        </scene>
         <!--Material Tab Bar View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -196,7 +653,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13.6" y="117.39130434782609"/>
+            <point key="canvasLocation" x="-122" y="116"/>
         </scene>
         <!--Locations View Controller-->
         <scene sceneID="64n-cK-eCe">
@@ -211,13 +668,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tus direcciones" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XzZ-Fn-0An">
-                                <rect key="frame" x="122.5" y="35" width="130" height="21.5"/>
+                                <rect key="frame" x="123" y="35" width="130" height="21"/>
                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                 <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iyE-4Y-PZg">
-                                <rect key="frame" x="16" y="107" width="343" height="510"/>
+                                <rect key="frame" x="16" y="106.5" width="343" height="510.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addressCell" rowHeight="60" id="JLX-JA-zzt" customClass="HTTableViewCell" customModule="Hometap" customModuleProvider="target">
@@ -379,11 +836,12 @@
                         <outlet property="bookingB" destination="d6B-Zc-TWD" id="hXP-jJ-rjP"/>
                         <outlet property="noBookingArt" destination="tvN-k0-43k" id="kSj-I1-jIf"/>
                         <outlet property="noBookingHint" destination="woP-cP-vgO" id="ZO5-O4-Nq8"/>
+                        <segue destination="TSO-Ys-xq8" kind="showDetail" identifier="Login" id="Jly-F7-soO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2re-I9-qGx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1016.8" y="116.49175412293854"/>
+            <point key="canvasLocation" x="1017" y="116"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="Mhm-hW-DBm">
@@ -398,7 +856,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Historial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETy-gz-HgE">
-                                <rect key="frame" x="152.5" y="35" width="69.5" height="21"/>
+                                <rect key="frame" x="153.5" y="35" width="69" height="21"/>
                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                 <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -454,7 +912,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perfil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfz-SE-lRk">
-                                <rect key="frame" x="166" y="35" width="43" height="21.5"/>
+                                <rect key="frame" x="166.5" y="35" width="43" height="21.5"/>
                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                 <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -500,33 +958,33 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8E-dW-vQr">
-                                        <rect key="frame" x="0.0" y="90.5" width="163" height="52.5"/>
+                                        <rect key="frame" x="0.0" y="90.5" width="163" height="53"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="20"/>
                                         <state key="normal" title="3017303973">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7A7-ka-FgF">
-                                        <rect key="frame" x="0.0" y="143" width="163" height="19"/>
+                                        <rect key="frame" x="0.0" y="143.5" width="163" height="19"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
                                         <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHQ-E9-0Bf">
-                                        <rect key="frame" x="0.0" y="162" width="163" height="52"/>
+                                        <rect key="frame" x="0.0" y="162.5" width="163" height="52"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                         <state key="normal" title="usuario@email.com">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUu-fr-95i">
-                                        <rect key="frame" x="0.0" y="214" width="163" height="19"/>
+                                        <rect key="frame" x="0.0" y="214.5" width="163" height="19"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
                                         <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKx-zz-JjX">
-                                        <rect key="frame" x="0.0" y="233" width="163" height="52.5"/>
+                                        <rect key="frame" x="0.0" y="233.5" width="163" height="52"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                         <state key="normal" title="********">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -570,6 +1028,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LOGO.bmp" width="355" height="294"/>
+        <image name="fb.png" width="1001" height="211"/>
+        <image name="google_c_b.png" width="1000" height="211"/>
         <image name="iconAddService.png" width="134" height="134"/>
         <image name="iconAdressGreen.png" width="26" height="40"/>
         <image name="iconAdressGrey.png" width="20" height="30"/>
@@ -584,4 +1045,7 @@
         <image name="iconProfileGrey.png" width="26" height="30"/>
         <image name="illustrationNoBookings.png" width="1242" height="459"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="R3Z-A3-x7z"/>
+    </inferredMetricsTieBreakers>
 </document>

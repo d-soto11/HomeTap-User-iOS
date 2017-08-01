@@ -113,7 +113,9 @@ class User: HometapObject {
             if let srvcDict = srvc as? [String:AnyObject] {
                 for (id_service, _) in srvcDict {
                     Service.withID(id: id_service, callback: {(service) in
-                        services_brief.append(service)
+                        if service != nil {
+                            services_brief.append(service!)
+                        }
                     })
                 }
                 return services_brief
@@ -143,7 +145,9 @@ class User: HometapObject {
             if let srvcDict = srvc as? [String:AnyObject] {
                 for (id_service, _) in srvcDict {
                     Service.withID(id: id_service, callback: {(service) in
-                        history.append(service)
+                        if service != nil {
+                            history.append(service!)
+                        }
                     })
                 }
                 return history

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import MBProgressHUD
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var bookingB: UIButton!
@@ -15,8 +17,32 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        MBProgressHUD.showAdded(to: self.view, animated: true)
 
         // Do any additional setup after loading the view.
+        
+        FIRAuth.auth()?.addStateDidChangeListener { auth, user in
+            if user != nil {
+                // User is signed in.
+                
+                // Save user
+                Client.withID(id: (K.User.logged_user()?.uid)!, callback: {(client) in
+                    if client == nil {
+                        // Register data and save
+                    } else {
+                        K.User.client = client!
+                    }
+                })
+                
+                
+            } else {
+                // No user is signed in.
+                self.performSegue(withIdentifier: "Login", sender: nil)
+            }
+            
+            MBProgressHUD.hide(for: self.view, animated: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {

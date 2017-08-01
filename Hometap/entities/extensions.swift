@@ -84,6 +84,7 @@ extension UIView {
 }
 
 extension UIViewController {
+    
     func showAlert(title:String, message:String, closeButtonTitle:String) {
         let alertController = UIAlertController(title: title, message: message,
                                                 preferredStyle: .alert)
@@ -91,6 +92,51 @@ extension UIViewController {
         }
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true) { }
+    }
+    
+    func setUpSmartKeyboard() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisplay(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clearKeyboards)))
+    }
+    
+    func keyboardWillDisplay(notification:NSNotification) {
+        let userInfo:Dictionary = notification.userInfo!
+        let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        let keyboardHeight = keyboardRectangle.height
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.frame = CGRect(x: 0.0, y: ((self.originalFrame().origin.y)-keyboardHeight)*self.needsDisplacement(), width: (self.originalFrame().size.width), height: (self.originalFrame().size.height))
+        })
+    }
+    
+    func keyboardWillHide(notification:NSNotification) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.frame = self.originalFrame()
+        })
+    }
+    
+    func needsDisplacement() -> CGFloat {
+        return CGFloat(0)
+    }
+    
+    func originalFrame() -> CGRect {
+        return CGRect.zero
+    }
+    
+    func keyboards() -> [UITextField] {
+        return []
+    }
+    
+    func clearKeyboards(index: Int = -1) {
+        let kb = keyboards()
+        for k in kb {
+            k.resignFirstResponder()
+        }
+        if (index > -1 && index < kb.count) {
+            kb[index].becomeFirstResponder()
+        }
     }
 }
 
@@ -159,6 +205,7 @@ extension Array where Element: Equatable {
 extension Date {
     enum DateFormat {
         case Default
+        case Medium
         case Long
         case Time
         case Try
@@ -169,12 +216,19 @@ extension Date {
         switch withFormat {
         case .Default:
             dtf.dateFormat = K.Helper.fb_date_format
+        case .Medium:
+            dtf.dateFormat = K.Helper.fb_date_medium_format
         case .Long:
             dtf.dateFormat = K.Helper.fb_long_date_format
         case .Time:
             dtf.dateFormat = K.Helper.fb_time_format
         case .Try:
             dtf.dateFormat = K.Helper.fb_date_format
+            if let tst_dt = dtf.date(from: fromString) {
+                self = tst_dt
+                return
+            }
+            dtf.dateFormat = K.Helper.fb_date_medium_format
             if let tst_dt = dtf.date(from: fromString) {
                 self = tst_dt
                 return
@@ -202,6 +256,8 @@ extension Date {
         switch format {
         case .Default:
             dtf.dateFormat = K.Helper.fb_date_format
+        case .Medium:
+            dtf.dateFormat = K.Helper.fb_date_medium_format
         case .Long:
             dtf.dateFormat = K.Helper.fb_long_date_format
         case .Time:
@@ -230,4 +286,3 @@ extension Date {
         return str
     }
 }
-
