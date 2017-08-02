@@ -24,10 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Override point for customization after application launch.
         // Configurar Firebase
-        FIRApp.configure()
+        FirebaseApp.configure()
         
         // Configurar Google
-        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()!.options.clientID
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()!.options.clientID
         
         // Configurar Facebook
         // FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)

@@ -47,7 +47,7 @@ class Service: HometapObject {
     }
     
     class func withID(id: String, callback: @escaping (_ s: Service?)->Void){
-        K.Database.ref!.child("services").child(id).observe(FIRDataEventType.value, with: { (snapshot) in
+        K.Database.ref!.child("services").child(id).observe(DataEventType.value, with: { (snapshot) in
             if let dict = snapshot.value as? [String:AnyObject] {
                 callback(Service(dict: dict))
             } else {

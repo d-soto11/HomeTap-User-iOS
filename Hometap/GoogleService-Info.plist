@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>62059264636-qkdnq1qkhe03uhn1bmub1tq6tcq5qui4.apps.googleusercontent.com</string>
+	<string>62059264636-7d2uhekumv6s1nchkfhi8rpgdcak8fjl.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.62059264636-qkdnq1qkhe03uhn1bmub1tq6tcq5qui4</string>
+	<string>com.googleusercontent.apps.62059264636-7d2uhekumv6s1nchkfhi8rpgdcak8fjl</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAGljljgsaVojuaFIYghnrLaOCxjEDM6oY</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.tresastronautas.Hometap</string>
+	<string>com.tresastronautas.ios.hometap.user</string>
 	<key>PROJECT_ID</key>
 	<string>hometap-f173f</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:62059264636:ios:d1d93c64793ed1ac</string>
+	<string>1:62059264636:ios:0c5fc7789f7c9382</string>
 	<key>DATABASE_URL</key>
 	<string>https://hometap-f173f.firebaseio.com</string>
 </dict>

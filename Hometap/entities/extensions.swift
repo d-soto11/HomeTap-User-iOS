@@ -200,6 +200,28 @@ extension Array where Element: Equatable {
             remove(at: index)
         }
     }
+    
+    func empty() -> Bool {
+        return self.count == 0
+    }
+    
+    var head: Element? {
+        get {
+            return self.first
+        }
+    }
+    
+    var tail: Array<Element>? {
+        get {
+            if self.empty() { return nil }
+            return Array(self.dropFirst())
+        }
+    }
+    
+    func foldl<A>(acc: A, list: Array<Element>,f: (A, Element) -> A) -> A {
+        if list.empty() { return acc }
+        return foldl(acc: f(acc, list.head!), list: list.tail!, f: f)
+    }
 }
 
 extension Date {

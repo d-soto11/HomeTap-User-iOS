@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import ImagePicker
+import Lightbox
+import JModalController
 
-class SetUpViewController: UIViewController {
+class SetUpViewController: UIViewController, ImagePickerDelegate, DatePickerDelegate {
 
     @IBOutlet weak var profileContainer: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -42,13 +45,78 @@ class SetUpViewController: UIViewController {
         
         self.originalFR = self.view.bounds
     }
+
+    @IBAction func selectProfilePicture(_ sender: UIButton) {
+        var config = Configuration()
+        config.settingsFont = UIFont(name: "Rubik", size: 15)!
+        config.noCameraFont = UIFont(name: "Rubik", size: 25)!
+        config.noImagesFont = UIFont(name: "Rubik", size: 25)!
+        config.numberLabelFont = UIFont(name: "Rubik", size: 18)!
+        config.doneButton = UIFont(name: "Rubik-Medium", size: 25)!
+        config.flashButton = UIFont(name: "Rubik", size: 10)!
+        
+        config.doneButtonTitle = "Listo"
+        config.noImagesTitle = "No hemos encontrado ninguna imagen."
+        config.cancelButtonTitle = "Cancelar"
+        config.noCameraTitle = "No hemos podido acceder a tu cámara."
+        config.settingsTitle = "Ajustes"
+        config.OKButtonTitle = "Listo"
+        config.requestPermissionTitle = "Necesitamos tu permiso"
+        
+        config.requestPermissionMessage = "Para poder cambiar tu foto de perfil necesitamos permiso para usar tu cámara o acceder a la galería de imágenes"
+        
+        config.recordLocation = false
+        config.allowMultiplePhotoSelection = false
+        config.bottomContainerColor = K.UI.main_color
+        config.mainColor = .white
+        
+        
+        let imagePicker = ImagePickerController()
+        imagePicker.configuration = config
+        imagePicker.delegate = self
+        
+        self.present(imagePicker, animated: true, completion: nil)
+    }
     
     @IBAction func done(_ sender: Any) {
     }
 
+    // ImagePicker Delegate
+    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        guard images.count > 0 else { return }
+        
+        let lightboxImages = images.map {
+            return LightboxImage(image: $0)
+        }
+        
+        let lightbox = LightboxController(images: lightboxImages, startIndex: 0)
+        imagePicker.present(lightbox, animated: true, completion: nil)
+    }
+    
+    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        let sized_images = AssetManager.resolveAssets(imagePicker.stack.assets, size: CGSize(width: 200, height: 200))
+        if sized_images.count == 1 {
+            self.profileImageView.image = sized_images[0]
+        }
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    // DatePicker Delegate
+    func datePickerDidSelectDate(date: Date, string:String, tag:Int) {
+        switch tag {
+        case 4:
+            self.birthField.text = string
+            break
+        default:
+            break
+        }
+    }
     
     // UI Helpers
-    
     override func needsDisplacement() -> CGFloat {
         return self.displaceKeyboard ? CGFloat(1) : CGFloat(0)
     }
@@ -62,7 +130,6 @@ class SetUpViewController: UIViewController {
     }
     
     public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-//        clearKeyboards(index: textField.tag)
         switch textField.tag {
         case 1:
             self.displaceKeyboard = false
@@ -74,9 +141,15 @@ class SetUpViewController: UIViewController {
             self.displaceKeyboard = true
             return true
         case 4:
-            self.displaceKeyboard = true
-            return true
+            // Date Picker
+            let date_picker = DatePickerViewController.init(nibName: "DatePickerViewController", bundle: nil)
+            date_picker.loadWith(label: "¿Qué día naciste?", date: self.birthField.text, format: "dd-MM-yyyy", type: UIDatePickerMode.date, minDate: .none, maxDate: .now, delegate: self, jm_delegate: self, tag: 4)
+            let config = JModalConfig(transitionDirection: .bottom, animationDuration: 0.2, backgroundTransform: false, tapOverlayDismiss: true)
+            presentModal(self, modalViewController: date_picker, config: config) {
+            }
+            return false
         case 5:
+            // Gender Picker
             self.displaceKeyboard = true
             return true
         default:

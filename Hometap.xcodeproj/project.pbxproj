@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		430B83711F1DDB7B007585F2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B83701F1DDB7B007585F2 /* LoginViewController.swift */; };
+		4343932F1F315CFB00861426 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343932D1F315CFB00861426 /* DatePickerViewController.swift */; };
+		434393301F315CFB00861426 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4343932E1F315CFB00861426 /* DatePickerViewController.xib */; };
 		439F14021F195A1B009DABF8 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14011F195A1B009DABF8 /* Place.swift */; };
 		439F14041F19683F009DABF8 /* AdditionalServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14031F19683F009DABF8 /* AdditionalServices.swift */; };
 		439F14061F198574009DABF8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14051F198574009DABF8 /* Product.swift */; };
@@ -89,6 +91,8 @@
 /* Begin PBXFileReference section */
 		41EE0E6489CEC26245E3FF96 /* Pods-Hometap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hometap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hometap/Pods-Hometap.debug.xcconfig"; sourceTree = "<group>"; };
 		430B83701F1DDB7B007585F2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = AuthViews/LoginViewController.swift; sourceTree = "<group>"; };
+		4343932D1F315CFB00861426 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerViewController.swift; path = CustomViews/DatePickerViewController.swift; sourceTree = "<group>"; };
+		4343932E1F315CFB00861426 /* DatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DatePickerViewController.xib; path = CustomViews/DatePickerViewController.xib; sourceTree = "<group>"; };
 		439F14011F195A1B009DABF8 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = entities/Place.swift; sourceTree = "<group>"; };
 		439F14031F19683F009DABF8 /* AdditionalServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdditionalServices.swift; path = entities/AdditionalServices.swift; sourceTree = "<group>"; };
 		439F14051F198574009DABF8 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Product.swift; path = entities/Product.swift; sourceTree = "<group>"; };
@@ -270,6 +274,8 @@
 			children = (
 				439F14681F1C4A0B009DABF8 /* MaterialTabBarViewController.swift */,
 				43DC56511F1D393800C68B17 /* HTTableViewCell.swift */,
+				4343932D1F315CFB00861426 /* DatePickerViewController.swift */,
+				4343932E1F315CFB00861426 /* DatePickerViewController.xib */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -454,6 +460,7 @@
 				439F14441F1C3E7A009DABF8 /* iconAdressGreen.png in Resources */,
 				439F14651F1C3E7A009DABF8 /* illustrationGeneralService.png in Resources */,
 				439F14461F1C3E7A009DABF8 /* iconApartment.png in Resources */,
+				434393301F315CFB00861426 /* DatePickerViewController.xib in Resources */,
 				439F14621F1C3E7A009DABF8 /* iconWindowGreen.png in Resources */,
 				439F145B1F1C3E7A009DABF8 /* iconSofaWhite.png in Resources */,
 				439F14431F1C3E7A009DABF8 /* iconAddService.png in Resources */,
@@ -570,6 +577,7 @@
 				43EF36E01F192B2A0013FA8A /* Constants.swift in Sources */,
 				439F14061F198574009DABF8 /* Product.swift in Sources */,
 				439F14081F19A698009DABF8 /* Calendar.swift in Sources */,
+				4343932F1F315CFB00861426 /* DatePickerViewController.swift in Sources */,
 				43AC4C881F23F19F007D638E /* SetUpViewController.swift in Sources */,
 				439F14691F1C4A0B009DABF8 /* MaterialTabBarViewController.swift in Sources */,
 			);
@@ -698,7 +706,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Hometap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tresastronautas.Hometap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tresastronautas.ios.hometap.user;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Hometap/Hometap-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -714,7 +722,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Hometap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tresastronautas.Hometap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tresastronautas.ios.hometap.user;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Hometap/Hometap-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

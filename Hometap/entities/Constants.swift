@@ -27,7 +27,7 @@ struct K {
     }
     
     struct Database {
-        static var ref: FIRDatabaseReference? = nil
+        static var ref: DatabaseReference? = nil
     }
     
     struct UI {
@@ -51,15 +51,8 @@ struct K {
         static var client:Client?
         static var loaded_user_name_tmp:String?
         
-        static func logged_user () -> FIRUser?{
-            if let user = FIRAuth.auth()?.currentUser {
-                // User is signed in.
-                return user
-            } else {
-                // No user is signed in.
-                return nil
-            }
-            
+        static func logged_user () -> Firebase.User?{
+            return Auth.auth().currentUser
         }
     }
     

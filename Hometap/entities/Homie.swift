@@ -23,7 +23,7 @@ class Homie: User {
     }
     
     class func withID(id: String, callback: @escaping (_ s: Homie?)->Void){
-        K.Database.ref!.child("homies").child(id).observe(FIRDataEventType.value, with: { (snapshot) in
+        K.Database.ref!.child("homies").child(id).observe(DataEventType.value, with: { (snapshot) in
             if let dict = snapshot.value as? [String:AnyObject] {
                 callback(Homie(dict: dict))
             } else {

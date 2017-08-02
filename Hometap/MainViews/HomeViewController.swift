@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        FIRAuth.auth()?.addStateDidChangeListener { auth, user in
+        Auth.auth().addStateDidChangeListener { auth, user in
             if user != nil {
                 // User is signed in.
                 
