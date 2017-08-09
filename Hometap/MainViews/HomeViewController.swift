@@ -18,6 +18,13 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        do {
+//            try Auth.auth().signOut()
+//            K.User.client = nil
+//        } catch {
+//            
+//        }
+        
         MBProgressHUD.showAdded(to: self.view, animated: true)
 
         // Do any additional setup after loading the view.

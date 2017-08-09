@@ -30,10 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()!.options.clientID
         
         // Configurar Facebook
-        // FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         // Configuracion de GMaps
-        // GMSServices.provideAPIKey("AIzaSyAM2e7EaL92l9aMC9u1oFVhbwq5ygC4_qM")
+        // GMSServices.provideAPIKey("API_KEY")
         
         // Private configurations
         // ...

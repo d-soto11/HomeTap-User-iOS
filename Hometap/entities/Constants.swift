@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import JModalController
 
 struct K {
     struct Test {
@@ -20,14 +21,21 @@ struct K {
     }
     
     struct Helper {
-        static let fb_date_format:String = "yyyy-MM-dd'T'HH:mmZZZZZ"
-        static let fb_date_medium_format:String = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-        static let fb_long_date_format: String = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        static let fb_date_short_format:String = "dd-MM-yyyy"
+        static let fb_date_format:String = "yyyy-MM-dd'T'HH:mmxxxxx"
+        static let fb_date_medium_format:String = "yyyy-MM-dd'T'HH:mm:ssxxxxx"
+        static let fb_long_date_format: String = "yyyy-MM-dd'T'HH:mm:ss.SSSxxxxx"
         static let fb_time_format: String = "hh:mm a"
     }
     
     struct Database {
-        static var ref: DatabaseReference? = nil
+        public static func ref() -> DatabaseReference {
+            return Firebase.Database.database().reference()
+        }
+        private static let storageURL: String = "gs://hometap-f173f.appspot.com/"
+        public static func storageRef() -> StorageReference {
+            return Storage.storage().reference(forURL: storageURL)
+        }
     }
     
     struct UI {
@@ -45,21 +53,23 @@ struct K {
     }
     
     struct User {
-        
         static let default_ph: String = "default"
         
         static var client:Client?
-        static var loaded_user_name_tmp:String?
         
         static func logged_user () -> Firebase.User?{
             return Auth.auth().currentUser
         }
     }
     
+    struct MaterialTapBar {
+        static var TapBar: MaterialTabBarViewController?
+    }
+    
 }
 
 func getCurrentUserUid()->String?{
-    return K.User.client!.uid
+    return K.User.client?.uid
 }
 
 //func rand() -> UInt32{

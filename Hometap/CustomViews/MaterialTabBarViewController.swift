@@ -9,7 +9,7 @@
 import UIKit
 
 class MaterialTabBarViewController: UIViewController {
-
+    
     
     @IBOutlet weak var tabBarBackground: UIView!
     @IBOutlet weak var mainView: UIView!
@@ -53,6 +53,8 @@ class MaterialTabBarViewController: UIViewController {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture(gesture:)))
         swipeLeft.direction = UISwipeGestureRecognizerDirection.left
         self.view.addGestureRecognizer(swipeLeft)
+        
+        K.MaterialTapBar.TapBar = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -76,8 +78,52 @@ class MaterialTabBarViewController: UIViewController {
         }
     }
     
+    public func reloadViewController() {
+        var reloadedViewController: UIViewController = UIViewController()
+        switch selectedIndex {
+        case 0:
+            reloadedViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LocationsView")
+        case 1:
+            reloadedViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeView")
+        case 2:
+            reloadedViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HistoryView")
+        case 3:
+            reloadedViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileView")
+        default:
+            return
+        }
+        
+        let previous_vc = self.viewControllers[selectedIndex]
+        previous_vc.dismiss(animated: true, completion: nil)
+        
+        UIView.animate(withDuration: 0.3, animations: {() in
+            previous_vc.view.alpha = 0
+        })
+        
+        previous_vc.willMove(toParentViewController: nil)
+        previous_vc.view.removeFromSuperview()
+        previous_vc.removeFromParentViewController()
+        
+        self.view.insertSubview(reloadedViewController.view, aboveSubview: self.mainView)
+        
+        reloadedViewController.view.alpha = 0
+        
+        self.addChildViewController(reloadedViewController)
+        reloadedViewController.didMove(toParentViewController: self)
+        
+        UIView.animate(withDuration: 0.3, animations: {() in
+            self.view.layoutIfNeeded()
+            reloadedViewController.view.alpha = 1
+            reloadedViewController.view.frame = self.mainView.bounds
+        })
+        
+        self.viewControllers[selectedIndex] = reloadedViewController
+        
+    }
+    
     @IBAction func tabBarTap(_ sender: UIButton) {
         if(sender.tag == selectedIndex) {
+            reloadViewController()
             return
         }
         
@@ -155,5 +201,5 @@ class MaterialTabBarViewController: UIViewController {
             tabBarTap(b)
         }
     }
-
+    
 }

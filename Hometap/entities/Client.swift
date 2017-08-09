@@ -23,7 +23,7 @@ class Client: User {
     }
     
     class func withID(id: String, callback: @escaping (_ s: Client?)->Void){
-        K.Database.ref!.child("clients").child(id).observe(DataEventType.value, with: { (snapshot) in
+        K.Database.ref().child("clients").child(id).observe(DataEventType.value, with: { (snapshot) in
             if let dict = snapshot.value as? [String:AnyObject] {
                 callback(Client(dict: dict))
             } else {
@@ -94,7 +94,7 @@ class Client: User {
     
     public func savePlace(place: Place) {
         if place.uid == nil {
-            place.uid = K.Database.ref?.child("clients").child(self.uid!).child("places").childByAutoId().key
+            place.uid = K.Database.ref().child("clients").child(self.uid!).child("places").childByAutoId().key
         }
         let plc_dict = place.prepareForSave()
         var org_places_dict:[String:[String:AnyObject]] = original_dictionary["places"] as? [String:[String:AnyObject]] ?? [:]

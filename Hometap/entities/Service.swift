@@ -22,6 +22,9 @@ class Service: HometapObject {
         if let price = dict["price"] {
             self.price = (price as? Double)
         }
+        if let price = dict["briefPrice"] {
+            self.price = (price as? Double)
+        }
         if let state = dict["state"] {
             self.state = (state as? String)
         }
@@ -47,7 +50,7 @@ class Service: HometapObject {
     }
     
     class func withID(id: String, callback: @escaping (_ s: Service?)->Void){
-        K.Database.ref!.child("services").child(id).observe(DataEventType.value, with: { (snapshot) in
+        K.Database.ref().child("services").child(id).observe(DataEventType.value, with: { (snapshot) in
             if let dict = snapshot.value as? [String:AnyObject] {
                 callback(Service(dict: dict))
             } else {

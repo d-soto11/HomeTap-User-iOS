@@ -10,8 +10,10 @@ import UIKit
 import ImagePicker
 import Lightbox
 import JModalController
+import MBProgressHUD
+import Firebase
 
-class SetUpViewController: UIViewController, ImagePickerDelegate, DatePickerDelegate {
+class SetUpViewController: UIViewController, ImagePickerDelegate, DatePickerDelegate, OptionPickerDelegate{
 
     @IBOutlet weak var profileContainer: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -26,10 +28,30 @@ class SetUpViewController: UIViewController, ImagePickerDelegate, DatePickerDele
     var originalFR: CGRect = CGRect.zero
     var keyboards_list: [UITextField] = []
     
+    let gender_options = ["Masculino", "Femenino", "Otro"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         keyboards_list = [nameField, mailField, phoneField, birthField, genreField]
         setUpSmartKeyboard()
+        
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        
+        if let client = K.User.client {
+            if let url = client.photo {
+                self.profileImageView.downloadedFrom(link: url)
+            }
+            self.nameField.text = client.name
+            if let mail = client.email {
+                self.mailField.text = mail
+                self.mailField.isEnabled = false
+            }
+            self.phoneField.text = client.phone
+            self.birthField.text = client.birth?.toString(format: .Short)
+            self.genreField.text = gender_options[client.gender ?? 2]
+        }
+        
+        MBProgressHUD.hide(for: self.view, animated: true)
         // Do any additional setup after loading the view.
     }
 
@@ -79,6 +101,99 @@ class SetUpViewController: UIViewController, ImagePickerDelegate, DatePickerDele
     }
     
     @IBAction func done(_ sender: Any) {
+        let mb = MBProgressHUD.showAdded(to: self.view, animated: true)
+        
+        guard nameField.text != "" else {
+            MBProgressHUD.hide(for: self.view, animated: true)
+            showAlert(title: "Espera!", message: "Debes ingresar tu nombre", closeButtonTitle: "Entendido")
+            return
+        }
+        
+        guard (nameField.text!.characters.count) <= 50 else {
+            MBProgressHUD.hide(for: self.view, animated: true)
+            showAlert(title: "Espera!", message: "El nombre que has ingresado es muy largo.", closeButtonTitle: "Entendido")
+            return
+
+        }
+        
+        guard mailField.text != "" && mailField.text!.contains("@") && mailField.text!.contains(".") && !mailField.text!.contains("+") && mailField.text!.characters.count <= 100 else {
+            MBProgressHUD.hide(for: self.view, animated: true)
+            showAlert(title: "Espera!", message: "Debes ingresar un correo válido", closeButtonTitle: "Entendido")
+            return
+        }
+        
+        guard (phoneField.text?.characters.count)! == 10 else {
+            MBProgressHUD.hide(for: self.view, animated: true)
+            showAlert(title: "Espera!", message: "El número celular que has ingresado no es válido", closeButtonTitle: "Entendido")
+            return
+        }
+        
+        guard birthField.text != "" else {
+            MBProgressHUD.hide(for: self.view, animated: true)
+            showAlert(title: "Espera!", message: "Debes seleccionar tu fecha de nacimiento", closeButtonTitle: "Entendido")
+            return
+        }
+        
+        if genreField.text == "" {
+            genreField.text = "Otro"
+        }
+        
+        mb.label.text = "Guardando tu información"
+        let profile_picture_ref = K.Database.storageRef().child("clients/\(getCurrentUserUid()!)/pp.png")
+        guard let pp_data = UIImageJPEGRepresentation(self.profileImageView.image!, 0.8) else {
+            self.showAlert(title: "Lo sentimos", message: "Ha ocurrido un error al subir tu foto a nuestra nube. Intenta de nuevo.", closeButtonTitle: "Ok")
+            return
+        }
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+        
+        mb.label.text = "Subiendo foto"
+        
+        let _ = profile_picture_ref.putData(pp_data, metadata: metaData) { (metadata, error) in
+            guard let metadata = metadata else {
+                mb.hide(animated: true)
+                self.showAlert(title: "Lo sentimos", message: "Ha ocurrido un error al subir tu foto a nuestra nube. Intenta de nuevo.", closeButtonTitle: "Ok")
+                return
+            }
+            
+            let downloadURL = metadata.downloadURL()
+            if let photo = downloadURL?.absoluteString {
+                K.User.client!.photo = photo
+                
+                mb.label.text = "Finalizando"
+                
+                let local = Auth.auth().currentUser!
+                let req = Auth.auth().currentUser!.createProfileChangeRequest()
+                if local.displayName != self.nameField.text {
+                    req.displayName = self.nameField.text
+                }
+                req.commitChanges(completion: nil)
+                
+                
+                K.User.client!.name = self.nameField.text
+                K.User.client!.email = self.mailField.text
+                K.User.client!.phone = self.phoneField.text
+                K.User.client!.birth = Date(fromString: self.birthField.text!, withFormat: .Short)
+                K.User.client!.joined = Date()
+                K.User.client!.votes = 1
+                K.User.client!.rating = 5.0
+                K.User.client!.gender = self.gender_options.index(of: self.genreField.text!)
+                
+                K.User.client!.save()
+                
+                mb.hide(animated: true)
+                
+                K.MaterialTapBar.TapBar?.reloadViewController()
+                
+            } else {
+                mb.hide(animated: true)
+                self.showAlert(title: "Lo sentimos", message: "Ha ocurrido un error al subir tu foto a nuestra nube. Intenta de nuevo.", closeButtonTitle: "Ok")
+                return
+            }
+            
+        }
+        
+        K.MaterialTapBar.TapBar?.reloadViewController()
     }
 
     // ImagePicker Delegate
@@ -107,13 +222,11 @@ class SetUpViewController: UIViewController, ImagePickerDelegate, DatePickerDele
     
     // DatePicker Delegate
     func datePickerDidSelectDate(date: Date, string:String, tag:Int) {
-        switch tag {
-        case 4:
-            self.birthField.text = string
-            break
-        default:
-            break
-        }
+        self.birthField.text = string
+    }
+    // OptionPicker Delegate
+    func optionPickerDidPickSubject(index:Int, selected:String, tag:Int) {
+        self.genreField.text = selected
     }
     
     // UI Helpers
@@ -142,16 +255,21 @@ class SetUpViewController: UIViewController, ImagePickerDelegate, DatePickerDele
             return true
         case 4:
             // Date Picker
-            let date_picker = DatePickerViewController.init(nibName: "DatePickerViewController", bundle: nil)
-            date_picker.loadWith(label: "¿Qué día naciste?", date: self.birthField.text, format: "dd-MM-yyyy", type: UIDatePickerMode.date, minDate: .none, maxDate: .now, delegate: self, jm_delegate: self, tag: 4)
-            let config = JModalConfig(transitionDirection: .bottom, animationDuration: 0.2, backgroundTransform: false, tapOverlayDismiss: true)
-            presentModal(self, modalViewController: date_picker, config: config) {
-            }
+            DatePickerViewController.pickerWith(title: "¿Qué día naciste?", date: self.birthField.text,maxDate: .now, delegate: self, jm_delegate: self, onViewController: self)
             return false
         case 5:
             // Gender Picker
-            self.displaceKeyboard = true
-            return true
+            if let sel = self.genreField.text {
+                if let ind = gender_options.index(of: sel) {
+                    OptionPicker.pickerWith(title: "Género", options: gender_options, delegate: self, onViewController: self, selected: [ind])
+                } else {
+                    OptionPicker.pickerWith(title: "Género", options: gender_options, delegate: self, onViewController: self)
+                }
+            } else {
+                 OptionPicker.pickerWith(title: "Género", options: gender_options, delegate: self, onViewController: self)
+            }
+           
+            return false
         default:
             return true
         }

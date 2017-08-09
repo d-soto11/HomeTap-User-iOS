@@ -22,11 +22,11 @@ class HometapObject: NSObject {
     
     public func save(route: String) {
         if uid == nil {
-            let saving_ref = K.Database.ref!.child(route).childByAutoId()
+            let saving_ref = K.Database.ref().child(route).childByAutoId()
             saving_ref.setValue(original_dictionary)
             uid = saving_ref.key
         } else {
-            K.Database.ref!.child(route).child(uid!).setValue(original_dictionary)
+            K.Database.ref().child(route).child(uid!).setValue(original_dictionary)
         }
     }
     

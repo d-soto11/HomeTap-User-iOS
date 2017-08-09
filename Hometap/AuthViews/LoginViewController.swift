@@ -25,12 +25,34 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     var originalFR: CGRect = CGRect.zero
     var keyboars_list: [UITextField] = []
     
+    var authCallback: AuthResultCallback?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
         keyboars_list = [username, password]
         setUpSmartKeyboard()
         // Do any additional setup after loading the view.
+        
+        authCallback = { (user, error) in
+            MBProgressHUD.hide(for: self.view, animated: true)
+            if (error != nil){
+                self.showAlert(title: "Lo sentimos", message: "Ha ocurrido un error inesperado. Intenta de nuevo.", closeButtonTitle: "Ok")
+            }
+            else if user != nil{
+                Client.withID(id: user!.uid, callback: { (client) in
+                    if client == nil {
+                        K.User.client = Client(user: user!)
+                        self.performSegue(withIdentifier: "Setup", sender: nil)
+                    } else {
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                })
+            } else {
+                self.showAlert(title: "Lo sentimos", message:"Ha ocurrido un error inesperado.", closeButtonTitle: "Ok")
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,7 +71,32 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     }
     
     @IBAction func loginWithHT(_ sender: Any) {
+        let mb = MBProgressHUD.showAdded(to: self.view, animated: true)
         
+        guard username.text != "" else {
+            MBProgressHUD.hide(for: self.view, animated: true)
+            showAlert(title: "Espera!", message: "Debes ingresar tu usuario (correo)", closeButtonTitle: "Entendido")
+            return
+        }
+        
+        guard password.text != "" else {
+            MBProgressHUD.hide(for: self.view, animated: true)
+            showAlert(title: "Espera!", message: "Debes ingresar tu contraseña", closeButtonTitle: "Entendido")
+            return
+        }
+        
+        mb.label.text = "Iniciando sesión"
+        
+        Auth.auth().signIn(withEmail: username.text!, password: password.text!) { (user, error) in
+            mb.hide(animated: true)
+            if error != nil {
+                self.showAlert(title: "Lo sentimos", message: "El usuario/contraseña ingresado no es correcto.", closeButtonTitle: "Entendido")
+            } else if user == nil {
+                self.showAlert(title: "Lo sentimos", message: "Ha ocurrido un error inesperado. Intenta iniciar sesión de nuevo.", closeButtonTitle: "Entendido")
+            } else {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
     }
 
     @IBAction func register(_ sender: Any) {
@@ -72,15 +119,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         
         let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
         
-        Auth.auth().signIn(with: credential) { (user, error) in
-            MBProgressHUD.hide(for: self.view, animated: true)
-            if (error != nil){
-                self.showAlert(title: "Lo sentimos", message: String(format:"Ha ocurrido un error inesperado: %@", error!.localizedDescription), closeButtonTitle: "Ok")
-            }
-            else{
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
+        Auth.auth().signIn(with: credential, completion: self.authCallback!)
         
     }
     
@@ -111,15 +150,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         let credential = GoogleAuthProvider.credential(withIDToken: (authentication?.idToken)!,
                                                           accessToken: (authentication?.accessToken)!)
         
-        Auth.auth().signIn(with: credential) { (user, error) in
-            MBProgressHUD.hide(for: self.view, animated: true)
-            if (error != nil){
-                self.showAlert(title: "Lo sentimos", message: String(format:"Ha ocurrido un error inesperado: %@", error!.localizedDescription), closeButtonTitle: "Ok")
-            }
-            else{
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
+        Auth.auth().signIn(with: credential, completion: self.authCallback!)
     }
     
     public func sign(_ signIn: GIDSignIn!, didDisconnectWith user:GIDGoogleUser!,
@@ -150,7 +181,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
             self.displaceKeyboard = false
             return true
         case 2:
-            // Date Picker
             self.displaceKeyboard = false
             return true
         default:

@@ -12,27 +12,47 @@ import MBProgressHUD
 
 class DatePickerViewController: UIViewController {
     
+    static func pickerWith(title: String, date: String? = nil, format:String = "dd-MM-yyyy", type: UIDatePickerMode = .date, minDate:MinDate = .none, maxDate:MaxDate = .none, delegate: DatePickerDelegate, jm_delegate: JModalDelegate, tag: Int = 0, onViewController: UIViewController) {
+        
+        let date_picker = DatePickerViewController.init(nibName: "DatePickerViewController", bundle: nil)
+        
+        date_picker.label = title
+        date_picker.date = date
+        date_picker.format = format
+        date_picker.type = type
+        date_picker.delegate = delegate
+        date_picker.jm_delegate = jm_delegate
+        date_picker.tag = tag
+        
+        date_picker.minDate = minDate
+        date_picker.maxDate = maxDate
+        
+        let config = JModalConfig(transitionDirection: .bottom, animationDuration: 0.2, backgroundTransform: false, tapOverlayDismiss: true)
+        onViewController.presentModal(onViewController, modalViewController: date_picker, config: config) {
+        }
+    }
+    
     @IBOutlet weak var text: UILabel!
     @IBOutlet weak var picker: UIDatePicker!
     @IBOutlet weak var acceptB: UIButton!
     
-    var delegate: DatePickerDelegate!
-    var jm_delegate : JModalDelegate!
-    var label : String!
-    var date: String?
-    var format: String?
-    var type: UIDatePickerMode?
-    var tag: Int?
+    private var delegate: DatePickerDelegate!
+    private var jm_delegate : JModalDelegate!
+    private var label : String!
+    private var date: String?
+    private var format: String?
+    private var type: UIDatePickerMode?
+    private var tag: Int?
     
-    var minDate:MinDate?
-    var maxDate:MaxDate?
+    private var minDate:MinDate?
+    private var maxDate:MaxDate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.text.text = label
         self.picker.datePickerMode = type!
-        
+        self.text.textColor = K.UI.form_color
         let dayTimePeriodFormatter = DateFormatter()
         dayTimePeriodFormatter.dateFormat = self.format
         
@@ -87,17 +107,9 @@ class DatePickerViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func loadWith(label: String, date: String?, format:String?, type: UIDatePickerMode, minDate:MinDate, maxDate:MaxDate, delegate: DatePickerDelegate, jm_delegate: JModalDelegate, tag: Int) {
-        self.label = label
-        self.date = date
-        self.format = format
-        self.type = type
-        self.delegate = delegate
-        self.jm_delegate = jm_delegate
-        self.tag = tag
-        
-        self.minDate = minDate
-        self.maxDate = maxDate
+    override func viewDidLayoutSubviews() {
+        self.acceptB.roundCorners(radius: K.UI.light_round_px)
+        self.acceptB.addLightShadow()
     }
     
     override func didReceiveMemoryWarning() {

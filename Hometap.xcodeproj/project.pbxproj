@@ -10,6 +10,8 @@
 		430B83711F1DDB7B007585F2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B83701F1DDB7B007585F2 /* LoginViewController.swift */; };
 		4343932F1F315CFB00861426 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343932D1F315CFB00861426 /* DatePickerViewController.swift */; };
 		434393301F315CFB00861426 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4343932E1F315CFB00861426 /* DatePickerViewController.xib */; };
+		43628D9B1F328FE600C5444D /* OptionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43628D991F328FE600C5444D /* OptionPicker.swift */; };
+		43628D9F1F32939F00C5444D /* OptionPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43628D9E1F32939F00C5444D /* OptionPicker.storyboard */; };
 		439F14021F195A1B009DABF8 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14011F195A1B009DABF8 /* Place.swift */; };
 		439F14041F19683F009DABF8 /* AdditionalServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14031F19683F009DABF8 /* AdditionalServices.swift */; };
 		439F14061F198574009DABF8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14051F198574009DABF8 /* Product.swift */; };
@@ -93,6 +95,8 @@
 		430B83701F1DDB7B007585F2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = AuthViews/LoginViewController.swift; sourceTree = "<group>"; };
 		4343932D1F315CFB00861426 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerViewController.swift; path = CustomViews/DatePickerViewController.swift; sourceTree = "<group>"; };
 		4343932E1F315CFB00861426 /* DatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DatePickerViewController.xib; path = CustomViews/DatePickerViewController.xib; sourceTree = "<group>"; };
+		43628D991F328FE600C5444D /* OptionPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionPicker.swift; path = CustomViews/OptionPicker.swift; sourceTree = "<group>"; };
+		43628D9E1F32939F00C5444D /* OptionPicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = OptionPicker.storyboard; path = CustomViews/OptionPicker.storyboard; sourceTree = "<group>"; };
 		439F14011F195A1B009DABF8 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = entities/Place.swift; sourceTree = "<group>"; };
 		439F14031F19683F009DABF8 /* AdditionalServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdditionalServices.swift; path = entities/AdditionalServices.swift; sourceTree = "<group>"; };
 		439F14051F198574009DABF8 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Product.swift; path = entities/Product.swift; sourceTree = "<group>"; };
@@ -276,6 +280,8 @@
 				43DC56511F1D393800C68B17 /* HTTableViewCell.swift */,
 				4343932D1F315CFB00861426 /* DatePickerViewController.swift */,
 				4343932E1F315CFB00861426 /* DatePickerViewController.xib */,
+				43628D991F328FE600C5444D /* OptionPicker.swift */,
+				43628D9E1F32939F00C5444D /* OptionPicker.storyboard */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -416,6 +422,7 @@
 				TargetAttributes = {
 					43EF36B31F16F9D70013FA8A = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 9Q4CM9A5GD;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -473,6 +480,7 @@
 				439F144B1F1C3E7A009DABF8 /* iconDivisonGreen.png in Resources */,
 				439F14561F1C3E7A009DABF8 /* iconProfileGreen.png in Resources */,
 				439F14601F1C3E7A009DABF8 /* iconWallGreen.png in Resources */,
+				43628D9F1F32939F00C5444D /* OptionPicker.storyboard in Resources */,
 				439F14571F1C3E7A009DABF8 /* iconProfileGrey.png in Resources */,
 				43B610D81F1E80C1003425BD /* fb.png in Resources */,
 				439F144C1F1C3E7A009DABF8 /* iconFavorite.png in Resources */,
@@ -569,6 +577,7 @@
 				43AC4C861F23F18E007D638E /* RegisterViewController.swift in Sources */,
 				43DC564D1F1D2E5000C68B17 /* ProfileViewController.swift in Sources */,
 				43DC564B1F1D2A9800C68B17 /* HistoryViewController.swift in Sources */,
+				43628D9B1F328FE600C5444D /* OptionPicker.swift in Sources */,
 				43EF36DF1F192B2A0013FA8A /* Client.swift in Sources */,
 				43EF36EA1F194F600013FA8A /* Service.swift in Sources */,
 				43DC564F1F1D381200C68B17 /* LocationsViewController.swift in Sources */,
@@ -704,6 +713,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 9Q4CM9A5GD;
 				INFOPLIST_FILE = Hometap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tresastronautas.ios.hometap.user;
@@ -720,6 +730,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 9Q4CM9A5GD;
 				INFOPLIST_FILE = Hometap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tresastronautas.ios.hometap.user;

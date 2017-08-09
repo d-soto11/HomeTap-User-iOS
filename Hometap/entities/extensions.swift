@@ -141,7 +141,7 @@ extension UIViewController {
 }
 
 extension UIImageView {
-    func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+    func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFill) {
         let mb = MBProgressHUD.showAdded(to: self, animated: true)
         contentMode = mode
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -157,7 +157,7 @@ extension UIImageView {
             }
             }.resume()
     }
-    func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+    func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFill) {
         guard let url = URL(string: link) else { return }
         downloadedFrom(url: url, contentMode: mode)
     }
@@ -222,10 +222,21 @@ extension Array where Element: Equatable {
         if list.empty() { return acc }
         return foldl(acc: f(acc, list.head!), list: list.tail!, f: f)
     }
+    
+    subscript(indexes: [Int]) ->  [Element] {
+        var result: [Element] = []
+        for index in indexes {
+            if index > 0 && index < self.count {
+                result.append(self[index])
+            }
+        }
+        return result
+    }
 }
 
 extension Date {
     enum DateFormat {
+        case Short
         case Default
         case Medium
         case Long
@@ -236,6 +247,8 @@ extension Date {
     init?(fromString: String, withFormat: DateFormat) {
         let dtf = DateFormatter()
         switch withFormat {
+        case .Short:
+            dtf.dateFormat = K.Helper.fb_date_short_format
         case .Default:
             dtf.dateFormat = K.Helper.fb_date_format
         case .Medium:
@@ -246,6 +259,11 @@ extension Date {
             dtf.dateFormat = K.Helper.fb_time_format
         case .Try:
             dtf.dateFormat = K.Helper.fb_date_format
+            if let tst_dt = dtf.date(from: fromString) {
+                self = tst_dt
+                return
+            }
+            dtf.dateFormat = K.Helper.fb_date_short_format
             if let tst_dt = dtf.date(from: fromString) {
                 self = tst_dt
                 return
@@ -276,6 +294,8 @@ extension Date {
     func toString(format: DateFormat) -> String? {
         let dtf = DateFormatter()
         switch format {
+        case .Short:
+            dtf.dateFormat = K.Helper.fb_date_short_format
         case .Default:
             dtf.dateFormat = K.Helper.fb_date_format
         case .Medium:

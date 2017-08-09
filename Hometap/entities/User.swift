@@ -46,7 +46,18 @@ class User: HometapObject {
         }
     }
     
+    public convenience init(user: Firebase.User) {
+        var dict = ["name": user.displayName, "email":user.email, "id": user.uid]
+        if let pp = user.photoURL {
+            dict["photo"] = pp.absoluteString
+        }
+        self.init(dict: dict as [String : AnyObject])
+    }
+    
     override func save(route: String) {
+        if (self.uid != getCurrentUserUid()) {
+            return
+        }        
         if self.name != nil {
             original_dictionary["name"] = self.name as AnyObject
         }
