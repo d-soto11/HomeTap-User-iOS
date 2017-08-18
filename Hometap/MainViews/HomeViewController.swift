@@ -10,10 +10,12 @@ import UIKit
 import Firebase
 import MBProgressHUD
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var bookingB: UIButton!
     @IBOutlet weak var noBookingArt: UIImageView!
     @IBOutlet weak var noBookingHint: UILabel!
+    @IBOutlet weak var bookingTitle: UILabel!
+    @IBOutlet weak var bookingTable: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,22 +34,19 @@ class HomeViewController: UIViewController {
         Auth.auth().addStateDidChangeListener { auth, user in
             if user != nil {
                 // User is signed in.
-                
                 // Save user
                 Client.withID(id: (K.User.logged_user()?.uid)!, callback: {(client) in
                     if client == nil {
                         // Register data and save
                     } else {
                         K.User.client = client!
+                        self.reloadClientData()
                     }
                 })
-                
-                
             } else {
                 // No user is signed in.
                 self.performSegue(withIdentifier: "Login", sender: nil)
             }
-            
             MBProgressHUD.hide(for: self.view, animated: true)
         }
     }
@@ -63,15 +62,73 @@ class HomeViewController: UIViewController {
         self.bookingB.roundCorners(radius: K.UI.round_px)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func reloadClientData() {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        Client.withID(id: K.User.client!.uid!) { (client) in
+            if client != nil {
+                K.User.client = client
+                if let count = K.User.client?.services_brief()?.count {
+                    if count > 0 {
+                        UIView.animate(withDuration: 1.0, animations: {
+                            self.noBookingHint.alpha = 0
+                            self.noBookingArt.alpha = 0
+                            self.bookingB.alpha = 0
+                            
+                            self.bookingTitle.alpha = 1
+                            self.bookingTable.alpha = 1
+                            
+                            self.bookingTable.reloadData()
+                        })
+                    } else {
+                        UIView.animate(withDuration: 1.0, animations: {
+                            self.noBookingHint.alpha = 1
+                            self.noBookingArt.alpha = 1
+                            self.bookingB.alpha = 1
+                            
+                            self.bookingTitle.alpha = 0
+                            self.bookingTable.alpha = 0
+                        })
+                    }
+                }
+            }
+            MBProgressHUD.hide(for: self.view, animated: true)
+        }
+        
     }
-    */
+    
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return K.User.client?.services_brief()?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellUI = tableView.dequeueReusableCell(withIdentifier: "BookingCell", for: indexPath) as! HTTableViewCell
+        let service = K.User.client!.services_brief()![indexPath.row]
+        
+        cellUI.uiUpdates = {(cell) in
+            cell.viewWithTag(0)?.addNormalShadow()
+            cell.viewWithTag(0)?.roundCorners(radius: K.UI.light_round_px)
+            
+            cell.viewWithTag(2)?.addLightShadow()
+            cell.viewWithTag(2)?.roundCorners(radius: K.UI.light_round_px)
+            
+            (cell.viewWithTag(1) as? UIImageView)?.downloadedFrom(link: service.briefPhoto!)
+            (cell.viewWithTag(11) as? UILabel)?.text = service.briefName!
+            (cell.viewWithTag(2)?.viewWithTag(12) as? UILabel)?.text = service.date?.toCustomString(format: "MMM") ?? "MON"
+            (cell.viewWithTag(2)?.viewWithTag(13) as? UILabel)?.text = service.date?.toCustomString(format: "DD") ?? "00"
+            (cell.viewWithTag(2)?.viewWithTag(14) as? UILabel)?.text = service.date?.toString(format: .Time)
+            
+            (cell.viewWithTag(15) as? UILabel)?.text = String(format: "%f", service.briefRating!)
+        }
+        return cellUI
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Go to Service
+    }
 
 }

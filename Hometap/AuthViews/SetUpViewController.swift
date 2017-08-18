@@ -139,7 +139,7 @@ class SetUpViewController: UIViewController, ImagePickerDelegate, DatePickerDele
         }
         
         mb.label.text = "Guardando tu información"
-        let profile_picture_ref = K.Database.storageRef().child("clients/\(getCurrentUserUid()!)/pp.png")
+        let profile_picture_ref = K.Database.storageRef().child("clients/\(getCurrentUserUid()!)/profile_picture.jpg")
         guard let pp_data = UIImageJPEGRepresentation(self.profileImageView.image!, 0.8) else {
             self.showAlert(title: "Lo sentimos", message: "Ha ocurrido un error al subir tu foto a nuestra nube. Intenta de nuevo.", closeButtonTitle: "Ok")
             return

@@ -327,4 +327,10 @@ extension Date {
         let str = dtf.string(from: self)
         return str
     }
+    
+    func toCustomString(format: String) -> String? {
+        let dtf = DateFormatter()
+        dtf.dateFormat = format
+        return dtf.string(from: self)
+    }
 }

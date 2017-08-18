@@ -26,7 +26,7 @@ class Service: HometapObject {
             self.price = (price as? Double)
         }
         if let state = dict["state"] {
-            self.state = (state as? String)
+            self.state = (state as? Int)
         }
         if let comments = dict["comments"] {
             self.comments = (comments as? String)
@@ -77,7 +77,7 @@ class Service: HometapObject {
     
     var date: Date?
     var price: Double?
-    var state: String?
+    var state: Int?
     var comments: String?
     var briefName: String?
     var briefRating: Double?

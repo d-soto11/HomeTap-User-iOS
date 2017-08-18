@@ -15,15 +15,9 @@ import MBProgressHUD
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate, GIDSignInDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var username: UITextField!
-    @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var signInB: UIButton!
     @IBOutlet weak var google: UIButton!
     @IBOutlet weak var fb: UIButton!
     
-    var displaceKeyboard = false
-    var originalFR: CGRect = CGRect.zero
-    var keyboars_list: [UITextField] = []
     
     var authCallback: AuthResultCallback?
     
@@ -31,8 +25,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
-        keyboars_list = [username, password]
-        setUpSmartKeyboard()
         // Do any additional setup after loading the view.
         
         authCallback = { (user, error) in
@@ -64,42 +56,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         super.viewDidLayoutSubviews()
         fb.addNormalShadow()
         google.addNormalShadow()
-        signInB.addNormalShadow()
-        signInB.roundCorners(radius: K.UI.round_px)
-        
-        self.originalFR = self.view.bounds
-    }
-    
-    @IBAction func loginWithHT(_ sender: Any) {
-        let mb = MBProgressHUD.showAdded(to: self.view, animated: true)
-        
-        guard username.text != "" else {
-            MBProgressHUD.hide(for: self.view, animated: true)
-            showAlert(title: "Espera!", message: "Debes ingresar tu usuario (correo)", closeButtonTitle: "Entendido")
-            return
-        }
-        
-        guard password.text != "" else {
-            MBProgressHUD.hide(for: self.view, animated: true)
-            showAlert(title: "Espera!", message: "Debes ingresar tu contraseña", closeButtonTitle: "Entendido")
-            return
-        }
-        
-        mb.label.text = "Iniciando sesión"
-        
-        Auth.auth().signIn(withEmail: username.text!, password: password.text!) { (user, error) in
-            mb.hide(animated: true)
-            if error != nil {
-                self.showAlert(title: "Lo sentimos", message: "El usuario/contraseña ingresado no es correcto.", closeButtonTitle: "Entendido")
-            } else if user == nil {
-                self.showAlert(title: "Lo sentimos", message: "Ha ocurrido un error inesperado. Intenta iniciar sesión de nuevo.", closeButtonTitle: "Entendido")
-            } else {
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
-    }
-
-    @IBAction func register(_ sender: Any) {
     }
     
     @IBAction func loginWithFB(_ sender: Any) {
@@ -158,46 +114,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         // Perform any operations when the user disconnects from app here.
         // ...
         MBProgressHUD.hide(for: self.view, animated: true)
-    }
-    
-    // UI Helpers
-    
-    override func needsDisplacement() -> CGFloat {
-        return self.displaceKeyboard ? CGFloat(1) : CGFloat(0)
-     }
-    
-    override func originalFrame() -> CGRect {
-        return self.originalFR
-    }
-    
-    override func keyboards() -> [UITextField] {
-        return self.keyboars_list
-    }
-    
-    public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        clearKeyboards(index: textField.tag)
-        switch textField.tag {
-        case 1:
-            self.displaceKeyboard = false
-            return true
-        case 2:
-            self.displaceKeyboard = false
-            return true
-        default:
-            return true
-        }
-    }
-    
-    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        switch textField.tag {
-        case 2:
-            textField.resignFirstResponder()
-            return true
-        default:
-            textField.resignFirstResponder()
-            self.view.viewWithTag(textField.tag+1)?.becomeFirstResponder()
-            return true
-        }
     }
 
 }

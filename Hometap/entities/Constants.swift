@@ -47,13 +47,13 @@ struct K {
         static let booking_color: UIColor = UIColor(netHex: 0xb8b8b8)
         static let form_color: UIColor = UIColor(netHex: 0x8d8d8d)
         static let select_box_color: UIColor = UIColor(netHex: 0xe5e5e5)
-        static let round_px: CGFloat = 25.0
-        static let special_round_px: CGFloat = 20.0
+        static let round_px: CGFloat = 20.0
+        static let special_round_px: CGFloat = 15.0
         static let light_round_px: CGFloat = 5.0
     }
     
     struct User {
-        static let default_ph: String = "default"
+        static let default_ph: String = "https://firebasestorage.googleapis.com/v0/b/hometap-f173f.appspot.com/o/app_content%2Ficon_no_photo.png?alt=media&token=86491cbb-7c44-455d-bc4d-39ff8da3fc54"
         
         static var client:Client?
         

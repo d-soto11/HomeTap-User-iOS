@@ -39,6 +39,9 @@ class Place: HometapObject {
         if let basement = dict["basement"] {
             self.basement = (basement as? Bool)
         }
+        if let apartament = dict["isApartament"] {
+            self.apartament = (apartament as? Bool)
+        }
     }
     
     public func prepareForSave() -> [String:AnyObject] {
@@ -69,6 +72,9 @@ class Place: HometapObject {
         if self.basement != nil {
             original_dictionary["basement"] = self.basement as AnyObject
         }
+        if self.apartament != nil {
+            original_dictionary["isApartament"] = self.apartament as AnyObject
+        }
         
         return original_dictionary
     }
@@ -82,5 +88,6 @@ class Place: HometapObject {
     var rooms: Int?
     var bathrooms: Int?
     var basement: Bool?
+    var apartament: Bool?
     
 }
