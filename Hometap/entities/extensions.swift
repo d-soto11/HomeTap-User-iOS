@@ -242,6 +242,7 @@ extension Date {
         case Long
         case Time
         case Try
+        case Custom(String)
     }
     
     func merge(time: Date) -> Date? {
@@ -302,6 +303,8 @@ extension Date {
             else {
                 return nil
             }
+        case .Custom(let format):
+            dtf.dateFormat = format
         }
         
         self = dtf.date(from: fromString)!
@@ -312,7 +315,7 @@ extension Date {
         switch format {
         case .Short:
             dtf.dateFormat = K.Helper.fb_date_short_format
-        case .Default:
+        case .Default, .Try:
             dtf.dateFormat = K.Helper.fb_date_format
         case .Medium:
             dtf.dateFormat = K.Helper.fb_date_medium_format
@@ -320,33 +323,14 @@ extension Date {
             dtf.dateFormat = K.Helper.fb_long_date_format
         case .Time:
             dtf.dateFormat = K.Helper.fb_time_format
-        case .Try:
-            dtf.dateFormat = K.Helper.fb_date_format
-            var str = dtf.string(from: self)
+        case .Custom(let format):
+            dtf.dateFormat = format
+            let str = dtf.string(from: self)
             if str != "" {
                 return str
-            }
-            dtf.dateFormat = K.Helper.fb_long_date_format
-            str = dtf.string(from: self)
-            if str != "" {
-                return str
-            }
-            dtf.dateFormat = K.Helper.fb_time_format
-            str = dtf.string(from: self)
-            if str != "" {
-                return str
-            }
-            else {
-                return nil
             }
         }
         let str = dtf.string(from: self)
         return str
-    }
-    
-    func toCustomString(format: String) -> String? {
-        let dtf = DateFormatter()
-        dtf.dateFormat = format
-        return dtf.string(from: self)
     }
 }

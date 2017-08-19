@@ -46,6 +46,12 @@ class Service: HometapObject {
         if let briefPhoto = dict["briefPhoto"] {
             self.briefPhoto = (briefPhoto as? String)
         }
+        if let time = dict["time"] {
+            self.time = (time as? Int)
+        }
+        if let block = dict["blockID"] {
+            self.blockID = (block as? String)
+        }
 
     }
     
@@ -72,7 +78,13 @@ class Service: HometapObject {
         if self.comments != nil {
             original_dictionary["comments"] = self.comments as AnyObject
         }
-        super.save(route: "clients")
+        if self.time != nil {
+            original_dictionary["time"] = self.time as AnyObject
+        }
+        if self.blockID != nil {
+            original_dictionary["blockID"] = self.blockID as AnyObject
+        }
+        super.save(route: "services")
     }
     
     var date: Date?
@@ -82,6 +94,8 @@ class Service: HometapObject {
     var briefName: String?
     var briefRating: Double?
     var briefPhoto: String?
+    var time: Int?
+    var blockID: String?
     
     var place: Place?
     

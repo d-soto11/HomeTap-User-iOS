@@ -15,6 +15,10 @@
 		434393301F315CFB00861426 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4343932E1F315CFB00861426 /* DatePickerViewController.xib */; };
 		434D5C501F48949A00C17541 /* HomiePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D5C4E1F48949A00C17541 /* HomiePickerViewController.swift */; };
 		434D5C511F48949A00C17541 /* HomiePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434D5C4F1F48949A00C17541 /* HomiePickerViewController.xib */; };
+		434D5C541F48D8CF00C17541 /* iconArrowGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 434D5C521F48D8CF00C17541 /* iconArrowGreen.png */; };
+		434D5C551F48D8CF00C17541 /* iconArrowWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 434D5C531F48D8CF00C17541 /* iconArrowWhite.png */; };
+		434D5C581F48DAEF00C17541 /* HomieConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D5C561F48DAEF00C17541 /* HomieConfirmViewController.swift */; };
+		434D5C591F48DAEF00C17541 /* HomieConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434D5C571F48DAEF00C17541 /* HomieConfirmViewController.xib */; };
 		43628D9B1F328FE600C5444D /* OptionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43628D991F328FE600C5444D /* OptionPicker.swift */; };
 		43628D9F1F32939F00C5444D /* OptionPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43628D9E1F32939F00C5444D /* OptionPicker.storyboard */; };
 		439F14021F195A1B009DABF8 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14011F195A1B009DABF8 /* Place.swift */; };
@@ -105,6 +109,10 @@
 		4343932E1F315CFB00861426 /* DatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DatePickerViewController.xib; path = CustomViews/DatePickerViewController.xib; sourceTree = "<group>"; };
 		434D5C4E1F48949A00C17541 /* HomiePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomiePickerViewController.swift; path = MainViews/BookingViews/HomiePickerViewController.swift; sourceTree = "<group>"; };
 		434D5C4F1F48949A00C17541 /* HomiePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomiePickerViewController.xib; path = MainViews/BookingViews/HomiePickerViewController.xib; sourceTree = "<group>"; };
+		434D5C521F48D8CF00C17541 /* iconArrowGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconArrowGreen.png; path = assets/iconArrowGreen.png; sourceTree = "<group>"; };
+		434D5C531F48D8CF00C17541 /* iconArrowWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconArrowWhite.png; path = assets/iconArrowWhite.png; sourceTree = "<group>"; };
+		434D5C561F48DAEF00C17541 /* HomieConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomieConfirmViewController.swift; path = MainViews/BookingViews/HomieConfirmViewController.swift; sourceTree = "<group>"; };
+		434D5C571F48DAEF00C17541 /* HomieConfirmViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomieConfirmViewController.xib; path = MainViews/BookingViews/HomieConfirmViewController.xib; sourceTree = "<group>"; };
 		43628D991F328FE600C5444D /* OptionPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionPicker.swift; path = CustomViews/OptionPicker.swift; sourceTree = "<group>"; };
 		43628D9E1F32939F00C5444D /* OptionPicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = OptionPicker.storyboard; path = CustomViews/OptionPicker.storyboard; sourceTree = "<group>"; };
 		439F14011F195A1B009DABF8 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = entities/Place.swift; sourceTree = "<group>"; };
@@ -225,6 +233,8 @@
 				4319355B1F47963E005BB082 /* BookingViewController.swift */,
 				434D5C4E1F48949A00C17541 /* HomiePickerViewController.swift */,
 				434D5C4F1F48949A00C17541 /* HomiePickerViewController.xib */,
+				434D5C561F48DAEF00C17541 /* HomieConfirmViewController.swift */,
+				434D5C571F48DAEF00C17541 /* HomieConfirmViewController.xib */,
 			);
 			name = BookingViews;
 			sourceTree = "<group>";
@@ -257,6 +267,8 @@
 				439F14321F1C3E79009DABF8 /* iconProfileGreen.png */,
 				439F14331F1C3E79009DABF8 /* iconProfileGrey.png */,
 				439F14341F1C3E79009DABF8 /* iconServiceBooked.png */,
+				434D5C521F48D8CF00C17541 /* iconArrowGreen.png */,
+				434D5C531F48D8CF00C17541 /* iconArrowWhite.png */,
 				439F14351F1C3E79009DABF8 /* iconServiceChecked.png */,
 				439F14361F1C3E79009DABF8 /* icon_sofa_green.png */,
 				439F14371F1C3E79009DABF8 /* icon_sofa_white.png */,
@@ -479,6 +491,7 @@
 				43EF36C21F16F9D70013FA8A /* LaunchScreen.storyboard in Resources */,
 				439F141E1F1C3B34009DABF8 /* Rubik-Regular.ttf in Resources */,
 				439F14661F1C3E7A009DABF8 /* illustrationNoBookings.png in Resources */,
+				434D5C551F48D8CF00C17541 /* iconArrowWhite.png in Resources */,
 				439F144F1F1C3E7A009DABF8 /* iconHistoryGreen.png in Resources */,
 				439F144E1F1C3E7A009DABF8 /* icon_fridge_white.png in Resources */,
 				439F14581F1C3E7A009DABF8 /* iconServiceBooked.png in Resources */,
@@ -494,6 +507,7 @@
 				439F14621F1C3E7A009DABF8 /* icon_window_green.png in Resources */,
 				439F145B1F1C3E7A009DABF8 /* icon_sofa_white.png in Resources */,
 				439F14431F1C3E7A009DABF8 /* iconAddService.png in Resources */,
+				434D5C541F48D8CF00C17541 /* iconArrowGreen.png in Resources */,
 				439F14181F1C3B28009DABF8 /* Rubik-BoldItalic.ttf in Resources */,
 				43EF36D61F1708070013FA8A /* GoogleService-Info.plist in Resources */,
 				439F141C1F1C3B30009DABF8 /* Rubik-Medium.ttf in Resources */,
@@ -518,6 +532,7 @@
 				439F145E1F1C3E7A009DABF8 /* icon_stove_green.png in Resources */,
 				439F144D1F1C3E7A009DABF8 /* icon_fridge_green.png in Resources */,
 				439F14631F1C3E7A009DABF8 /* icon_window_white.png in Resources */,
+				434D5C591F48DAEF00C17541 /* HomieConfirmViewController.xib in Resources */,
 				439F14491F1C3E7A009DABF8 /* icon_curtains_white.png in Resources */,
 				439F14171F1C3B26009DABF8 /* Rubik-Bold.ttf in Resources */,
 				439F14611F1C3E7A009DABF8 /* icon_wall_white.png in Resources */,
@@ -615,6 +630,7 @@
 				439F14061F198574009DABF8 /* Product.swift in Sources */,
 				439F14081F19A698009DABF8 /* Calendar.swift in Sources */,
 				4343932F1F315CFB00861426 /* DatePickerViewController.swift in Sources */,
+				434D5C581F48DAEF00C17541 /* HomieConfirmViewController.swift in Sources */,
 				43AC4C881F23F19F007D638E /* SetUpViewController.swift in Sources */,
 				439F14691F1C4A0B009DABF8 /* MaterialTabBarViewController.swift in Sources */,
 			);

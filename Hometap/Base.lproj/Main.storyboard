@@ -489,7 +489,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tus direcciones" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XzZ-Fn-0An">
-                                <rect key="frame" x="122.5" y="35" width="130" height="21"/>
+                                <rect key="frame" x="123" y="35" width="130" height="21"/>
                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                 <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -859,7 +859,7 @@
                                                 <rect key="frame" x="0.0" y="310" width="375" height="870"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servicios adicionales" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bw-Hx-Vt1">
-                                                        <rect key="frame" x="101" y="115" width="174.5" height="21"/>
+                                                        <rect key="frame" x="100.5" y="115" width="174.5" height="21"/>
                                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                                         <color key="textColor" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1101,13 +1101,13 @@
                                                     <constraint firstAttribute="bottom" secondItem="qep-Wi-hjj" secondAttribute="bottom" id="wTi-IX-xPj"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtm-iZ-sQK">
-                                                <rect key="frame" x="15" y="5.5" width="40" height="40"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtm-iZ-sQK">
+                                                <rect key="frame" x="25" y="11" width="30" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="KsO-sW-WEy"/>
+                                                    <constraint firstAttribute="width" constant="30" id="KsO-sW-WEy"/>
                                                     <constraint firstAttribute="width" secondItem="gtm-iZ-sQK" secondAttribute="height" multiplier="1:1" id="NlS-Yc-OtG"/>
                                                 </constraints>
-                                                <state key="normal" title="&lt;">
+                                                <state key="normal" image="iconArrowWhite.png">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -1115,7 +1115,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nuevo servicio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMS-PZ-DOR">
-                                                <rect key="frame" x="126.5" y="15" width="122.5" height="21"/>
+                                                <rect key="frame" x="127" y="15" width="122.5" height="21"/>
                                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -1133,7 +1133,7 @@
                                             <constraint firstItem="jgk-7z-Z8i" firstAttribute="centerX" secondItem="21f-XR-Uyc" secondAttribute="centerX" id="JNi-pP-Sg9"/>
                                             <constraint firstItem="jgk-7z-Z8i" firstAttribute="leading" secondItem="eHg-Sd-L4V" secondAttribute="leading" id="MP5-8a-5AS"/>
                                             <constraint firstItem="4xH-wm-KAA" firstAttribute="leading" secondItem="eHg-Sd-L4V" secondAttribute="leading" id="To2-59-Len"/>
-                                            <constraint firstItem="gtm-iZ-sQK" firstAttribute="leading" secondItem="21f-XR-Uyc" secondAttribute="leading" constant="15" id="U5T-fe-dRd"/>
+                                            <constraint firstItem="gtm-iZ-sQK" firstAttribute="leading" secondItem="21f-XR-Uyc" secondAttribute="leading" constant="25" id="U5T-fe-dRd"/>
                                             <constraint firstItem="7nt-U5-YqY" firstAttribute="centerX" secondItem="21f-XR-Uyc" secondAttribute="centerX" id="X0q-m2-3cb"/>
                                             <constraint firstItem="Rxi-dC-kyw" firstAttribute="leading" secondItem="eHg-Sd-L4V" secondAttribute="leading" id="b5Z-oq-0MT"/>
                                             <constraint firstItem="4xH-wm-KAA" firstAttribute="top" secondItem="Rxi-dC-kyw" secondAttribute="bottom" constant="20" id="cRv-vt-2VW"/>
@@ -1194,7 +1194,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Historial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETy-gz-HgE">
-                                <rect key="frame" x="153.5" y="35" width="69.5" height="21"/>
+                                <rect key="frame" x="153" y="35" width="69.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                 <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1291,13 +1291,13 @@
                                         </state>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teléfono" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ai0-sj-Hkf">
-                                        <rect key="frame" x="0.0" y="95" width="163" height="47.5"/>
+                                        <rect key="frame" x="0.0" y="95" width="163" height="48"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
                                         <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8E-dW-vQr">
-                                        <rect key="frame" x="0.0" y="142.5" width="163" height="48"/>
+                                        <rect key="frame" x="0.0" y="143" width="163" height="47.5"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="20"/>
                                         <state key="normal" title="3017303973">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1363,6 +1363,7 @@
         <image name="iconAdressGreen.png" width="26" height="40"/>
         <image name="iconAdressGrey.png" width="20" height="30"/>
         <image name="iconApartment.png" width="50" height="93"/>
+        <image name="iconArrowWhite.png" width="50" height="49"/>
         <image name="iconFavorite.png" width="128" height="128"/>
         <image name="iconHistoryGreen.png" width="40" height="29"/>
         <image name="iconHistoryGrey.png" width="30" height="22"/>

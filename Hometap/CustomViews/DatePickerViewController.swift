@@ -108,7 +108,7 @@ class DatePickerViewController: UIViewController {
             }
         }
         
-        // Do any additional setup after loading the view.
+        self.picker.minuteInterval = 30
     }
     
     override func viewDidLayoutSubviews() {

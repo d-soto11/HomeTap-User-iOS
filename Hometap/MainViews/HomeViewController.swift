@@ -119,8 +119,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             (cell.viewWithTag(1) as? UIImageView)?.downloadedFrom(link: service.briefPhoto!)
             (cell.viewWithTag(11) as? UILabel)?.text = service.briefName!
-            (cell.viewWithTag(2)?.viewWithTag(12) as? UILabel)?.text = service.date?.toCustomString(format: "MMM") ?? "MON"
-            (cell.viewWithTag(2)?.viewWithTag(13) as? UILabel)?.text = service.date?.toCustomString(format: "DD") ?? "00"
+            (cell.viewWithTag(2)?.viewWithTag(12) as? UILabel)?.text = service.date?.toString(format: .Custom("MMM")) ?? "MON"
+            (cell.viewWithTag(2)?.viewWithTag(13) as? UILabel)?.text = service.date?.toString(format: .Custom("dd")) ?? "00"
             (cell.viewWithTag(2)?.viewWithTag(14) as? UILabel)?.text = service.date?.toString(format: .Time)
             
             (cell.viewWithTag(15) as? UILabel)?.text = String(format: "%f", service.briefRating!)

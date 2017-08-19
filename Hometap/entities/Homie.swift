@@ -46,7 +46,7 @@ class Homie: User {
     var preferences: NSDictionary?
     var folder: String?    
     
-    public func schedule() -> HTCalendar? {
+    public func schedule() -> [HTCBlock]? {
         return nil
     }
     

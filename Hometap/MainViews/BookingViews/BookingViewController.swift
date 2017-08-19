@@ -28,6 +28,7 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
     
     public var selected:[Int] = []
     private var total: Double = 0
+    private var total_time: Int = 0
     
     private var new_service = Service(dict: [:])
     
@@ -52,6 +53,8 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
         self.aditionalServicesCV.collectionViewLayout = layout
         
         self.commentsTextView.bordered(color: K.UI.select_box_color)
+        self.nextB.addNormalShadow()
+        self.nextB.roundCorners(radius: K.UI.round_px)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -67,6 +70,8 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
             
             self.total = K.Hometap.app_content?.basic()?.price ?? 0
             self.mainServicePrice.text = String(format: "PRECIO: %.0f COP", self.total)
+            
+            self.total_time = K.Hometap.app_content?.basic()?.time ?? 0
             
             self.updateTotal()
             
@@ -110,9 +115,12 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
             self.new_service.saveAdditionalServices(services: services)
         }
         self.new_service.price = total
+        self.new_service.time = total_time
         self.new_service.comments = self.commentsTextView.text ?? "Ninguno"
         
         MBProgressHUD.hide(for: self.view, animated: true)
+        
+        HomiePickerViewController.pickHomie(service: self.new_service, parent: self)
         
     }
     
@@ -209,9 +217,11 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
         if (selected.contains(indexPath.row)) {
             selected.remove(object: indexPath.row)
             total = total - additional_services[indexPath.row].price!
+            total_time = total_time - additional_services[indexPath.row].time!
         } else {
             selected.append(indexPath.row)
             total = total + additional_services[indexPath.row].price!
+            total_time = total_time + additional_services[indexPath.row].time!
         }
         collectionView.reloadItems(at: [indexPath])
         self.updateTotal()
