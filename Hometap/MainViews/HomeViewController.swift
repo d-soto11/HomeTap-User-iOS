@@ -12,6 +12,7 @@ import MBProgressHUD
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var bookingB: UIButton!
+    @IBOutlet weak var bookingB2: UIButton!
     @IBOutlet weak var noBookingArt: UIImageView!
     @IBOutlet weak var noBookingHint: UILabel!
     @IBOutlet weak var bookingTitle: UILabel!
@@ -19,13 +20,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        do {
-//            try Auth.auth().signOut()
-//            K.User.client = nil
-//        } catch {
-//            
-//        }
         
         MBProgressHUD.showAdded(to: self.view, animated: true)
 
@@ -41,6 +35,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     } else {
                         K.User.client = client!
                         self.reloadClientData()
+                        
+                        self.bookingB.addTarget(self, action: #selector(self.startBooking), for: .touchUpInside)
+                        self.bookingB2.addTarget(self, action: #selector(self.startBooking), for: .touchUpInside)
                     }
                 })
             } else {
@@ -49,6 +46,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
             MBProgressHUD.hide(for: self.view, animated: true)
         }
+    }
+    
+    public func startBooking() {
+        BookingViewController.show(parent: self)
     }
 
     override func didReceiveMemoryWarning() {

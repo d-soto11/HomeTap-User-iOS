@@ -67,6 +67,8 @@ class DatePickerViewController: UIViewController {
             break
         case .now:
             self.picker.minimumDate = Date()
+        case .tomorrow:
+            self.picker.minimumDate = Calendar.current.date(byAdding: .day, value: 1, to: Date())
         case .date(let dateStr):
             if let dateDate = dayTimePeriodFormatter.date(from: dateStr) {
                 self.picker.date = dateDate
@@ -89,6 +91,8 @@ class DatePickerViewController: UIViewController {
             break
         case .now:
             self.picker.maximumDate = Date()
+        case .tomorrow:
+            self.picker.maximumDate = Calendar.current.date(byAdding: .day, value: 1, to: Date())
         case .date(let dateStr):
             if let dateDate = dayTimePeriodFormatter.date(from: dateStr) {
                 self.picker.maximumDate = dateDate
@@ -141,6 +145,7 @@ class DatePickerViewController: UIViewController {
     public enum MinDate {
         case none
         case now
+        case tomorrow
         case timeOnDate(String, String)
         case date(String)
     }
@@ -148,6 +153,7 @@ class DatePickerViewController: UIViewController {
     public enum MaxDate {
         case none
         case now
+        case tomorrow
         case timeOnDate(String, String)
         case date(String)
     }

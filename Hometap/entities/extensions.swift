@@ -244,6 +244,22 @@ extension Date {
         case Try
     }
     
+    func merge(time: Date) -> Date? {
+        let calendar = Calendar.current
+        
+        let dateComponents = calendar.dateComponents([.year, .month, .day], from: self)
+        let timeComponents = calendar.dateComponents([.hour, .minute], from: time)
+        
+        var mergedComponments = DateComponents()
+        mergedComponments.year = dateComponents.year!
+        mergedComponments.month = dateComponents.month!
+        mergedComponments.day = dateComponents.day!
+        mergedComponments.hour = timeComponents.hour!
+        mergedComponments.minute = timeComponents.minute!
+        
+        return calendar.date(from: mergedComponments)
+    }
+    
     init?(fromString: String, withFormat: DateFormat) {
         let dtf = DateFormatter()
         switch withFormat {

@@ -28,6 +28,10 @@ struct K {
         static let fb_time_format: String = "hh:mm a"
     }
     
+    struct Hometap {
+        static var app_content: AppContent?
+    }
+    
     struct Database {
         public static func ref() -> DatabaseReference {
             return Firebase.Database.database().reference()
