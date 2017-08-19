@@ -61,6 +61,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLayoutSubviews()
         self.bookingB.addNormalShadow()
         self.bookingB.roundCorners(radius: K.UI.round_px)
+        
+        self.bookingTable.reloadData()
     }
     
     private func reloadClientData() {
@@ -103,7 +105,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+        return 120
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -111,19 +113,20 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let service = K.User.client!.services_brief()![indexPath.row]
         
         cellUI.uiUpdates = {(cell) in
-            cell.viewWithTag(0)?.addNormalShadow()
-            cell.viewWithTag(0)?.roundCorners(radius: K.UI.light_round_px)
+            cell.viewWithTag(100)?.addNormalShadow()
+            cell.viewWithTag(100)?.roundCorners(radius: K.UI.light_round_px)
             
             cell.viewWithTag(2)?.addLightShadow()
             cell.viewWithTag(2)?.roundCorners(radius: K.UI.light_round_px)
             
             (cell.viewWithTag(1) as? UIImageView)?.downloadedFrom(link: service.briefPhoto!)
+            (cell.viewWithTag(1) as? UIImageView)?.circleImage()
             (cell.viewWithTag(11) as? UILabel)?.text = service.briefName!
             (cell.viewWithTag(2)?.viewWithTag(12) as? UILabel)?.text = service.date?.toString(format: .Custom("MMM")) ?? "MON"
             (cell.viewWithTag(2)?.viewWithTag(13) as? UILabel)?.text = service.date?.toString(format: .Custom("dd")) ?? "00"
             (cell.viewWithTag(2)?.viewWithTag(14) as? UILabel)?.text = service.date?.toString(format: .Time)
             
-            (cell.viewWithTag(15) as? UILabel)?.text = String(format: "%f", service.briefRating!)
+            (cell.viewWithTag(15) as? UILabel)?.text = String(format: "%.0f", service.briefRating!)
         }
         return cellUI
     }

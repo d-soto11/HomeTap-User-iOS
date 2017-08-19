@@ -34,10 +34,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PB-n4-3E9">
-                    <rect key="frame" x="25" y="31" width="30" height="30"/>
+                    <rect key="frame" x="25" y="36" width="20" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="8PB-n4-3E9" secondAttribute="height" multiplier="1:1" id="Fle-at-z5Q"/>
-                        <constraint firstAttribute="height" constant="30" id="Itg-ql-oKt"/>
+                        <constraint firstAttribute="height" constant="20" id="Itg-ql-oKt"/>
                     </constraints>
                     <state key="normal" image="iconArrowGreen.png">
                         <color key="titleColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>

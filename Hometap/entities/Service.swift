@@ -52,6 +52,12 @@ class Service: HometapObject {
         if let block = dict["blockID"] {
             self.blockID = (block as? String)
         }
+        if let homie = dict["homieID"] {
+            self.homieID = (homie as? String)
+        }
+        if let client = dict["clientID"] {
+            self.clientID = (client as? String)
+        }
 
     }
     
@@ -84,6 +90,12 @@ class Service: HometapObject {
         if self.blockID != nil {
             original_dictionary["blockID"] = self.blockID as AnyObject
         }
+        if self.homieID != nil {
+            original_dictionary["homieID"] = self.homieID as AnyObject
+        }
+        if self.clientID != nil {
+            original_dictionary["clientID"] = self.clientID as AnyObject
+        }
         super.save(route: "services")
     }
     
@@ -96,6 +108,8 @@ class Service: HometapObject {
     var briefPhoto: String?
     var time: Int?
     var blockID: String?
+    var homieID: String?
+    var clientID: String?
     
     var place: Place?
     

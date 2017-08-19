@@ -19,6 +19,7 @@ class HomiePickerViewController: UIViewController {
     
     private var service: Service!
     private var blocks:[HTCBlock] = []
+    private var loaded_homies: [Homie] = []
     
     private var homie_views: [UIView] = []
     
@@ -35,7 +36,16 @@ class HomiePickerViewController: UIViewController {
         let mb = MBProgressHUD.showAdded(to: self.view, animated: true)
         mb.label.text = "Buscando homies"
         
+        homie1.tag = 51
+        homie2.tag = 52
+        homie3.tag = 53
+        
+        self.homie1.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectHomie1)))
+        self.homie2.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectHomie2)))
+        self.homie3.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectHomie3)))
+        
         homie_views = [homie1, homie2, homie3]
+        
         
         guard let url = RestController.make(urlString: "https://us-central1-hometap-f173f.cloudfunctions.net") else {
             mb.hide(animated: true)
@@ -123,11 +133,38 @@ class HomiePickerViewController: UIViewController {
                     mb.hide(animated: true)
                     (v.viewWithTag(1) as? UIImageView)?.downloadedFrom(link: homie?.photo ?? "")
                     (v.viewWithTag(1) as? UIImageView)?.circleImage()
+                    
+                    self.loaded_homies.append(homie!)
                 })
                 
                 
             }
         }
+    }
+    
+    public func selectHomie1() {
+        let homie = loaded_homies[0]
+        let block = blocks[0]
+        service.blockID = block.uid
+        service.date = block.date!.merge(time: block.startHour!)
+        HomieConfirmViewController.confirmHomie(service: self.service, homie: homie, parent: self)
+        print("First")
+    }
+    
+    public func selectHomie2() {
+        let homie = loaded_homies[1]
+        let block = blocks[1]
+        service.blockID = block.uid
+        service.date = block.date!.merge(time: block.startHour!)
+        HomieConfirmViewController.confirmHomie(service: self.service, homie: homie, parent: self)
+    }
+    
+    public func selectHomie3() {
+        let homie = loaded_homies[2]
+        let block = blocks[2]
+        service.blockID = block.uid
+        service.date = block.date!.merge(time: block.startHour!)
+        HomieConfirmViewController.confirmHomie(service: self.service, homie: homie, parent: self)
     }
 
 

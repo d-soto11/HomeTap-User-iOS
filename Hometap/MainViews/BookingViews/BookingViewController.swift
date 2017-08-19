@@ -18,6 +18,7 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
     @IBOutlet weak var commentsTextView: UITextView!
     @IBOutlet weak var totalPrice: UILabel!
     @IBOutlet weak var nextB: UIButton!
+    @IBOutlet weak var mainServiceView: UIView!
     
     @IBOutlet weak var additionalHeigth: NSLayoutConstraint!
     @IBOutlet weak var contentViewHeigth: NSLayoutConstraint!
@@ -33,7 +34,7 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
     private var new_service = Service(dict: [:])
     
     public class func show(parent: UIViewController) {
-        let st = UIStoryboard.init(name: "Main", bundle: nil)
+        let st = UIStoryboard.init(name: "Booking", bundle: nil)
         let book = st.instantiateViewController(withIdentifier: "BookView")
         parent.show(book, sender: nil)
     }
@@ -55,6 +56,9 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
         self.commentsTextView.bordered(color: K.UI.select_box_color)
         self.nextB.addNormalShadow()
         self.nextB.roundCorners(radius: K.UI.round_px)
+        
+        self.mainServiceView.roundCorners(radius: K.UI.light_round_px)
+        self.mainServiceView.addNormalShadow()
     }
 
     override func viewDidAppear(_ animated: Bool) {
