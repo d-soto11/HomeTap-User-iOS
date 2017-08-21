@@ -13,7 +13,9 @@
 		431935601F47A00C005BB082 /* HTCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4319355F1F47A00C005BB082 /* HTCollectionViewCell.swift */; };
 		4343932F1F315CFB00861426 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343932D1F315CFB00861426 /* DatePickerViewController.swift */; };
 		434393301F315CFB00861426 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4343932E1F315CFB00861426 /* DatePickerViewController.xib */; };
-		434B66161F4B1EDB007CE9E2 /* PlacePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B66151F4B1EDB007CE9E2 /* PlacePickerViewController.swift */; };
+		434B66191F4B3988007CE9E2 /* Places.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434B66181F4B3988007CE9E2 /* Places.storyboard */; };
+		434B661B1F4B39F6007CE9E2 /* PlacePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B661A1F4B39F6007CE9E2 /* PlacePickerViewController.swift */; };
+		434B661D1F4B3A0E007CE9E2 /* PlaceEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B661C1F4B3A0E007CE9E2 /* PlaceEditorViewController.swift */; };
 		434D5C501F48949A00C17541 /* HomiePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D5C4E1F48949A00C17541 /* HomiePickerViewController.swift */; };
 		434D5C511F48949A00C17541 /* HomiePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434D5C4F1F48949A00C17541 /* HomiePickerViewController.xib */; };
 		434D5C541F48D8CF00C17541 /* iconArrowGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 434D5C521F48D8CF00C17541 /* iconArrowGreen.png */; };
@@ -109,7 +111,9 @@
 		4319355F1F47A00C005BB082 /* HTCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTCollectionViewCell.swift; path = CustomViews/HTCollectionViewCell.swift; sourceTree = "<group>"; };
 		4343932D1F315CFB00861426 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerViewController.swift; path = CustomViews/DatePickerViewController.swift; sourceTree = "<group>"; };
 		4343932E1F315CFB00861426 /* DatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DatePickerViewController.xib; path = CustomViews/DatePickerViewController.xib; sourceTree = "<group>"; };
-		434B66151F4B1EDB007CE9E2 /* PlacePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlacePickerViewController.swift; path = MainViews/BookingViews/PlacePickerViewController.swift; sourceTree = "<group>"; };
+		434B66181F4B3988007CE9E2 /* Places.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Places.storyboard; path = MainViews/PlacesViews/Places.storyboard; sourceTree = "<group>"; };
+		434B661A1F4B39F6007CE9E2 /* PlacePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlacePickerViewController.swift; path = MainViews/PlacesViews/PlacePickerViewController.swift; sourceTree = "<group>"; };
+		434B661C1F4B3A0E007CE9E2 /* PlaceEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceEditorViewController.swift; path = MainViews/PlacesViews/PlaceEditorViewController.swift; sourceTree = "<group>"; };
 		434D5C4E1F48949A00C17541 /* HomiePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomiePickerViewController.swift; path = MainViews/BookingViews/HomiePickerViewController.swift; sourceTree = "<group>"; };
 		434D5C4F1F48949A00C17541 /* HomiePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomiePickerViewController.xib; path = MainViews/BookingViews/HomiePickerViewController.xib; sourceTree = "<group>"; };
 		434D5C521F48D8CF00C17541 /* iconArrowGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconArrowGreen.png; path = assets/iconArrowGreen.png; sourceTree = "<group>"; };
@@ -238,10 +242,19 @@
 				434D5C4E1F48949A00C17541 /* HomiePickerViewController.swift */,
 				434D5C4F1F48949A00C17541 /* HomiePickerViewController.xib */,
 				434D5C561F48DAEF00C17541 /* HomieConfirmViewController.swift */,
-				434B66151F4B1EDB007CE9E2 /* PlacePickerViewController.swift */,
 				434D5C5A1F48DE7F00C17541 /* Booking.storyboard */,
 			);
 			name = BookingViews;
+			sourceTree = "<group>";
+		};
+		434B66171F4B394C007CE9E2 /* PlacesViews */ = {
+			isa = PBXGroup;
+			children = (
+				434B66181F4B3988007CE9E2 /* Places.storyboard */,
+				434B661A1F4B39F6007CE9E2 /* PlacePickerViewController.swift */,
+				434B661C1F4B3A0E007CE9E2 /* PlaceEditorViewController.swift */,
+			);
+			name = PlacesViews;
 			sourceTree = "<group>";
 		};
 		439F14091F1C3AE8009DABF8 /* assets */ = {
@@ -327,6 +340,7 @@
 		439F146A1F1C9D0B009DABF8 /* MainViews */ = {
 			isa = PBXGroup;
 			children = (
+				434B66171F4B394C007CE9E2 /* PlacesViews */,
 				4319355A1F4795F7005BB082 /* BookingViews */,
 				43DC564E1F1D381200C68B17 /* LocationsViewController.swift */,
 				439F146B1F1C9D3C009DABF8 /* HomeViewController.swift */,
@@ -552,6 +566,7 @@
 				439F144A1F1C3E7A009DABF8 /* icon_division_white.png in Resources */,
 				439F14551F1C3E7A009DABF8 /* iconNoPhotoSmall.png in Resources */,
 				439F14511F1C3E7A009DABF8 /* iconHouseBlack.png in Resources */,
+				434B66191F4B3988007CE9E2 /* Places.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,8 +630,9 @@
 				43EF36E81F192C010013FA8A /* HometapObject.swift in Sources */,
 				43EF36E61F192B880013FA8A /* Homie.swift in Sources */,
 				43EF36E11F192B2A0013FA8A /* extensions.swift in Sources */,
+				434B661D1F4B3A0E007CE9E2 /* PlaceEditorViewController.swift in Sources */,
 				431935601F47A00C005BB082 /* HTCollectionViewCell.swift in Sources */,
-				434B66161F4B1EDB007CE9E2 /* PlacePickerViewController.swift in Sources */,
+				434B661B1F4B39F6007CE9E2 /* PlacePickerViewController.swift in Sources */,
 				43EF36E21F192B2A0013FA8A /* User.swift in Sources */,
 				439F146C1F1C9D3C009DABF8 /* HomeViewController.swift in Sources */,
 				43EF36B81F16F9D70013FA8A /* AppDelegate.swift in Sources */,
