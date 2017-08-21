@@ -13,6 +13,8 @@ import Firebase
 import FirebaseAuth
 import FBSDKCoreKit
 import GoogleMaps
+import GooglePlaces
+import DropDown
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,10 +35,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         // Configuracion de GMaps
-        // GMSServices.provideAPIKey("API_KEY")
+        GMSServices.provideAPIKey(K.Hometap.google_api_key)
+        GMSPlacesClient.provideAPIKey(K.Hometap.google_api_key)
+        
         
         // Private configurations
         // ...
+        DropDown.startListeningToKeyboard()
         
         return true
     }

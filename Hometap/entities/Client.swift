@@ -45,26 +45,24 @@ class Client: User {
     var preferences: NSDictionary?
     var credits: Double?
     
-    public func places() -> [Place]? {
-        var places:[Place] = []
+    public func places(callback: @escaping (_ p: Place?, _ total: Int)->Void){
         if let plcs = original_dictionary["places"] {
             if let plcsDict = plcs as? [String:AnyObject] {
+                let total = plcsDict.count
                 for (idPlace, place) in plcsDict {
                     if let place = place as? Bool {
                         if place {
-                            Place.withID(id: idPlace, callback: { (placeObj) in
-                                if placeObj != nil {
-                                    places.append(placeObj!)
-                                }
+                            Place.withID(id: idPlace, callback: {(place_loaded) in
+                                callback(place_loaded, total)
                             })
                         }
                         
                     }
                 }
-                return places
             }
+        } else {
+            callback(nil, 0)
         }
-        return nil
     }
     
     public func favorites_brief() -> [Homie]? {
@@ -101,6 +99,10 @@ class Client: User {
     
     public func savePlace(place: Place) {
         K.Database.ref().child("clients").child(self.uid!).child("places").child(place.uid!).setValue(true)
+    }
+    
+    public func removePlace(place: Place) {
+        K.Database.ref().child("clients").child(self.uid!).child("places").child(place.uid!).removeValue()
     }
     
     public func saveFavorite(favorite: Homie) -> Bool {

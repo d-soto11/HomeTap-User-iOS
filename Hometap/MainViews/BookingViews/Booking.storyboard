@@ -81,7 +81,7 @@
                                                 <rect key="frame" x="0.0" y="310" width="375" height="870"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servicios adicionales" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjz-kM-VNL">
-                                                        <rect key="frame" x="100.5" y="115" width="174.5" height="21"/>
+                                                        <rect key="frame" x="101" y="115" width="174.5" height="21"/>
                                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                                         <color key="textColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -337,7 +337,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nuevo servicio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nh8-aC-saJ">
-                                                <rect key="frame" x="127" y="15" width="122.5" height="21"/>
+                                                <rect key="frame" x="126.5" y="15" width="122.5" height="21"/>
                                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -416,8 +416,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="830"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mv-Xl-Dmx">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="830"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mv-Xl-Dmx">
+                                <rect key="frame" x="0.0" y="20" width="375" height="810"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jTf-oL-itw" userLabel="contentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="830"/>
@@ -623,7 +623,7 @@
                         <constraints>
                             <constraint firstItem="V0h-GL-VVk" firstAttribute="top" secondItem="6Mv-Xl-Dmx" secondAttribute="bottom" id="2FP-Cv-ixE"/>
                             <constraint firstItem="jTf-oL-itw" firstAttribute="width" secondItem="0Qn-CB-lU4" secondAttribute="width" id="CmP-Lo-L0W"/>
-                            <constraint firstItem="6Mv-Xl-Dmx" firstAttribute="top" secondItem="0Qn-CB-lU4" secondAttribute="top" id="F7O-Jf-753"/>
+                            <constraint firstItem="6Mv-Xl-Dmx" firstAttribute="top" secondItem="0Qn-CB-lU4" secondAttribute="top" constant="20" id="F7O-Jf-753"/>
                             <constraint firstItem="6Mv-Xl-Dmx" firstAttribute="leading" secondItem="0Qn-CB-lU4" secondAttribute="leading" id="LPj-Dd-4c3"/>
                             <constraint firstAttribute="trailing" secondItem="6Mv-Xl-Dmx" secondAttribute="trailing" id="jca-ik-TFz"/>
                         </constraints>

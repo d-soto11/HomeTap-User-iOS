@@ -99,15 +99,9 @@ class HomieConfirmViewController: UIViewController, UITableViewDataSource, UITab
 
     @IBAction func confirmBooking(_ sender: Any) {
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        service.homieID = homie.uid!
-        service.clientID = getCurrentUserUid()
-        
-        service.save()
-        
-        K.MaterialTapBar.TapBar?.reloadViewController()
-        
+        let _ = service.saveClientHomie(client: K.User.client!, homie: homie)
         MBProgressHUD.hide(for: self.view, animated: true)
-        
+        PlacePickerViewController.showPicker(parent: self)
     }
     
     @IBAction func toogleComments(_ sender: Any) {

@@ -65,6 +65,9 @@ class Place: HometapObject {
     }
     
     public func prepareForSave() -> [String:AnyObject] {
+        if self.uid != nil {
+            original_dictionary["id"] = self.name as AnyObject
+        }
         if self.name != nil {
             original_dictionary["nickname"] = self.name as AnyObject
         }
@@ -91,6 +94,8 @@ class Place: HometapObject {
         }
         if self.floors != nil {
             original_dictionary["floors"] = self.floors as AnyObject
+        } else {
+            original_dictionary["floors"] = 1 as AnyObject
         }
         if self.bathrooms != nil {
             original_dictionary["bathrooms"] = self.bathrooms as AnyObject
