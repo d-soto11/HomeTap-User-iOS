@@ -49,9 +49,16 @@ class Client: User {
         var places:[Place] = []
         if let plcs = original_dictionary["places"] {
             if let plcsDict = plcs as? [String:AnyObject] {
-                for (_, place) in plcsDict {
-                    if let servDict = place as? [String:AnyObject] {
-                        places.append(Place(dict: servDict))
+                for (idPlace, place) in plcsDict {
+                    if let place = place as? Bool {
+                        if place {
+                            Place.withID(id: idPlace, callback: { (placeObj) in
+                                if placeObj != nil {
+                                    places.append(placeObj!)
+                                }
+                            })
+                        }
+                        
                     }
                 }
                 return places
@@ -93,13 +100,7 @@ class Client: User {
     }
     
     public func savePlace(place: Place) {
-        if place.uid == nil {
-            place.uid = K.Database.ref().child("clients").child(self.uid!).child("places").childByAutoId().key
-        }
-        let plc_dict = place.prepareForSave()
-        var org_places_dict:[String:[String:AnyObject]] = original_dictionary["places"] as? [String:[String:AnyObject]] ?? [:]
-        org_places_dict[place.uid!] = plc_dict
-        original_dictionary["places"] = org_places_dict as AnyObject
+        K.Database.ref().child("clients").child(self.uid!).child("places").child(place.uid!).setValue(true)
     }
     
     public func saveFavorite(favorite: Homie) -> Bool {
