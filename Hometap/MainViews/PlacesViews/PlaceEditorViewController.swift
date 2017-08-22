@@ -17,6 +17,7 @@ class PlaceEditorViewController: UIViewController, UITextFieldDelegate, GMSPlace
     @IBOutlet weak var houseB: UIButton!
     @IBOutlet weak var apartamentB: UIButton!
     @IBOutlet weak var interiorText: UITextField!
+    @IBOutlet weak var towerText: UITextField!
     @IBOutlet weak var metersText: UITextField!
     @IBOutlet weak var floorsText: UITextField!
     @IBOutlet weak var roomsText: UITextField!
@@ -39,7 +40,7 @@ class PlaceEditorViewController: UIViewController, UITextFieldDelegate, GMSPlace
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        keyboards_list = [nameText, addressText, interiorText, metersText, floorsText, roomsText, bathroomsText]
+        keyboards_list = [nameText, addressText, towerText, interiorText, metersText, floorsText, roomsText, bathroomsText]
         setUpSmartKeyboard()
         self.deleteB.alpha = self.place.uid != nil ? 1 : 0
     }
@@ -50,6 +51,7 @@ class PlaceEditorViewController: UIViewController, UITextFieldDelegate, GMSPlace
     public func loadPlaceData() {
         self.nameText.text = place.name
         self.addressText.text = place.address
+        self.towerText.text = place.tower
         self.interiorText.text = place.interior
         self.metersText.text = place.area != nil ? String(format: "%.0f m2", place.area!) : ""
         self.floorsText.text = place.floors != nil ? String(format: "%d", place.floors!) : ""
@@ -59,6 +61,7 @@ class PlaceEditorViewController: UIViewController, UITextFieldDelegate, GMSPlace
         if place.apartament! {
             UIView.animate(withDuration: 0.5, animations: {
                 self.floorsText.superview?.alpha = 0
+                self.towerText.superview?.alpha = 1
                 self.apartamentB.setTitleColor(.white, for: .normal)
                 self.apartamentB.backgroundColor = K.UI.main_color
                 self.houseB.setTitleColor(K.UI.form_color, for: .normal)
@@ -67,6 +70,7 @@ class PlaceEditorViewController: UIViewController, UITextFieldDelegate, GMSPlace
         } else {
             UIView.animate(withDuration: 0.5, animations: {
                 self.floorsText.superview?.alpha = 1
+                self.towerText.superview?.alpha = 0
                 self.houseB.setTitleColor(.white, for: .normal)
                 self.houseB.backgroundColor = K.UI.main_color
                 self.apartamentB.setTitleColor(K.UI.form_color, for: .normal)
@@ -233,16 +237,19 @@ class PlaceEditorViewController: UIViewController, UITextFieldDelegate, GMSPlace
             self.displaceKeyboard = true
             return true
         case 24:
-            textField.text = String(format: "%.0f", place.area ?? 0)
             self.displaceKeyboard = true
             return true
         case 25:
+            textField.text = String(format: "%.0f", place.area ?? 0)
             self.displaceKeyboard = true
             return true
         case 26:
             self.displaceKeyboard = true
             return true
         case 27:
+            self.displaceKeyboard = true
+            return true
+        case 28:
             self.displaceKeyboard = true
             return true
         default:
@@ -253,7 +260,7 @@ class PlaceEditorViewController: UIViewController, UITextFieldDelegate, GMSPlace
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField.tag {
-        case 27:
+        case 28:
             textField.resignFirstResponder()
             return true
         default:
@@ -270,14 +277,16 @@ class PlaceEditorViewController: UIViewController, UITextFieldDelegate, GMSPlace
         case 22:
             return true
         case 23:
-            return ((textField.text?.characters.count) ?? 0 < 9)
+            return ((textField.text?.characters.count) ?? 0 < 4)
         case 24:
-            return ((textField.text?.characters.count) ?? 0 < 5)
+            return ((textField.text?.characters.count) ?? 0 < 9)
         case 25:
-            return ((textField.text?.characters.count) ?? 0 < 2)
+            return ((textField.text?.characters.count) ?? 0 < 5)
         case 26:
-            return ((textField.text?.characters.count) ?? 0 < 3)
+            return ((textField.text?.characters.count) ?? 0 < 2)
         case 27:
+            return ((textField.text?.characters.count) ?? 0 < 3)
+        case 28:
             return ((textField.text?.characters.count) ?? 0 < 3)
         default:
             return false
@@ -289,29 +298,31 @@ class PlaceEditorViewController: UIViewController, UITextFieldDelegate, GMSPlace
         case 21:
             self.place.name = textField.text
         case 23:
-            self.place.interior = textField.text
+            self.place.tower = textField.text
         case 24:
+            self.place.interior = textField.text
+        case 25:
             if textField.text != "", let area = Double(textField.text!) {
                 self.place.area = area
             } else {
                 self.showAlert(title: "Espera", message: "El área que has ingresado no es válida", closeButtonTitle: "Ok")
                 return false
             }
-        case 25:
+        case 26:
             if textField.text != "", let floors = Int(textField.text!) {
                 self.place.floors = floors
             } else {
                 self.showAlert(title: "Espera", message: "El número de pisos que has ingresado no es válido", closeButtonTitle: "Ok")
                 return false
             }
-        case 26:
+        case 27:
             if textField.text != "", let rooms = Int(textField.text!) {
                 self.place.rooms = rooms
             } else {
                 self.showAlert(title: "Espera", message: "El número de habitaciones que has ingresado no es válido", closeButtonTitle: "Ok")
                 return false
             }
-        case 27:
+        case 28:
             if textField.text != "", let baths = Int(textField.text!) {
                 self.place.bathrooms = baths
             } else {

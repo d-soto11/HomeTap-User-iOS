@@ -43,6 +43,9 @@ class Place: HometapObject {
         if let interior = dict["interior"] {
             self.interior = (interior as? String)
         }
+        if let tower = dict["tower"] {
+            self.tower = (tower as? String)
+        }
         if let bathrooms = dict["bathrooms"] {
             self.bathrooms = (bathrooms as? Int)
         }
@@ -103,6 +106,9 @@ class Place: HometapObject {
         if self.interior != nil {
             original_dictionary["interior"] = self.interior as AnyObject
         }
+        if self.tower != nil {
+            original_dictionary["tower"] = self.tower as AnyObject
+        }
         if self.basement != nil {
             original_dictionary["basement"] = self.basement as AnyObject
         }
@@ -132,6 +138,7 @@ class Place: HometapObject {
     var pets: Bool?
     var wifi: String?
     var rooms: Int?
+    var tower: String?
     var interior: String?
     var floors: Int?
     var bathrooms: Int?

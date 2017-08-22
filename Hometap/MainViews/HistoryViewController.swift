@@ -15,7 +15,7 @@ class HistoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        bookingB.addTarget(self, action: #selector(startBooking), for: .touchUpInside)
         // Do any additional setup after loading the view.
     }
 
@@ -29,6 +29,10 @@ class HistoryViewController: UIViewController {
         self.bookingB.addNormalShadow()
         self.bookingB.roundCorners(radius: K.UI.round_px)
     }
+    
+    public func startBooking() {
+        BookingViewController.show(parent: self)
+    }
 
     /*
     // MARK: - Navigation
@@ -39,5 +43,6 @@ class HistoryViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
 }

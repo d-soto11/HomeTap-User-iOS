@@ -81,7 +81,7 @@ class LocationsViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         // isLastCell
-        return indexPath.row == self.places.count ? 80 : 60
+        return indexPath.row == self.places.count ? 80 : 70
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

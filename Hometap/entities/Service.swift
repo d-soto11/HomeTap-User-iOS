@@ -52,6 +52,9 @@ class Service: HometapObject {
         if let block = dict["blockID"] {
             self.blockID = (block as? String)
         }
+        if let tk = dict["paymentToken"] {
+            self.token = (tk as? String)
+        }
 
     }
     
@@ -87,6 +90,9 @@ class Service: HometapObject {
         if self.place != nil {
             original_dictionary["place"] = self.place?.prepareForSave() as AnyObject
         }
+        if self.token != nil {
+            original_dictionary["paymentToken"] = self.token as AnyObject
+        }
         super.save(route: "services")
     }
     
@@ -99,6 +105,7 @@ class Service: HometapObject {
     var briefPhoto: String?
     var time: Int?
     var blockID: String?
+    var token: String?
     
     var place: Place?
     

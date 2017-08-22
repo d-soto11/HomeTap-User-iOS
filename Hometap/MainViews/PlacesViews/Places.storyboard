@@ -166,7 +166,7 @@
                                         <rect key="frame" x="0.0" y="186" width="303" height="92.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vtm-19-8Gm">
-                                                <rect key="frame" x="0.0" y="32.5" width="99" height="55"/>
+                                                <rect key="frame" x="0.0" y="32.5" width="84.5" height="55"/>
                                                 <color key="backgroundColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="55" id="xoi-Vl-OeU"/>
@@ -180,7 +180,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fut-Y6-khh">
-                                                <rect key="frame" x="109" y="32.5" width="99.5" height="55"/>
+                                                <rect key="frame" x="94.5" y="32.5" width="84.5" height="55"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="12"/>
                                                 <state key="normal" title="Apartamento">
@@ -191,10 +191,10 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGk-XS-nav">
-                                                <rect key="frame" x="228.5" y="32.5" width="69.5" height="55"/>
+                                                <rect key="frame" x="238.5" y="32.5" width="59.5" height="55"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Número" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="PxM-cQ-XZr">
-                                                        <rect key="frame" x="0.0" y="5" width="69.5" height="10"/>
+                                                        <rect key="frame" x="0.0" y="5" width="59.5" height="10"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="10" id="tQy-Tu-rn5"/>
                                                         </constraints>
@@ -202,8 +202,8 @@
                                                         <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" tag="23" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="401" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="0wx-OA-mdm">
-                                                        <rect key="frame" x="0.0" y="20" width="70" height="29"/>
+                                                    <textField opaque="NO" clipsSubviews="YES" tag="24" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="401" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="0wx-OA-mdm">
+                                                        <rect key="frame" x="0.0" y="20" width="60" height="29"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -212,7 +212,7 @@
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCk-Q5-z5v">
-                                                        <rect key="frame" x="5" y="49" width="59.5" height="1"/>
+                                                        <rect key="frame" x="5" y="49" width="49.5" height="1"/>
                                                         <color key="backgroundColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="bDK-hr-PhM"/>
@@ -233,11 +233,55 @@
                                                     <constraint firstAttribute="trailing" secondItem="0wx-OA-mdm" secondAttribute="trailing" id="vYi-fw-NsV"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHM-rr-YAT">
+                                                <rect key="frame" x="189" y="32" width="39.5" height="55"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bloque" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="psu-bQ-gQX">
+                                                        <rect key="frame" x="0.0" y="5" width="39.5" height="10"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="10" id="evi-Bp-3l2"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="10"/>
+                                                        <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" tag="23" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="1" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="vHA-nt-mIB">
+                                                        <rect key="frame" x="0.0" y="20" width="40" height="29"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="25"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="58n-9E-BKh" id="oJy-M0-aEV"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iXM-rT-6P0">
+                                                        <rect key="frame" x="5" y="49" width="29.5" height="1"/>
+                                                        <color key="backgroundColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="gvV-0d-xar"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="psu-bQ-gQX" firstAttribute="top" secondItem="qHM-rr-YAT" secondAttribute="top" constant="5" id="A8T-JH-zfg"/>
+                                                    <constraint firstItem="iXM-rT-6P0" firstAttribute="leading" secondItem="qHM-rr-YAT" secondAttribute="leading" constant="5" id="BIz-YO-Ij1"/>
+                                                    <constraint firstItem="psu-bQ-gQX" firstAttribute="leading" secondItem="qHM-rr-YAT" secondAttribute="leading" id="Bw6-oE-g2D"/>
+                                                    <constraint firstAttribute="trailing" secondItem="vHA-nt-mIB" secondAttribute="trailing" id="FYo-hY-SKM"/>
+                                                    <constraint firstAttribute="bottom" secondItem="iXM-rT-6P0" secondAttribute="bottom" constant="5" id="Ijp-Td-BFS"/>
+                                                    <constraint firstItem="iXM-rT-6P0" firstAttribute="top" secondItem="vHA-nt-mIB" secondAttribute="bottom" id="Nmt-6A-0S7"/>
+                                                    <constraint firstItem="vHA-nt-mIB" firstAttribute="leading" secondItem="qHM-rr-YAT" secondAttribute="leading" id="Zx0-v6-Oio"/>
+                                                    <constraint firstAttribute="trailing" secondItem="psu-bQ-gQX" secondAttribute="trailing" id="aKb-fz-G8y"/>
+                                                    <constraint firstAttribute="trailing" secondItem="iXM-rT-6P0" secondAttribute="trailing" constant="5" id="lnQ-xf-mph"/>
+                                                    <constraint firstItem="vHA-nt-mIB" firstAttribute="top" secondItem="psu-bQ-gQX" secondAttribute="bottom" constant="5" id="pe5-EQ-U2e"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="OGk-XS-nav" firstAttribute="top" secondItem="qHM-rr-YAT" secondAttribute="top" id="10p-cj-uZm"/>
                                             <constraint firstAttribute="bottom" secondItem="Vtm-19-8Gm" secondAttribute="bottom" constant="5" id="Bvh-xE-amG"/>
                                             <constraint firstItem="Fut-Y6-khh" firstAttribute="width" secondItem="Vtm-19-8Gm" secondAttribute="width" id="Gpx-8a-sbO"/>
-                                            <constraint firstItem="OGk-XS-nav" firstAttribute="leading" secondItem="Fut-Y6-khh" secondAttribute="trailing" constant="20" id="JsN-7B-aWF"/>
+                                            <constraint firstItem="qHM-rr-YAT" firstAttribute="leading" secondItem="Fut-Y6-khh" secondAttribute="trailing" constant="10" id="NW1-DN-lwF"/>
                                             <constraint firstItem="Fut-Y6-khh" firstAttribute="bottom" secondItem="Vtm-19-8Gm" secondAttribute="bottom" id="Ntc-kw-iJi"/>
                                             <constraint firstItem="OGk-XS-nav" firstAttribute="bottom" secondItem="Fut-Y6-khh" secondAttribute="bottom" id="RNi-yM-Lvw"/>
                                             <constraint firstItem="OGk-XS-nav" firstAttribute="width" secondItem="Vtm-19-8Gm" secondAttribute="width" multiplier="0.7" id="RVM-lU-I8v"/>
@@ -245,8 +289,11 @@
                                             <constraint firstItem="OGk-XS-nav" firstAttribute="top" secondItem="Fut-Y6-khh" secondAttribute="top" id="k2j-KF-wLZ"/>
                                             <constraint firstItem="Fut-Y6-khh" firstAttribute="top" secondItem="Vtm-19-8Gm" secondAttribute="top" id="lKf-DT-UZ3"/>
                                             <constraint firstItem="Vtm-19-8Gm" firstAttribute="leading" secondItem="OWi-49-GZx" secondAttribute="leading" id="lwW-NY-0nw"/>
+                                            <constraint firstItem="OGk-XS-nav" firstAttribute="bottom" secondItem="qHM-rr-YAT" secondAttribute="bottom" id="msb-Dk-HXK"/>
                                             <constraint firstAttribute="trailing" secondItem="OGk-XS-nav" secondAttribute="trailing" constant="5" id="pas-aF-FTk"/>
+                                            <constraint firstItem="OGk-XS-nav" firstAttribute="leading" secondItem="qHM-rr-YAT" secondAttribute="trailing" constant="10" id="rAl-Cd-MXz"/>
                                             <constraint firstItem="Fut-Y6-khh" firstAttribute="leading" secondItem="Vtm-19-8Gm" secondAttribute="trailing" constant="10" id="sCV-rr-fSZ"/>
+                                            <constraint firstItem="OGk-XS-nav" firstAttribute="width" secondItem="qHM-rr-YAT" secondAttribute="width" multiplier="1.5" id="ymu-hs-lPI"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dJg-m9-LZc">
@@ -274,7 +321,7 @@
                                                                     <constraint firstAttribute="height" constant="1" id="G7V-nz-CV0"/>
                                                                 </constraints>
                                                             </view>
-                                                            <textField opaque="NO" clipsSubviews="YES" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="143 m2" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="X79-yp-v1K">
+                                                            <textField opaque="NO" clipsSubviews="YES" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="143 m2" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="X79-yp-v1K">
                                                                 <rect key="frame" x="0.0" y="18" width="111" height="54"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="25"/>
@@ -316,7 +363,7 @@
                                                                     <constraint firstAttribute="height" constant="1" id="hw4-Qd-nc7"/>
                                                                 </constraints>
                                                             </view>
-                                                            <textField opaque="NO" clipsSubviews="YES" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="3" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dGs-04-R2u">
+                                                            <textField opaque="NO" clipsSubviews="YES" tag="26" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="3" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dGs-04-R2u">
                                                                 <rect key="frame" x="0.0" y="18" width="45" height="54"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="25"/>
@@ -359,7 +406,7 @@
                                                                     <constraint firstAttribute="height" constant="1" id="yta-sJ-RMg"/>
                                                                 </constraints>
                                                             </view>
-                                                            <textField opaque="NO" clipsSubviews="YES" tag="26" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="4" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="svR-ha-SyN">
+                                                            <textField opaque="NO" clipsSubviews="YES" tag="27" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="4" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="svR-ha-SyN">
                                                                 <rect key="frame" x="0.0" y="18" width="77.5" height="54"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="25"/>
@@ -401,7 +448,7 @@
                                                                     <constraint firstAttribute="height" constant="1" id="iBi-0U-YmR"/>
                                                                 </constraints>
                                                             </view>
-                                                            <textField opaque="NO" clipsSubviews="YES" tag="27" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="3" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wv7-fJ-S6f">
+                                                            <textField opaque="NO" clipsSubviews="YES" tag="28" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="3" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wv7-fJ-S6f">
                                                                 <rect key="frame" x="0.0" y="18" width="45" height="54"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="25"/>
@@ -524,6 +571,7 @@
                         <outlet property="petsLabel" destination="EIu-8z-kIp" id="NhK-ix-fag"/>
                         <outlet property="placePickerBox" destination="LmP-WB-GmK" id="GGy-Tn-K7b"/>
                         <outlet property="roomsText" destination="svR-ha-SyN" id="Wqb-hN-edq"/>
+                        <outlet property="towerText" destination="vHA-nt-mIB" id="EON-3c-QDz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OyG-Qv-6kF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -649,7 +697,7 @@
                                         <rect key="frame" x="0.0" y="208" width="303" height="104"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNf-7x-gzl">
-                                                <rect key="frame" x="0.0" y="44" width="99" height="55"/>
+                                                <rect key="frame" x="0.0" y="44" width="84.5" height="55"/>
                                                 <color key="backgroundColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="55" id="2xa-wD-jEY"/>
@@ -663,7 +711,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlQ-iy-zVA">
-                                                <rect key="frame" x="109" y="44" width="99.5" height="55"/>
+                                                <rect key="frame" x="94.5" y="44" width="84.5" height="55"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="12"/>
                                                 <state key="normal" title="Apartamento">
@@ -674,10 +722,10 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K4W-Sk-Z2k">
-                                                <rect key="frame" x="228.5" y="44" width="69.5" height="55"/>
+                                                <rect key="frame" x="238.5" y="44" width="59.5" height="55"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Número" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZD9-JW-IQR">
-                                                        <rect key="frame" x="0.0" y="5" width="69.5" height="10"/>
+                                                        <rect key="frame" x="0.0" y="5" width="59.5" height="10"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="10" id="Fnx-yy-bhK"/>
                                                         </constraints>
@@ -685,8 +733,8 @@
                                                         <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" tag="23" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="401" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="fHe-Vy-Crc">
-                                                        <rect key="frame" x="0.0" y="20" width="70" height="29"/>
+                                                    <textField opaque="NO" clipsSubviews="YES" tag="24" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="401" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="fHe-Vy-Crc">
+                                                        <rect key="frame" x="0.0" y="20" width="60" height="29"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -695,7 +743,7 @@
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O7X-Ri-Rhv">
-                                                        <rect key="frame" x="5" y="49" width="59.5" height="1"/>
+                                                        <rect key="frame" x="5" y="49" width="49.5" height="1"/>
                                                         <color key="backgroundColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="jgS-Dh-gv1"/>
@@ -716,20 +764,67 @@
                                                     <constraint firstItem="O7X-Ri-Rhv" firstAttribute="top" secondItem="fHe-Vy-Crc" secondAttribute="bottom" id="tcQ-GS-wfN"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yf4-ma-HSX">
+                                                <rect key="frame" x="189" y="44" width="39.5" height="55"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bloque" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="1fb-xy-lef">
+                                                        <rect key="frame" x="0.0" y="5" width="39.5" height="10"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="10" id="q1Z-eK-LcI"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="10"/>
+                                                        <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" tag="23" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="1" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="4KO-Yl-7bF">
+                                                        <rect key="frame" x="0.0" y="20" width="40" height="29"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="25"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="DYF-mR-7SA" id="T0k-bN-GwX"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PGf-kf-Dbn">
+                                                        <rect key="frame" x="5" y="49" width="29.5" height="1"/>
+                                                        <color key="backgroundColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="acB-3n-sSv"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="PGf-kf-Dbn" secondAttribute="bottom" constant="5" id="2KK-88-elw"/>
+                                                    <constraint firstAttribute="trailing" secondItem="4KO-Yl-7bF" secondAttribute="trailing" id="Akw-Me-EX8"/>
+                                                    <constraint firstItem="4KO-Yl-7bF" firstAttribute="top" secondItem="1fb-xy-lef" secondAttribute="bottom" constant="5" id="Hi2-Di-qvq"/>
+                                                    <constraint firstItem="4KO-Yl-7bF" firstAttribute="leading" secondItem="Yf4-ma-HSX" secondAttribute="leading" id="KbA-0w-e3H"/>
+                                                    <constraint firstAttribute="trailing" secondItem="PGf-kf-Dbn" secondAttribute="trailing" constant="5" id="eYN-y1-Z66"/>
+                                                    <constraint firstItem="PGf-kf-Dbn" firstAttribute="top" secondItem="4KO-Yl-7bF" secondAttribute="bottom" id="fJL-p7-tcU"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1fb-xy-lef" secondAttribute="trailing" id="gvb-VM-Cc9"/>
+                                                    <constraint firstItem="1fb-xy-lef" firstAttribute="leading" secondItem="Yf4-ma-HSX" secondAttribute="leading" id="h3R-cJ-eTS"/>
+                                                    <constraint firstItem="1fb-xy-lef" firstAttribute="top" secondItem="Yf4-ma-HSX" secondAttribute="top" constant="5" id="iv3-PI-jEh"/>
+                                                    <constraint firstItem="PGf-kf-Dbn" firstAttribute="leading" secondItem="Yf4-ma-HSX" secondAttribute="leading" constant="5" id="o6c-ga-Uhy"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="K4W-Sk-Z2k" firstAttribute="bottom" secondItem="Yf4-ma-HSX" secondAttribute="bottom" id="3nH-t3-hWC"/>
                                             <constraint firstItem="qlQ-iy-zVA" firstAttribute="width" secondItem="GNf-7x-gzl" secondAttribute="width" id="638-HQ-pyl"/>
                                             <constraint firstItem="K4W-Sk-Z2k" firstAttribute="width" secondItem="GNf-7x-gzl" secondAttribute="width" multiplier="0.7" id="7Zs-08-y36"/>
-                                            <constraint firstItem="K4W-Sk-Z2k" firstAttribute="leading" secondItem="qlQ-iy-zVA" secondAttribute="trailing" constant="20" id="7p1-WH-Gtl"/>
+                                            <constraint firstItem="K4W-Sk-Z2k" firstAttribute="top" secondItem="Yf4-ma-HSX" secondAttribute="top" id="G1x-O1-7ol"/>
                                             <constraint firstItem="qlQ-iy-zVA" firstAttribute="top" secondItem="GNf-7x-gzl" secondAttribute="top" id="LF6-4R-1gx"/>
                                             <constraint firstItem="K4W-Sk-Z2k" firstAttribute="top" secondItem="qlQ-iy-zVA" secondAttribute="top" id="Lx4-aT-BFC"/>
                                             <constraint firstItem="GNf-7x-gzl" firstAttribute="top" relation="greaterThanOrEqual" secondItem="S6s-ZV-EJR" secondAttribute="top" constant="10" id="Nl8-VA-bLu"/>
+                                            <constraint firstItem="K4W-Sk-Z2k" firstAttribute="width" secondItem="Yf4-ma-HSX" secondAttribute="width" multiplier="1.5" id="Nr1-Rw-Toh"/>
                                             <constraint firstItem="K4W-Sk-Z2k" firstAttribute="bottom" secondItem="qlQ-iy-zVA" secondAttribute="bottom" id="Pnp-mt-cXu"/>
+                                            <constraint firstItem="Yf4-ma-HSX" firstAttribute="leading" secondItem="qlQ-iy-zVA" secondAttribute="trailing" constant="10" id="UHy-VD-lM9"/>
                                             <constraint firstAttribute="bottom" secondItem="GNf-7x-gzl" secondAttribute="bottom" constant="5" id="jHQ-n1-6Yw"/>
                                             <constraint firstItem="GNf-7x-gzl" firstAttribute="leading" secondItem="S6s-ZV-EJR" secondAttribute="leading" id="jfn-8I-bZa"/>
                                             <constraint firstItem="qlQ-iy-zVA" firstAttribute="leading" secondItem="GNf-7x-gzl" secondAttribute="trailing" constant="10" id="jg0-AT-c9D"/>
                                             <constraint firstItem="qlQ-iy-zVA" firstAttribute="bottom" secondItem="GNf-7x-gzl" secondAttribute="bottom" id="l7B-ak-T1N"/>
                                             <constraint firstAttribute="trailing" secondItem="K4W-Sk-Z2k" secondAttribute="trailing" constant="5" id="lpj-LM-YdC"/>
+                                            <constraint firstItem="K4W-Sk-Z2k" firstAttribute="leading" secondItem="Yf4-ma-HSX" secondAttribute="trailing" constant="10" id="sei-rd-pnq"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAN-EH-YKB">
@@ -757,7 +852,7 @@
                                                                     <constraint firstAttribute="height" constant="1" id="Xj7-A9-9eS"/>
                                                                 </constraints>
                                                             </view>
-                                                            <textField opaque="NO" clipsSubviews="YES" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="143 m2" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="p46-8t-67A">
+                                                            <textField opaque="NO" clipsSubviews="YES" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="143 m2" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="p46-8t-67A">
                                                                 <rect key="frame" x="0.0" y="18" width="111" height="65.5"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="25"/>
@@ -799,7 +894,7 @@
                                                                     <constraint firstAttribute="height" constant="1" id="kfM-Kb-JrZ"/>
                                                                 </constraints>
                                                             </view>
-                                                            <textField opaque="NO" clipsSubviews="YES" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="3" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Yg-4y-fxH">
+                                                            <textField opaque="NO" clipsSubviews="YES" tag="26" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="3" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Yg-4y-fxH">
                                                                 <rect key="frame" x="0.0" y="18" width="45" height="65.5"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="25"/>
@@ -842,7 +937,7 @@
                                                                     <constraint firstAttribute="height" constant="1" id="eG1-AH-lLf"/>
                                                                 </constraints>
                                                             </view>
-                                                            <textField opaque="NO" clipsSubviews="YES" tag="26" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="4" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="llq-60-BE0">
+                                                            <textField opaque="NO" clipsSubviews="YES" tag="27" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="4" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="llq-60-BE0">
                                                                 <rect key="frame" x="0.0" y="18" width="77.5" height="65.5"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="25"/>
@@ -884,7 +979,7 @@
                                                                     <constraint firstAttribute="height" constant="1" id="q9O-CE-VoB"/>
                                                                 </constraints>
                                                             </view>
-                                                            <textField opaque="NO" clipsSubviews="YES" tag="27" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="3" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TPe-UH-vcP">
+                                                            <textField opaque="NO" clipsSubviews="YES" tag="28" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="3" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TPe-UH-vcP">
                                                                 <rect key="frame" x="0.0" y="18" width="45" height="65.5"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="25"/>
@@ -1014,6 +1109,7 @@
                         <outlet property="petsLabel" destination="VFW-ih-cjD" id="vbs-e5-wK2"/>
                         <outlet property="roomsText" destination="llq-60-BE0" id="puF-kT-Zq2"/>
                         <outlet property="saveB" destination="4Kh-56-mRT" id="bF7-Rw-Z8l"/>
+                        <outlet property="towerText" destination="4KO-Yl-7bF" id="3Ee-dD-l4S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9e9-NF-olu" userLabel="First Responder" sceneMemberID="firstResponder"/>

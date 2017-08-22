@@ -15,6 +15,7 @@ import FBSDKCoreKit
 import GoogleMaps
 import GooglePlaces
 import DropDown
+import Stripe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -38,6 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey(K.Hometap.google_api_key)
         GMSPlacesClient.provideAPIKey(K.Hometap.google_api_key)
         
+        // Configuracion Stripe
+        STPPaymentConfiguration.shared().publishableKey = K.Hometap.stripe_key
         
         // Private configurations
         // ...

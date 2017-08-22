@@ -31,6 +31,7 @@ struct K {
     struct Hometap {
         static var app_content: AppContent?
         static let google_api_key:String = "AIzaSyDgKHIWf3dix_-npP89ww2SwVSutrwbeWo"
+        static let stripe_key:String = "pk_test_0SmAvWdAgsSUtTqj0GMaNrZ2"
     }
     
     struct Database {

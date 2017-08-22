@@ -18,6 +18,7 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
     @IBOutlet weak var addressText: UITextField!
     @IBOutlet weak var houseB: UIButton!
     @IBOutlet weak var apartamentB: UIButton!
+    @IBOutlet weak var towerText: UITextField!
     @IBOutlet weak var interiorText: UITextField!
     @IBOutlet weak var metersText: UITextField!
     @IBOutlet weak var floorsText: UITextField!
@@ -78,7 +79,7 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
                 self.configureDropDown()
             }
         })
-        keyboards_list = [nameText, addressText, interiorText, metersText, floorsText, roomsText, bathroomsText]
+        keyboards_list = [nameText, addressText, towerText, interiorText, metersText, floorsText, roomsText, bathroomsText]
         setUpSmartKeyboard()
     }
     
@@ -90,6 +91,7 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
         let place = self.places[self.selected_index]
         self.nameText.text = place.name
         self.addressText.text = place.address
+        self.towerText.text = place.tower
         self.interiorText.text = place.interior
         self.metersText.text = place.area != nil ? String(format: "%.0f m2", place.area!) : ""
         self.floorsText.text = place.floors != nil ? String(format: "%d", place.floors!) : ""
@@ -99,6 +101,7 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
         if place.apartament! {
             UIView.animate(withDuration: 0.5, animations: {
                 self.floorsText.superview?.alpha = 0
+                self.towerText.superview?.alpha = 1
                 self.apartamentB.setTitleColor(.white, for: .normal)
                 self.apartamentB.backgroundColor = K.UI.main_color
                 self.houseB.setTitleColor(K.UI.form_color, for: .normal)
@@ -107,6 +110,7 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
         } else {
             UIView.animate(withDuration: 0.5, animations: {
                 self.floorsText.superview?.alpha = 1
+                self.towerText.superview?.alpha = 0
                 self.houseB.setTitleColor(.white, for: .normal)
                 self.houseB.backgroundColor = K.UI.main_color
                 self.apartamentB.setTitleColor(K.UI.form_color, for: .normal)
@@ -297,16 +301,19 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
             self.displaceKeyboard = true
             return true
         case 24:
-            textField.text = String(format: "%.0f", places[selected_index].area ?? 0)
             self.displaceKeyboard = true
             return true
         case 25:
+            textField.text = String(format: "%.0f", places[selected_index].area ?? 0)
             self.displaceKeyboard = true
             return true
         case 26:
             self.displaceKeyboard = true
             return true
         case 27:
+            self.displaceKeyboard = true
+            return true
+        case 28:
             self.displaceKeyboard = true
             return true
         default:
@@ -316,7 +323,7 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField.tag {
-        case 27:
+        case 28:
             textField.resignFirstResponder()
             return true
         default:
@@ -333,14 +340,16 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
         case 22:
             return true
         case 23:
-            return ((textField.text?.characters.count) ?? 0 < 9)
+            return ((textField.text?.characters.count) ?? 0 < 4)
         case 24:
-            return ((textField.text?.characters.count) ?? 0 < 5)
+            return ((textField.text?.characters.count) ?? 0 < 9)
         case 25:
-            return ((textField.text?.characters.count) ?? 0 < 2)
+            return ((textField.text?.characters.count) ?? 0 < 5)
         case 26:
-            return ((textField.text?.characters.count) ?? 0 < 3)
+            return ((textField.text?.characters.count) ?? 0 < 2)
         case 27:
+            return ((textField.text?.characters.count) ?? 0 < 3)
+        case 28:
             return ((textField.text?.characters.count) ?? 0 < 3)
         default:
             return false
@@ -352,29 +361,31 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
         case 21:
             self.places[selected_index].name = textField.text
         case 23:
-            self.places[selected_index].interior = textField.text
+            self.places[selected_index].tower = textField.text
         case 24:
+            self.places[selected_index].interior = textField.text
+        case 25:
             if textField.text != "", let area = Double(textField.text!) {
                 self.places[selected_index].area = area
             } else {
                 self.showAlert(title: "Espera", message: "El área que has ingresado no es válida", closeButtonTitle: "Ok")
                 return false
             }
-        case 25:
+        case 26:
             if textField.text != "", let floors = Int(textField.text!) {
                 self.places[selected_index].floors = floors
             } else {
                 self.showAlert(title: "Espera", message: "El número de pisos que has ingresado no es válido", closeButtonTitle: "Ok")
                 return false
             }
-        case 26:
+        case 27:
             if textField.text != "", let rooms = Int(textField.text!) {
                 self.places[selected_index].rooms = rooms
             } else {
                 self.showAlert(title: "Espera", message: "El número de habitaciones que has ingresado no es válido", closeButtonTitle: "Ok")
                 return false
             }
-        case 27:
+        case 28:
             if textField.text != "", let baths = Int(textField.text!) {
                 self.places[selected_index].bathrooms = baths
             } else {

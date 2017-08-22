@@ -495,18 +495,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iyE-4Y-PZg">
-                                <rect key="frame" x="16" y="106" width="343" height="511"/>
+                                <rect key="frame" x="16" y="86" width="343" height="531"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="addressCell" rowHeight="60" id="JLX-JA-zzt" customClass="HTTableViewCell" customModule="Hometap" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="addressCell" rowHeight="70" id="JLX-JA-zzt" customClass="HTTableViewCell" customModule="Hometap" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JLX-JA-zzt" id="K8T-VE-BGR">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fma-uh-KHd">
-                                                    <rect key="frame" x="5" y="5" width="333" height="50"/>
+                                                    <rect key="frame" x="8" y="10" width="327" height="50"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" tag="10" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconApartment.png" translatesAutoresizingMaskIntoConstraints="NO" id="YwJ-5R-xWl">
                                                             <rect key="frame" x="5" y="5" width="40" height="40"/>
@@ -515,7 +515,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="wdr-Sq-pyd">
-                                                            <rect key="frame" x="55" y="15" width="263" height="21"/>
+                                                            <rect key="frame" x="55" y="15" width="257" height="21"/>
                                                             <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -533,22 +533,22 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Fma-uh-KHd" firstAttribute="leading" secondItem="K8T-VE-BGR" secondAttribute="leading" constant="5" id="BGD-tb-DhR"/>
-                                                <constraint firstItem="Fma-uh-KHd" firstAttribute="top" secondItem="K8T-VE-BGR" secondAttribute="top" constant="5" id="BOy-iN-iKF"/>
-                                                <constraint firstAttribute="trailing" secondItem="Fma-uh-KHd" secondAttribute="trailing" constant="5" id="O2b-9m-6Hk"/>
-                                                <constraint firstAttribute="bottom" secondItem="Fma-uh-KHd" secondAttribute="bottom" constant="5" id="vMG-w0-qH8"/>
+                                                <constraint firstItem="Fma-uh-KHd" firstAttribute="leading" secondItem="K8T-VE-BGR" secondAttribute="leading" constant="8" id="BGD-tb-DhR"/>
+                                                <constraint firstItem="Fma-uh-KHd" firstAttribute="top" secondItem="K8T-VE-BGR" secondAttribute="top" constant="10" id="BOy-iN-iKF"/>
+                                                <constraint firstAttribute="trailing" secondItem="Fma-uh-KHd" secondAttribute="trailing" constant="8" id="O2b-9m-6Hk"/>
+                                                <constraint firstAttribute="bottom" secondItem="Fma-uh-KHd" secondAttribute="bottom" constant="10" id="vMG-w0-qH8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="addAddressCell" rowHeight="80" id="98Y-eO-TRi" customClass="HTTableViewCell" customModule="Hometap" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="88" width="343" height="80"/>
+                                        <rect key="frame" x="0.0" y="98" width="343" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="98Y-eO-TRi" id="28x-Rp-9YA">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajI-iV-XtC">
-                                                    <rect key="frame" x="28" y="13" width="287" height="54"/>
+                                                    <rect key="frame" x="16" y="13" width="311" height="54"/>
                                                     <color key="backgroundColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                                     <state key="normal" title="Agregar una nueva dirección">
@@ -559,8 +559,8 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="ajI-iV-XtC" secondAttribute="bottom" constant="5" id="66a-vW-CUv"/>
                                                 <constraint firstItem="ajI-iV-XtC" firstAttribute="top" secondItem="28x-Rp-9YA" secondAttribute="topMargin" constant="5" id="Cwn-nT-DlO"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ajI-iV-XtC" secondAttribute="trailing" constant="20" id="EDG-Tz-2il"/>
-                                                <constraint firstItem="ajI-iV-XtC" firstAttribute="leading" secondItem="28x-Rp-9YA" secondAttribute="leadingMargin" constant="20" id="F5t-aC-Hwi"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ajI-iV-XtC" secondAttribute="trailing" constant="8" id="EDG-Tz-2il"/>
+                                                <constraint firstItem="ajI-iV-XtC" firstAttribute="leading" secondItem="28x-Rp-9YA" secondAttribute="leadingMargin" constant="8" id="F5t-aC-Hwi"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -576,7 +576,7 @@
                             <constraint firstItem="XzZ-Fn-0An" firstAttribute="top" secondItem="a9E-GT-m3n" secondAttribute="bottom" constant="15" id="EIp-R6-0HQ"/>
                             <constraint firstItem="EUZ-tu-EgA" firstAttribute="top" secondItem="iyE-4Y-PZg" secondAttribute="bottom" constant="50" id="bu1-Af-lMI"/>
                             <constraint firstItem="iyE-4Y-PZg" firstAttribute="trailing" secondItem="AmV-s7-8mM" secondAttribute="trailingMargin" id="oo4-tc-LvM"/>
-                            <constraint firstItem="iyE-4Y-PZg" firstAttribute="top" secondItem="XzZ-Fn-0An" secondAttribute="bottom" constant="50" id="pJf-aH-chu"/>
+                            <constraint firstItem="iyE-4Y-PZg" firstAttribute="top" secondItem="XzZ-Fn-0An" secondAttribute="bottom" constant="30" id="pJf-aH-chu"/>
                             <constraint firstItem="XzZ-Fn-0An" firstAttribute="centerX" secondItem="AmV-s7-8mM" secondAttribute="centerX" id="sZc-bS-zih"/>
                             <constraint firstItem="iyE-4Y-PZg" firstAttribute="leading" secondItem="AmV-s7-8mM" secondAttribute="leadingMargin" id="wXl-Tu-Y1F"/>
                         </constraints>

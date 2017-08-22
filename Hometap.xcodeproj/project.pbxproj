@@ -16,6 +16,7 @@
 		434B66191F4B3988007CE9E2 /* Places.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434B66181F4B3988007CE9E2 /* Places.storyboard */; };
 		434B661B1F4B39F6007CE9E2 /* PlacePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B661A1F4B39F6007CE9E2 /* PlacePickerViewController.swift */; };
 		434B661D1F4B3A0E007CE9E2 /* PlaceEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B661C1F4B3A0E007CE9E2 /* PlaceEditorViewController.swift */; };
+		434B66201F4BC0C8007CE9E2 /* Payments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434B661F1F4BC0C8007CE9E2 /* Payments.storyboard */; };
 		434D5C501F48949A00C17541 /* HomiePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D5C4E1F48949A00C17541 /* HomiePickerViewController.swift */; };
 		434D5C511F48949A00C17541 /* HomiePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434D5C4F1F48949A00C17541 /* HomiePickerViewController.xib */; };
 		434D5C541F48D8CF00C17541 /* iconArrowGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 434D5C521F48D8CF00C17541 /* iconArrowGreen.png */; };
@@ -114,6 +115,7 @@
 		434B66181F4B3988007CE9E2 /* Places.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Places.storyboard; path = MainViews/PlacesViews/Places.storyboard; sourceTree = "<group>"; };
 		434B661A1F4B39F6007CE9E2 /* PlacePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlacePickerViewController.swift; path = MainViews/PlacesViews/PlacePickerViewController.swift; sourceTree = "<group>"; };
 		434B661C1F4B3A0E007CE9E2 /* PlaceEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceEditorViewController.swift; path = MainViews/PlacesViews/PlaceEditorViewController.swift; sourceTree = "<group>"; };
+		434B661F1F4BC0C8007CE9E2 /* Payments.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Payments.storyboard; path = MainViews/PaymentsViews/Payments.storyboard; sourceTree = "<group>"; };
 		434D5C4E1F48949A00C17541 /* HomiePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomiePickerViewController.swift; path = MainViews/BookingViews/HomiePickerViewController.swift; sourceTree = "<group>"; };
 		434D5C4F1F48949A00C17541 /* HomiePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomiePickerViewController.xib; path = MainViews/BookingViews/HomiePickerViewController.xib; sourceTree = "<group>"; };
 		434D5C521F48D8CF00C17541 /* iconArrowGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconArrowGreen.png; path = assets/iconArrowGreen.png; sourceTree = "<group>"; };
@@ -257,6 +259,14 @@
 			name = PlacesViews;
 			sourceTree = "<group>";
 		};
+		434B661E1F4BC07E007CE9E2 /* PaymentsViews */ = {
+			isa = PBXGroup;
+			children = (
+				434B661F1F4BC0C8007CE9E2 /* Payments.storyboard */,
+			);
+			name = PaymentsViews;
+			sourceTree = "<group>";
+		};
 		439F14091F1C3AE8009DABF8 /* assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +350,7 @@
 		439F146A1F1C9D0B009DABF8 /* MainViews */ = {
 			isa = PBXGroup;
 			children = (
+				434B661E1F4BC07E007CE9E2 /* PaymentsViews */,
 				434B66171F4B394C007CE9E2 /* PlacesViews */,
 				4319355A1F4795F7005BB082 /* BookingViews */,
 				43DC564E1F1D381200C68B17 /* LocationsViewController.swift */,
@@ -547,6 +558,7 @@
 				439F14541F1C3E7A009DABF8 /* iconNoPhoto.png in Resources */,
 				439F14451F1C3E7A009DABF8 /* iconAdressGrey.png in Resources */,
 				434D5C511F48949A00C17541 /* HomiePickerViewController.xib in Resources */,
+				434B66201F4BC0C8007CE9E2 /* Payments.storyboard in Resources */,
 				439F14591F1C3E7A009DABF8 /* iconServiceChecked.png in Resources */,
 				43EF36BF1F16F9D70013FA8A /* Assets.xcassets in Resources */,
 				439F14191F1C3B2A009DABF8 /* Rubik-Italic.ttf in Resources */,
