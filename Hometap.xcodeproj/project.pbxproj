@@ -23,7 +23,6 @@
 		434D5C551F48D8CF00C17541 /* iconArrowWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 434D5C531F48D8CF00C17541 /* iconArrowWhite.png */; };
 		434D5C581F48DAEF00C17541 /* HomieConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D5C561F48DAEF00C17541 /* HomieConfirmViewController.swift */; };
 		434D5C5B1F48DE7F00C17541 /* Booking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434D5C5A1F48DE7F00C17541 /* Booking.storyboard */; };
-		434D5C5D1F48EA1F00C17541 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D5C5C1F48EA1F00C17541 /* Comment.swift */; };
 		43628D9B1F328FE600C5444D /* OptionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43628D991F328FE600C5444D /* OptionPicker.swift */; };
 		43628D9F1F32939F00C5444D /* OptionPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43628D9E1F32939F00C5444D /* OptionPicker.storyboard */; };
 		439F14021F195A1B009DABF8 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14011F195A1B009DABF8 /* Place.swift */; };
@@ -88,6 +87,11 @@
 		43DC564D1F1D2E5000C68B17 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC564C1F1D2E5000C68B17 /* ProfileViewController.swift */; };
 		43DC564F1F1D381200C68B17 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC564E1F1D381200C68B17 /* LocationsViewController.swift */; };
 		43DC56521F1D393800C68B17 /* HTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC56511F1D393800C68B17 /* HTTableViewCell.swift */; };
+		43E707D21F53185900EBBEEF /* PaymentsCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E707D11F53185900EBBEEF /* PaymentsCardViewController.swift */; };
+		43E707D41F531F1D00EBBEEF /* AddPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E707D31F531F1D00EBBEEF /* AddPaymentViewController.swift */; };
+		43E707D61F53219C00EBBEEF /* PaymentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E707D51F53219C00EBBEEF /* PaymentsListViewController.swift */; };
+		43E707D81F5321C400EBBEEF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E707D71F5321C400EBBEEF /* Comment.swift */; };
+		43E707DA1F5323B100EBBEEF /* PaymentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E707D91F5323B100EBBEEF /* PaymentCard.swift */; };
 		43EF36B81F16F9D70013FA8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF36B71F16F9D70013FA8A /* AppDelegate.swift */; };
 		43EF36BD1F16F9D70013FA8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43EF36BB1F16F9D70013FA8A /* Main.storyboard */; };
 		43EF36BF1F16F9D70013FA8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43EF36BE1F16F9D70013FA8A /* Assets.xcassets */; };
@@ -122,7 +126,6 @@
 		434D5C531F48D8CF00C17541 /* iconArrowWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconArrowWhite.png; path = assets/iconArrowWhite.png; sourceTree = "<group>"; };
 		434D5C561F48DAEF00C17541 /* HomieConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomieConfirmViewController.swift; path = MainViews/BookingViews/HomieConfirmViewController.swift; sourceTree = "<group>"; };
 		434D5C5A1F48DE7F00C17541 /* Booking.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Booking.storyboard; path = MainViews/BookingViews/Booking.storyboard; sourceTree = "<group>"; };
-		434D5C5C1F48EA1F00C17541 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		43628D991F328FE600C5444D /* OptionPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionPicker.swift; path = CustomViews/OptionPicker.swift; sourceTree = "<group>"; };
 		43628D9E1F32939F00C5444D /* OptionPicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = OptionPicker.storyboard; path = CustomViews/OptionPicker.storyboard; sourceTree = "<group>"; };
 		439F14011F195A1B009DABF8 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = entities/Place.swift; sourceTree = "<group>"; };
@@ -187,6 +190,11 @@
 		43DC564C1F1D2E5000C68B17 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = MainViews/ProfileViewController.swift; sourceTree = "<group>"; };
 		43DC564E1F1D381200C68B17 /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsViewController.swift; path = MainViews/LocationsViewController.swift; sourceTree = "<group>"; };
 		43DC56511F1D393800C68B17 /* HTTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTableViewCell.swift; path = CustomViews/HTTableViewCell.swift; sourceTree = "<group>"; };
+		43E707D11F53185900EBBEEF /* PaymentsCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentsCardViewController.swift; path = MainViews/PaymentsViews/PaymentsCardViewController.swift; sourceTree = "<group>"; };
+		43E707D31F531F1D00EBBEEF /* AddPaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddPaymentViewController.swift; path = MainViews/PaymentsViews/AddPaymentViewController.swift; sourceTree = "<group>"; };
+		43E707D51F53219C00EBBEEF /* PaymentsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentsListViewController.swift; path = MainViews/PaymentsViews/PaymentsListViewController.swift; sourceTree = "<group>"; };
+		43E707D71F5321C400EBBEEF /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comment.swift; path = entities/Comment.swift; sourceTree = "<group>"; };
+		43E707D91F5323B100EBBEEF /* PaymentCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentCard.swift; path = entities/PaymentCard.swift; sourceTree = "<group>"; };
 		43EF36B41F16F9D70013FA8A /* Hometap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hometap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43EF36B71F16F9D70013FA8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43EF36BC1F16F9D70013FA8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -263,6 +271,9 @@
 			isa = PBXGroup;
 			children = (
 				434B661F1F4BC0C8007CE9E2 /* Payments.storyboard */,
+				43E707D11F53185900EBBEEF /* PaymentsCardViewController.swift */,
+				43E707D31F531F1D00EBBEEF /* AddPaymentViewController.swift */,
+				43E707D51F53219C00EBBEEF /* PaymentsListViewController.swift */,
 			);
 			name = PaymentsViews;
 			sourceTree = "<group>";
@@ -439,7 +450,8 @@
 				439F14051F198574009DABF8 /* Product.swift */,
 				439F14071F19A698009DABF8 /* Calendar.swift */,
 				4319355D1F4799A8005BB082 /* AppContent.swift */,
-				434D5C5C1F48EA1F00C17541 /* Comment.swift */,
+				43E707D71F5321C400EBBEEF /* Comment.swift */,
+				43E707D91F5323B100EBBEEF /* PaymentCard.swift */,
 			);
 			name = entities;
 			sourceTree = "<group>";
@@ -488,7 +500,7 @@
 				TargetAttributes = {
 					43EF36B31F16F9D70013FA8A = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 9Q4CM9A5GD;
+						DevelopmentTeam = QBLL74FJC6;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -647,7 +659,9 @@
 				434B661B1F4B39F6007CE9E2 /* PlacePickerViewController.swift in Sources */,
 				43EF36E21F192B2A0013FA8A /* User.swift in Sources */,
 				439F146C1F1C9D3C009DABF8 /* HomeViewController.swift in Sources */,
+				43E707D81F5321C400EBBEEF /* Comment.swift in Sources */,
 				43EF36B81F16F9D70013FA8A /* AppDelegate.swift in Sources */,
+				43E707D61F53219C00EBBEEF /* PaymentsListViewController.swift in Sources */,
 				430B83711F1DDB7B007585F2 /* LoginViewController.swift in Sources */,
 				4319355E1F4799A8005BB082 /* AppContent.swift in Sources */,
 				43AC4C861F23F18E007D638E /* RegisterViewController.swift in Sources */,
@@ -664,11 +678,13 @@
 				43EF36E01F192B2A0013FA8A /* Constants.swift in Sources */,
 				439F14061F198574009DABF8 /* Product.swift in Sources */,
 				439F14081F19A698009DABF8 /* Calendar.swift in Sources */,
-				434D5C5D1F48EA1F00C17541 /* Comment.swift in Sources */,
 				4343932F1F315CFB00861426 /* DatePickerViewController.swift in Sources */,
 				434D5C581F48DAEF00C17541 /* HomieConfirmViewController.swift in Sources */,
 				43AC4C881F23F19F007D638E /* SetUpViewController.swift in Sources */,
+				43E707DA1F5323B100EBBEEF /* PaymentCard.swift in Sources */,
 				439F14691F1C4A0B009DABF8 /* MaterialTabBarViewController.swift in Sources */,
+				43E707D21F53185900EBBEEF /* PaymentsCardViewController.swift in Sources */,
+				43E707D41F531F1D00EBBEEF /* AddPaymentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -793,11 +809,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 9Q4CM9A5GD;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = QBLL74FJC6;
 				INFOPLIST_FILE = Hometap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tresastronautas.ios.hometap.user;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Hometap/Hometap-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -810,11 +828,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 9Q4CM9A5GD;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = QBLL74FJC6;
 				INFOPLIST_FILE = Hometap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tresastronautas.ios.hometap.user;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Hometap/Hometap-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

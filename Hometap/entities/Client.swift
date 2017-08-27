@@ -65,6 +65,26 @@ class Client: User {
         }
     }
     
+    public func payments(callback: @escaping (_ p: PaymentCard?, _ total: Int)->Void){
+        if let tokens = original_dictionary["creditCardTokens"] {
+            if let tokensDict = tokens as? [String:AnyObject] {
+                let total = tokensDict.count
+                for (token, tk) in tokensDict {
+                    if let exists = tk as? Bool {
+                        if exists {
+//                            PaymentCard.withToken(id: token, callback: {(place_loaded) in
+//                                callback(place_loaded, total)
+//                            })
+                        }
+                        
+                    }
+                }
+            }
+        } else {
+            callback(nil, 0)
+        }
+    }
+    
     public func favorites_brief() -> [Homie]? {
         var favorites_brief:[Homie] = []
         if let fvts = original_dictionary["favorites"] {
