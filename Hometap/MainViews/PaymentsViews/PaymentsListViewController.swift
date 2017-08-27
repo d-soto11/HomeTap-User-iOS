@@ -78,7 +78,7 @@ class PaymentsListViewController: UIViewController, UITableViewDataSource, UITab
             cell_m.uiUpdates = {(cell) in
                 cell.viewWithTag(2)?.roundCorners(radius: K.UI.light_round_px)
                 cell.viewWithTag(2)?.addNormalShadow()
-                (cell.viewWithTag(2)?.viewWithTag(11) as? UILabel)?.text = ""
+                (cell.viewWithTag(2)?.viewWithTag(11) as? UILabel)?.text = String(format: "%@ ***%@", payment.brand!, payment.number!)
             }
             return cell_m
         }
@@ -95,7 +95,9 @@ class PaymentsListViewController: UIViewController, UITableViewDataSource, UITab
             newPayment()
         } else {
             let payment = payments[indexPath.row]
-            // Show editor
+            print(payment.uid!)
+            print(payment.brand!)
+            EditPaymentViewController.edit(parent: self, card: payment)
         }
     }
     

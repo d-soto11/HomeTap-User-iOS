@@ -30,7 +30,7 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
     @IBOutlet weak var nextB: UIButton!
     
     private var places: [Place]! = []
-    private var service: Service?
+    private var service: Service!
     
     public var selected_index: Int = 0
     
@@ -40,12 +40,10 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
     var originalFR: CGRect = CGRect.zero
     var keyboards_list: [UITextField] = []
     
-    public class func showPicker(service: Service? = nil, parent: UIViewController) {
+    public class func showPicker(service: Service, parent: UIViewController) {
         let st = UIStoryboard.init(name: "Places", bundle: nil)
         let picker = st.instantiateViewController(withIdentifier: "Picker") as! PlacePickerViewController
-        
         picker.service = service
-        
         parent.show(picker, sender: nil)
     }
     
@@ -167,7 +165,6 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func back(_ sender: Any) {
@@ -234,13 +231,8 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
         place.save()
         K.User.client?.savePlace(place: place)
         
-        if service != nil {
-            service!.place = place
-            service!.save()
-            // Go to payments
-        } else {
-            self.back(self)
-        }
+        service.place = place
+        PaymentPickerViewController.showPicker(service: service, parent: self)
     }
     
     // Place picker

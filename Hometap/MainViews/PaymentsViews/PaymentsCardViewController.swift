@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Stripe
+import MBProgressHUD
 
 class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
-
+    
+    @IBOutlet weak var cardBG: UIImageView!
     @IBOutlet weak var cardNumber: UILabel!
     @IBOutlet weak var cardBrand: UIImageView!
     @IBOutlet weak var cardExpiration: UILabel!
@@ -19,42 +22,130 @@ class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var expirationText: UITextField!
     @IBOutlet weak var cvcText: UITextField!
     
+    @IBOutlet weak var nameEditView: UIView!
+    @IBOutlet weak var numberEditView: UIView!
+    @IBOutlet weak var detailsEditView: UIView!
+    
+    
     var displaceKeyboard = false
     var originalFR: CGRect = CGRect.zero
     var keyboards_list: [UITextField] = []
     
-    public class func showCardView(parent: UIViewController, frame: CGRect) -> PaymentsCardViewController {
+    var stripeCard: STPCard = STPCard()
+    var dateExpString = ""
+    
+    var loaded_card: PaymentCard?
+    var selecting: Bool!
+    
+    public class func showCardView(parent: UIViewController, frame: CGRect, card: PaymentCard? = nil, selecting: Bool = false) -> PaymentsCardViewController {
         let st = UIStoryboard.init(name: "Payments", bundle: nil)
         let cardView = st.instantiateViewController(withIdentifier: "CardView") as! PaymentsCardViewController
         
         parent.view.insertSubview(cardView.view, aboveSubview: parent.view)
         cardView.view.frame = frame
         cardView.originalFR = frame
+        cardView.loaded_card = card
+        cardView.selecting = selecting
         parent.addChildViewController(cardView)
         cardView.didMove(toParentViewController: parent)
+        
+        parent.view.addGestureRecognizer(UITapGestureRecognizer(target: cardView, action: #selector(clearKeyboards)))
         
         return cardView
     }
     
+    func tokenizeCreditCard(callback: @escaping (PaymentCard) -> ()) {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        STPAPIClient.shared().createToken(withCard: self.stripeCard) { (token, error) in
+            guard let token = token, error == nil else {
+                MBProgressHUD.hide(for: self.view, animated: true)
+                self.showAlert(title: "Lo sentimos", message: "No hemos podido verificar tu tarjeta. Verifica que todos los datos están correctos.", closeButtonTitle: "Ok")
+                return
+            }
+            guard let stcard = token.card else {
+                MBProgressHUD.hide(for: self.view, animated: true)
+                self.showAlert(title: "Lo sentimos", message: "No hemos podido verificar tu tarjeta. Verifica que todos los datos están correctos.", closeButtonTitle: "Ok")
+                return
+            }
+            self.loaded_card = PaymentCard(dict: [:])
+            self.loaded_card!.uid = token.stripeID
+            self.loaded_card!.name = stcard.name
+            switch stcard.brand {
+            case .amex:
+                self.loaded_card!.brand = "Amex"
+            case .dinersClub:
+                self.loaded_card!.brand = "Diners Club"
+            case .discover:
+                self.loaded_card!.brand = "Discover"
+            case .JCB:
+                self.loaded_card!.brand = "JCB"
+            case .masterCard:
+                self.loaded_card!.brand = "Master Card"
+            case .visa:
+                self.loaded_card!.brand = "Visa"
+            case .unknown:
+                self.loaded_card!.brand = "Otra"
+            }
+            self.loaded_card!.expiration = self.cardExpiration.text
+            self.loaded_card!.number = stcard.last4()
+            self.loaded_card!.cvc = self.cardCVC.text
+            MBProgressHUD.hide(for: self.view, animated: true)
+            callback(self.loaded_card!)
+        }
+    }
+    
+    func saveDetails() -> PaymentCard? {
+        self.loaded_card?.expiration = self.cardExpiration.text
+        self.loaded_card?.cvc = self.cardCVC.text
+        return self.loaded_card
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         keyboards_list = [nameText, numberText, expirationText, cvcText]
         setUpSmartKeyboard()
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let card = self.loaded_card {
+            self.nameEditView.isHidden = true
+            self.numberEditView.isHidden = true
+            self.detailsEditView.isHidden = true
+            
+            self.cardNumber.text = String(format: "**** **** **** %@", card.number!)
+            self.cardExpiration.text = card.expiration
+            self.cardCVC.text = card.cvc
+            
+            switch card.brand! {
+            case "Amex":
+                self.cardBrand.image = STPImageLibrary.amexCardImage()
+            case "Diners Club":
+                self.cardBrand.image = STPImageLibrary.dinersClubCardImage()
+            case "Discover":
+                self.cardBrand.image = STPImageLibrary.discoverCardImage()
+            case "JCB":
+                self.cardBrand.image = STPImageLibrary.jcbCardImage()
+            case "Master Card":
+                self.cardBrand.image = STPImageLibrary.masterCardCardImage()
+            case "Visa":
+                self.cardBrand.image = STPImageLibrary.visaCardImage()
+            case "Otra":
+                self.cardBrand.image = STPImageLibrary.unknownCardCardImage()
+            default:
+                break
+            }
+        }
     }
     
     override func viewDidLayoutSubviews() {
-//        self.originalFR = self.view.bounds
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        cardBG.addLightShadow()
     }
     
-
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    
     // UI Helpers
     override func needsDisplacement() -> CGFloat {
         return self.displaceKeyboard ? CGFloat(1) : CGFloat(0)
@@ -66,6 +157,12 @@ class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
     
     override func keyboards() -> [UITextField] {
         return self.keyboards_list
+    }
+    
+    override func keyboardWillDisplay(notification:NSNotification) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.frame = CGRect(x: 0.0, y: 0, width: (self.originalFrame().size.width), height: (self.originalFrame().size.height))
+        })
     }
     
     public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -104,36 +201,76 @@ class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
         case 21:
             return ((textField.text?.characters.count) ?? 0 < 40)
         case 22:
-            return ((textField.text?.characters.count) ?? 0 < 16)
+            if ((textField.text?.characters.count) ?? 0 < 16) {
+                if let text = textField.text as NSString? {
+                    let txtAfterUpdate = text.replacingCharacters(in: range, with: string)
+                    self.cardNumber.text = txtAfterUpdate.inserting(separator: " ", every: 4)
+                    stripeCard.number = txtAfterUpdate
+                    let cardBrand = STPCardValidator.brand(forNumber: stripeCard.number!)
+                    self.cardBrand.image = STPImageLibrary.brandImage(for: cardBrand)
+                }
+                return true
+            } else if ((textField.text?.characters.count) ?? 0 == 16) {
+                textField.text = string
+                self.cardNumber.text = string.inserting(separator: " ", every: 4)
+                stripeCard.number = string
+                let cardBrand = STPCardValidator.brand(forNumber: stripeCard.number!)
+                self.cardBrand.image = STPImageLibrary.brandImage(for: cardBrand)
+                return true
+            }
         case 23:
-            if ((textField.text?.characters.count) ?? 0 == 2) {
-               textField.text = String(format: "%@/%@", textField.text!, string)
+            if ((textField.text?.characters.count) ?? 0 < 5) {
+                if let text = textField.text as NSString? {
+                    let txtAfterUpdate = text.replacingCharacters(in: range, with: string)
+                    self.cardExpiration.text = txtAfterUpdate.replacingOccurrences(of: "/", with: "").inserting(separator: "/", every: 2)
+                   textField.text = self.cardExpiration.text
+                }
                 return false
-            } else {
-                return ((textField.text?.characters.count) ?? 0 < 5)
+            } else if ((textField.text?.characters.count) ?? 0 == 5) {
+                textField.text = string
+                self.cardExpiration.text = string.inserting(separator: "/", every: 2)
+                return true
             }
         case 24:
-            return ((textField.text?.characters.count) ?? 0 < 4)
+            if ((textField.text?.characters.count) ?? 0 < 4) {
+                if let text = textField.text as NSString? {
+                    let txtAfterUpdate = text.replacingCharacters(in: range, with: string)
+                    self.cardCVC.text = ""
+                    for _ in txtAfterUpdate.characters {
+                        self.cardCVC.text = String(format: "%@%@", self.cardCVC.text!, "*")
+                    }
+                }
+                return true
+            }
         default:
             return false
         }
+        
+        return false
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         switch textField.tag {
         case 21:
-            break
+            stripeCard.name = textField.text!
         case 22:
-            break
+            stripeCard.number = textField.text!
         case 23:
-            break
+            if textField.text?.isEmpty == false {
+                let expirationDate = textField.text!.components(separatedBy: "/")
+                let expMonth = UInt(Int(expirationDate[0])!)
+                let expYear = UInt(Int(expirationDate[1])!)
+                // Send the card info to Strip to get the token
+                stripeCard.expMonth = expMonth
+                stripeCard.expYear = expYear
+            }
         case 24:
-            break
+            stripeCard.cvc = textField.text
         default:
             return true
         }
         return true
     }
-
-
+    
+    
 }

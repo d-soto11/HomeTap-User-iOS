@@ -92,6 +92,9 @@
 		43E707D61F53219C00EBBEEF /* PaymentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E707D51F53219C00EBBEEF /* PaymentsListViewController.swift */; };
 		43E707D81F5321C400EBBEEF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E707D71F5321C400EBBEEF /* Comment.swift */; };
 		43E707DA1F5323B100EBBEEF /* PaymentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E707D91F5323B100EBBEEF /* PaymentCard.swift */; };
+		43E707DC1F535C4C00EBBEEF /* EditPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E707DB1F535C4C00EBBEEF /* EditPaymentViewController.swift */; };
+		43E707DE1F537DE100EBBEEF /* iconArrowComboBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 43E707DD1F537DE100EBBEEF /* iconArrowComboBox.png */; };
+		43E707E01F53801700EBBEEF /* PaymentPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E707DF1F53801700EBBEEF /* PaymentPickerViewController.swift */; };
 		43EF36B81F16F9D70013FA8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF36B71F16F9D70013FA8A /* AppDelegate.swift */; };
 		43EF36BD1F16F9D70013FA8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43EF36BB1F16F9D70013FA8A /* Main.storyboard */; };
 		43EF36BF1F16F9D70013FA8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43EF36BE1F16F9D70013FA8A /* Assets.xcassets */; };
@@ -195,6 +198,9 @@
 		43E707D51F53219C00EBBEEF /* PaymentsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentsListViewController.swift; path = MainViews/PaymentsViews/PaymentsListViewController.swift; sourceTree = "<group>"; };
 		43E707D71F5321C400EBBEEF /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comment.swift; path = entities/Comment.swift; sourceTree = "<group>"; };
 		43E707D91F5323B100EBBEEF /* PaymentCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentCard.swift; path = entities/PaymentCard.swift; sourceTree = "<group>"; };
+		43E707DB1F535C4C00EBBEEF /* EditPaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditPaymentViewController.swift; path = MainViews/PaymentsViews/EditPaymentViewController.swift; sourceTree = "<group>"; };
+		43E707DD1F537DE100EBBEEF /* iconArrowComboBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconArrowComboBox.png; path = assets/iconArrowComboBox.png; sourceTree = "<group>"; };
+		43E707DF1F53801700EBBEEF /* PaymentPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentPickerViewController.swift; path = MainViews/PaymentsViews/PaymentPickerViewController.swift; sourceTree = "<group>"; };
 		43EF36B41F16F9D70013FA8A /* Hometap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hometap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43EF36B71F16F9D70013FA8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43EF36BC1F16F9D70013FA8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -274,6 +280,8 @@
 				43E707D11F53185900EBBEEF /* PaymentsCardViewController.swift */,
 				43E707D31F531F1D00EBBEEF /* AddPaymentViewController.swift */,
 				43E707D51F53219C00EBBEEF /* PaymentsListViewController.swift */,
+				43E707DB1F535C4C00EBBEEF /* EditPaymentViewController.swift */,
+				43E707DF1F53801700EBBEEF /* PaymentPickerViewController.swift */,
 			);
 			name = PaymentsViews;
 			sourceTree = "<group>";
@@ -287,6 +295,7 @@
 				43B610D31F1E7D44003425BD /* photo-camera.png */,
 				439F14201F1C3E79009DABF8 /* iconAdressGreen.png */,
 				439F14211F1C3E79009DABF8 /* iconAdressGrey.png */,
+				43E707DD1F537DE100EBBEEF /* iconArrowComboBox.png */,
 				439F14221F1C3E79009DABF8 /* iconApartment.png */,
 				439F14231F1C3E79009DABF8 /* iconCreditCard.png */,
 				439F14241F1C3E79009DABF8 /* icon_curtains_green.png */,
@@ -563,6 +572,7 @@
 				439F14601F1C3E7A009DABF8 /* icon_wall_green.png in Resources */,
 				43628D9F1F32939F00C5444D /* OptionPicker.storyboard in Resources */,
 				439F14571F1C3E7A009DABF8 /* iconProfileGrey.png in Resources */,
+				43E707DE1F537DE100EBBEEF /* iconArrowComboBox.png in Resources */,
 				43B610D81F1E80C1003425BD /* fb.png in Resources */,
 				439F144C1F1C3E7A009DABF8 /* iconFavorite.png in Resources */,
 				439F145C1F1C3E7A009DABF8 /* iconStarEmpty.png in Resources */,
@@ -669,6 +679,7 @@
 				43DC564B1F1D2A9800C68B17 /* HistoryViewController.swift in Sources */,
 				43628D9B1F328FE600C5444D /* OptionPicker.swift in Sources */,
 				4319355C1F47963E005BB082 /* BookingViewController.swift in Sources */,
+				43E707DC1F535C4C00EBBEEF /* EditPaymentViewController.swift in Sources */,
 				43EF36DF1F192B2A0013FA8A /* Client.swift in Sources */,
 				434D5C501F48949A00C17541 /* HomiePickerViewController.swift in Sources */,
 				43EF36EA1F194F600013FA8A /* Service.swift in Sources */,
@@ -677,6 +688,7 @@
 				439F14021F195A1B009DABF8 /* Place.swift in Sources */,
 				43EF36E01F192B2A0013FA8A /* Constants.swift in Sources */,
 				439F14061F198574009DABF8 /* Product.swift in Sources */,
+				43E707E01F53801700EBBEEF /* PaymentPickerViewController.swift in Sources */,
 				439F14081F19A698009DABF8 /* Calendar.swift in Sources */,
 				4343932F1F315CFB00861426 /* DatePickerViewController.swift in Sources */,
 				434D5C581F48DAEF00C17541 /* HomieConfirmViewController.swift in Sources */,

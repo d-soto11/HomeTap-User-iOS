@@ -54,21 +54,17 @@ class Homie: User {
         return []
     }
     
-    public func comments() -> [Comment]? {
-        var comments:[Comment] = []
+    public func comments(callback: @escaping (_ c: Comment?, _ total: Int)->Void){
         if let comms = original_dictionary["comments"] {
             if let commsDict = comms as? [String:AnyObject] {
+                let total = commsDict.count
                 for (id_comment, _) in commsDict {
                     Comment.withID(id: id_comment, callback: {(comment) in
-                        if comment != nil {
-                            comments.append(comment!)
-                        }
+                        callback(comment, total)
                     })
                 }
-                return comments
             }
         }
-        return nil
     }
     
 }

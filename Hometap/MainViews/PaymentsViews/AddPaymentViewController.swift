@@ -23,7 +23,6 @@ class AddPaymentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpSmartKeyboard()
         // Do any additional setup after loading the view.
     }
 
@@ -35,13 +34,9 @@ class AddPaymentViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         self.saveB.addNormalShadow()
         self.saveB.roundCorners(radius: K.UI.round_px)
-        if (loadedCardView != nil) {
-            loadedCardView!.willMove(toParentViewController: nil)
-            loadedCardView!.view.removeFromSuperview()
-            loadedCardView!.removeFromParentViewController()
+        if (loadedCardView == nil) {
+            loadedCardView = PaymentsCardViewController.showCardView(parent: self, frame: self.paymentCardView.frame)
         }
-        loadedCardView = PaymentsCardViewController.showCardView(parent: self, frame: self.paymentCardView.frame)
-        
     }
     
 
@@ -50,6 +45,11 @@ class AddPaymentViewController: UIViewController {
     }
     
     @IBAction func savePayment(_ sender: Any) {
+        loadedCardView?.tokenizeCreditCard(callback: { (card) in
+            K.User.client!.savePayment(payment: card)
+            card.save()
+            self.back(self)
+        })
     }
     /*
     // MARK: - Navigation

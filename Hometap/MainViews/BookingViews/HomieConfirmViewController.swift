@@ -10,7 +10,7 @@ import UIKit
 import MBProgressHUD
 
 class HomieConfirmViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var homieProfilePicture: UIImageView!
     @IBOutlet weak var homieRating: UILabel!
     @IBOutlet weak var homieName: UILabel!
@@ -26,7 +26,7 @@ class HomieConfirmViewController: UIViewController, UITableViewDataSource, UITab
     
     private var service: Service!
     private var homie: Homie!
-    private var comments: [Comment]?
+    private var comments: [Comment] = []
     private var showComments = false
     
     private let initialHeigth: CGFloat = 830
@@ -42,13 +42,12 @@ class HomieConfirmViewController: UIViewController, UITableViewDataSource, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewDidLayoutSubviews() {
         self.loadCommentsB.roundCorners(radius: K.UI.light_round_px)
-        self.commentsTable.addNormalShadow()
         self.homieProfilePicture.addNormalShadow()
         self.homieProfilePicture.circleImage()
         
@@ -69,25 +68,35 @@ class HomieConfirmViewController: UIViewController, UITableViewDataSource, UITab
         self.homieName.text = homie.name!
         self.homieCommentsHint.text = String(format: "Lo que dicen de %@", homie.name!)
         
-        comments = homie.comments()
-        
-        if comments == nil || (comments?.count)! == 0{
-            UIView.animate(withDuration: 1, animations: {
-                self.commentsTable.alpha = 0
-                self.noCommentsHint.alpha = 1
-                self.loadCommentsB.alpha = 0
-            })
-        } else {
-            self.commentsTable.reloadData()
-            self.commentsTable.layoutIfNeeded()
-            self.commentsHeigth.constant = self.commentsTable.contentSize.height
-            self.contentViewHeigth.constant = self.initialHeigth + (self.commentsTable.contentSize.height - self.initalCommentsHeigth)
+        homie.comments { (comment, total) in
+            if comment != nil {
+                self.comments.append(comment!)
+                if self.comments.count == total {
+                    self.commentsTable.reloadData()
+                    self.commentsTable.layoutIfNeeded()
+                    self.commentsHeigth.constant = self.commentsTable.contentSize.height
+                    self.contentViewHeigth.constant = self.initialHeigth + (self.commentsTable.contentSize.height - self.initalCommentsHeigth)
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                }
+            } else {
+                if self.comments.count == 0{
+                    UIView.animate(withDuration: 1, animations: {
+                        self.commentsTable.alpha = 0
+                        self.noCommentsHint.alpha = 1
+                        self.loadCommentsB.alpha = 0
+                    })
+                } else {
+                    self.commentsTable.reloadData()
+                    self.commentsTable.layoutIfNeeded()
+                    self.commentsHeigth.constant = self.commentsTable.contentSize.height
+                    self.contentViewHeigth.constant = self.initialHeigth + (self.commentsTable.contentSize.height - self.initalCommentsHeigth)
+                }
+                MBProgressHUD.hide(for: self.view, animated: true)
+            }
         }
         
-        MBProgressHUD.hide(for: self.view, animated: true)
-        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -96,12 +105,12 @@ class HomieConfirmViewController: UIViewController, UITableViewDataSource, UITab
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-
+    
     @IBAction func confirmBooking(_ sender: Any) {
         MBProgressHUD.showAdded(to: self.view, animated: true)
         let _ = service.saveClientHomie(client: K.User.client!, homie: homie)
         MBProgressHUD.hide(for: self.view, animated: true)
-        PlacePickerViewController.showPicker(parent: self)
+        PlacePickerViewController.showPicker(service: self.service, parent: self)
     }
     
     @IBAction func toogleComments(_ sender: Any) {
@@ -115,21 +124,26 @@ class HomieConfirmViewController: UIViewController, UITableViewDataSource, UITab
     // Table View
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return showComments ? (comments?.count ?? 0) > 10 ? 10 : comments?.count ?? 0 : 2
+        if showComments {
+            return comments.count > 10 ? 10 : comments.count
+        } else {
+            return comments.count > 2 ? 2 : comments.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellUI = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! HTTableViewCell
         
-        let comment = comments![indexPath.row]
+        let comment = comments[indexPath.row]
         
         cellUI.uiUpdates = {(cell) in
             cell.viewWithTag(1)?.addNormalShadow()
             (cell.viewWithTag(11) as? UILabel)?.text = comment.clientName
             (cell.viewWithTag(12) as? UILabel)?.text = comment.body
+            (cell.viewWithTag(2) as? UIImageView)?.circleImage()
         }
         
         return cellUI
     }
-
+    
 }

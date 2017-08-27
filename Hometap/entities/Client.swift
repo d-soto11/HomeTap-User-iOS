@@ -72,9 +72,9 @@ class Client: User {
                 for (token, tk) in tokensDict {
                     if let exists = tk as? Bool {
                         if exists {
-//                            PaymentCard.withToken(id: token, callback: {(place_loaded) in
-//                                callback(place_loaded, total)
-//                            })
+                            PaymentCard.withID(id: token, callback: {(payment_card) in
+                                callback(payment_card, total)
+                            })
                         }
                         
                     }
@@ -123,6 +123,14 @@ class Client: User {
     
     public func removePlace(place: Place) {
         K.Database.ref().child("clients").child(self.uid!).child("places").child(place.uid!).removeValue()
+    }
+    
+    public func savePayment(payment: PaymentCard) {
+        K.Database.ref().child("clients").child(self.uid!).child("creditCardTokens").child(payment.uid!).setValue(true)
+    }
+    
+    public func removePayment(payment: PaymentCard) {
+        K.Database.ref().child("clients").child(self.uid!).child("creditCardTokens").child(payment.uid!).removeValue()
     }
     
     public func saveFavorite(favorite: Homie) -> Bool {

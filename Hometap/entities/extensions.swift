@@ -107,7 +107,7 @@ extension UIViewController {
         let keyboardHeight = keyboardRectangle.height
         
         UIView.animate(withDuration: 0.3, animations: {
-            self.view.frame = CGRect(x: 0.0, y: ((self.originalFrame().origin.y)-keyboardHeight)*self.needsDisplacement(), width: (self.originalFrame().size.width), height: (self.originalFrame().size.height))
+            self.view.frame = CGRect(x: 0.0, y: (self.originalFrame().origin.y - (keyboardHeight*self.needsDisplacement())), width: (self.originalFrame().size.width), height: (self.originalFrame().size.height))
         })
     }
     
@@ -332,5 +332,22 @@ extension Date {
         }
         let str = dtf.string(from: self)
         return str
+    }
+}
+
+extension String {
+    mutating func insert(separator: String, every n: Int) {
+        self = inserting(separator: separator, every: n)
+    }
+    func inserting(separator: String, every n: Int) -> String {
+        var result: String = ""
+        let characters = Array(self.characters)
+        stride(from: 0, to: characters.count, by: n).forEach {
+            result += String(characters[$0..<min($0+n, characters.count)])
+            if $0+n < characters.count {
+                result += separator
+            }
+        }
+        return result
     }
 }
