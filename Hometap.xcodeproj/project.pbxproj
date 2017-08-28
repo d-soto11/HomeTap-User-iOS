@@ -95,6 +95,7 @@
 		43E707DC1F535C4C00EBBEEF /* EditPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E707DB1F535C4C00EBBEEF /* EditPaymentViewController.swift */; };
 		43E707DE1F537DE100EBBEEF /* iconArrowComboBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 43E707DD1F537DE100EBBEEF /* iconArrowComboBox.png */; };
 		43E707E01F53801700EBBEEF /* PaymentPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E707DF1F53801700EBBEEF /* PaymentPickerViewController.swift */; };
+		43E707E21F53A4EC00EBBEEF /* BookingBriefViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E707E11F53A4EC00EBBEEF /* BookingBriefViewController.swift */; };
 		43EF36B81F16F9D70013FA8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF36B71F16F9D70013FA8A /* AppDelegate.swift */; };
 		43EF36BD1F16F9D70013FA8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43EF36BB1F16F9D70013FA8A /* Main.storyboard */; };
 		43EF36BF1F16F9D70013FA8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43EF36BE1F16F9D70013FA8A /* Assets.xcassets */; };
@@ -201,6 +202,7 @@
 		43E707DB1F535C4C00EBBEEF /* EditPaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditPaymentViewController.swift; path = MainViews/PaymentsViews/EditPaymentViewController.swift; sourceTree = "<group>"; };
 		43E707DD1F537DE100EBBEEF /* iconArrowComboBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconArrowComboBox.png; path = assets/iconArrowComboBox.png; sourceTree = "<group>"; };
 		43E707DF1F53801700EBBEEF /* PaymentPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentPickerViewController.swift; path = MainViews/PaymentsViews/PaymentPickerViewController.swift; sourceTree = "<group>"; };
+		43E707E11F53A4EC00EBBEEF /* BookingBriefViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookingBriefViewController.swift; path = MainViews/BookingViews/BookingBriefViewController.swift; sourceTree = "<group>"; };
 		43EF36B41F16F9D70013FA8A /* Hometap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hometap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43EF36B71F16F9D70013FA8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43EF36BC1F16F9D70013FA8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -254,11 +256,12 @@
 		4319355A1F4795F7005BB082 /* BookingViews */ = {
 			isa = PBXGroup;
 			children = (
+				434D5C5A1F48DE7F00C17541 /* Booking.storyboard */,
 				4319355B1F47963E005BB082 /* BookingViewController.swift */,
 				434D5C4E1F48949A00C17541 /* HomiePickerViewController.swift */,
 				434D5C4F1F48949A00C17541 /* HomiePickerViewController.xib */,
 				434D5C561F48DAEF00C17541 /* HomieConfirmViewController.swift */,
-				434D5C5A1F48DE7F00C17541 /* Booking.storyboard */,
+				43E707E11F53A4EC00EBBEEF /* BookingBriefViewController.swift */,
 			);
 			name = BookingViews;
 			sourceTree = "<group>";
@@ -682,6 +685,7 @@
 				43E707DC1F535C4C00EBBEEF /* EditPaymentViewController.swift in Sources */,
 				43EF36DF1F192B2A0013FA8A /* Client.swift in Sources */,
 				434D5C501F48949A00C17541 /* HomiePickerViewController.swift in Sources */,
+				43E707E21F53A4EC00EBBEEF /* BookingBriefViewController.swift in Sources */,
 				43EF36EA1F194F600013FA8A /* Service.swift in Sources */,
 				43DC564F1F1D381200C68B17 /* LocationsViewController.swift in Sources */,
 				43EF36E41F192B4D0013FA8A /* Threading.swift in Sources */,

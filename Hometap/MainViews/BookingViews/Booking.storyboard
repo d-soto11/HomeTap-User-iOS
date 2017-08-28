@@ -659,10 +659,10 @@
             </objects>
             <point key="canvasLocation" x="2612" y="83"/>
         </scene>
-        <!--View Controller-->
+        <!--Booking Brief View Controller-->
         <scene sceneID="q7x-zy-zKo">
             <objects>
-                <viewController id="0zy-Mr-Glc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Brief" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0zy-Mr-Glc" customClass="BookingBriefViewController" customModule="Hometap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kNP-ke-Qc6"/>
                         <viewControllerLayoutGuide type="bottom" id="drR-zP-fIQ"/>
