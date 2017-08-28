@@ -230,9 +230,8 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
         
         place.save()
         K.User.client?.savePlace(place: place)
-        
         service.place = place
-        PaymentPickerViewController.showPicker(service: service, parent: self)
+        BookingBriefViewController.brief(service: service, parent: self)
     }
     
     // Place picker
