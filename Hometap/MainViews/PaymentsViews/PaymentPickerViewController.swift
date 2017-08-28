@@ -126,7 +126,7 @@ class PaymentPickerViewController: UIViewController {
     @IBAction func payBooking(_ sender: Any) {
         if self.selected_index < payments.count {
             // Is old
-            print("Attempt pay with \(payments[self.selected_index].number)")
+            print("Attempt pay with \(String(describing: payments[self.selected_index].number))")
         } else {
             // Is new
             loaded_card_view?.tokenizeCreditCard(callback: { (card) in
@@ -137,7 +137,7 @@ class PaymentPickerViewController: UIViewController {
                     self.back(self)
                 }
                 // Attempt pay
-                print("Attempt pay with \(card.number)")
+                print("Attempt pay with \(String(describing: card.number))")
                 self.service!.save()
                 K.MaterialTapBar.TapBar?.reloadViewController()
             })
