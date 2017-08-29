@@ -133,6 +133,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Go to Service
+        let service = K.User.client!.services_brief()![indexPath.row]
+        BookingBriefViewController.brief(service: service, parent: self)
     }
 
 }

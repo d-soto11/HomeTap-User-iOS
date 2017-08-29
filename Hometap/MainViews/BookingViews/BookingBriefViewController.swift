@@ -29,6 +29,7 @@ class BookingBriefViewController: UIViewController {
     @IBOutlet weak var contentHeigth: NSLayoutConstraint!
     @IBOutlet weak var basicServiceImage: UIImageView!
     @IBOutlet weak var basicServiceLabel: UILabel!
+    @IBOutlet weak var statusHeigth: NSLayoutConstraint!
     
     var service: Service!
     
@@ -42,19 +43,38 @@ class BookingBriefViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if service.uid != nil {
+            Service.withID(id: service.uid!, callback: { (serv) in
+                self.service = serv
+                self.loadServiceData()
+            })
+        } else {
+            self.loadServiceData()
+        }
+    }
+    
+    public func loadServiceData() {
         if (service.state == nil) {
             self.completedView.alpha = 0
+            self.statusHeigth.constant = 0
+            self.contentHeigth.constant = self.contentHeigth.constant - 70
         } else if (service.state == 0) {
             self.completedView.alpha = 0
+            self.statusHeigth.constant = 0
+            self.contentHeigth.constant = self.contentHeigth.constant - 70
         } else if service.state == -1{
             self.stateLabel.text = "Cancelado"
             self.stateLabel.textColor = K.UI.alert_color
+            self.statusHeigth.constant = 70
+            self.contentHeigth.constant = self.contentHeigth.constant + 70
         } else if service.state == 1 {
             self.stateLabel.text = "Completado"
             self.stateLabel.textColor = K.UI.main_color
             self.ratingLabel.text = String(format: "%.0f", service.rating ?? 5.0)
+            self.statusHeigth.constant = 70
+            self.contentHeigth.constant = self.contentHeigth.constant + 70
         }
-
+        
         let _ = service.homie { (homie) in
             if homie != nil {
                 self.homiePhoto.downloadedFrom(link: homie!.photo!)
@@ -103,8 +123,6 @@ class BookingBriefViewController: UIViewController {
             self.priceView.alpha = 0
             self.doneB.setTitle("Llamar a Hometap", for: .normal)
         }
-        
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -130,6 +148,9 @@ class BookingBriefViewController: UIViewController {
             PaymentPickerViewController.showPicker(service: service, parent: self)
         } else if (service.state == 0) {
             // Cancel service
+            service.state = -1
+            service.save()
+            self.back(self)
         } else {
             // Call hometap
         }
