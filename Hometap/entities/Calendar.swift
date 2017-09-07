@@ -21,7 +21,7 @@ class HTCBlock: HometapObject {
         if let date = dict["date"] {
             self.date = Date(fromString: date as! String, withFormat: .Custom("YYYY-MM-dd"))
         }
-        if let homie = dict["id"] {
+        if let homie = dict["homieID"] {
             self.homieID = homie as? String
         }
     }

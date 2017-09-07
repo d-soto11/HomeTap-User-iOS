@@ -12,8 +12,8 @@ import Lightbox
 import Firebase
 import MBProgressHUD
 
-class ProfileViewController: UIViewController, ImagePickerDelegate {
-
+class ProfileViewController: UIViewController, ImagePickerDelegate, ProfileChangeDelegate {
+    
     @IBOutlet weak var pictureView: UIImageView!
     @IBOutlet weak var pictureB: UIButton!
     @IBOutlet weak var nameB: UIButton!
@@ -23,7 +23,7 @@ class ProfileViewController: UIViewController, ImagePickerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         self.pictureB.addTarget(self, action: #selector(editProfilePicture), for: .touchUpInside)
@@ -33,7 +33,7 @@ class ProfileViewController: UIViewController, ImagePickerDelegate {
         
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -55,7 +55,7 @@ class ProfileViewController: UIViewController, ImagePickerDelegate {
         paymentB.roundCorners(radius: K.UI.light_round_px)
         pictureView.circleImage()
     }
-
+    
     @IBAction func showPayments(_ sender: Any) {
         PaymentsListViewController.showList(parent: self)
     }
@@ -92,24 +92,52 @@ class ProfileViewController: UIViewController, ImagePickerDelegate {
     }
     
     func editInfo(sender: UIButton) {
-//        let local = Auth.auth().currentUser!
-//        let req = Auth.auth().currentUser!.createProfileChangeRequest()
-//        if local.displayName != self.nameField.text {
-//            req.displayName = self.nameField.text
-//        }
-//        req.commitChanges(completion: nil)
-//        
-//        
-//        K.User.client!.name = self.nameField.text
-//        K.User.client!.email = self.mailField.text
-//        K.User.client!.phone = self.phoneField.text
-//        K.User.client!.birth = Date(fromString: self.birthField.text!, withFormat: .Short)
-//        K.User.client!.joined = Date()
-//        K.User.client!.votes = 1
-//        K.User.client!.rating = 5.0
-//        K.User.client!.gender = self.gender_options.index(of: self.genreField.text!)
+        switch sender.tag {
+        case 1:
+            // Name
+            ProfileChangeViewController.showFieldEditor(value: K.User.client?.name ?? "", name: "Nombre", delegate: self, val: .name, tag: sender.tag)
+        case 2:
+            // Phone
+            ProfileChangeViewController.showFieldEditor(value: K.User.client?.phone ?? "", name: "Teléfono", delegate: self, val: .phone, tag: sender.tag)
+        case 3:
+            // Mail
+            ProfileChangeViewController.showFieldEditor(value: K.User.client?.email ?? "", name: "Correo", delegate: self, val: .email, tag: sender.tag)
+        default:
+            break
+        }
         
+    }
+    
+    // Profile Change delegate
+    func fieldUpdated(value: String, tag: Int) {
+        guard let local = Auth.auth().currentUser else {
+            return
+        }
+        switch tag {
+        case 1:
+        // Name
+            let req = Auth.auth().currentUser!.createProfileChangeRequest()
+            
+            if local.displayName != value {
+                req.displayName = value
+            }
+            req.commitChanges(completion: nil)
+            
+            K.User.client?.name = value
+            self.nameB.setTitle(K.User.client!.name!, for: .normal)
+        case 2:
+        // Phone
+            K.User.client?.phone = value
+            self.phoneB.setTitle(K.User.client!.phone!, for: .normal)
+        case 3:
+        // Mail
+            K.User.client?.email = value
+            self.mailB.setTitle(K.User.client!.email!, for: .normal)
+        default:
+            break
+        }
         
+        K.User.client?.save()
     }
     
     // ImagePicker Delegate
@@ -173,5 +201,5 @@ class ProfileViewController: UIViewController, ImagePickerDelegate {
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
-
+    
 }

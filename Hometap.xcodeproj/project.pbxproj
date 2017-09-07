@@ -518,9 +518,8 @@
 				TargetAttributes = {
 					43EF36B31F16F9D70013FA8A = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = QBLL74FJC6;
 						LastSwiftMigration = 0830;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -834,7 +833,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = QBLL74FJC6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Hometap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tresastronautas.ios.hometap.user;
@@ -853,7 +852,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = QBLL74FJC6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Hometap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tresastronautas.ios.hometap.user;
