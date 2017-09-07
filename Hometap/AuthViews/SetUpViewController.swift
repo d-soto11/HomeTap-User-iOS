@@ -89,9 +89,8 @@ class SetUpViewController: UIViewController, ImagePickerDelegate, DatePickerDele
         
         config.recordLocation = false
         config.allowMultiplePhotoSelection = false
-        config.bottomContainerColor = K.UI.main_color
-        config.mainColor = .white
         
+        config.mainColor = .white
         
         let imagePicker = ImagePickerController()
         imagePicker.configuration = config

@@ -9,13 +9,31 @@
 import Foundation
 import Firebase
 import JModalController
+import ReachabilitySwift
 
 struct K {
-    struct Test {
-        static var test_val:Bool = true
+    struct Network {
+        static var network_available:Bool = true
         
-        static func test_func() {
-            _ = false
+        static public func startNetworkUpdates() {
+            let reachability = Reachability()!
+            reachability.whenReachable = { reachability in
+                network_available = true
+                DispatchQueue.main.async {
+                    K.MaterialTapBar.TapBar?.hideSnack()
+                }
+            }
+            reachability.whenUnreachable = { reachability in
+                network_available = false
+                DispatchQueue.main.async {
+                    K.MaterialTapBar.TapBar?.showSnack(message: "Estás en modo sin conexión", permanent: true)
+                }
+            }
+            do {
+                try reachability.startNotifier()
+            } catch {
+                print("Unable to start notifier")
+            }
         }
         
     }
@@ -77,9 +95,3 @@ struct K {
 func getCurrentUserUid()->String?{
     return K.User.client?.uid
 }
-
-//func rand() -> UInt32{
-//    let randomNumber = arc4random_uniform(9 - 0)
-//    return randomNumber
-//}
-

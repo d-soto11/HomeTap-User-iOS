@@ -23,6 +23,7 @@
 		434D5C551F48D8CF00C17541 /* iconArrowWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 434D5C531F48D8CF00C17541 /* iconArrowWhite.png */; };
 		434D5C581F48DAEF00C17541 /* HomieConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D5C561F48DAEF00C17541 /* HomieConfirmViewController.swift */; };
 		434D5C5B1F48DE7F00C17541 /* Booking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434D5C5A1F48DE7F00C17541 /* Booking.storyboard */; };
+		435B24621F60E9EE00F2AC5C /* ProfileChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435B24611F60E9EE00F2AC5C /* ProfileChangeViewController.swift */; };
 		43628D9B1F328FE600C5444D /* OptionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43628D991F328FE600C5444D /* OptionPicker.swift */; };
 		43628D9F1F32939F00C5444D /* OptionPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43628D9E1F32939F00C5444D /* OptionPicker.storyboard */; };
 		439F14021F195A1B009DABF8 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14011F195A1B009DABF8 /* Place.swift */; };
@@ -131,6 +132,7 @@
 		434D5C531F48D8CF00C17541 /* iconArrowWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconArrowWhite.png; path = assets/iconArrowWhite.png; sourceTree = "<group>"; };
 		434D5C561F48DAEF00C17541 /* HomieConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomieConfirmViewController.swift; path = MainViews/BookingViews/HomieConfirmViewController.swift; sourceTree = "<group>"; };
 		434D5C5A1F48DE7F00C17541 /* Booking.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Booking.storyboard; path = MainViews/BookingViews/Booking.storyboard; sourceTree = "<group>"; };
+		435B24611F60E9EE00F2AC5C /* ProfileChangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileChangeViewController.swift; path = MainViews/ProfileChangeViewController.swift; sourceTree = "<group>"; };
 		43628D991F328FE600C5444D /* OptionPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionPicker.swift; path = CustomViews/OptionPicker.swift; sourceTree = "<group>"; };
 		43628D9E1F32939F00C5444D /* OptionPicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = OptionPicker.storyboard; path = CustomViews/OptionPicker.storyboard; sourceTree = "<group>"; };
 		439F14011F195A1B009DABF8 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = entities/Place.swift; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 				439F146B1F1C9D3C009DABF8 /* HomeViewController.swift */,
 				43DC564A1F1D2A9800C68B17 /* HistoryViewController.swift */,
 				43DC564C1F1D2E5000C68B17 /* ProfileViewController.swift */,
+				435B24611F60E9EE00F2AC5C /* ProfileChangeViewController.swift */,
 			);
 			name = MainViews;
 			sourceTree = "<group>";
@@ -687,6 +690,7 @@
 				43628D9B1F328FE600C5444D /* OptionPicker.swift in Sources */,
 				4319355C1F47963E005BB082 /* BookingViewController.swift in Sources */,
 				43E707DC1F535C4C00EBBEEF /* EditPaymentViewController.swift in Sources */,
+				435B24621F60E9EE00F2AC5C /* ProfileChangeViewController.swift in Sources */,
 				43EF36DF1F192B2A0013FA8A /* Client.swift in Sources */,
 				434D5C501F48949A00C17541 /* HomiePickerViewController.swift in Sources */,
 				43E707E21F53A4EC00EBBEEF /* BookingBriefViewController.swift in Sources */,

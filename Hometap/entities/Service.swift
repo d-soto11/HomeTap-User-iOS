@@ -100,6 +100,7 @@ class Service: HometapObject {
             original_dictionary["rating"] = self.rating as AnyObject
         }
         super.save(route: "services")
+        self.place?.saveService(service: self)
     }
     
     var date: Date?

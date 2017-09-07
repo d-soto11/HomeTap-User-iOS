@@ -69,7 +69,7 @@ class Place: HometapObject {
     
     public func prepareForSave() -> [String:AnyObject] {
         if self.uid != nil {
-            original_dictionary["id"] = self.name as AnyObject
+            original_dictionary["id"] = self.uid as AnyObject
         }
         if self.name != nil {
             original_dictionary["nickname"] = self.name as AnyObject
@@ -115,6 +115,8 @@ class Place: HometapObject {
         if self.apartament != nil {
             original_dictionary["isApartament"] = self.apartament as AnyObject
         }
+        
+        original_dictionary["clientID"] = K.User.client?.uid as AnyObject
         
         return original_dictionary
     }

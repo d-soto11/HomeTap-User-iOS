@@ -111,7 +111,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Go to Service
-        let service = K.User.client!.services_brief()![indexPath.row]
+        let service = self.services[indexPath.row]
         BookingBriefViewController.brief(service: service, parent: self)
     }
     

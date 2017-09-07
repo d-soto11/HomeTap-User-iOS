@@ -31,6 +31,12 @@ class Comment: HometapObject {
         if let rating = dict["rating"] {
             self.rating = (rating as? Double)
         }
+        if let serviceID = dict["serviceID"] {
+            self.serviceID = (serviceID as? String)
+        }
+        if let homieName = dict["homieName"] {
+            self.homieName = (homieName as? String)
+        }
     }
     
     class func withID(id: String, callback: @escaping (_ s: Comment?)->Void){
@@ -68,8 +74,10 @@ class Comment: HometapObject {
     var body: String?
     var clientID: String?
     var clientName: String?
+    var homieName: String?
     var date: Date?
     var homieID: String?
     var rating: Double?
+    var serviceID: String?
     
 }

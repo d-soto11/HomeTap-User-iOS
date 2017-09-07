@@ -46,6 +46,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
             MBProgressHUD.hide(for: self.view, animated: true)
         }
+        
+        K.Network.startNetworkUpdates()
     }
     
     public func startBooking() {

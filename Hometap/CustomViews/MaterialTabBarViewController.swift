@@ -12,6 +12,7 @@ class MaterialTabBarViewController: UIViewController {
     
     
     @IBOutlet weak var tabBarBackground: UIView!
+    @IBOutlet weak var snackView: UIView!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var imgIcon1: UIImageView!
     @IBOutlet weak var imgIcon2: UIImageView!
@@ -199,6 +200,30 @@ class MaterialTabBarViewController: UIViewController {
                 break
             }
             tabBarTap(b)
+        }
+    }
+    
+    
+    public func showSnack(message: String, permanent: Bool = false) {
+        (self.snackView.viewWithTag(11) as? UILabel)?.text = message
+        UIView.animate(withDuration: 0.5) {
+            self.snackView.alpha = 1
+        }
+        if (!permanent) {
+            Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { (timer) in
+                UIView.animate(withDuration: 0.5) {
+                    self.snackView.alpha = 0
+                }
+                timer.invalidate()
+            }
+        }
+    }
+    
+    public func hideSnack() {
+        if self.snackView.alpha == 1 {
+            UIView.animate(withDuration: 0.5) {
+                self.snackView.alpha = 0
+            }
         }
     }
     
