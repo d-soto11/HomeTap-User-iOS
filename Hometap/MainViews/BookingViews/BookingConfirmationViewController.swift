@@ -29,13 +29,28 @@ class BookingConfirmationViewController: UIViewController {
             confirmation.view.alpha = 1
         }
         
-        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (timer) in
-            UIView.animate(withDuration: 0.5) {
-                confirmation.view.alpha = 0
+        if #available(iOS 10.0, *) {
+            Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (timer) in
+                UIView.animate(withDuration: 0.5) {
+                    confirmation.view.alpha = 0
+                }
+                K.MaterialTapBar.TapBar?.reloadViewController()
             }
-            K.MaterialTapBar.TapBar?.reloadViewController()
+        } else {
+            Timer.scheduledTimer(timeInterval: 5.0,
+                                 target: self,
+                                 selector: #selector(hideConfirmation),
+                                 userInfo: nil,
+                                 repeats: false)
         }
         
+    }
+    
+    func hideConfirmation() {
+        UIView.animate(withDuration: 0.5) {
+            self.view.alpha = 0
+        }
+        K.MaterialTapBar.TapBar?.reloadViewController()
     }
 
     override func viewDidLoad() {

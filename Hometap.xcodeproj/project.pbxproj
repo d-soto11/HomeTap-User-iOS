@@ -138,6 +138,7 @@
 		434E05181F62124A00214CD3 /* Other.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Other.storyboard; path = MainViews/OtherViews/Other.storyboard; sourceTree = "<group>"; };
 		434E051A1F62128100214CD3 /* ServiceRatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceRatingViewController.swift; path = MainViews/OtherViews/ServiceRatingViewController.swift; sourceTree = "<group>"; };
 		434E051C1F62515F00214CD3 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Notification.swift; path = entities/Notification.swift; sourceTree = "<group>"; };
+		434E051E1F62579A00214CD3 /* Hometap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hometap.entitlements; sourceTree = "<group>"; };
 		435B24611F60E9EE00F2AC5C /* ProfileChangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileChangeViewController.swift; path = MainViews/ProfileChangeViewController.swift; sourceTree = "<group>"; };
 		43628D991F328FE600C5444D /* OptionPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionPicker.swift; path = CustomViews/OptionPicker.swift; sourceTree = "<group>"; };
 		43628D9E1F32939F00C5444D /* OptionPicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = OptionPicker.storyboard; path = CustomViews/OptionPicker.storyboard; sourceTree = "<group>"; };
@@ -444,6 +445,7 @@
 		43EF36B61F16F9D70013FA8A /* Hometap */ = {
 			isa = PBXGroup;
 			children = (
+				434E051E1F62579A00214CD3 /* Hometap.entitlements */,
 				430B836F1F1DDB3F007585F2 /* AuthViews */,
 				439F146A1F1C9D0B009DABF8 /* MainViews */,
 				439F14671F1C49BF009DABF8 /* CustomViews */,
@@ -537,6 +539,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -852,9 +859,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Hometap/Hometap.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Hometap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tresastronautas.ios.hometap.user;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -871,9 +880,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Hometap/Hometap.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Hometap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tresastronautas.ios.hometap.user;
 				PRODUCT_NAME = "$(TARGET_NAME)";

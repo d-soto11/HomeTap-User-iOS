@@ -210,11 +210,19 @@ class MaterialTabBarViewController: UIViewController {
             self.snackView.alpha = 1
         }
         if (!permanent) {
-            Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { (timer) in
-                UIView.animate(withDuration: 0.5) {
-                    self.snackView.alpha = 0
+            if #available(iOS 10.0, *) {
+                Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { (timer) in
+                    UIView.animate(withDuration: 0.5) {
+                        self.snackView.alpha = 0
+                    }
+                    timer.invalidate()
                 }
-                timer.invalidate()
+            } else {
+                Timer.scheduledTimer(timeInterval: 5.0,
+                                     target: self,
+                                     selector: #selector(hideSnack),
+                                     userInfo: nil,
+                                     repeats: false)
             }
         }
     }
