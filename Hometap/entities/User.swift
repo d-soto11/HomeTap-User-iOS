@@ -194,4 +194,24 @@ class User: HometapObject {
         }
     }
     
+    public func notifications() -> [Notification]? {
+        var notifications:[Notification] = []
+        if let not = original_dictionary["notifications"] {
+            if let notDict = not as? [String:AnyObject] {
+                for (_, notification) in notDict {
+                    if let notificationDict = notification as? [String:AnyObject] {
+                        notifications.append(Notification(dict: notificationDict))
+                    }
+                }
+                return notifications
+            }
+        }
+        return nil
+    }
+    
+    public func clearNotifications() {
+        original_dictionary.removeValue(forKey: "notifications")
+        K.Database.ref().child("clients").child(self.uid!).child("notifications").removeValue()
+    }
+    
 }

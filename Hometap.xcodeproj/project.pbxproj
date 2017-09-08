@@ -23,6 +23,9 @@
 		434D5C551F48D8CF00C17541 /* iconArrowWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 434D5C531F48D8CF00C17541 /* iconArrowWhite.png */; };
 		434D5C581F48DAEF00C17541 /* HomieConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D5C561F48DAEF00C17541 /* HomieConfirmViewController.swift */; };
 		434D5C5B1F48DE7F00C17541 /* Booking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434D5C5A1F48DE7F00C17541 /* Booking.storyboard */; };
+		434E05191F62124A00214CD3 /* Other.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434E05181F62124A00214CD3 /* Other.storyboard */; };
+		434E051B1F62128100214CD3 /* ServiceRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E051A1F62128100214CD3 /* ServiceRatingViewController.swift */; };
+		434E051D1F62515F00214CD3 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E051C1F62515F00214CD3 /* Notification.swift */; };
 		435B24621F60E9EE00F2AC5C /* ProfileChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435B24611F60E9EE00F2AC5C /* ProfileChangeViewController.swift */; };
 		43628D9B1F328FE600C5444D /* OptionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43628D991F328FE600C5444D /* OptionPicker.swift */; };
 		43628D9F1F32939F00C5444D /* OptionPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43628D9E1F32939F00C5444D /* OptionPicker.storyboard */; };
@@ -132,6 +135,9 @@
 		434D5C531F48D8CF00C17541 /* iconArrowWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconArrowWhite.png; path = assets/iconArrowWhite.png; sourceTree = "<group>"; };
 		434D5C561F48DAEF00C17541 /* HomieConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomieConfirmViewController.swift; path = MainViews/BookingViews/HomieConfirmViewController.swift; sourceTree = "<group>"; };
 		434D5C5A1F48DE7F00C17541 /* Booking.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Booking.storyboard; path = MainViews/BookingViews/Booking.storyboard; sourceTree = "<group>"; };
+		434E05181F62124A00214CD3 /* Other.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Other.storyboard; path = MainViews/OtherViews/Other.storyboard; sourceTree = "<group>"; };
+		434E051A1F62128100214CD3 /* ServiceRatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceRatingViewController.swift; path = MainViews/OtherViews/ServiceRatingViewController.swift; sourceTree = "<group>"; };
+		434E051C1F62515F00214CD3 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Notification.swift; path = entities/Notification.swift; sourceTree = "<group>"; };
 		435B24611F60E9EE00F2AC5C /* ProfileChangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileChangeViewController.swift; path = MainViews/ProfileChangeViewController.swift; sourceTree = "<group>"; };
 		43628D991F328FE600C5444D /* OptionPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionPicker.swift; path = CustomViews/OptionPicker.swift; sourceTree = "<group>"; };
 		43628D9E1F32939F00C5444D /* OptionPicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = OptionPicker.storyboard; path = CustomViews/OptionPicker.storyboard; sourceTree = "<group>"; };
@@ -294,6 +300,15 @@
 			name = PaymentsViews;
 			sourceTree = "<group>";
 		};
+		434E05171F62121A00214CD3 /* OtherViews */ = {
+			isa = PBXGroup;
+			children = (
+				434E05181F62124A00214CD3 /* Other.storyboard */,
+				434E051A1F62128100214CD3 /* ServiceRatingViewController.swift */,
+			);
+			name = OtherViews;
+			sourceTree = "<group>";
+		};
 		439F14091F1C3AE8009DABF8 /* assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +393,7 @@
 		439F146A1F1C9D0B009DABF8 /* MainViews */ = {
 			isa = PBXGroup;
 			children = (
+				434E05171F62121A00214CD3 /* OtherViews */,
 				434B661E1F4BC07E007CE9E2 /* PaymentsViews */,
 				434B66171F4B394C007CE9E2 /* PlacesViews */,
 				4319355A1F4795F7005BB082 /* BookingViews */,
@@ -470,6 +486,7 @@
 				4319355D1F4799A8005BB082 /* AppContent.swift */,
 				43E707D71F5321C400EBBEEF /* Comment.swift */,
 				43E707D91F5323B100EBBEEF /* PaymentCard.swift */,
+				434E051C1F62515F00214CD3 /* Notification.swift */,
 			);
 			name = entities;
 			sourceTree = "<group>";
@@ -555,6 +572,7 @@
 				439F144F1F1C3E7A009DABF8 /* iconHistoryGreen.png in Resources */,
 				439F144E1F1C3E7A009DABF8 /* icon_fridge_white.png in Resources */,
 				439F14581F1C3E7A009DABF8 /* iconServiceBooked.png in Resources */,
+				434E05191F62124A00214CD3 /* Other.storyboard in Resources */,
 				439F14481F1C3E7A009DABF8 /* icon_curtains_green.png in Resources */,
 				439F14531F1C3E7A009DABF8 /* iconHouseGrey.png in Resources */,
 				439F145D1F1C3E7A009DABF8 /* iconStarFilled.png in Resources */,
@@ -684,6 +702,7 @@
 				430B83711F1DDB7B007585F2 /* LoginViewController.swift in Sources */,
 				4319355E1F4799A8005BB082 /* AppContent.swift in Sources */,
 				43AC4C861F23F18E007D638E /* RegisterViewController.swift in Sources */,
+				434E051B1F62128100214CD3 /* ServiceRatingViewController.swift in Sources */,
 				43DC564D1F1D2E5000C68B17 /* ProfileViewController.swift in Sources */,
 				43DC564B1F1D2A9800C68B17 /* HistoryViewController.swift in Sources */,
 				43628D9B1F328FE600C5444D /* OptionPicker.swift in Sources */,
@@ -705,6 +724,7 @@
 				434D5C581F48DAEF00C17541 /* HomieConfirmViewController.swift in Sources */,
 				43AC4C881F23F19F007D638E /* SetUpViewController.swift in Sources */,
 				43E707DA1F5323B100EBBEEF /* PaymentCard.swift in Sources */,
+				434E051D1F62515F00214CD3 /* Notification.swift in Sources */,
 				439F14691F1C4A0B009DABF8 /* MaterialTabBarViewController.swift in Sources */,
 				43E707D21F53185900EBBEEF /* PaymentsCardViewController.swift in Sources */,
 				43E707D41F531F1D00EBBEEF /* AddPaymentViewController.swift in Sources */,

@@ -53,6 +53,26 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     public func startBooking() {
         BookingViewController.show(parent: self)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if var pending = K.User.client?.notifications() {
+            while (!pending.isEmpty) {
+                if let notification = pending.popLast() {
+                    switch notification.type! {
+                    case 1:
+                        Service.withID(id: notification.uid!, callback: { (service) in
+                            if service != nil {
+                                ServiceRatingViewController.rateService(service: service!, parent: K.MaterialTapBar.TapBar!)
+                            }
+                        })
+                    default:
+                        break
+                    }
+                }
+            }
+            K.User.client?.clearNotifications()
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
