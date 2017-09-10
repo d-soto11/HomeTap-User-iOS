@@ -140,14 +140,8 @@ class ServiceRatingViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func save(_ sender: Any) {
         if self.starRating.rating < 3 {
-            guard let url = URL(string: "tel://\(K.Hometap.callcenter)") else { return }
-            print("calling...")
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                saveAux(sender)
-            } else {
-                // Fallback on earlier versions
-            }
+            saveAux(sender)
+            K.Hometap.call()
         } else {
             saveAux(sender)
         }

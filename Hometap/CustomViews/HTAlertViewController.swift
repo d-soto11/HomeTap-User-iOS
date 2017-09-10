@@ -101,6 +101,7 @@ class HTAlertViewController: UIViewController {
         self.confirmationB.roundCorners(radius: K.UI.round_px)
         if self.cancelTitle != nil {
             self.cancelB.roundCorners(radius: K.UI.light_round_px)
+            self.cancelB.bordered(color: K.UI.form_color)
         }
     }
 

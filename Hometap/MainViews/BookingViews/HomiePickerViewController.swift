@@ -15,7 +15,9 @@ class HomiePickerViewController: UIViewController {
     @IBOutlet weak var homie1: UIView!
     @IBOutlet weak var homie2: UIView!
     @IBOutlet weak var homie3: UIView!
+    @IBOutlet weak var noHomieHintTitle: UILabel!
     @IBOutlet weak var noHomieHint: UILabel!
+    @IBOutlet weak var noHomieB: UIButton!
     
     private var service: Service!
     private var blocks:[HTCBlock] = []
@@ -110,6 +112,8 @@ class HomiePickerViewController: UIViewController {
         if blocks.count == 0 {
             UIView.animate(withDuration: 1, animations: {
                 self.noHomieHint.alpha = 1
+                self.noHomieHintTitle.alpha = 1
+                self.noHomieB.alpha = 1
             })
         } else {
             for (index, block) in blocks.enumerated() {

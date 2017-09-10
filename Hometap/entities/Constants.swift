@@ -51,6 +51,17 @@ struct K {
         static let google_api_key:String = "AIzaSyDgKHIWf3dix_-npP89ww2SwVSutrwbeWo"
         static let stripe_key:String = "pk_test_0SmAvWdAgsSUtTqj0GMaNrZ2"
         static let callcenter: String = "3017303973"
+        
+        static func call() {
+            guard let url = URL(string: "tel://\(K.Hometap.callcenter)") else { return }
+            print("calling...")
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url)
+                
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
     }
     
     struct Database {

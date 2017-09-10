@@ -57,7 +57,8 @@ class RedeemViewController: UIViewController, UITextFieldDelegate {
                                         verified!.used = true
                                         verified!.save()
                                         K.User.client?.useCoupon(coupon: coupon)
-                                        self.showAlert(title: "¡Cupón redimido!", message: "Hemos agregado los créditos a tu cuenta.", closeButtonTitle: "Genial")
+                                        let congrats = String(format: "Se han redimido %.0f COP en tu cuenta, ¡disfrútalos!", verified!.credits ?? 0)
+                                        self.showAlert(title: "¡Felicitaciones!", message: congrats, closeButtonTitle: "Continuar")
                                     }
                                 })
                             } else {

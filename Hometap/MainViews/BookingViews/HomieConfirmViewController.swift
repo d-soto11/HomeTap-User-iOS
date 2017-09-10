@@ -29,8 +29,8 @@ class HomieConfirmViewController: UIViewController, UITableViewDataSource, UITab
     private var comments: [Comment] = []
     private var showComments = false
     
-    private let initialHeigth: CGFloat = 830
-    private let initalCommentsHeigth: CGFloat = 150
+    private let initialHeigth: CGFloat = 650
+    private let initalCommentsHeigth: CGFloat = 100
     
     public class func confirmHomie(service: Service, homie: Homie, parent: UIViewController) {
         let st = UIStoryboard.init(name: "Booking", bundle: nil)

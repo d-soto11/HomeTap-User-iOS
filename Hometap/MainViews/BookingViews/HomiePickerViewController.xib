@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="17A360a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -13,6 +12,9 @@
     <customFonts key="customFonts">
         <array key="Rubik-Light.ttf">
             <string>Rubik-Light</string>
+        </array>
+        <array key="Rubik-Medium.ttf">
+            <string>Rubik-Medium</string>
         </array>
         <array key="Rubik-Regular.ttf">
             <string>Rubik-Regular</string>
@@ -24,7 +26,9 @@
                 <outlet property="homie1" destination="9DC-pS-c3e" id="Nfn-mf-Ehl"/>
                 <outlet property="homie2" destination="meH-Ta-oPw" id="nqq-kG-YPH"/>
                 <outlet property="homie3" destination="i6u-Ok-I2Z" id="LAl-tc-67O"/>
+                <outlet property="noHomieB" destination="0tF-Qe-hfM" id="KjY-iD-ids"/>
                 <outlet property="noHomieHint" destination="8hm-Zv-rT3" id="FWN-l7-099"/>
+                <outlet property="noHomieHintTitle" destination="RC8-7g-bcg" id="t0L-x9-OZh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -34,7 +38,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PB-n4-3E9">
-                    <rect key="frame" x="25" y="36" width="20" height="20"/>
+                    <rect key="frame" x="25" y="36.5" width="20" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="8PB-n4-3E9" secondAttribute="height" multiplier="1:1" id="Fle-at-z5Q"/>
                         <constraint firstAttribute="height" constant="20" id="Itg-ql-oKt"/>
@@ -47,7 +51,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escoge tu Homie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JV2-Xm-Jeq">
-                    <rect key="frame" x="117.5" y="35" width="141" height="21.5"/>
+                    <rect key="frame" x="117" y="35" width="141" height="21.5"/>
                     <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                     <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -352,15 +356,37 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lo sentimos, no hemos encontrado homies disponibles para tu servicio." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hm-Zv-rT3">
-                    <rect key="frame" x="50" y="298.5" width="274" height="71.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No hay disponibilidad de Homies para la fecha de tu servicio, prueba intentando en un nuevo horario" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hm-Zv-rT3">
+                    <rect key="frame" x="50" y="286" width="274" height="95"/>
                     <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tF-Qe-hfM">
+                    <rect key="frame" x="87" y="421" width="200" height="40"/>
+                    <color key="backgroundColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="9BY-IG-kWT"/>
+                        <constraint firstAttribute="width" secondItem="0tF-Qe-hfM" secondAttribute="height" multiplier="5:1" id="hN7-xm-Lez"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="18"/>
+                    <state key="normal" title="Cambiar fechas">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="back:" destination="-1" eventType="touchUpInside" id="gg2-Qb-eVi"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lo sentimos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RC8-7g-bcg">
+                    <rect key="frame" x="135" y="224.5" width="106" height="21.5"/>
+                    <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="RC8-7g-bcg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0d0-V0-Oq8"/>
                 <constraint firstItem="JV2-Xm-Jeq" firstAttribute="centerY" secondItem="8PB-n4-3E9" secondAttribute="centerY" id="0w2-jk-d78"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="i6u-Ok-I2Z" secondAttribute="bottom" constant="20" id="4pn-k9-Epv"/>
                 <constraint firstItem="l3w-ad-EwB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5Uw-CZ-doU"/>
@@ -371,9 +397,12 @@
                 <constraint firstItem="8hm-Zv-rT3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JOv-3K-EqY"/>
                 <constraint firstItem="l3w-ad-EwB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="OfD-1g-5vR"/>
                 <constraint firstItem="i6u-Ok-I2Z" firstAttribute="width" secondItem="9DC-pS-c3e" secondAttribute="width" id="RLu-U4-H1G"/>
+                <constraint firstItem="8hm-Zv-rT3" firstAttribute="top" secondItem="RC8-7g-bcg" secondAttribute="bottom" constant="40" id="U3h-1w-es4"/>
                 <constraint firstItem="8hm-Zv-rT3" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Ze3-0I-PtZ"/>
                 <constraint firstItem="8hm-Zv-rT3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="Zms-sD-aMz"/>
+                <constraint firstItem="0tF-Qe-hfM" firstAttribute="top" secondItem="8hm-Zv-rT3" secondAttribute="bottom" constant="40" id="ar5-dO-iUp"/>
                 <constraint firstItem="JV2-Xm-Jeq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="35" id="eLL-WO-atd"/>
+                <constraint firstItem="0tF-Qe-hfM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fMs-pf-3yD"/>
                 <constraint firstItem="i6u-Ok-I2Z" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wbe-Fx-dys"/>
                 <constraint firstItem="l3w-ad-EwB" firstAttribute="top" secondItem="JV2-Xm-Jeq" secondAttribute="bottom" constant="40" id="yga-oy-jYf"/>
             </constraints>
