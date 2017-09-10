@@ -32,16 +32,17 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
     private var total_time: Int = 0
     
     private var new_service = Service(dict: [:])
+    private var old_service: Service? = nil
     
-    public class func show(parent: UIViewController) {
+    public class func show(parent: UIViewController, old: Service? = nil) {
         let st = UIStoryboard.init(name: "Booking", bundle: nil)
-        let book = st.instantiateViewController(withIdentifier: "BookView")
+        let book = st.instantiateViewController(withIdentifier: "BookView") as! BookingViewController
+        book.old_service = old
         parent.show(book, sender: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -76,6 +77,23 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
             self.mainServicePrice.text = String(format: "PRECIO: %.0f COP", self.total)
             
             self.total_time = K.Hometap.app_content?.basic()?.time ?? 0
+            
+            if self.old_service != nil {
+                self.commentsTextView.text = self.old_service?.comments
+                self.total = self.old_service?.price ?? 0
+                self.total_time = self.old_service?.time ?? 0
+                
+                if let old_additional = self.old_service?.additionalServices() {
+                    for old_service in old_additional {
+                        for (index, ht_add) in self.additional_services.enumerated() {
+                            if old_service.descriptionH == ht_add.name {
+                                self.selected.append(index)
+                            }
+                        }
+                    }
+                    self.self.aditionalServicesCV.reloadData()
+                }
+            }
             
             self.updateTotal()
             

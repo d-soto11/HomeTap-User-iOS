@@ -52,13 +52,9 @@ class ServiceRatingViewController: UIViewController, UITextViewDelegate {
         parent.view.addConstraints([bc1, bc2, bc3, bc4])
         parent.view.layoutIfNeeded()
         
-        UIView.animate(withDuration: 0.5) {
-            parent.view.viewWithTag(95)?.alpha = 0.8
-        }
-        
         rater.view.translatesAutoresizingMaskIntoConstraints = false
         parent.view.insertSubview(rater.view, aboveSubview: blackView)
-        rater.view.frame = CGRect(x: 0, y: 50, width: parent.view.frame.width, height: 120)
+        rater.view.frame = CGRect(x: 0, y: parent.view.frame.height, width: parent.view.frame.width, height: 120)
         
         let c1 = NSLayoutConstraint(item: rater.view, attribute: .width, relatedBy: .equal, toItem: blackView, attribute: .width, multiplier: 0.9, constant: 0)
         let c2 = NSLayoutConstraint(item: rater.view, attribute: .centerX, relatedBy: .equal, toItem: blackView, attribute: .centerX, multiplier: 1, constant: 0)
@@ -67,9 +63,11 @@ class ServiceRatingViewController: UIViewController, UITextViewDelegate {
         parent.view.addConstraints([c1, c2, rater.centerY, rater.totalHeigth])
         
         
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.3) {
             parent.view.layoutIfNeeded()
             rater.view.roundCorners(radius: K.UI.light_round_px)
+            rater.view.alpha = 1
+            parent.view.viewWithTag(95)?.alpha = 0.7
         }
         
         parent.addChildViewController(rater)
@@ -171,14 +169,17 @@ class ServiceRatingViewController: UIViewController, UITextViewDelegate {
                 comment.original_dictionary["tipo"] = 0 as AnyObject
                 comment.save()
                 MBProgressHUD.hide(for: self.view, animated: true)
-                UIView.animate(withDuration: 0.5, animations: { 
+                self.centerY.constant = self.container.view.frame.height
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.container.view.layoutIfNeeded()
                     self.container.view.viewWithTag(95)?.alpha = 0
                     self.view.alpha = 0
+                }, completion: { (done) in
+                    self.container.view.viewWithTag(95)?.removeFromSuperview()
+                    self.view.removeFromSuperview()
+                    self.callback()
+                    self.didMove(toParentViewController: nil)
                 })
-                self.container.view.viewWithTag(95)?.removeFromSuperview()
-                self.view.removeFromSuperview()
-                self.callback()
-                self.didMove(toParentViewController: nil)
             } else {
                 MBProgressHUD.hide(for: self.view, animated: true)
                 self.showAlert(title: "Lo sentimos", message: "Ha ocurrido un error inesperado.", closeButtonTitle: "Ok")

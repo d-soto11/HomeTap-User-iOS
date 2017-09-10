@@ -82,6 +82,44 @@ struct K {
         
         static var client:Client?
         
+        static func reloadClient() {
+            if client != nil {
+                Client.withID(id: client!.uid!, callback: { (c) in
+                    K.User.client = c
+                })
+            }
+        }
+        
+        static func checkNotifications() {
+            if var pending = K.User.client?.notifications() {
+                for notification in pending {
+                    switch notification.type! {
+                    case 1:
+                        Service.withID(id: notification.uid!, callback: { (service) in
+                            if service != nil {
+                                ServiceRatingViewController.rateService(service: service!, parent: K.MaterialTapBar.TapBar!, callback: {
+                                    HTAlertViewController.showHTAlert(title: "¿Deseas agendar un servicio con las mismas especificaciones?", body: "", accpetTitle: "¡Claro que sí!", cancelTitle: "Más tarde", confirmation: {
+                                        BookingViewController.show(parent: K.MaterialTapBar.TapBar!.currentViewController()!, old: service)
+                                    }, cancelation: {
+                                        pending.remove(object: notification)
+                                        if pending.isEmpty {
+                                            K.User.client?.clearNotifications()
+                                            K.MaterialTapBar.TapBar?.reloadViewController()
+                                        }
+                                    }, parent: K.MaterialTapBar.TapBar!)
+                                    
+                                })
+                            }
+                        })
+                    default:
+                        break
+                    }
+                    
+                }
+                K.User.client?.clearNotifications()
+            }
+        }
+        
         static func logged_user () -> Firebase.User?{
             return Auth.auth().currentUser
         }

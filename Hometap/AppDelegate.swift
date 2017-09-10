@@ -63,6 +63,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         
         application.registerForRemoteNotifications()
+        application.applicationIconBadgeNumber = 0
+        
         
         return true
     }
@@ -106,7 +108,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         statusBar.backgroundColor = color
     }
-
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+        K.User.reloadClient()
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        K.User.reloadClient()
+        completionHandler(UIBackgroundFetchResult.newData)
+    }
 
 }
 

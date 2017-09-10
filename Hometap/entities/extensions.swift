@@ -85,13 +85,17 @@ extension UIView {
 
 extension UIViewController {
     
-    func showAlert(title:String, message:String, closeButtonTitle:String) {
-        let alertController = UIAlertController(title: title, message: message,
-                                                preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: closeButtonTitle, style: .default) { (action: UIAlertAction) in
+    func showAlert(title:String, message:String, closeButtonTitle:String, special: Bool = true) {
+        if special {
+            HTAlertViewController.showHTAlert(title: title, body: message, accpetTitle: closeButtonTitle, parent: self)
+        } else {
+            let alertController = UIAlertController(title: title, message: message,
+                                                    preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: closeButtonTitle, style: .default) { (action: UIAlertAction) in
+            }
+            alertController.addAction(cancelAction)
+            self.present(alertController, animated: true) { }
         }
-        alertController.addAction(cancelAction)
-        self.present(alertController, animated: true) { }
     }
     
     func setUpSmartKeyboard() {

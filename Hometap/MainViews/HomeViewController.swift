@@ -35,7 +35,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     } else {
                         K.User.client = client!
                         self.reloadClientData()
-                        
+                        K.User.checkNotifications()
                         self.bookingB.addTarget(self, action: #selector(self.startBooking), for: .touchUpInside)
                         self.bookingB2.addTarget(self, action: #selector(self.startBooking), for: .touchUpInside)
                         if let token = Firebase.Messaging.messaging().fcmToken {
@@ -55,31 +55,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     public func startBooking() {
         BookingViewController.show(parent: self)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        if var pending = K.User.client?.notifications() {
-            for notification in pending {
-                switch notification.type! {
-                case 1:
-                    Service.withID(id: notification.uid!, callback: { (service) in
-                        if service != nil {
-                            ServiceRatingViewController.rateService(service: service!, parent: K.MaterialTapBar.TapBar!, callback: {
-                                pending.remove(object: notification)
-                                if pending.isEmpty {
-                                    K.User.client?.clearNotifications()
-                                    K.MaterialTapBar.TapBar?.reloadViewController()
-                                }
-                            })
-                        }
-                    })
-                default:
-                    break
-                }
-                
-            }
-            K.User.client?.clearNotifications()
-        }
     }
     
     override func didReceiveMemoryWarning() {

@@ -79,6 +79,14 @@ class MaterialTabBarViewController: UIViewController {
         }
     }
     
+    public func currentViewController() -> UIViewController? {
+        if selectedIndex > -1 {
+            return viewControllers[selectedIndex]
+        } else {
+            return nil
+        }
+    }
+    
     public func reloadViewController() {
         var reloadedViewController: UIViewController = UIViewController()
         switch selectedIndex {
@@ -184,6 +192,8 @@ class MaterialTabBarViewController: UIViewController {
         })
         
     }
+    
+    
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer)
     {

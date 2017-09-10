@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17A360a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,7 +7,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -35,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Qué tanto te gustó el servicio?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7w-B7-ltS">
-                                <rect key="frame" x="19.5" y="25" width="262.5" height="21"/>
+                                <rect key="frame" x="19" y="25" width="262.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                 <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -244,67 +243,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eT6-Ik-ymX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="396" y="-195.20239880059972"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="WZp-xT-lVD">
-            <objects>
-                <viewController storyboardIdentifier="ReBook" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ykq-lU-3ge" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="NcG-2e-8Fn"/>
-                        <viewControllerLayoutGuide type="bottom" id="HqI-7f-Um0"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cxh-Nc-6hQ">
-                        <rect key="frame" x="0.0" y="0.0" width="350" height="250"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Deseas agendar un servicio con las mismas especificaciones?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojM-Wx-6Ks">
-                                <rect key="frame" x="41" y="25" width="268" height="64"/>
-                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
-                                <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4om-Pz-Tfq">
-                                <rect key="frame" x="76" y="129" width="198" height="40"/>
-                                <color key="backgroundColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="vyj-7d-HaG"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="20"/>
-                                <state key="normal" title="¡Claro que sí!">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnQ-0a-3SR">
-                                <rect key="frame" x="115.5" y="199" width="119" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="I0V-Wd-QMp"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
-                                <state key="normal" title="Mas tarde">
-                                    <color key="titleColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="4om-Pz-Tfq" firstAttribute="leading" secondItem="cxh-Nc-6hQ" secondAttribute="leadingMargin" constant="60" id="0g1-9c-NIm"/>
-                            <constraint firstItem="ojM-Wx-6Ks" firstAttribute="top" secondItem="NcG-2e-8Fn" secondAttribute="bottom" constant="25" id="0gP-fl-WwK"/>
-                            <constraint firstItem="ojM-Wx-6Ks" firstAttribute="centerX" secondItem="cxh-Nc-6hQ" secondAttribute="centerX" id="NmM-ee-g3q"/>
-                            <constraint firstItem="QnQ-0a-3SR" firstAttribute="top" secondItem="4om-Pz-Tfq" secondAttribute="bottom" constant="30" id="fJU-MP-OXN"/>
-                            <constraint firstItem="4om-Pz-Tfq" firstAttribute="centerX" secondItem="cxh-Nc-6hQ" secondAttribute="centerX" id="jFP-Qy-75c"/>
-                            <constraint firstItem="QnQ-0a-3SR" firstAttribute="width" secondItem="4om-Pz-Tfq" secondAttribute="width" multiplier="0.6" id="jG1-MZ-8SR"/>
-                            <constraint firstItem="4om-Pz-Tfq" firstAttribute="top" secondItem="ojM-Wx-6Ks" secondAttribute="bottom" constant="40" id="nw1-lE-3gV"/>
-                            <constraint firstItem="QnQ-0a-3SR" firstAttribute="centerX" secondItem="cxh-Nc-6hQ" secondAttribute="centerX" id="tyP-ro-HND"/>
-                            <constraint firstItem="ojM-Wx-6Ks" firstAttribute="leading" secondItem="cxh-Nc-6hQ" secondAttribute="leadingMargin" constant="25" id="zYh-ny-vzW"/>
-                        </constraints>
-                    </view>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="350" height="250"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iXK-lH-rDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1093.5999999999999" y="-183.05847076461771"/>
         </scene>
     </scenes>
     <resources>

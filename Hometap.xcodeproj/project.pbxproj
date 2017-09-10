@@ -33,6 +33,8 @@
 		43628D9B1F328FE600C5444D /* OptionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43628D991F328FE600C5444D /* OptionPicker.swift */; };
 		43628D9F1F32939F00C5444D /* OptionPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43628D9E1F32939F00C5444D /* OptionPicker.storyboard */; };
 		438E331F1F657308005117AF /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438E331E1F657308005117AF /* Coupon.swift */; };
+		438E33221F659188005117AF /* HTAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438E33201F659188005117AF /* HTAlertViewController.swift */; };
+		438E33231F659188005117AF /* HTAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 438E33211F659188005117AF /* HTAlertViewController.xib */; };
 		439F14021F195A1B009DABF8 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14011F195A1B009DABF8 /* Place.swift */; };
 		439F14041F19683F009DABF8 /* AdditionalServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14031F19683F009DABF8 /* AdditionalServices.swift */; };
 		439F14061F198574009DABF8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14051F198574009DABF8 /* Product.swift */; };
@@ -150,6 +152,8 @@
 		43628D991F328FE600C5444D /* OptionPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionPicker.swift; path = CustomViews/OptionPicker.swift; sourceTree = "<group>"; };
 		43628D9E1F32939F00C5444D /* OptionPicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = OptionPicker.storyboard; path = CustomViews/OptionPicker.storyboard; sourceTree = "<group>"; };
 		438E331E1F657308005117AF /* Coupon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Coupon.swift; path = entities/Coupon.swift; sourceTree = "<group>"; };
+		438E33201F659188005117AF /* HTAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTAlertViewController.swift; path = CustomViews/HTAlertViewController.swift; sourceTree = "<group>"; };
+		438E33211F659188005117AF /* HTAlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HTAlertViewController.xib; path = CustomViews/HTAlertViewController.xib; sourceTree = "<group>"; };
 		439F14011F195A1B009DABF8 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = entities/Place.swift; sourceTree = "<group>"; };
 		439F14031F19683F009DABF8 /* AdditionalServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdditionalServices.swift; path = entities/AdditionalServices.swift; sourceTree = "<group>"; };
 		439F14051F198574009DABF8 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Product.swift; path = entities/Product.swift; sourceTree = "<group>"; };
@@ -405,6 +409,8 @@
 				4343932E1F315CFB00861426 /* DatePickerViewController.xib */,
 				43628D991F328FE600C5444D /* OptionPicker.swift */,
 				43628D9E1F32939F00C5444D /* OptionPicker.storyboard */,
+				438E33201F659188005117AF /* HTAlertViewController.swift */,
+				438E33211F659188005117AF /* HTAlertViewController.xib */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -612,6 +618,7 @@
 				434393301F315CFB00861426 /* DatePickerViewController.xib in Resources */,
 				4313C1E61F6448B700DBF27A /* Credits.storyboard in Resources */,
 				439F14621F1C3E7A009DABF8 /* icon_window_green.png in Resources */,
+				438E33231F659188005117AF /* HTAlertViewController.xib in Resources */,
 				439F145B1F1C3E7A009DABF8 /* icon_sofa_white.png in Resources */,
 				439F14431F1C3E7A009DABF8 /* iconAddService.png in Resources */,
 				434D5C541F48D8CF00C17541 /* iconArrowGreen.png in Resources */,
@@ -724,6 +731,7 @@
 				431935601F47A00C005BB082 /* HTCollectionViewCell.swift in Sources */,
 				434B661B1F4B39F6007CE9E2 /* PlacePickerViewController.swift in Sources */,
 				43EF36E21F192B2A0013FA8A /* User.swift in Sources */,
+				438E33221F659188005117AF /* HTAlertViewController.swift in Sources */,
 				439F146C1F1C9D3C009DABF8 /* HomeViewController.swift in Sources */,
 				43E707D81F5321C400EBBEEF /* Comment.swift in Sources */,
 				43A0B94E1F56033800ABB9F9 /* BookingConfirmationViewController.swift in Sources */,
