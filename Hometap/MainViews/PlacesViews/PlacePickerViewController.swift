@@ -63,6 +63,7 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
                     self.placePickerBox.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tooglePicker)))
                     
                     self.configureDropDown()
+                    self.loadPlaceData()
                 }
             } else {
                 let new_place = Place(dict: [:])
@@ -82,7 +83,7 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.loadPlaceData()
+//        self.loadPlaceData()
     }
     
     public func loadPlaceData() {

@@ -31,8 +31,9 @@ class ServiceRatingViewController: UIViewController, UITextViewDelegate {
     private var saveFavorite: Bool = true
     private var compliments: [String:Bool] = [:]
     private var service: Service!
+    private var callback: ()->Void = {() in}
     
-    public class func rateService(service: Service, parent: UIViewController) {
+    public class func rateService(service: Service, parent: UIViewController, callback: @escaping ()->Void) {
         let st = UIStoryboard.init(name: "Other", bundle: nil)
         let rater = st.instantiateViewController(withIdentifier: "Rate") as! ServiceRatingViewController
         
@@ -75,6 +76,7 @@ class ServiceRatingViewController: UIViewController, UITextViewDelegate {
         rater.didMove(toParentViewController: parent)
         rater.container = parent
         rater.service = service
+        rater.callback = callback
     }
     
     override func viewDidLoad() {
@@ -144,6 +146,7 @@ class ServiceRatingViewController: UIViewController, UITextViewDelegate {
             print("calling...")
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                saveAux(sender)
             } else {
                 // Fallback on earlier versions
             }
@@ -168,7 +171,17 @@ class ServiceRatingViewController: UIViewController, UITextViewDelegate {
                 comment.original_dictionary["tipo"] = 0 as AnyObject
                 comment.save()
                 MBProgressHUD.hide(for: self.view, animated: true)
-                K.MaterialTapBar.TapBar?.reloadViewController()
+                UIView.animate(withDuration: 0.5, animations: { 
+                    self.container.view.viewWithTag(95)?.alpha = 0
+                    self.view.alpha = 0
+                })
+                self.container.view.viewWithTag(95)?.removeFromSuperview()
+                self.view.removeFromSuperview()
+                self.callback()
+                self.didMove(toParentViewController: nil)
+            } else {
+                MBProgressHUD.hide(for: self.view, animated: true)
+                self.showAlert(title: "Lo sentimos", message: "Ha ocurrido un error inesperado.", closeButtonTitle: "Ok")
             }
         }
         
@@ -179,10 +192,10 @@ class ServiceRatingViewController: UIViewController, UITextViewDelegate {
     func updateUIForRaintg(rating: Double) {
         if rating < 3 {
             // Problems
-            self.commentHeigth.constant = 0
+            self.commentHeigth.constant = 100
             self.complimentHeigth.constant = 0
             self.favoriteHeigth.constant = 0
-            self.totalHeigth.constant = 285
+            self.totalHeigth.constant = 385
             UIView.animate(withDuration: 0.5, animations: {
                 self.view.layoutIfNeeded()
                 self.container.view.layoutIfNeeded()

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -32,7 +31,7 @@
                         <viewControllerLayoutGuide type="bottom" id="KwZ-w4-8SQ"/>
                     </layoutGuides>
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="dRm-gA-d1U">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="120"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Qué tanto te gustó el servicio?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7w-B7-ltS">
@@ -227,7 +226,7 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="300" height="120"/>
+                    <size key="freeformSize" width="300" height="150"/>
                     <connections>
                         <outlet property="auxSaveB" destination="gBW-Sw-nlS" id="QpE-tc-ccX"/>
                         <outlet property="commentHeigth" destination="1eP-eN-hYo" id="w2t-qN-U7A"/>

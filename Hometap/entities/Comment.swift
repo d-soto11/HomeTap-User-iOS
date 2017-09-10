@@ -40,7 +40,7 @@ class Comment: HometapObject {
     }
     
     class func withID(id: String, callback: @escaping (_ s: Comment?)->Void){
-        K.Database.ref().child("comments").child(id).observe(DataEventType.value, with: { (snapshot) in
+        K.Database.ref().child("comments").child(id).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
             if let dict = snapshot.value as? [String:AnyObject] {
                 callback(Comment(dict: dict))
             } else {
@@ -60,7 +60,7 @@ class Comment: HometapObject {
             original_dictionary["clientName"] = self.clientName as AnyObject
         }
         if self.date != nil {
-            original_dictionary["date"] = self.date?.toString(format: .Default) as AnyObject
+            original_dictionary["date"] = self.date?.toString(format: .Long) as AnyObject
         }
         if self.homieID != nil {
             original_dictionary["homieID"] = self.homieID as AnyObject

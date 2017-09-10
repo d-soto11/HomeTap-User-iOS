@@ -209,9 +209,23 @@ class User: HometapObject {
         return nil
     }
     
+    public func saveNotificationToken(token: String) {
+        K.Database.ref().child("clients").child(self.uid!).child("tokens").child(token).setValue(true)
+    }
+    
+    public func useCoupon(coupon: String) {
+        K.Database.ref().child("clients").child(self.uid!).child("coupons").child(coupon).setValue(true)
+    }
+    
     public func clearNotifications() {
         original_dictionary.removeValue(forKey: "notifications")
         K.Database.ref().child("clients").child(self.uid!).child("notifications").removeValue()
+    }
+    
+    public func checkUsedCoupon(coupon: String, callback: @escaping (Bool)->Void) {
+        K.Database.ref().child("clients").child(self.uid!).child("coupons").child(coupon).observeSingleEvent(of: .value, with: { (snapshot) in
+            callback(snapshot.exists())
+        })
     }
     
 }

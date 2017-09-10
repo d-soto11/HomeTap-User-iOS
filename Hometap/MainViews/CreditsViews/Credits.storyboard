@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17A360a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Rubik-Light.ttf">
+            <string>Rubik-Light</string>
+        </array>
+        <array key="Rubik-LightItalic.ttf">
+            <string>Rubik-LightItalic</string>
+        </array>
+        <array key="Rubik-Medium.ttf">
+            <string>Rubik-Medium</string>
+        </array>
+        <array key="Rubik-Regular.ttf">
+            <string>Rubik-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Credits View Controller-->
+        <scene sceneID="iWG-Yj-eni">
+            <objects>
+                <viewController storyboardIdentifier="Credits" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eLb-Ta-IsL" customClass="CreditsViewController" customModule="Hometap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c3m-D6-Wog"/>
+                        <viewControllerLayoutGuide type="bottom" id="knW-nE-gW7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b8H-5p-oqA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Créditos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hme-sI-UHA">
+                                <rect key="frame" x="148.5" y="45" width="78.5" height="24"/>
+                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="20"/>
+                                <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNi-ko-bdj">
+                                <rect key="frame" x="41" y="42" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="jrj-z0-IyI"/>
+                                    <constraint firstAttribute="width" secondItem="vNi-ko-bdj" secondAttribute="height" multiplier="1:1" id="nEj-rB-6s4"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="iconArrowGreen.png"/>
+                                <connections>
+                                    <action selector="back:" destination="eLb-Ta-IsL" eventType="touchUpInside" id="4VM-lO-rfo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tus créditos:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bs-vo-O2k">
+                                <rect key="frame" x="56" y="132" width="142" height="30"/>
+                                <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35000 COP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="I0B-IZ-qG8">
+                                <rect key="frame" x="78.5" y="202" width="219" height="47"/>
+                                <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="40"/>
+                                <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCI-l1-5nW">
+                                <rect key="frame" x="56" y="343" width="262" height="40"/>
+                                <color key="backgroundColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Hex-bA-io9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="18"/>
+                                <state key="normal" title="Redimir bono">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="redeem:" destination="eLb-Ta-IsL" eventType="touchUpInside" id="0zl-Xl-IRK"/>
+                                    <segue destination="sCr-QA-e45" kind="show" id="cys-0d-YCL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Se redimirán automáticamente en tu próxima compra" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="vtd-mS-UKh">
+                                <rect key="frame" x="25" y="289" width="325" height="14"/>
+                                <fontDescription key="fontDescription" name="Rubik-LightItalic" family="Rubik" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fCI-l1-5nW" firstAttribute="leading" secondItem="b8H-5p-oqA" secondAttribute="leadingMargin" constant="40" id="CFa-Sm-6dY"/>
+                            <constraint firstItem="vtd-mS-UKh" firstAttribute="leading" secondItem="b8H-5p-oqA" secondAttribute="leading" constant="25" id="DsL-xd-Aet"/>
+                            <constraint firstItem="hme-sI-UHA" firstAttribute="top" secondItem="c3m-D6-Wog" secondAttribute="bottom" constant="25" id="EcZ-Qx-A9P"/>
+                            <constraint firstItem="I0B-IZ-qG8" firstAttribute="centerX" secondItem="b8H-5p-oqA" secondAttribute="centerX" id="GCC-Bd-toU"/>
+                            <constraint firstItem="fCI-l1-5nW" firstAttribute="centerX" secondItem="b8H-5p-oqA" secondAttribute="centerX" id="LcF-8Q-hsu"/>
+                            <constraint firstItem="vtd-mS-UKh" firstAttribute="top" secondItem="I0B-IZ-qG8" secondAttribute="bottom" constant="40" id="Oq3-Hc-8tD"/>
+                            <constraint firstItem="I0B-IZ-qG8" firstAttribute="top" secondItem="0bs-vo-O2k" secondAttribute="bottom" constant="40" id="Sqz-HW-p5u"/>
+                            <constraint firstItem="0bs-vo-O2k" firstAttribute="top" secondItem="vNi-ko-bdj" secondAttribute="bottom" constant="60" id="ZaR-lZ-o8o"/>
+                            <constraint firstItem="fCI-l1-5nW" firstAttribute="top" secondItem="vtd-mS-UKh" secondAttribute="bottom" constant="40" id="b9a-2c-fl3"/>
+                            <constraint firstItem="hme-sI-UHA" firstAttribute="centerY" secondItem="vNi-ko-bdj" secondAttribute="centerY" id="ph6-VZ-yWb"/>
+                            <constraint firstItem="hme-sI-UHA" firstAttribute="centerX" secondItem="b8H-5p-oqA" secondAttribute="centerX" id="qJL-rV-bpc"/>
+                            <constraint firstItem="vtd-mS-UKh" firstAttribute="centerX" secondItem="b8H-5p-oqA" secondAttribute="centerX" id="xXC-yH-dAu"/>
+                            <constraint firstItem="0bs-vo-O2k" firstAttribute="leading" secondItem="b8H-5p-oqA" secondAttribute="leadingMargin" constant="40" id="yCF-7Q-mQe"/>
+                            <constraint firstItem="vNi-ko-bdj" firstAttribute="leading" secondItem="b8H-5p-oqA" secondAttribute="leadingMargin" constant="25" id="ylM-nB-2yg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="creditsLabel" destination="I0B-IZ-qG8" id="ugi-UW-phU"/>
+                        <outlet property="ticketB" destination="fCI-l1-5nW" id="8Od-j4-gvP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u6u-sR-RDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="142.57871064467767"/>
+        </scene>
+        <!--Redeem View Controller-->
+        <scene sceneID="v0P-hj-1iE">
+            <objects>
+                <viewController storyboardIdentifier="Redeem" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sCr-QA-e45" customClass="RedeemViewController" customModule="Hometap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SFL-mz-FjR"/>
+                        <viewControllerLayoutGuide type="bottom" id="HaX-Ll-4fR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5W9-Bg-Jqt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Redime un bono" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZJ-5M-b9C">
+                                <rect key="frame" x="114" y="45" width="148" height="23.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXT-VH-mJi">
+                                <rect key="frame" x="41" y="42.5" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rXT-VH-mJi" secondAttribute="height" multiplier="1:1" id="fg5-35-jsC"/>
+                                    <constraint firstAttribute="width" constant="30" id="nHi-a6-1lV"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="iconArrowGreen.png"/>
+                                <connections>
+                                    <action selector="back:" destination="sCr-QA-e45" eventType="touchUpInside" id="GjZ-HP-gy4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqI-ED-peg">
+                                <rect key="frame" x="107.5" y="252" width="160" height="40"/>
+                                <color key="backgroundColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fqI-ED-peg" secondAttribute="height" multiplier="4:1" id="Q3J-DZ-Dfn"/>
+                                    <constraint firstAttribute="height" constant="40" id="QMl-jD-MGS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
+                                <state key="normal" title="Redimir">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="redeem:" destination="sCr-QA-e45" eventType="touchUpInside" id="z84-KR-9pg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Código del bono" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tru-Kl-pYi">
+                                <rect key="frame" x="41" y="118.5" width="105.5" height="17"/>
+                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
+                                <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Hometap" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XB4-kf-o8t">
+                                <rect key="frame" x="41" y="140.5" width="293" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="dhH-nV-Y2i"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="sCr-QA-e45" id="OMY-g9-yud"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejZ-90-OK8">
+                                <rect key="frame" x="41" y="189.5" width="293" height="1"/>
+                                <color key="backgroundColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="zzM-l7-HQU"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*No hemos encontrado registro de este código. Intenta de nuevo." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="AhI-sb-eiy">
+                                <rect key="frame" x="41" y="200.5" width="293" height="11"/>
+                                <fontDescription key="fontDescription" name="Rubik-LightItalic" family="Rubik" pointSize="9"/>
+                                <color key="textColor" red="0.97647058819999999" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ejZ-90-OK8" firstAttribute="bottom" secondItem="XB4-kf-o8t" secondAttribute="bottom" id="1Ug-fe-UmD"/>
+                            <constraint firstItem="tru-Kl-pYi" firstAttribute="leading" secondItem="5W9-Bg-Jqt" secondAttribute="leadingMargin" constant="25" id="1tk-DO-OfD"/>
+                            <constraint firstItem="tZJ-5M-b9C" firstAttribute="top" secondItem="SFL-mz-FjR" secondAttribute="bottom" constant="25" id="BOe-tD-Hh4"/>
+                            <constraint firstItem="AhI-sb-eiy" firstAttribute="top" secondItem="ejZ-90-OK8" secondAttribute="bottom" constant="10" id="FDb-ap-FiK"/>
+                            <constraint firstItem="XB4-kf-o8t" firstAttribute="top" secondItem="tru-Kl-pYi" secondAttribute="bottom" constant="5" id="Lb0-tm-625"/>
+                            <constraint firstItem="AhI-sb-eiy" firstAttribute="leading" secondItem="tru-Kl-pYi" secondAttribute="leading" id="Nsi-JJ-OSi"/>
+                            <constraint firstItem="fqI-ED-peg" firstAttribute="centerX" secondItem="5W9-Bg-Jqt" secondAttribute="centerX" id="XK4-t5-aaQ"/>
+                            <constraint firstItem="AhI-sb-eiy" firstAttribute="centerX" secondItem="5W9-Bg-Jqt" secondAttribute="centerX" id="Xq4-G5-dbR"/>
+                            <constraint firstItem="XB4-kf-o8t" firstAttribute="leading" secondItem="tru-Kl-pYi" secondAttribute="leading" id="YaO-hP-zRk"/>
+                            <constraint firstItem="ejZ-90-OK8" firstAttribute="trailing" secondItem="XB4-kf-o8t" secondAttribute="trailing" id="bZ9-Uv-02m"/>
+                            <constraint firstItem="fqI-ED-peg" firstAttribute="top" secondItem="AhI-sb-eiy" secondAttribute="bottom" constant="40" id="dz3-ZC-1oY"/>
+                            <constraint firstItem="tZJ-5M-b9C" firstAttribute="centerY" secondItem="rXT-VH-mJi" secondAttribute="centerY" id="g6O-u1-F1D"/>
+                            <constraint firstItem="rXT-VH-mJi" firstAttribute="leading" secondItem="5W9-Bg-Jqt" secondAttribute="leadingMargin" constant="25" id="hnA-I9-989"/>
+                            <constraint firstItem="XB4-kf-o8t" firstAttribute="centerX" secondItem="5W9-Bg-Jqt" secondAttribute="centerX" id="jn7-7w-pJ2"/>
+                            <constraint firstItem="tru-Kl-pYi" firstAttribute="top" secondItem="tZJ-5M-b9C" secondAttribute="bottom" constant="50" id="pQF-nB-MDT"/>
+                            <constraint firstItem="ejZ-90-OK8" firstAttribute="leading" secondItem="XB4-kf-o8t" secondAttribute="leading" id="s4l-Ek-UQE"/>
+                            <constraint firstItem="tZJ-5M-b9C" firstAttribute="centerX" secondItem="5W9-Bg-Jqt" secondAttribute="centerX" id="zVi-zG-v9B"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="errorLabel" destination="AhI-sb-eiy" id="Ny5-Nv-3Gy"/>
+                        <outlet property="redeemB" destination="fqI-ED-peg" id="8Yd-ES-vgy"/>
+                        <outlet property="ticketField" destination="XB4-kf-o8t" id="Tyc-08-mdU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yie-Kw-jXf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="143"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="iconArrowGreen.png" width="50" height="49"/>
+    </resources>
+</document>

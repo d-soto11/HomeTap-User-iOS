@@ -31,7 +31,7 @@ class PaymentCard: HometapObject {
     }
     
     public class func withID(id: String, callback: @escaping (_ pc: PaymentCard?)->Void){
-        K.Database.ref().child("creditCards").child(id).observe(DataEventType.value, with: { (snapshot) in
+        K.Database.ref().child("creditCards").child(id).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
             if let dict = snapshot.value as? [String:AnyObject] {
                 callback(PaymentCard(dict: dict))
             } else {

@@ -23,7 +23,7 @@ class Client: User {
     }
     
     class func withID(id: String, callback: @escaping (_ s: Client?)->Void){
-        K.Database.ref().child("clients").child(id).observe(DataEventType.value, with: { (snapshot) in
+        K.Database.ref().child("clients").child(id).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
             if let dict = snapshot.value as? [String:AnyObject] {
                 callback(Client(dict: dict))
             } else {

@@ -20,6 +20,8 @@ class ProfileViewController: UIViewController, ImagePickerDelegate, ProfileChang
     @IBOutlet weak var phoneB: UIButton!
     @IBOutlet weak var mailB: UIButton!
     @IBOutlet weak var paymentB: UIButton!
+    @IBOutlet weak var creditsB: UIButton!
+    @IBOutlet weak var logoutB: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,11 +55,26 @@ class ProfileViewController: UIViewController, ImagePickerDelegate, ProfileChang
         super.viewDidLayoutSubviews()
         paymentB.addLightShadow()
         paymentB.roundCorners(radius: K.UI.light_round_px)
+        creditsB.addLightShadow()
+        creditsB.roundCorners(radius: K.UI.light_round_px)
+        logoutB.addLightShadow()
+        logoutB.roundCorners(radius: K.UI.light_round_px)
         pictureView.circleImage()
+        
     }
     
     @IBAction func showPayments(_ sender: Any) {
         PaymentsListViewController.showList(parent: self)
+    }
+    @IBAction func showCredits(_ sender: Any) {
+        CreditsViewController.showCredits(parent: self)
+    }
+    @IBAction func logout(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+        } catch _ as NSError {
+            self.showAlert(title: "Lo sentimos", message: "No hemos podido cerrar tu sesión. Intenta de nuevo.", closeButtonTitle: "Ok")
+        }
     }
     
     func editProfilePicture() {

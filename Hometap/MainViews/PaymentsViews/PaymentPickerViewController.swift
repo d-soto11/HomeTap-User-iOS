@@ -9,6 +9,8 @@
 import UIKit
 import DropDown
 import MBProgressHUD
+import Firebase
+import RestEssentials
 
 class PaymentPickerViewController: UIViewController {
 
@@ -124,24 +126,134 @@ class PaymentPickerViewController: UIViewController {
     }
     
     @IBAction func payBooking(_ sender: Any) {
-        if self.selected_index < payments.count {
-            // Is old
-            print("Attempt pay with \(String(describing: payments[self.selected_index].number!))")
-            BookingConfirmationViewController.confirm(service: service, parent: self)
-        } else {
-            // Is new
-            loaded_card_view?.tokenizeCreditCard(callback: { (card) in
-                if self.save_payment {
-                    // Save
-                    K.User.client!.savePayment(payment: card)
-                    card.save()
-                    self.back(self)
-                }
-                // Attempt pay
-                print("Attempt pay with \(String(describing: card.number!))")
-                BookingConfirmationViewController.confirm(service: self.service, parent: self)
-            })
+        let mb = MBProgressHUD.showAdded(to: self.view, animated: true)
+        mb.label.text = "Estableciendo conexión segura"
+        
+        guard let url = RestController.make(urlString: "https://us-central1-hometap-f173f.cloudfunctions.net") else {
+            mb.hide(animated: true)
+            self.showAlert(title: "Sin conexión", message: "No hemos podido establecer una conexión segura, por favor revisa tu conexión a internet e intenta de nuevo.", closeButtonTitle: "Ok")
+            return
         }
+        
+        Auth.auth().currentUser?.getIDToken(completion: { (id, error) in
+            DispatchQueue.main.async {
+                mb.label.text = "Preparando pago"
+            }
+            
+            if id != nil {
+                var options = RestOptions()
+                let authToken = String(format: "Bearer %@", id!)
+                options.httpHeaders = ["Authorization": authToken]
+                
+                if self.selected_index < self.payments.count {
+                    // Is old
+                    DispatchQueue.main.async {
+                        mb.label.text = "Procesando pago"
+                    }
+                    if let token = self.payments[self.selected_index].uid {
+                        let query: JSON = ["date": Date().toString(format: .Custom("yyyy-MM-dd"))!,
+                                           "ammount":self.service.price!,
+                                           "token": token]
+                        url.post(query, at: "pay", options: options) { (result, httpResponse) in
+                            if httpResponse?.statusCode == 200 {
+                                // Payment succesfull
+                                DispatchQueue.main.async {
+                                    mb.hide(animated: true)
+                                    BookingConfirmationViewController.confirm(service: self.service, parent: self)
+                                }
+                            } else {
+                                DispatchQueue.main.async {
+                                    mb.hide(animated: true)
+                                    self.showAlert(title: "Lo sentimos", message: "No hemos podido procesar tu pago. Intenta de nuevo más tarde.", closeButtonTitle: "Ok")
+                                }
+                            }
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            mb.hide(animated: true)
+                            self.showAlert(title: "Lo sentimos", message: "No hemos podido procesar tu pago. Intenta de nuevo más tarde.", closeButtonTitle: "Ok")
+                        }
+                    }
+                } else {
+                    // Is new
+                    DispatchQueue.main.async {
+                        mb.label.text = "Verificando tarjeta"
+                    }
+                    self.loaded_card_view?.tokenizeCreditCard(callback: { (card) in
+                        if self.save_payment {
+                            // Save
+                            DispatchQueue.main.async {
+                                mb.label.text = "Guardando información de pago"
+                            }
+                            K.User.client!.savePayment(payment: card)
+                            card.save()
+                            if let token = card.uid {
+                                DispatchQueue.main.async {
+                                    mb.label.text = "Procesando pago"
+                                }
+                                let query: JSON = ["date": Date().toString(format: .Custom("yyyy-MM-dd"))!,
+                                                   "ammount":self.service.price!,
+                                                   "token": token]
+                                url.post(query, at: "pay", options: options) { (result, httpResponse) in
+                                    if httpResponse?.statusCode == 200 {
+                                        // Payment succesfull
+                                        DispatchQueue.main.async {
+                                            mb.hide(animated: true)
+                                            BookingConfirmationViewController.confirm(service: self.service, parent: self)
+                                        }
+                                    } else {
+                                        DispatchQueue.main.async {
+                                            mb.hide(animated: true)
+                                            self.showAlert(title: "Lo sentimos", message: "No hemos podido procesar tu pago. Intenta de nuevo más tarde.", closeButtonTitle: "Ok")
+                                        }
+                                    }
+                                }
+                            } else {
+                                DispatchQueue.main.async {
+                                    mb.hide(animated: true)
+                                    self.showAlert(title: "Lo sentimos", message: "No hemos podido procesar tu pago. Intenta de nuevo más tarde.", closeButtonTitle: "Ok")
+                                }
+                            }
+                        } else {
+                            if let token = card.uid {
+                                DispatchQueue.main.async {
+                                    mb.label.text = "Procesando pago"
+                                }
+                                let query: JSON = ["date": Date().toString(format: .Custom("yyyy-MM-dd"))!,
+                                                   "ammount":self.service.price!,
+                                                   "token": token]
+                                url.post(query, at: "pay", options: options) { (result, httpResponse) in
+                                    if httpResponse?.statusCode == 200 {
+                                        // Payment succesfull
+                                        DispatchQueue.main.async {
+                                            mb.hide(animated: true)
+                                            BookingConfirmationViewController.confirm(service: self.service, parent: self)
+                                        }
+                                    } else {
+                                        DispatchQueue.main.async {
+                                            mb.hide(animated: true)
+                                            self.showAlert(title: "Lo sentimos", message: "No hemos podido procesar tu pago. Intenta de nuevo más tarde.", closeButtonTitle: "Ok")
+                                        }
+                                    }
+                                }
+                            } else {
+                                DispatchQueue.main.async {
+                                    mb.hide(animated: true)
+                                    self.showAlert(title: "Lo sentimos", message: "No hemos podido procesar tu pago. Intenta de nuevo más tarde.", closeButtonTitle: "Ok")
+                                }
+                            }
+                        }
+                    })
+                }
+            } else {
+                DispatchQueue.main.async {
+                    mb.hide(animated: true)
+                    self.showAlert(title: "Lo sentimos", message: "No hemos podido procesar tu pago. Intenta de nuevo más tarde.", closeButtonTitle: "Ok")
+                }
+            }
+        })
+        
+        
     }
 
 }

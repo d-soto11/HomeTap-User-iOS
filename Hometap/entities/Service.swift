@@ -58,11 +58,17 @@ class Service: HometapObject {
         if let rating = dict["rating"] {
             self.rating = (rating as? Double)
         }
+        if let client = dict["clientID"] {
+            self.clientID = (client as? String)
+        }
+        if let homie = dict["homieID"] {
+            self.homieID = (homie as? String)
+        }
 
     }
     
     class func withID(id: String, callback: @escaping (_ s: Service?)->Void){
-        K.Database.ref().child("services").child(id).observe(DataEventType.value, with: { (snapshot) in
+        K.Database.ref().child("services").child(id).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
             if let dict = snapshot.value as? [String:AnyObject] {
                 callback(Service(dict: dict))
             } else {
@@ -116,9 +122,11 @@ class Service: HometapObject {
     
     var place: Place?
     var rating: Double?
+    var clientID: String?
+    var homieID: String?
     
     public func homie(callback: @escaping (_:Homie?)->Void) -> Bool {
-        if let id = original_dictionary["homieID"] as? String{
+        if let id = homieID{
             Homie.withID(id: id, callback: callback)
             return true
         }
@@ -126,7 +134,7 @@ class Service: HometapObject {
     }
     
     public func client(callback: @escaping (_:Client?)->Void) -> Bool {
-        if let id = original_dictionary["clientID"] as? String{
+        if let id = clientID{
             Client.withID(id: id, callback: callback)
             return true
         }

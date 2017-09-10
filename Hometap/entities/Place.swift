@@ -58,7 +58,7 @@ class Place: HometapObject {
     }
     
     public class func withID(id: String, callback: @escaping (_ s: Place?)->Void){
-        K.Database.ref().child("places").child(id).observe(DataEventType.value, with: { (snapshot) in
+        K.Database.ref().child("places").child(id).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
             if let dict = snapshot.value as? [String:AnyObject] {
                 callback(Place(dict: dict))
             } else {

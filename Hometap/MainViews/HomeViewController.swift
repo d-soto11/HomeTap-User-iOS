@@ -17,12 +17,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var noBookingHint: UILabel!
     @IBOutlet weak var bookingTitle: UILabel!
     @IBOutlet weak var bookingTable: UITableView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         MBProgressHUD.showAdded(to: self.view, animated: true)
-
+        
         // Do any additional setup after loading the view.
         
         Auth.auth().addStateDidChangeListener { auth, user in
@@ -38,6 +38,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         
                         self.bookingB.addTarget(self, action: #selector(self.startBooking), for: .touchUpInside)
                         self.bookingB2.addTarget(self, action: #selector(self.startBooking), for: .touchUpInside)
+                        if let token = Firebase.Messaging.messaging().fcmToken {
+                            K.User.client?.saveNotificationToken(token: token)
+                        }
                     }
                 })
             } else {
@@ -47,7 +50,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             MBProgressHUD.hide(for: self.view, animated: true)
         }
         
-        K.Network.startNetworkUpdates()
+        K.Network.startNetworkUpdates()        
     }
     
     public func startBooking() {
@@ -56,24 +59,29 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidAppear(_ animated: Bool) {
         if var pending = K.User.client?.notifications() {
-            while (!pending.isEmpty) {
-                if let notification = pending.popLast() {
-                    switch notification.type! {
-                    case 1:
-                        Service.withID(id: notification.uid!, callback: { (service) in
-                            if service != nil {
-                                ServiceRatingViewController.rateService(service: service!, parent: K.MaterialTapBar.TapBar!)
-                            }
-                        })
-                    default:
-                        break
-                    }
+            for notification in pending {
+                switch notification.type! {
+                case 1:
+                    Service.withID(id: notification.uid!, callback: { (service) in
+                        if service != nil {
+                            ServiceRatingViewController.rateService(service: service!, parent: K.MaterialTapBar.TapBar!, callback: {
+                                pending.remove(object: notification)
+                                if pending.isEmpty {
+                                    K.User.client?.clearNotifications()
+                                    K.MaterialTapBar.TapBar?.reloadViewController()
+                                }
+                            })
+                        }
+                    })
+                default:
+                    break
                 }
+                
             }
             K.User.client?.clearNotifications()
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -121,7 +129,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return K.User.client?.services_brief()?.count ?? 0
     }
@@ -158,5 +166,5 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let service = K.User.client!.services_brief()![indexPath.row]
         BookingBriefViewController.brief(service: service, parent: self)
     }
-
+    
 }

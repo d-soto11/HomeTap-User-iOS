@@ -12,7 +12,7 @@ import Firebase
 class AppContent: NSObject {
     
     public class func loadAppContent(callback: @escaping () -> Void) {
-        K.Database.ref().child("appContent").observe(.value, with: { (snapshot) in
+        K.Database.ref().child("appContent").observeSingleEvent(of: .value, with: { (snapshot) in
             if let dict = snapshot.value as? [String: AnyObject] {
                 K.Hometap.app_content = AppContent(dict: dict)
                 callback()

@@ -68,6 +68,12 @@ class BookingBriefViewController: UIViewController {
             self.statusHeigth.constant = 70
             self.contentHeigth.constant = self.contentHeigth.constant + 70
         } else if service.state == 1 {
+            self.stateLabel.text = "En progreso"
+            self.stateLabel.textColor = K.UI.main_color
+            self.ratingLabel.text = String(format: "%.0f", service.rating ?? 5.0)
+            self.statusHeigth.constant = 70
+            self.contentHeigth.constant = self.contentHeigth.constant + 70
+        } else if service.state == 2 {
             self.stateLabel.text = "Completado"
             self.stateLabel.textColor = K.UI.main_color
             self.ratingLabel.text = String(format: "%.0f", service.rating ?? 5.0)
