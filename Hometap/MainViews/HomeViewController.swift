@@ -54,6 +54,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @IBAction func showFavorites(_ sender: Any) {
+        FavoritesViewController.showFavorites(parent: self)
     }
     
     public func startBooking() {

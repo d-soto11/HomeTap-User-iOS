@@ -85,7 +85,7 @@ class Client: User {
         }
     }
     
-    public func favorites_brief() -> [Homie]? {
+    public func favorites() -> [Homie]? {
         var favorites_brief:[Homie] = []
         if let fvts = original_dictionary["favorites"] {
             if let fvtsDict = fvts as? [String:AnyObject] {
@@ -95,23 +95,6 @@ class Client: User {
                     }
                 }
                 return favorites_brief
-            }
-        }
-        return nil
-    }
-    
-    public func favorites() -> [Homie]? {
-        var favorites:[Homie] = []
-        if let srvc = original_dictionary["favorites"] {
-            if let srvcDict = srvc as? [String:AnyObject] {
-                for (id_homie, _) in srvcDict {
-                    Homie.withID(id: id_homie, callback: {(homie) in
-                        if homie != nil {
-                            favorites.append(homie!)
-                        }
-                    })
-                }
-                return favorites
             }
         }
         return nil
@@ -138,8 +121,8 @@ class Client: User {
             return false
         }
         let fav_dict = favorite.prepareForBriefSave()
-        var org_fav_dict:[String:[String:AnyObject]] = original_dictionary["favorites"] as? [String:[String:AnyObject]] ?? [:]
-        org_fav_dict[favorite.uid!] = fav_dict
+        var org_fav_dict:[String:AnyObject] = original_dictionary["favorites"] as? [String:AnyObject] ?? [:]
+        org_fav_dict[favorite.uid!] = fav_dict as AnyObject
         original_dictionary["favorites"] = org_fav_dict as AnyObject
         
         return true

@@ -162,6 +162,9 @@ class ServiceRatingViewController: UIViewController, UITextViewDelegate {
                 comment.original_dictionary["tags"] = self.compliments as AnyObject
                 comment.original_dictionary["tipo"] = 0 as AnyObject
                 comment.save()
+                if self.saveFavorite {
+                    let _ = K.User.client?.saveFavorite(favorite: homie!)
+                }
                 MBProgressHUD.hide(for: self.view, animated: true)
                 self.centerY.constant = self.container.view.frame.height
                 UIView.animate(withDuration: 0.3, animations: {

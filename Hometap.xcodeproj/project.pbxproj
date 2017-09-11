@@ -94,6 +94,8 @@
 		43B610D41F1E7D44003425BD /* photo-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 43B610D31F1E7D44003425BD /* photo-camera.png */; };
 		43B610D81F1E80C1003425BD /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = 43B610D61F1E80C1003425BD /* fb.png */; };
 		43B610D91F1E80C1003425BD /* google_c_b.png in Resources */ = {isa = PBXBuildFile; fileRef = 43B610D71F1E80C1003425BD /* google_c_b.png */; };
+		43C4EC241F66EC4C006A54B4 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C4EC231F66EC4C006A54B4 /* Favorites.storyboard */; };
+		43C4EC261F66EDF1006A54B4 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C4EC251F66EDF1006A54B4 /* FavoritesViewController.swift */; };
 		43DC564B1F1D2A9800C68B17 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC564A1F1D2A9800C68B17 /* HistoryViewController.swift */; };
 		43DC564D1F1D2E5000C68B17 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC564C1F1D2E5000C68B17 /* ProfileViewController.swift */; };
 		43DC564F1F1D381200C68B17 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC564E1F1D381200C68B17 /* LocationsViewController.swift */; };
@@ -213,6 +215,8 @@
 		43B610D31F1E7D44003425BD /* photo-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "photo-camera.png"; path = "assets/photo-camera.png"; sourceTree = "<group>"; };
 		43B610D61F1E80C1003425BD /* fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fb.png; path = assets/social/fb.png; sourceTree = "<group>"; };
 		43B610D71F1E80C1003425BD /* google_c_b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = google_c_b.png; path = assets/social/google_c_b.png; sourceTree = "<group>"; };
+		43C4EC231F66EC4C006A54B4 /* Favorites.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Favorites.storyboard; path = MainViews/FavoritesViews/Favorites.storyboard; sourceTree = "<group>"; };
+		43C4EC251F66EDF1006A54B4 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesViewController.swift; path = MainViews/FavoritesViews/FavoritesViewController.swift; sourceTree = "<group>"; };
 		43DC564A1F1D2A9800C68B17 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = MainViews/HistoryViewController.swift; sourceTree = "<group>"; };
 		43DC564C1F1D2E5000C68B17 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = MainViews/ProfileViewController.swift; sourceTree = "<group>"; };
 		43DC564E1F1D381200C68B17 /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsViewController.swift; path = MainViews/LocationsViewController.swift; sourceTree = "<group>"; };
@@ -418,6 +422,7 @@
 		439F146A1F1C9D0B009DABF8 /* MainViews */ = {
 			isa = PBXGroup;
 			children = (
+				43C4EC221F66EB5F006A54B4 /* FavoritesViews */,
 				4313C1E41F64488E00DBF27A /* CreditsViews */,
 				434E05171F62121A00214CD3 /* OtherViews */,
 				434B661E1F4BC07E007CE9E2 /* PaymentsViews */,
@@ -447,6 +452,15 @@
 				43B610D71F1E80C1003425BD /* google_c_b.png */,
 			);
 			name = social;
+			sourceTree = "<group>";
+		};
+		43C4EC221F66EB5F006A54B4 /* FavoritesViews */ = {
+			isa = PBXGroup;
+			children = (
+				43C4EC231F66EC4C006A54B4 /* Favorites.storyboard */,
+				43C4EC251F66EDF1006A54B4 /* FavoritesViewController.swift */,
+			);
+			name = FavoritesViews;
 			sourceTree = "<group>";
 		};
 		43EF36AB1F16F9D70013FA8A = {
@@ -615,6 +629,7 @@
 				439F14441F1C3E7A009DABF8 /* iconAdressGreen.png in Resources */,
 				439F14651F1C3E7A009DABF8 /* illustrationGeneralService.png in Resources */,
 				439F14461F1C3E7A009DABF8 /* iconApartment.png in Resources */,
+				43C4EC241F66EC4C006A54B4 /* Favorites.storyboard in Resources */,
 				434393301F315CFB00861426 /* DatePickerViewController.xib in Resources */,
 				4313C1E61F6448B700DBF27A /* Credits.storyboard in Resources */,
 				439F14621F1C3E7A009DABF8 /* icon_window_green.png in Resources */,
@@ -731,6 +746,7 @@
 				431935601F47A00C005BB082 /* HTCollectionViewCell.swift in Sources */,
 				434B661B1F4B39F6007CE9E2 /* PlacePickerViewController.swift in Sources */,
 				43EF36E21F192B2A0013FA8A /* User.swift in Sources */,
+				43C4EC261F66EDF1006A54B4 /* FavoritesViewController.swift in Sources */,
 				438E33221F659188005117AF /* HTAlertViewController.swift in Sources */,
 				439F146C1F1C9D3C009DABF8 /* HomeViewController.swift in Sources */,
 				43E707D81F5321C400EBBEEF /* Comment.swift in Sources */,
