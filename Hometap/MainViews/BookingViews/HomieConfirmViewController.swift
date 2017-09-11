@@ -113,6 +113,7 @@ class HomieConfirmViewController: UIViewController, UITableViewDataSource, UITab
         MBProgressHUD.showAdded(to: self.view, animated: true)
         let _ = service.saveClientHomie(client: K.User.client!, homie: homie)
         MBProgressHUD.hide(for: self.view, animated: true)
+        MBProgressHUD.hide(for: self.view, animated: true)
         PlacePickerViewController.showPicker(service: self.service, parent: self)
     }
     

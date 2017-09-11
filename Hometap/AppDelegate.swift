@@ -19,7 +19,7 @@ import Stripe
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
 
     var window: UIWindow?
 
@@ -117,6 +117,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         K.User.reloadClient()
         completionHandler(UIBackgroundFetchResult.newData)
+    }
+    
+    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
+        K.User.client?.saveNotificationToken(token: fcmToken)
     }
 
 }

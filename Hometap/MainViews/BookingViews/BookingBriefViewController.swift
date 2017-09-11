@@ -45,8 +45,10 @@ class BookingBriefViewController: UIViewController {
         
         if service.uid != nil {
             Service.withID(id: service.uid!, callback: { (serv) in
-                self.service = serv
-                self.loadServiceData()
+                if serv != nil {
+                    self.service = serv
+                    self.loadServiceData()
+                }
             })
         } else {
             self.loadServiceData()
@@ -54,6 +56,7 @@ class BookingBriefViewController: UIViewController {
     }
     
     public func loadServiceData() {
+        
         if (service.state == nil) {
             self.completedView.alpha = 0
             self.statusHeigth.constant = 0

@@ -201,7 +201,11 @@ class User: HometapObject {
                         callback(comment, total)
                     })
                 }
+            } else {
+                callback(nil, 0)
             }
+        } else {
+            callback(nil, 0)
         }
     }
     

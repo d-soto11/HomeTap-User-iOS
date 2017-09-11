@@ -95,11 +95,58 @@ class FavoritesViewController: UIViewController, UICollectionViewDelegate, UICol
             (cell.viewWithTag(1)?.viewWithTag(2) as? UIImageView)?.circleImage()
         }
         
+        cellUI.layoutIfNeeded()
+        
         return cellUI
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Search favorite
+        let selected_homie = favorites[indexPath.row]
+        var results: [FavoriteSearchResult] = []
+        let mb = MBProgressHUD.showAdded(to: self.view, animated: true)
+        guard let url = RestController.make(urlString: "https://us-central1-hometap-f173f.cloudfunctions.net") else {
+            mb.hide(animated: true)
+            self.showAlert(title: "Sin conexión", message: "No hemos podido comunicarnos con tus homie, por favor revisa tu conexión a internet e intenta de nuevo.", closeButtonTitle: "Ok")
+            return
+        }
+        
+        let query: JSON = ["date": Date().addingTimeInterval(60 * 60 * 24).toString(format: .Custom("YYYY-MM-dd"))!,
+                           "id": selected_homie.uid ?? "none"]
+        
+        url.post(query, at: "favoritehomie") { (result, httpResponse) in
+            do {
+                let json = try result.value()
+                if let blocks = json.array{
+                    for block in blocks {
+                        let date = Date(fromString: block["date"].string!, withFormat: .Custom("yyyy-MM-dd"))
+                        let time = Date(fromString: block["date"].string!, withFormat: .Custom("HH:mm"))?.toString(format: .Time)
+                        let res = FavoriteSearchResult(name: selected_homie.name!, photo: selected_homie.photo!, date: date!.toString(format: .Custom("dd/MM/yyyy"))!, time: time!, block: block["blockID"].string!)
+                        results.append(res)
+                    }
+                    
+                    DispatchQueue.main.async {
+                        mb.hide(animated: true)
+                        // Show resutls
+                        FavoriteSearchViewController.showSearchResults(results: results, confirmation: {
+                            // Book with selected homie
+                        }, cancelation: {
+                            self.showAlert(title: "Lo sentimos", message: String(format: "%@ no tiene más fechas disponibles próximamente.", selected_homie.name!), closeButtonTitle: "Ok")
+                        }, parent: self)
+                    }
+                    
+                } else {
+                    DispatchQueue.main.async {
+                        mb.hide(animated: true)
+                        self.showAlert(title: "Sin conexión", message: "No hemos podido revisar el horario de tu homie, por favor revisa tu conexión a internet e intenta de nuevo.", closeButtonTitle: "Ok")
+                    }
+                }
+            } catch {
+                mb.hide(animated: true)
+                self.showAlert(title: "Sin conexión", message: "No hemos podido revisar el horario de tu homie, por favor revisa tu conexión a internet e intenta de nuevo.", closeButtonTitle: "Ok")
+                return
+            }
+        }
     }
 
 }

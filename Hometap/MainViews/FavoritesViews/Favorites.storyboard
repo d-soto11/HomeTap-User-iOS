@@ -7,6 +7,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -57,7 +58,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Al completar un servicio puedes agregar a tu Homie a tus favoritos para agendar servicios rápidamente con ella" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="rI4-Od-Cao">
-                                <rect key="frame" x="40" y="197.5" width="294" height="85.5"/>
+                                <rect key="frame" x="40" y="197.5" width="295" height="85.5"/>
                                 <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -69,14 +70,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ymj-c6-0ZS">
-                                <rect key="frame" x="41" y="193.5" width="292" height="1"/>
+                                <rect key="frame" x="41" y="193.5" width="293" height="1"/>
                                 <color key="backgroundColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="mQq-VG-1tR"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GOz-yY-gmE">
-                                <rect key="frame" x="36" y="214.5" width="303" height="432.5"/>
+                                <rect key="frame" x="36" y="204.5" width="303" height="442.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bSN-Ea-ihH">
                                     <size key="itemSize" width="139" height="153"/>
@@ -108,7 +109,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="1" green="0.85490196078431369" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="1" green="0.8784313725490196" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="7xJ-HF-jku" firstAttribute="centerX" secondItem="RJw-yi-cwk" secondAttribute="centerX" id="BZb-9H-bmf"/>
                                                         <constraint firstItem="2nE-Mi-AuV" firstAttribute="top" secondItem="7xJ-HF-jku" secondAttribute="bottom" constant="10" id="JUR-ov-Sbn"/>
@@ -144,7 +145,7 @@
                             <constraint firstItem="VR0-67-E8u" firstAttribute="centerX" secondItem="xTT-U5-K9t" secondAttribute="centerX" id="CgF-hG-Cre"/>
                             <constraint firstItem="E9K-yl-Ri3" firstAttribute="leading" secondItem="xTT-U5-K9t" secondAttribute="leadingMargin" constant="25" id="FxH-1H-dko"/>
                             <constraint firstItem="rI4-Od-Cao" firstAttribute="top" secondItem="bRW-h3-IGz" secondAttribute="bottom" constant="40" id="Goa-Mt-FOX"/>
-                            <constraint firstItem="GOz-yY-gmE" firstAttribute="top" secondItem="ymj-c6-0ZS" secondAttribute="bottom" constant="20" id="IDu-fh-PpL"/>
+                            <constraint firstItem="GOz-yY-gmE" firstAttribute="top" secondItem="ymj-c6-0ZS" secondAttribute="bottom" constant="10" id="IDu-fh-PpL"/>
                             <constraint firstItem="GZG-20-Iv9" firstAttribute="top" secondItem="8Bv-67-wxA" secondAttribute="bottom" constant="35" id="IlI-4R-Fpa"/>
                             <constraint firstItem="GZG-20-Iv9" firstAttribute="centerX" secondItem="xTT-U5-K9t" secondAttribute="centerX" id="Iwu-yB-3fC"/>
                             <constraint firstItem="ymj-c6-0ZS" firstAttribute="top" secondItem="VR0-67-E8u" secondAttribute="bottom" constant="20" id="YF1-WM-xFq"/>
@@ -169,6 +170,126 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XaU-sb-0Eb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="36" y="-117.39130434782609"/>
+        </scene>
+        <!--Favorite Search View Controller-->
+        <scene sceneID="9TK-Sm-Ssx">
+            <objects>
+                <viewController storyboardIdentifier="Search" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qEb-CZ-kot" customClass="FavoriteSearchViewController" customModule="Hometap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tcS-hn-5YW"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qi0-ew-W5Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7dd-cV-WkQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconNoPhoto.png" translatesAutoresizingMaskIntoConstraints="NO" id="D03-MI-nyN">
+                                <rect key="frame" x="98" y="60" width="179" height="179"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="D03-MI-nyN" secondAttribute="height" multiplier="1:1" id="nHj-Ck-Efb"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="800" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UcB-NR-nKs">
+                                <rect key="frame" x="25" y="279" width="325" height="109.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="María puede prestarte un servicio el:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="vGM-ML-ukU">
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="21.5"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/06/2017" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="xwd-Qa-GTb">
+                                        <rect key="frame" x="0.0" y="29.5" width="325" height="36"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:00PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="9ds-jA-4Vk">
+                                        <rect key="frame" x="0.0" y="73.5" width="325" height="36"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="110" id="drm-E7-eRA"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SvD-4n-Xfm">
+                                <rect key="frame" x="115.5" y="497" width="144" height="30"/>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="NWB-sE-RBI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="12"/>
+                                <state key="normal" title="Cancelar búsqueda">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancel:" destination="qEb-CZ-kot" eventType="touchUpInside" id="yCd-M3-nrZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZb-F9-gmt">
+                                <rect key="frame" x="94" y="537" width="187" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.85490196080000003" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Dp5-Py-YST"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
+                                <state key="normal" title="Buscar otra fecha">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="next:" destination="qEb-CZ-kot" eventType="touchUpInside" id="ON5-kj-riU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04H-tm-Tew">
+                                <rect key="frame" x="66" y="587" width="243" height="40"/>
+                                <color key="backgroundColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="NfG-Lp-UVh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="18"/>
+                                <state key="normal" title="Agendar servicio">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="book:" destination="qEb-CZ-kot" eventType="touchUpInside" id="NLH-zY-6mm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qi0-ew-W5Y" firstAttribute="top" secondItem="04H-tm-Tew" secondAttribute="bottom" constant="40" id="1ah-1c-zVD"/>
+                            <constraint firstItem="04H-tm-Tew" firstAttribute="top" secondItem="sZb-F9-gmt" secondAttribute="bottom" constant="10" id="5NT-gM-xC4"/>
+                            <constraint firstItem="UcB-NR-nKs" firstAttribute="leading" secondItem="7dd-cV-WkQ" secondAttribute="leading" constant="25" id="6bE-ae-WmI"/>
+                            <constraint firstItem="sZb-F9-gmt" firstAttribute="centerX" secondItem="7dd-cV-WkQ" secondAttribute="centerX" id="Bkx-BA-2h7"/>
+                            <constraint firstItem="UcB-NR-nKs" firstAttribute="centerX" secondItem="7dd-cV-WkQ" secondAttribute="centerX" id="HaI-Tw-MMg"/>
+                            <constraint firstItem="D03-MI-nyN" firstAttribute="centerX" secondItem="7dd-cV-WkQ" secondAttribute="centerX" id="JbI-Ph-Geb"/>
+                            <constraint firstItem="sZb-F9-gmt" firstAttribute="top" secondItem="SvD-4n-Xfm" secondAttribute="bottom" constant="10" id="Noz-k9-hXr"/>
+                            <constraint firstItem="04H-tm-Tew" firstAttribute="width" secondItem="sZb-F9-gmt" secondAttribute="width" multiplier="1.3" id="P3R-fi-Auz"/>
+                            <constraint firstItem="04H-tm-Tew" firstAttribute="centerX" secondItem="7dd-cV-WkQ" secondAttribute="centerX" id="SGf-d1-RB8"/>
+                            <constraint firstItem="SvD-4n-Xfm" firstAttribute="centerX" secondItem="7dd-cV-WkQ" secondAttribute="centerX" id="h9X-4B-fGT"/>
+                            <constraint firstItem="UcB-NR-nKs" firstAttribute="top" secondItem="D03-MI-nyN" secondAttribute="bottom" constant="40" id="ktv-4g-zsh"/>
+                            <constraint firstItem="04H-tm-Tew" firstAttribute="leading" secondItem="7dd-cV-WkQ" secondAttribute="leadingMargin" constant="50" id="kyv-TZ-clg"/>
+                            <constraint firstItem="D03-MI-nyN" firstAttribute="top" secondItem="tcS-hn-5YW" secondAttribute="bottom" constant="40" id="pz5-Eb-NxM"/>
+                            <constraint firstItem="UcB-NR-nKs" firstAttribute="centerY" secondItem="7dd-cV-WkQ" secondAttribute="centerY" id="wFe-9q-A3o"/>
+                            <constraint firstItem="sZb-F9-gmt" firstAttribute="width" secondItem="SvD-4n-Xfm" secondAttribute="width" multiplier="1.3" id="wW7-GT-t1y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bookB" destination="04H-tm-Tew" id="NCY-Zl-4Hv"/>
+                        <outlet property="cancelB" destination="SvD-4n-Xfm" id="oQ2-Vc-7Wg"/>
+                        <outlet property="homieHint" destination="vGM-ML-ukU" id="w22-rS-IV5"/>
+                        <outlet property="homiePhoto" destination="D03-MI-nyN" id="fxw-qc-kbN"/>
+                        <outlet property="nextB" destination="sZb-F9-gmt" id="EDV-kQ-xWb"/>
+                        <outlet property="serviceDate" destination="xwd-Qa-GTb" id="baN-gt-dYt"/>
+                        <outlet property="serviceTime" destination="9ds-jA-4Vk" id="srP-Kf-fGc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HhH-3X-z9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="854" y="-117"/>
         </scene>
     </scenes>
     <resources>
