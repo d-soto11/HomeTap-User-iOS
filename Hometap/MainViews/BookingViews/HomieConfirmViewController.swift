@@ -29,8 +29,8 @@ class HomieConfirmViewController: UIViewController, UITableViewDataSource, UITab
     private var comments: [Comment] = []
     private var showComments = false
     
-    private let initialHeigth: CGFloat = 650
-    private let initalCommentsHeigth: CGFloat = 100
+    private let initialHeigth: CGFloat = 830
+    private let initalCommentsHeigth: CGFloat = 200
     
     public class func confirmHomie(service: Service, homie: Homie, parent: UIViewController) {
         let st = UIStoryboard.init(name: "Booking", bundle: nil)
@@ -57,6 +57,7 @@ class HomieConfirmViewController: UIViewController, UITableViewDataSource, UITab
         self.bookB.roundCorners(radius: K.UI.round_px)
         
         self.dismissB.bordered(color: K.UI.select_box_color)
+        self.commentsTable.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -84,6 +85,8 @@ class HomieConfirmViewController: UIViewController, UITableViewDataSource, UITab
                         self.commentsTable.alpha = 0
                         self.noCommentsHint.alpha = 1
                         self.loadCommentsB.alpha = 0
+                        self.commentsHeigth.constant = 30
+                        self.contentViewHeigth.constant = self.initialHeigth + (30 - self.initalCommentsHeigth)
                     })
                 } else {
                     self.commentsTable.reloadData()
@@ -115,6 +118,11 @@ class HomieConfirmViewController: UIViewController, UITableViewDataSource, UITab
     
     @IBAction func toogleComments(_ sender: Any) {
         self.showComments = !self.showComments
+        if self.showComments {
+            self.loadCommentsB.setTitle("Ocultar comentarios", for: .normal)
+        } else {
+            self.loadCommentsB.setTitle("Cargar más comentarios", for: .normal)
+        }
         self.commentsTable.reloadData()
         self.commentsTable.layoutIfNeeded()
         self.commentsHeigth.constant = self.commentsTable.contentSize.height
@@ -142,6 +150,8 @@ class HomieConfirmViewController: UIViewController, UITableViewDataSource, UITab
             (cell.viewWithTag(12) as? UILabel)?.text = comment.body
             (cell.viewWithTag(2) as? UIImageView)?.circleImage()
         }
+        
+        cellUI.layoutIfNeeded()
         
         return cellUI
     }

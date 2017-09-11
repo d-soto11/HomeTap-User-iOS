@@ -105,6 +105,12 @@ class Service: HometapObject {
         if self.rating != nil {
             original_dictionary["rating"] = self.rating as AnyObject
         }
+        if self.homieID != nil {
+            original_dictionary["homieID"] = self.homieID as AnyObject
+        }
+        if self.clientID != nil {
+            original_dictionary["clientID"] = self.clientID as AnyObject
+        }
         super.save(route: "services")
         self.place?.saveService(service: self)
     }
@@ -185,8 +191,8 @@ class Service: HometapObject {
     
     public func saveClientHomie(client: Client, homie: Homie) -> Bool {
         if let idH = homie.uid, let idC = client.uid {
-            original_dictionary["clientID"] = idC as AnyObject
-            original_dictionary["homieID"] = idH as AnyObject
+            self.clientID = idC
+            self.homieID = idH
             return true
         } else {
             return false

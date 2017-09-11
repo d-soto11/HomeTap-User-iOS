@@ -16,6 +16,7 @@ class BookingConfirmationViewController: UIViewController {
         let st = UIStoryboard.init(name: "Booking", bundle: nil)
         let confirmation = st.instantiateViewController(withIdentifier: "Confirmation") as! BookingConfirmationViewController
         service.save()
+        K.User.client?.addCacheService(service)
         MBProgressHUD.hide(for: parent.view, animated: true)
         
         parent.view.insertSubview(confirmation.view, aboveSubview: parent.view)
@@ -37,8 +38,8 @@ class BookingConfirmationViewController: UIViewController {
                 K.MaterialTapBar.TapBar?.reloadViewController()
             }
         } else {
-            Timer.scheduledTimer(timeInterval: 5.0,
-                                 target: self,
+            Timer.scheduledTimer(timeInterval: 2.0,
+                                 target: confirmation,
                                  selector: #selector(hideConfirmation),
                                  userInfo: nil,
                                  repeats: false)

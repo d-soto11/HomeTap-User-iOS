@@ -53,6 +53,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         K.Network.startNetworkUpdates()        
     }
     
+    @IBAction func showFavorites(_ sender: Any) {
+    }
+    
     public func startBooking() {
         BookingViewController.show(parent: self)
     }
@@ -124,14 +127,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.viewWithTag(2)?.addLightShadow()
             cell.viewWithTag(2)?.roundCorners(radius: K.UI.light_round_px)
             
-            (cell.viewWithTag(1) as? UIImageView)?.downloadedFrom(link: service.briefPhoto!)
+            (cell.viewWithTag(1) as? UIImageView)?.downloadedFrom(link: service.briefPhoto ?? "")
             (cell.viewWithTag(1) as? UIImageView)?.circleImage()
-            (cell.viewWithTag(11) as? UILabel)?.text = service.briefName!
+            (cell.viewWithTag(11) as? UILabel)?.text = service.briefName ?? "Nuevo servicio"
             (cell.viewWithTag(2)?.viewWithTag(12) as? UILabel)?.text = service.date?.toString(format: .Custom("MMM")) ?? "MON"
             (cell.viewWithTag(2)?.viewWithTag(13) as? UILabel)?.text = service.date?.toString(format: .Custom("dd")) ?? "00"
             (cell.viewWithTag(2)?.viewWithTag(14) as? UILabel)?.text = service.date?.toString(format: .Time)
             
-            (cell.viewWithTag(15) as? UILabel)?.text = String(format: "%.0f", service.briefRating!)
+            (cell.viewWithTag(15) as? UILabel)?.text = String(format: "%.0f", service.briefRating ?? 0)
         }
         return cellUI
     }

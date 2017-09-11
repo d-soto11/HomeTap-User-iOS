@@ -45,12 +45,12 @@ extension UIView {
         self.layer.shadowPath = shadowPath.cgPath
     }
     
-    func addSpecialShadow(size: CGSize) {
+    func addSpecialShadow(size: CGSize, opacitiy: Float = 0.15) {
         let shadowPath = UIBezierPath(rect: self.bounds)
         self.layer.masksToBounds = false
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = size
-        self.layer.shadowOpacity = 0.15
+        self.layer.shadowOpacity = opacitiy
         self.layer.shadowPath = shadowPath.cgPath
     }
     
@@ -156,14 +156,21 @@ extension UIImageView {
                 let image = UIImage(data: data)
                 else { return }
             DispatchQueue.main.async() { () -> Void in
+                K.Database.Local.save(id: url.absoluteString, data: data)
                 mb.hide(animated: true)
                 self.image = image
             }
             }.resume()
     }
     func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFill) {
-        guard let url = URL(string: link) else { return }
-        downloadedFrom(url: url, contentMode: mode)
+        if let data = K.Database.Local.getCache(link) {
+            if let img = UIImage(data: data) {
+                self.image = img
+            }
+        } else {
+            guard let url = URL(string: link) else { return }
+            downloadedFrom(url: url, contentMode: mode)
+        }
     }
     func circleImage() {
         self.layer.cornerRadius = self.frame.size.width / 2;
@@ -355,3 +362,30 @@ extension String {
         return result
     }
 }
+/**
+extension UIView {
+    func anySubViewScrolling(view: UIView) -> Bool{
+        if (view.isKind(of: UIScrollView.class)) {
+            
+        }
+    if( [ view isKindOfClass:[ UIScrollView class ] ] )
+    {
+    UIScrollView* scroll_view = (UIScrollView*) view;
+    if( scroll_view.dragging || scroll_view.decelerating )
+    {
+    return true;
+    }
+    }
+    
+    for( UIView *sub_view in [ view subviews ] )
+    {
+    if( [ self anySubViewScrolling:sub_view ] )
+    {
+    return true;
+    }
+    }
+    
+    return false;
+    }
+}
+ **/

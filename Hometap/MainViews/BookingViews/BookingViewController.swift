@@ -206,8 +206,8 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
         let service = additional_services[indexPath.row]
         
         cellUI.uiUpdates = {(cell) in
-            cell.viewWithTag(1)?.addLightShadow()
-            cell.viewWithTag(2)?.addLightShadow()
+            cell.viewWithTag(1)?.addSpecialShadow(size: CGSize(width: 0.0, height: 1.0), opacitiy: 0.05)
+            cell.viewWithTag(2)?.addSpecialShadow(size: CGSize(width: 0.0, height: 1.0), opacitiy: 0.05)
             cell.viewWithTag(1)?.roundCorners(radius: K.UI.light_round_px)
             cell.viewWithTag(2)?.roundCorners(radius: 10)
             (cell.viewWithTag(1)?.viewWithTag(11) as? UILabel)?.text = service.name!
@@ -231,6 +231,7 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
                 (cell.viewWithTag(1)?.viewWithTag(10) as? UIImageView)?.image = UIImage(named: String(format: "%@_green", service.icon!))
             }
         }
+        cellUI.layoutIfNeeded()
         
         return cellUI
     }

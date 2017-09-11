@@ -106,9 +106,12 @@ class HomiePickerViewController: UIViewController {
         self.homie2.roundCorners(radius: K.UI.light_round_px)
         self.homie3.addNormalShadow()
         self.homie3.roundCorners(radius: K.UI.light_round_px)
+        
+        self.noHomieB.addNormalShadow()
+        self.noHomieB.roundCorners(radius: K.UI.round_px)
     }
     
-    private func reloadUI() {
+    public func reloadUI() {
         if blocks.count == 0 {
             UIView.animate(withDuration: 1, animations: {
                 self.noHomieHint.alpha = 1
@@ -117,6 +120,9 @@ class HomiePickerViewController: UIViewController {
             })
         } else {
             for (index, block) in blocks.enumerated() {
+                guard index < homie_views.count else {
+                    continue
+                }
                 let v = homie_views[index]
                 UIView.animate(withDuration: 1, animations: {
                     v.alpha = 1
@@ -124,21 +130,28 @@ class HomiePickerViewController: UIViewController {
                 })
                 let mb = MBProgressHUD.showAdded(to: v, animated: true)
                 
-                let same_day = (service.date!.toString(format: .Custom("YYYY-MM-dd")) == block.date!.toString(format: .Custom("YYYY-MM-dd")))
+                let same_day = (service.date! == block.date!.merge(time: block.startHour!))
                 if (!same_day) {
                     v.viewWithTag(100)?.backgroundColor = K.UI.second_color
                 }
+                print("passed \(index)")
                 Homie.withID(id: block.homieID!, callback: { (homie) in
-                    (v.viewWithTag(12) as? UILabel)?.text = String(format: "%.0f", homie?.rating ?? 0)
-                    (v.viewWithTag(11) as? UILabel)?.text = homie?.name!
-                    
-                    (v.viewWithTag(100)?.viewWithTag(20) as? UILabel)?.text = block.date!.toString(format: .Custom("dd/MM/YYYY"))
-                    (v.viewWithTag(100)?.viewWithTag(21) as? UILabel)?.text = block.startHour!.toString(format: .Time)
-                    mb.hide(animated: true)
-                    (v.viewWithTag(1) as? UIImageView)?.downloadedFrom(link: homie?.photo ?? "")
-                    (v.viewWithTag(1) as? UIImageView)?.circleImage()
-                    
-                    self.loaded_homies.append(homie!)
+                    if homie != nil {
+                        (v.viewWithTag(12) as? UILabel)?.text = String(format: "%.0f", homie!.rating ?? 0)
+                        (v.viewWithTag(11) as? UILabel)?.text = homie!.name!
+                        
+                        (v.viewWithTag(100)?.viewWithTag(20) as? UILabel)?.text = block.date!.toString(format: .Custom("dd/MM/YYYY"))
+                        (v.viewWithTag(100)?.viewWithTag(21) as? UILabel)?.text = block.startHour!.toString(format: .Time)
+                        mb.hide(animated: true)
+                        (v.viewWithTag(1) as? UIImageView)?.downloadedFrom(link: homie!.photo ?? "")
+                        (v.viewWithTag(1) as? UIImageView)?.circleImage()
+                        print(index)
+                        if (self.loaded_homies.count <= index) {
+                            self.loaded_homies.append(homie!)
+                        } else {
+                            self.loaded_homies.insert(homie!, at: index)
+                        }
+                    }
                 })
                 
                 
@@ -152,7 +165,6 @@ class HomiePickerViewController: UIViewController {
         service.blockID = block.uid
         service.date = block.date!.merge(time: block.startHour!)
         HomieConfirmViewController.confirmHomie(service: self.service, homie: homie, parent: self)
-        print("First")
     }
     
     public func selectHomie2() {

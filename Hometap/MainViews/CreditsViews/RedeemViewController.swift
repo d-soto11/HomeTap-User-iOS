@@ -37,6 +37,7 @@ class RedeemViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func redeem(_ sender: Any) {
+        self.ticketField.resignFirstResponder()
         let mb = MBProgressHUD.showAdded(to: self.view, animated: true)
         mb.label.text = "Verificando cupón"
         if let coupon = self.ticketField.text, self.ticketField.text != "" {

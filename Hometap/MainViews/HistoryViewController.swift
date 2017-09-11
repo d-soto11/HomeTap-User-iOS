@@ -92,7 +92,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
             (cell.viewWithTag(2) as? UIImageView)?.circleImage()
             (cell.viewWithTag(11) as? UILabel)?.text = service.briefName!
             (cell.viewWithTag(100)?.viewWithTag(12) as? UILabel)?.text = service.date?.toString(format: .Custom("dd/MM/YYYY")) ?? "Sin fecha"
-            (cell.viewWithTag(100)?.viewWithTag(13) as? UILabel)?.text = service.date?.toString(format: .Time)
+            //(cell.viewWithTag(100)?.viewWithTag(13) as? UILabel)?.text = service.date?.toString(format: .Time)
             if let state = service.state {
                 if state == -1 {
                     (cell.viewWithTag(100)?.viewWithTag(14) as? UILabel)?.text = "Cancelado"
@@ -104,7 +104,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
                 }
             }
             
-            (cell.viewWithTag(100)?.viewWithTag(15) as? UILabel)?.text = String(format: "%.1f", service.briefRating!)
+            //(cell.viewWithTag(100)?.viewWithTag(15) as? UILabel)?.text = String(format: "%.1f", service.briefRating!)
         }
         return cellUI
     }

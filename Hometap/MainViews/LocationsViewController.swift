@@ -44,7 +44,7 @@ class LocationsViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     override func viewDidLayoutSubviews() {
-        
+        self.locationsTable.reloadData()
     }
     
 

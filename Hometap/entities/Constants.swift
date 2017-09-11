@@ -72,6 +72,17 @@ struct K {
         public static func storageRef() -> StorageReference {
             return Storage.storage().reference(forURL: storageURL)
         }
+        struct Local {
+            private static var cache: [String:Data] = [:]
+            
+            public static func save(id: String, data: Data) {
+                cache[id] = data
+            }
+            
+            public static func getCache(_ id: String) -> Data? {
+                return cache[id]
+            }
+        }
     }
     
     struct UI {

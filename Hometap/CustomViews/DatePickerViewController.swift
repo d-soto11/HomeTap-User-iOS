@@ -122,13 +122,15 @@ class DatePickerViewController: UIViewController {
     }
     
     @IBAction func closeDatePicker(_ sender: Any) {
-        let dayTimePeriodFormatter = DateFormatter()
-        dayTimePeriodFormatter.dateFormat = format
-        
-        let dateString = dayTimePeriodFormatter.string(from: picker.date)
-        
-        delegate.datePickerDidSelectDate(date: picker.date, string:dateString, tag: tag!)
-        jm_delegate.dismissModal(self, data: nil)
+        if (self.picker.layer.animationKeys()?.isEmpty ?? true) {
+            let dayTimePeriodFormatter = DateFormatter()
+            dayTimePeriodFormatter.dateFormat = format
+            
+            let dateString = dayTimePeriodFormatter.string(from: picker.date)
+            
+            delegate.datePickerDidSelectDate(date: picker.date, string:dateString, tag: tag!)
+            jm_delegate.dismissModal(self, data: nil)
+        }
     }
     
     

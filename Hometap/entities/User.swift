@@ -122,17 +122,28 @@ class User: HometapObject {
         var services_brief:[Service] = []
         if let srvc = original_dictionary["upcomingServices"] {
             if let srvcDict = srvc as? [String:AnyObject] {
-                for (id_service, _) in srvcDict {
-                    Service.withID(id: id_service, callback: {(service) in
-                        if service != nil {
-                            services_brief.append(service!)
-                        }
-                    })
+                for (id_service, serv) in srvcDict {
+                    if (id_service == "cache") {
+                        let s = serv as! [String: AnyObject]
+                        services_brief.append(Service(dict: s))
+                    } else {
+                        Service.withID(id: id_service, callback: {(service) in
+                            if service != nil {
+                                services_brief.append(service!)
+                            }
+                        })
+                    }
                 }
                 return services_brief
             }
         }
         return nil
+    }
+    
+    public func addCacheService(_ s: Service) {
+        var upcoming = original_dictionary["upcomingServices"] as? [String:AnyObject] ?? [:]
+        upcoming["cache"] = s.original_dictionary as AnyObject
+        self.original_dictionary["upcomingServices"] = upcoming as AnyObject
     }
     
     public func history_brief() -> [Service]? {
