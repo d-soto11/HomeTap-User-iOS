@@ -115,14 +115,7 @@ class FavoriteSearchViewController: UIViewController {
     }
     
     @IBAction func book(_ sender: Any) {
-        let res = results[currentResult]
-        // Book
-        let service = Service(dict: [:])
-        let date = Date(fromString: res.date, withFormat: .Custom("dd/MM/yyyy"))
-        let time = Date(fromString: res.time, withFormat: .Time)
-        service.date = date!.merge(time: time!)
-        //service.price =
-        
+        BookingViewController.show(parent: self, favorite: results[currentResult])
     }
     
     private func dismiss() {
@@ -145,12 +138,14 @@ class FavoriteSearchResult {
     let date: String!
     let time: String!
     let blockID: String!
+    let homieID: String!
     
-    init(name: String, photo: String, date: String, time: String, block: String) {
+    init(name: String, photo: String, date: String, time: String, block: String, homie: String) {
         self.name = name
         self.photo = photo
         self.date = date
         self.blockID = block
         self.time = time
+        self.homieID = homie
     }
 }

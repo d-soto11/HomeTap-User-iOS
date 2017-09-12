@@ -120,8 +120,8 @@ class FavoritesViewController: UIViewController, UICollectionViewDelegate, UICol
                 if let blocks = json.array{
                     for block in blocks {
                         let date = Date(fromString: block["date"].string!, withFormat: .Custom("yyyy-MM-dd"))
-                        let time = Date(fromString: block["date"].string!, withFormat: .Custom("HH:mm"))?.toString(format: .Time)
-                        let res = FavoriteSearchResult(name: selected_homie.name!, photo: selected_homie.photo!, date: date!.toString(format: .Custom("dd/MM/yyyy"))!, time: time!, block: block["blockID"].string!)
+                        let time = Date(fromString: block["initialTime"].string!, withFormat: .Custom("HH:mm"))?.toString(format: .Time)
+                        let res = FavoriteSearchResult(name: selected_homie.name!, photo: selected_homie.photo!, date: date!.toString(format: .Custom("dd/MM/yyyy"))!, time: time!, block: block["blockID"].string!, homie: selected_homie.uid!)
                         results.append(res)
                     }
                     

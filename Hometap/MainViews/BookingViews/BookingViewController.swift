@@ -33,11 +33,13 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
     
     private var new_service = Service(dict: [:])
     private var old_service: Service? = nil
+    private var favoriteResult: FavoriteSearchResult? = nil
     
-    public class func show(parent: UIViewController, old: Service? = nil) {
+    public class func show(parent: UIViewController, old: Service? = nil, favorite: FavoriteSearchResult? = nil) {
         let st = UIStoryboard.init(name: "Booking", bundle: nil)
         let book = st.instantiateViewController(withIdentifier: "BookView") as! BookingViewController
         book.old_service = old
+        book.favoriteResult = favorite
         parent.show(book, sender: nil)
     }
     
@@ -64,6 +66,23 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
 
     override func viewDidAppear(_ animated: Bool) {
         MBProgressHUD.showAdded(to: self.view, animated: true)
+        
+        if favoriteResult != nil {
+            let date = Date(fromString: favoriteResult!.date, withFormat: .Custom("dd/MM/yyyy"))
+            let time = Date(fromString: favoriteResult!.time, withFormat: .Time)
+            self.new_service.date = date!.merge(time: time!)
+            Homie.withID(id: favoriteResult!.homieID, callback: { (homie) in
+                if homie != nil {
+                    if self.new_service.saveClientHomie(client: K.User.client!, homie: homie!) {
+                        self.new_service.blockID = self.favoriteResult!.blockID
+                    }
+                }
+            })
+            self.dateTextField.text = favoriteResult!.date
+            self.dateTextField.isEnabled = false
+            self.timeTextField.text = favoriteResult!.time
+            self.timeTextField.isEnabled = false
+        }
         
         AppContent.loadAppContent(callback: {() in
             self.additional_services = K.Hometap.app_content?.services() ?? []
@@ -142,7 +161,11 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
         
         MBProgressHUD.hide(for: self.view, animated: true)
         
-        HomiePickerViewController.pickHomie(service: self.new_service, parent: self)
+        if self.new_service.homieID != nil {
+            PlacePickerViewController.showPicker(service: self.new_service, parent: self)
+        } else {
+            HomiePickerViewController.pickHomie(service: self.new_service, parent: self)
+        }
         
     }
     

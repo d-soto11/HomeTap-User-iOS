@@ -232,6 +232,7 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
         place.save()
         K.User.client?.savePlace(place: place)
         service.place = place
+        mb.hide(animated: true)
         BookingBriefViewController.brief(service: service, parent: self)
     }
     
