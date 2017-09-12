@@ -85,9 +85,9 @@ extension UIView {
 
 extension UIViewController {
     
-    func showAlert(title:String, message:String, closeButtonTitle:String, special: Bool = true) {
+    func showAlert(title:String, message:String, closeButtonTitle:String, special: Bool = true, persistent: Bool = false) {
         if special {
-            HTAlertViewController.showHTAlert(title: title, body: message, accpetTitle: closeButtonTitle, parent: self)
+            HTAlertViewController.showHTAlert(title: title, body: message, accpetTitle: closeButtonTitle, parent: self, persistent: persistent)
         } else {
             let alertController = UIAlertController(title: title, message: message,
                                                     preferredStyle: .alert)
@@ -274,6 +274,7 @@ extension Date {
     
     init?(fromString: String, withFormat: DateFormat) {
         let dtf = DateFormatter()
+        dtf.locale = Locale(identifier: "en_US")
         switch withFormat {
         case .Short:
             dtf.dateFormat = K.Helper.fb_date_short_format
@@ -323,6 +324,7 @@ extension Date {
     
     func toString(format: DateFormat) -> String? {
         let dtf = DateFormatter()
+        dtf.locale = Locale(identifier: "en_US")
         switch format {
         case .Short:
             dtf.dateFormat = K.Helper.fb_date_short_format

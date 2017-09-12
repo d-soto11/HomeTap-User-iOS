@@ -41,11 +41,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         if let token = Firebase.Messaging.messaging().fcmToken {
                             K.User.client?.saveNotificationToken(token: token)
                         }
+                        if K.User.client?.blocked ?? false {
+                            HTAlertViewController.showHTAlert(title: "Lo sentimos", body: "Tu cuenta ha sido bloqueada por seguridad.", accpetTitle: "Llamar a HomeTap", confirmation: {() in
+                                K.Hometap.call()
+                            }, parent: K.MaterialTapBar.TapBar!, persistent: true)
+                        }
                     }
                 })
             } else {
                 // No user is signed in.
-                self.performSegue(withIdentifier: "Login", sender: nil)
+                K.MaterialTapBar.TapBar?.performSegue(withIdentifier: "Login", sender: nil)
             }
             MBProgressHUD.hide(for: self.view, animated: true)
         }

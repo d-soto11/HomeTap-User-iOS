@@ -115,7 +115,14 @@ class FavoriteSearchViewController: UIViewController {
     }
     
     @IBAction func book(_ sender: Any) {
+        let res = results[currentResult]
         // Book
+        let service = Service(dict: [:])
+        let date = Date(fromString: res.date, withFormat: .Custom("dd/MM/yyyy"))
+        let time = Date(fromString: res.time, withFormat: .Time)
+        service.date = date!.merge(time: time!)
+        //service.price =
+        
     }
     
     private func dismiss() {

@@ -22,11 +22,12 @@ class HTAlertViewController: UIViewController {
     private var cancelTitle: String?
     private var confirmation: (()->Void)!
     private var cancelation: (()->Void)!
+    private var persistent: Bool!
     
     private var container: UIViewController!
     private var centerY: NSLayoutConstraint!
     
-    public class func showHTAlert(title: String, body: String = "", accpetTitle: String = "Aceptar", cancelTitle: String? = nil, confirmation: @escaping ()->Void = {() in}, cancelation: @ escaping ()->Void = {() in}, parent: UIViewController) {
+    public class func showHTAlert(title: String, body: String = "", accpetTitle: String = "Aceptar", cancelTitle: String? = nil, confirmation: @escaping ()->Void = {() in}, cancelation: @ escaping ()->Void = {() in}, parent: UIViewController, persistent: Bool = false) {
         let alert = HTAlertViewController(nibName: "HTAlertViewController", bundle: nil)
         
         let blackView = UIView()
@@ -71,6 +72,7 @@ class HTAlertViewController: UIViewController {
         alert.confirmation = confirmation
         alert.cancelation = cancelation
         alert.container = parent
+        alert.persistent = persistent
         
         parent.addChildViewController(alert)
         alert.didMove(toParentViewController: parent)
@@ -122,6 +124,9 @@ class HTAlertViewController: UIViewController {
     }
     
     private func dismiss() {
+        guard persistent == false else {
+            return
+        }
         self.centerY.constant = self.container.view.frame.height
         UIView.animate(withDuration: 0.3, animations: {
             self.container.view.layoutIfNeeded()

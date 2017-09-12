@@ -319,7 +319,7 @@
                                 <rect key="frame" x="0.0" y="567" width="375" height="35"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No hay conexión a internet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="UKh-t4-BJ1">
-                                        <rect key="frame" x="20" y="9" width="335" height="18"/>
+                                        <rect key="frame" x="20" y="9.5" width="335" height="18"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -491,11 +491,12 @@
                         <outlet property="tabTitle2" destination="gzs-sI-2Nc" id="DIy-NW-8Zr"/>
                         <outlet property="tabTitle3" destination="wmr-j0-1eo" id="n1W-nn-hOu"/>
                         <outlet property="tabTitle4" destination="bAM-Ua-yRT" id="Yqp-IU-HBe"/>
+                        <segue destination="TSO-Ys-xq8" kind="show" identifier="Login" id="8M5-H9-hEA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-122.40000000000001" y="115.59220389805098"/>
+            <point key="canvasLocation" x="-212" y="116"/>
         </scene>
         <!--Locations View Controller-->
         <scene sceneID="64n-cK-eCe">
@@ -510,7 +511,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tus direcciones" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XzZ-Fn-0An">
-                                <rect key="frame" x="123" y="35" width="130" height="21"/>
+                                <rect key="frame" x="123.5" y="35" width="130" height="21"/>
                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                 <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -836,7 +837,6 @@
                         <outlet property="bookingTitle" destination="4rF-Y6-OVV" id="6ez-8g-yx5"/>
                         <outlet property="noBookingArt" destination="tvN-k0-43k" id="kSj-I1-jIf"/>
                         <outlet property="noBookingHint" destination="woP-cP-vgO" id="ZO5-O4-Nq8"/>
-                        <segue destination="TSO-Ys-xq8" kind="showDetail" identifier="Login" id="Jly-F7-soO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2re-I9-qGx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -856,7 +856,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Historial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETy-gz-HgE">
-                                <rect key="frame" x="153" y="35" width="69.5" height="21"/>
+                                <rect key="frame" x="153.5" y="35" width="69.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                 <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1198,7 +1198,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cambia tu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRM-pW-rY1">
-                                <rect key="frame" x="145.5" y="35" width="85" height="21"/>
+                                <rect key="frame" x="146" y="35" width="85" height="21"/>
                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                 <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1281,7 +1281,7 @@
         <image name="iconAdressGreen.png" width="26" height="40"/>
         <image name="iconAdressGrey.png" width="20" height="30"/>
         <image name="iconApartment.png" width="50" height="93"/>
-        <image name="iconArrowGreen.png" width="50" height="49"/>
+        <image name="iconArrowGreen.png" width="65" height="65"/>
         <image name="iconFavorite.png" width="128" height="128"/>
         <image name="iconHistoryGreen.png" width="40" height="29"/>
         <image name="iconHistoryGrey.png" width="30" height="22"/>
