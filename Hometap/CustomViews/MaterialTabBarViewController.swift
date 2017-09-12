@@ -27,6 +27,8 @@ class MaterialTabBarViewController: UIViewController {
     @IBOutlet weak var constraintIcon3: NSLayoutConstraint!
     @IBOutlet weak var constraintIcon4: NSLayoutConstraint!
     
+    @IBOutlet weak var snackHeigth: NSLayoutConstraint!
+    
     var images: [UIImageView] = []
     var labels: [UILabel] = []
     
@@ -56,6 +58,7 @@ class MaterialTabBarViewController: UIViewController {
         self.view.addGestureRecognizer(swipeLeft)
         
         K.MaterialTapBar.TapBar = self
+        K.Network.startNetworkUpdates()
     }
     
     override func didReceiveMemoryWarning() {
@@ -88,6 +91,7 @@ class MaterialTabBarViewController: UIViewController {
     }
     
     public func reloadViewController() {
+        K.User.reloadClient()
         var reloadedViewController: UIViewController = UIViewController()
         switch selectedIndex {
         case 0:
@@ -216,13 +220,17 @@ class MaterialTabBarViewController: UIViewController {
     
     public func showSnack(message: String, permanent: Bool = false) {
         (self.snackView.viewWithTag(11) as? UILabel)?.text = message
+        self.snackHeigth.constant = 35
         UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
             self.snackView.alpha = 1
         }
         if (!permanent) {
             if #available(iOS 10.0, *) {
                 Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { (timer) in
+                    self.snackHeigth.constant = 0
                     UIView.animate(withDuration: 0.5) {
+                        self.view.layoutIfNeeded()
                         self.snackView.alpha = 0
                     }
                     timer.invalidate()
@@ -238,10 +246,10 @@ class MaterialTabBarViewController: UIViewController {
     }
     
     public func hideSnack() {
-        if self.snackView.alpha == 1 {
-            UIView.animate(withDuration: 0.5) {
-                self.snackView.alpha = 0
-            }
+        self.snackHeigth.constant = 0
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+            self.snackView.alpha = 0
         }
     }
     

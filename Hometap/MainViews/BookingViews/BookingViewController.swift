@@ -45,6 +45,9 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dateTextField.text = Date().addingTimeInterval(60*60*24).toString(format: .Custom("dd/MM/yyyy"))
+        self.timeTextField.text = "07:00 AM"
+        self.new_service.date = Date().addingTimeInterval(60*60*24).merge(time: Date(fromString: "07:00 AM", withFormat: .Time)!)
     }
     
     override func viewDidLayoutSubviews() {
@@ -183,6 +186,8 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
         case 2:
             if (self.dateTextField.text != "") {
                 DatePickerViewController.pickerWith(title: "¿A qué hora quieres que llegue?", date: self.timeTextField.text, format: K.Helper.fb_time_format, type: .time, minDate: .date(self.dateTextField.text!), delegate: self, jm_delegate: self, tag: 2 , onViewController: self)
+            } else {
+                self.dateTextField.becomeFirstResponder()
             }
             break
         default:

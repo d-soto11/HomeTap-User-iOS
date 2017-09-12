@@ -316,10 +316,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="602"/>
                             </view>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jKK-Zi-0A3">
-                                <rect key="frame" x="0.0" y="567" width="375" height="35"/>
+                                <rect key="frame" x="0.0" y="602" width="375" height="0.0"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No hay conexión a internet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="UKh-t4-BJ1">
-                                        <rect key="frame" x="20" y="9.5" width="335" height="18"/>
+                                        <rect key="frame" x="20" y="-8.5" width="335" height="18"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -330,7 +330,7 @@
                                     <constraint firstItem="UKh-t4-BJ1" firstAttribute="centerY" secondItem="jKK-Zi-0A3" secondAttribute="centerY" id="1Fn-QZ-69O"/>
                                     <constraint firstItem="UKh-t4-BJ1" firstAttribute="leading" secondItem="jKK-Zi-0A3" secondAttribute="leading" constant="20" id="DRC-Rs-1ka"/>
                                     <constraint firstItem="UKh-t4-BJ1" firstAttribute="centerX" secondItem="jKK-Zi-0A3" secondAttribute="centerX" id="Pn9-ib-E9n"/>
-                                    <constraint firstAttribute="height" constant="35" id="nar-ws-dyo"/>
+                                    <constraint firstAttribute="height" id="nar-ws-dyo"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHZ-0Q-1n4">
@@ -468,12 +468,12 @@
                             <constraint firstAttribute="trailing" secondItem="qHZ-0Q-1n4" secondAttribute="trailing" id="7dv-gF-pJ1"/>
                             <constraint firstItem="qHZ-0Q-1n4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8B9-p1-0aZ"/>
                             <constraint firstItem="Gcp-VW-7fr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8Q9-II-lkT"/>
-                            <constraint firstItem="qHZ-0Q-1n4" firstAttribute="top" secondItem="Gcp-VW-7fr" secondAttribute="bottom" id="HTa-y9-yLH"/>
-                            <constraint firstItem="jKK-Zi-0A3" firstAttribute="bottom" secondItem="Gcp-VW-7fr" secondAttribute="bottom" id="JY6-or-DiQ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qHZ-0Q-1n4" secondAttribute="bottom" id="TWG-bW-8aa"/>
                             <constraint firstItem="jKK-Zi-0A3" firstAttribute="leading" secondItem="Gcp-VW-7fr" secondAttribute="leading" id="cJ1-In-ZVN"/>
                             <constraint firstItem="Gcp-VW-7fr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eLm-jg-EwA"/>
+                            <constraint firstItem="jKK-Zi-0A3" firstAttribute="top" secondItem="Gcp-VW-7fr" secondAttribute="bottom" id="jsa-hn-4fG"/>
                             <constraint firstItem="jKK-Zi-0A3" firstAttribute="trailing" secondItem="Gcp-VW-7fr" secondAttribute="trailing" id="s2t-91-0wY"/>
+                            <constraint firstItem="qHZ-0Q-1n4" firstAttribute="top" secondItem="jKK-Zi-0A3" secondAttribute="bottom" id="yPM-jc-h8h"/>
                         </constraints>
                     </view>
                     <connections>
@@ -485,6 +485,7 @@
                         <outlet property="imgIcon3" destination="Xcf-l6-OCh" id="tgc-Mc-S9G"/>
                         <outlet property="imgIcon4" destination="S9B-vx-Jpi" id="0JB-QA-b4U"/>
                         <outlet property="mainView" destination="Gcp-VW-7fr" id="Mnt-sT-fgW"/>
+                        <outlet property="snackHeigth" destination="nar-ws-dyo" id="eR6-w6-TpA"/>
                         <outlet property="snackView" destination="jKK-Zi-0A3" id="QhJ-yp-azm"/>
                         <outlet property="tabBarBackground" destination="qHZ-0Q-1n4" id="2hh-TU-zpv"/>
                         <outlet property="tabTitle1" destination="fLU-5Z-Lpm" id="ZHv-AK-WDa"/>
@@ -496,7 +497,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-212" y="116"/>
+            <point key="canvasLocation" x="-212" y="194.75262368815595"/>
         </scene>
         <!--Locations View Controller-->
         <scene sceneID="64n-cK-eCe">
@@ -511,7 +512,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tus direcciones" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XzZ-Fn-0An">
-                                <rect key="frame" x="123.5" y="35" width="130" height="21"/>
+                                <rect key="frame" x="123" y="35" width="130" height="21"/>
                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                 <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -684,31 +685,31 @@
                                 <rect key="frame" x="10" y="140" width="355" height="527"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BookingCell" rowHeight="140" id="efb-NL-wmr" customClass="HTTableViewCell" customModule="Hometap" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="355" height="140"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BookingCell" rowHeight="120" id="efb-NL-wmr" customClass="HTTableViewCell" customModule="Hometap" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="355" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="efb-NL-wmr" id="yhs-w4-wFw">
-                                            <rect key="frame" x="0.0" y="0.0" width="355" height="140"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="355" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddF-gR-DxK">
-                                                    <rect key="frame" x="8" y="13" width="339" height="114"/>
+                                                    <rect key="frame" x="8" y="13" width="339" height="94"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jeu-mZ-OSN">
-                                                            <rect key="frame" x="8" y="27.5" width="60" height="60"/>
+                                                            <rect key="frame" x="8" y="17.5" width="60" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="cYF-Uk-JDG"/>
                                                                 <constraint firstAttribute="width" secondItem="Jeu-mZ-OSN" secondAttribute="height" multiplier="1:1" id="ebQ-8R-jDU"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="María Silva" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="3CD-un-l1o">
-                                                            <rect key="frame" x="88" y="35" width="163" height="24"/>
+                                                            <rect key="frame" x="88" y="25" width="163" height="24"/>
                                                             <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgq-8R-z8Y">
-                                                            <rect key="frame" x="271" y="27.5" width="60" height="60"/>
+                                                            <rect key="frame" x="271" y="17.5" width="60" height="60"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMc-j4-vlq">
                                                                     <rect key="frame" x="8" y="20" width="44" height="20"/>
@@ -754,14 +755,14 @@
                                                             </constraints>
                                                         </view>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconStarFilled.png" translatesAutoresizingMaskIntoConstraints="NO" id="ty6-sI-9nJ">
-                                                            <rect key="frame" x="88" y="67" width="10" height="10"/>
+                                                            <rect key="frame" x="88" y="57" width="10" height="10"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="10" id="oWl-k0-Vhy"/>
                                                                 <constraint firstAttribute="width" secondItem="ty6-sI-9nJ" secondAttribute="height" multiplier="1:1" id="rPr-CL-brw"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="15" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hP-FD-ZVs">
-                                                            <rect key="frame" x="100" y="63" width="21" height="18"/>
+                                                            <rect key="frame" x="100" y="53" width="21" height="18"/>
                                                             <fontDescription key="fontDescription" name="Rubik-Light" family="Rubik" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -856,7 +857,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Historial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETy-gz-HgE">
-                                <rect key="frame" x="153.5" y="35" width="69.5" height="21"/>
+                                <rect key="frame" x="153" y="35" width="69.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                 <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -917,7 +918,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="14" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jk9-Ux-Ypp">
-                                                            <rect key="frame" x="112" y="39" width="0.0" height="0.0"/>
+                                                            <rect key="frame" x="112" y="39.5" width="0.0" height="0.0"/>
                                                             <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="12"/>
                                                             <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -1198,7 +1199,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cambia tu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRM-pW-rY1">
-                                <rect key="frame" x="146" y="35" width="85" height="21"/>
+                                <rect key="frame" x="145.5" y="35" width="85" height="21"/>
                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                 <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

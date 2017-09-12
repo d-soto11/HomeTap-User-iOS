@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class AddPaymentViewController: UIViewController {
 
@@ -45,9 +46,16 @@ class AddPaymentViewController: UIViewController {
     }
     
     @IBAction func savePayment(_ sender: Any) {
+        let mb = MBProgressHUD.showAdded(to: self.view, animated: true)
+        mb.label.text = "Guardando medio de pago"
         loadedCardView?.tokenizeCreditCard(callback: { (card) in
-            K.User.client!.savePayment(payment: card)
-            card.save()
+            mb.hide(animated: true)
+            guard card != nil else {
+                self.showAlert(title: "Lo sentimos", message: "No hemos podido verificar tu tarheta. Intenta de nuevo.", closeButtonTitle: "Entendido")
+                return
+            }
+            K.User.client!.savePayment(payment: card!)
+            card!.save()
             self.back(self)
         })
     }

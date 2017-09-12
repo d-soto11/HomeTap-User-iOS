@@ -109,20 +109,32 @@ class User: HometapObject {
     var phone: String?
     var votes: Int?
     var blocked: Bool?
+    var cachedServices: [Service]?
+    var lastCanceledService: Service?
     
     public func services_brief() -> [Service]? {
         var services_brief:[Service] = []
+        for cached in cachedServices ?? [] {
+            let index = services_brief.insertionIndexOf(elem: cached) { $0.date! < $1.date! }
+            services_brief.insert(cached, at: index)
+        }
+        K.User.clearCachedServices()
         if let srvc = original_dictionary["upcomingServices"] {
             if let srvcDict = srvc as? [String:AnyObject] {
-                for (_, service) in srvcDict {
+                for (id, service) in srvcDict {
+                    if id == lastCanceledService?.uid ?? "" {
+                        continue
+                    }
                     if let servDict = service as? [String:AnyObject] {
-                        services_brief.append(Service(dict: servDict))
+                        let toInsert = Service(dict: servDict)
+                        let index = services_brief.insertionIndexOf(elem: toInsert) { $0.date! < $1.date! }
+                        services_brief.insert(toInsert, at: index)
                     }
                 }
                 return services_brief
             }
         }
-        return nil
+        return services_brief.isEmpty ? nil : services_brief
     }
     
     public func services() -> [Service]? {
@@ -132,11 +144,14 @@ class User: HometapObject {
                 for (id_service, serv) in srvcDict {
                     if (id_service == "cache") {
                         let s = serv as! [String: AnyObject]
-                        services_brief.append(Service(dict: s))
+                        let toInsert = Service(dict: s)
+                        let index = services_brief.insertionIndexOf(elem: toInsert) { $0.date! < $1.date! }
+                        services_brief.insert(toInsert, at: index)
                     } else {
                         Service.withID(id: id_service, callback: {(service) in
                             if service != nil {
-                                services_brief.append(service!)
+                                let index = services_brief.insertionIndexOf(elem: service!) { $0.date! < $1.date! }
+                                services_brief.insert(service!, at: index)
                             }
                         })
                     }
@@ -147,19 +162,16 @@ class User: HometapObject {
         return nil
     }
     
-    public func addCacheService(_ s: Service) {
-        var upcoming = original_dictionary["upcomingServices"] as? [String:AnyObject] ?? [:]
-        upcoming["cache"] = s.original_dictionary as AnyObject
-        self.original_dictionary["upcomingServices"] = upcoming as AnyObject
-    }
-    
     public func history_brief() -> [Service]? {
-        var history_brief:[Service] = []
+        var history_brief:[Service] = lastCanceledService == nil ? [] : [lastCanceledService!]
+        lastCanceledService = nil
         if let srvc = original_dictionary["pastServices"] {
             if let srvcDict = srvc as? [String:AnyObject] {
                 for (_, service) in srvcDict {
                     if let servDict = service as? [String:AnyObject] {
-                        history_brief.append(Service(dict: servDict))
+                        let toInsert = Service(dict: servDict)
+                        let index = history_brief.insertionIndexOf(elem: toInsert) { $0.date! > $1.date! }
+                        history_brief.insert(toInsert, at: index)
                     }
                 }
                 return history_brief
@@ -175,7 +187,8 @@ class User: HometapObject {
                 for (id_service, _) in srvcDict {
                     Service.withID(id: id_service, callback: {(service) in
                         if service != nil {
-                            history.append(service!)
+                            let index = history.insertionIndexOf(elem: service!) { $0.date! > $1.date! }
+                            history.insert(service!, at: index)
                         }
                     })
                 }

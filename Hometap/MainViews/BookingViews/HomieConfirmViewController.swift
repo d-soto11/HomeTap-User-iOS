@@ -64,8 +64,8 @@ class HomieConfirmViewController: UIViewController, UITableViewDataSource, UITab
         
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
-        self.homieProfilePicture.downloadedFrom(link: homie.photo!)
-        self.homieRating.text = String(format: "%.0f", homie.rating!)
+        self.homieProfilePicture.downloadedFrom(link: homie.photo ?? "")
+        self.homieRating.text = String(format: "%.1f", homie.rating!)
         self.homieName.text = homie.name!
         self.homieCommentsHint.text = String(format: "Lo que dicen de %@", homie.name!)
         

@@ -21,7 +21,6 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         bookingB.addTarget(self, action: #selector(startBooking), for: .touchUpInside)
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,32 +42,31 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     
     private func reloadClientData() {
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        Client.withID(id: K.User.client!.uid!) { (client) in
-            if client != nil {
-                K.User.client = client
-                self.services = K.User.client?.history_brief() ?? []
-                if self.services.count > 0 {
-                    UIView.animate(withDuration: 1.0, animations: {
-                        self.noBookingHint.alpha = 0
-                        self.bookingB.alpha = 0
-                        
-                        self.historyTable.reloadData()
-                    })
-                } else {
-                    UIView.animate(withDuration: 1.0, animations: {
-                        self.noBookingHint.alpha = 1
-                        self.bookingB.alpha = 1
-                        self.historyTable.alpha = 0
-                    })
-                }
-            }
-            MBProgressHUD.hide(for: self.view, animated: true)
+        self.services = K.User.client?.history_brief() ?? []
+        if self.services.count > 0 {
+            UIView.animate(withDuration: 1.0, animations: {
+                self.noBookingHint.alpha = 0
+                self.bookingB.alpha = 0
+                
+                self.historyTable.reloadData()
+            })
+        } else {
+            UIView.animate(withDuration: 1.0, animations: {
+                self.noBookingHint.alpha = 1
+                self.bookingB.alpha = 1
+                self.historyTable.alpha = 0
+            })
         }
+        MBProgressHUD.hide(for: self.view, animated: true)
         
     }
     
     public func startBooking() {
-        BookingViewController.show(parent: self)
+        if K.Network.network_available {
+            BookingViewController.show(parent: self)
+        } else {
+            self.showAlert(title: "Lo sentimos", message: "No puedes pedir servicios cuando estás en el modo sin conexión.", closeButtonTitle: "Aceptar")
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -89,9 +87,9 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
             cell.viewWithTag(100)?.roundCorners(radius: K.UI.light_round_px)
             
             
-            (cell.viewWithTag(2) as? UIImageView)?.downloadedFrom(link: service.briefPhoto!)
+            (cell.viewWithTag(2) as? UIImageView)?.downloadedFrom(link: service.briefPhoto ?? "")
             (cell.viewWithTag(2) as? UIImageView)?.circleImage()
-            (cell.viewWithTag(11) as? UILabel)?.text = service.briefName!
+            (cell.viewWithTag(11) as? UILabel)?.text = service.briefName ?? "Servicio recién cancelado"
             (cell.viewWithTag(100)?.viewWithTag(12) as? UILabel)?.text = service.date?.toString(format: .Custom("dd/MM/YYYY")) ?? "Sin fecha"
             //(cell.viewWithTag(100)?.viewWithTag(13) as? UILabel)?.text = service.date?.toString(format: .Time)
             if let state = service.state {
@@ -99,7 +97,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
                     (cell.viewWithTag(100)?.viewWithTag(14) as? UILabel)?.text = "Cancelado"
                     (cell.viewWithTag(100)?.viewWithTag(14) as? UILabel)?.textColor = K.UI.alert_color
 
-                } else if state == 1 {
+                } else if state == 2 {
                     (cell.viewWithTag(100)?.viewWithTag(14) as? UILabel)?.text = "Completado"
                     (cell.viewWithTag(100)?.viewWithTag(14) as? UILabel)?.textColor = K.UI.main_color
                 }

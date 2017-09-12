@@ -122,7 +122,7 @@ class DatePickerViewController: UIViewController {
     }
     
     @IBAction func closeDatePicker(_ sender: Any) {
-        if (self.picker.layer.animationKeys()?.isEmpty ?? true) {
+        if (!self.picker.viewIsScrolling()) {
             let dayTimePeriodFormatter = DateFormatter()
             dayTimePeriodFormatter.dateFormat = format
             
@@ -132,17 +132,6 @@ class DatePickerViewController: UIViewController {
             jm_delegate.dismissModal(self, data: nil)
         }
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
     public enum MinDate {
         case none

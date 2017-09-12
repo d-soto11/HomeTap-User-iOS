@@ -14,9 +14,9 @@ import ReachabilitySwift
 struct K {
     struct Network {
         static var network_available:Bool = true
+        static var reachability = Reachability()!
         
         static public func startNetworkUpdates() {
-            let reachability = Reachability()!
             reachability.whenReachable = { reachability in
                 network_available = true
                 DispatchQueue.main.async {
@@ -73,14 +73,27 @@ struct K {
             return Storage.storage().reference(forURL: storageURL)
         }
         struct Local {
-            private static var cache: [String:Data] = [:]
+            private static var data_cache: [String:Data] = [:]
+            private static var model_cache: [String: AnyObject] = [:]
             
             public static func save(id: String, data: Data) {
-                cache[id] = data
+                data_cache[id] = data
             }
             
             public static func getCache(_ id: String) -> Data? {
-                return cache[id]
+                return data_cache[id]
+            }
+            
+            public static func saveModel(id: String, object: AnyObject) {
+                model_cache[id] = object
+            }
+            
+            public static func getModel(_ id: String) -> AnyObject? {
+                return model_cache[id]
+            }
+            
+            public static func clearModel(_ id: String) {
+                model_cache.removeValue(forKey: id)
             }
         }
     }
@@ -103,6 +116,34 @@ struct K {
         static let default_ph: String = "https://firebasestorage.googleapis.com/v0/b/hometap-f173f.appspot.com/o/app_content%2Ficon_no_photo.png?alt=media&token=86491cbb-7c44-455d-bc4d-39ff8da3fc54"
         
         static var client:Client?
+        
+        public static func addCacheService(_ s: Service) {
+            let _ = s.homie { (h) in
+                s.briefName = h?.name ?? "Nuevo servicio"
+                s.briefRating = h?.rating ?? 5
+                s.briefPhoto = h?.photo ?? ""
+                if var cache = K.Database.Local.getModel("cacheUpcomming") as? [Service] {
+                    cache.append(s)
+                    K.Database.Local.saveModel(id: "cacheUpcomming", object: cache as AnyObject)
+                } else {
+                    let cache = [s]
+                    K.Database.Local.saveModel(id: "cacheUpcomming", object: cache as AnyObject)
+                }
+
+            }
+        }
+        
+        public static func loadCachedServices() {
+            if let cache = K.Database.Local.getModel("cacheUpcomming") as? [Service] {
+                client?.cachedServices = cache
+            } else {
+                client?.cachedServices = []
+            }
+        }
+        
+        public static func clearCachedServices() {
+            K.Database.Local.clearModel("cacheUpcomming")
+        }
         
         static func reloadClient() {
             if client != nil {

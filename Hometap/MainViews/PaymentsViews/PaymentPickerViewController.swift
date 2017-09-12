@@ -116,6 +116,7 @@ class PaymentPickerViewController: UIViewController {
     
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+        self.service.state = nil
     }
 
     @IBAction func toogleSavingPayment(_ sender: Any) {
@@ -184,14 +185,19 @@ class PaymentPickerViewController: UIViewController {
                         mb.label.text = "Verificando tarjeta"
                     }
                     self.loaded_card_view?.tokenizeCreditCard(callback: { (card) in
+                        guard card != nil else {
+                            mb.hide(animated: true)
+                            self.showAlert(title: "Lo sentimos", message: "No hemos podido verificar tu tarjeta. Verifica que los datos que ingresaste son correctos.", closeButtonTitle: "Ok")
+                            return
+                        }
                         if self.save_payment {
                             // Save
                             DispatchQueue.main.async {
                                 mb.label.text = "Guardando información de pago"
                             }
-                            K.User.client!.savePayment(payment: card)
-                            card.save()
-                            if let token = card.uid {
+                            K.User.client!.savePayment(payment: card!)
+                            card!.save()
+                            if let token = card?.uid {
                                 DispatchQueue.main.async {
                                     mb.label.text = "Procesando pago"
                                 }
@@ -219,7 +225,7 @@ class PaymentPickerViewController: UIViewController {
                                 }
                             }
                         } else {
-                            if let token = card.uid {
+                            if let token = card?.uid {
                                 DispatchQueue.main.async {
                                     mb.label.text = "Procesando pago"
                                 }

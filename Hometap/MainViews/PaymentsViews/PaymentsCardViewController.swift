@@ -54,17 +54,14 @@ class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
         return cardView
     }
     
-    func tokenizeCreditCard(callback: @escaping (PaymentCard) -> ()) {
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+    func tokenizeCreditCard(callback: @escaping (PaymentCard?) -> ()) {
         STPAPIClient.shared().createToken(withCard: self.stripeCard) { (token, error) in
             guard let token = token, error == nil else {
-                MBProgressHUD.hide(for: self.view, animated: true)
-                self.showAlert(title: "Lo sentimos", message: "No hemos podido verificar tu tarjeta. Verifica que todos los datos están correctos.", closeButtonTitle: "Ok")
+                callback(nil)
                 return
             }
             guard let stcard = token.card else {
-                MBProgressHUD.hide(for: self.view, animated: true)
-                self.showAlert(title: "Lo sentimos", message: "No hemos podido verificar tu tarjeta. Verifica que todos los datos están correctos.", closeButtonTitle: "Ok")
+                callback(nil)
                 return
             }
             self.loaded_card = PaymentCard(dict: [:])
@@ -89,7 +86,6 @@ class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
             self.loaded_card!.expiration = self.cardExpiration.text
             self.loaded_card!.number = stcard.last4()
             self.loaded_card!.cvc = self.cardCVC.text
-            MBProgressHUD.hide(for: self.view, animated: true)
             callback(self.loaded_card!)
         }
     }

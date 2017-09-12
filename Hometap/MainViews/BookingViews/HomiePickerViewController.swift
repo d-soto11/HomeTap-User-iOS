@@ -134,10 +134,9 @@ class HomiePickerViewController: UIViewController {
                 if (!same_day) {
                     v.viewWithTag(100)?.backgroundColor = K.UI.second_color
                 }
-                print("passed \(index)")
                 Homie.withID(id: block.homieID!, callback: { (homie) in
                     if homie != nil {
-                        (v.viewWithTag(12) as? UILabel)?.text = String(format: "%.0f", homie!.rating ?? 0)
+                        (v.viewWithTag(12) as? UILabel)?.text = String(format: "%.1f", homie!.rating ?? 0)
                         (v.viewWithTag(11) as? UILabel)?.text = homie!.name!
                         
                         (v.viewWithTag(100)?.viewWithTag(20) as? UILabel)?.text = block.date!.toString(format: .Custom("dd/MM/YYYY"))
@@ -145,7 +144,6 @@ class HomiePickerViewController: UIViewController {
                         mb.hide(animated: true)
                         (v.viewWithTag(1) as? UIImageView)?.downloadedFrom(link: homie!.photo ?? "")
                         (v.viewWithTag(1) as? UIImageView)?.circleImage()
-                        print(index)
                         if (self.loaded_homies.count <= index) {
                             self.loaded_homies.append(homie!)
                         } else {

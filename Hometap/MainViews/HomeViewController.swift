@@ -18,6 +18,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var bookingTitle: UILabel!
     @IBOutlet weak var bookingTable: UITableView!
     
+    private var services: [Service]! = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +36,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         // Register data and save
                     } else {
                         K.User.client = client!
+                        K.User.loadCachedServices()
                         self.reloadClientData()
                         K.User.checkNotifications()
                         self.bookingB.addTarget(self, action: #selector(self.startBooking), for: .touchUpInside)
@@ -54,8 +57,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
             MBProgressHUD.hide(for: self.view, animated: true)
         }
-        
-        K.Network.startNetworkUpdates()        
     }
     
     @IBAction func showFavorites(_ sender: Any) {
@@ -63,7 +64,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     public func startBooking() {
-        BookingViewController.show(parent: self)
+        if K.Network.network_available {
+            BookingViewController.show(parent: self)
+        } else {
+            self.showAlert(title: "Lo sentimos", message: "No puedes pedir servicios cuando estás en el modo sin conexión.", closeButtonTitle: "Aceptar")
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -75,47 +80,45 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLayoutSubviews()
         self.bookingB.addNormalShadow()
         self.bookingB.roundCorners(radius: K.UI.round_px)
-        
         self.bookingTable.reloadData()
+        self.bookingTable.layoutIfNeeded()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.reloadClientData()
+        self.view.layoutIfNeeded()
     }
     
     private func reloadClientData() {
-        MBProgressHUD.showAdded(to: self.view, animated: true)
-        Client.withID(id: K.User.client!.uid!) { (client) in
-            if client != nil {
-                K.User.client = client
-                if let count = K.User.client?.services_brief()?.count {
-                    if count > 0 {
-                        UIView.animate(withDuration: 1.0, animations: {
-                            self.noBookingHint.alpha = 0
-                            self.noBookingArt.alpha = 0
-                            self.bookingB.alpha = 0
-                            
-                            self.bookingTitle.alpha = 1
-                            self.bookingTable.alpha = 1
-                            
-                            self.bookingTable.reloadData()
-                        })
-                    } else {
-                        UIView.animate(withDuration: 1.0, animations: {
-                            self.noBookingHint.alpha = 1
-                            self.noBookingArt.alpha = 1
-                            self.bookingB.alpha = 1
-                            
-                            self.bookingTitle.alpha = 0
-                            self.bookingTable.alpha = 0
-                        })
-                    }
-                }
-            }
-            MBProgressHUD.hide(for: self.view, animated: true)
+        self.services = K.User.client?.services_brief() ?? []
+        if self.services.count > 0 {
+            UIView.animate(withDuration: 1.0, animations: {
+                self.noBookingHint.alpha = 0
+                self.noBookingArt.alpha = 0
+                self.bookingB.alpha = 0
+                
+                self.bookingTitle.alpha = 1
+                self.bookingTable.alpha = 1
+                
+                self.bookingTable.reloadData()
+                self.bookingTable.layoutIfNeeded()
+            })
+        } else {
+            UIView.animate(withDuration: 1.0, animations: {
+                self.noBookingHint.alpha = 1
+                self.noBookingArt.alpha = 1
+                self.bookingB.alpha = 1
+                
+                self.bookingTitle.alpha = 0
+                self.bookingTable.alpha = 0
+            })
         }
-        
+                
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return K.User.client?.services_brief()?.count ?? 0
+        return self.services.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -124,14 +127,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellUI = tableView.dequeueReusableCell(withIdentifier: "BookingCell", for: indexPath) as! HTTableViewCell
-        let service = K.User.client!.services_brief()![indexPath.row]
+        let service = self.services[indexPath.row]
         
         cellUI.uiUpdates = {(cell) in
-            cell.viewWithTag(100)?.clearShadows()
             cell.viewWithTag(100)?.addNormalShadow()
             cell.viewWithTag(100)?.roundCorners(radius: K.UI.light_round_px)
             
-            cell.viewWithTag(2)?.clearShadows()
             cell.viewWithTag(2)?.addLightShadow()
             cell.viewWithTag(2)?.roundCorners(radius: K.UI.light_round_px)
             
@@ -142,14 +143,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             (cell.viewWithTag(2)?.viewWithTag(13) as? UILabel)?.text = service.date?.toString(format: .Custom("dd")) ?? "00"
             (cell.viewWithTag(2)?.viewWithTag(14) as? UILabel)?.text = service.date?.toString(format: .Time)
             
-            (cell.viewWithTag(15) as? UILabel)?.text = String(format: "%.0f", service.briefRating ?? 0)
+            (cell.viewWithTag(15) as? UILabel)?.text = String(format: "%.1f", service.briefRating ?? 0)
         }
         return cellUI
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Go to Service
-        let service = K.User.client!.services_brief()![indexPath.row]
+        let service = self.services[indexPath.row]
         BookingBriefViewController.brief(service: service, parent: self)
     }
     

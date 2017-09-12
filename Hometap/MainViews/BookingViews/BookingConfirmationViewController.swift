@@ -16,7 +16,7 @@ class BookingConfirmationViewController: UIViewController {
         let st = UIStoryboard.init(name: "Booking", bundle: nil)
         let confirmation = st.instantiateViewController(withIdentifier: "Confirmation") as! BookingConfirmationViewController
         service.save()
-        K.User.client?.addCacheService(service)
+        K.User.addCacheService(service)
         MBProgressHUD.hide(for: parent.view, animated: true)
         
         parent.view.insertSubview(confirmation.view, aboveSubview: parent.view)

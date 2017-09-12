@@ -73,13 +73,13 @@ class BookingBriefViewController: UIViewController {
         } else if service.state == 1 {
             self.stateLabel.text = "En progreso"
             self.stateLabel.textColor = K.UI.main_color
-            self.ratingLabel.text = String(format: "%.0f", service.rating ?? 5.0)
+            self.ratingLabel.text = String(format: "%.1f", service.rating ?? 5.0)
             self.statusHeigth.constant = 70
             self.contentHeigth.constant = self.contentHeigth.constant + 70
         } else if service.state == 2 {
             self.stateLabel.text = "Completado"
             self.stateLabel.textColor = K.UI.main_color
-            self.ratingLabel.text = String(format: "%.0f", service.rating ?? 5.0)
+            self.ratingLabel.text = String(format: "%.1f", service.rating ?? 5.0)
             self.statusHeigth.constant = 70
             self.contentHeigth.constant = self.contentHeigth.constant + 70
         }
@@ -153,15 +153,20 @@ class BookingBriefViewController: UIViewController {
 
     @IBAction func done(_ sender: Any) {
         if (service.state == nil) {
-            service.state = 0
+            self.service.state = 0
             PaymentPickerViewController.showPicker(service: service, parent: self)
         } else if (service.state == 0) {
             // Cancel service
             service.state = -1
             service.save()
+            let _ = service.homie(callback: { (h) in
+                self.service.briefName = h?.name ?? "Servicio cancelado"
+                self.service.briefPhoto = h?.photo ?? K.User.default_ph
+                K.User.client?.lastCanceledService = self.service
+            })
             self.back(self)
         } else {
-            // Call hometap
+            K.Hometap.call()
         }
     }
     
