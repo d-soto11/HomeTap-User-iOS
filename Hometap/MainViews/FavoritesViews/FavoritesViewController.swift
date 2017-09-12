@@ -88,6 +88,7 @@ class FavoritesViewController: UIViewController, UICollectionViewDelegate, UICol
         let homie = favorites[indexPath.row]
         
         cellUI.uiUpdates = {(cell) in
+            cell.viewWithTag(1)?.clearShadows()
             cell.viewWithTag(1)?.addNormalShadow()
             cell.viewWithTag(1)?.roundCorners(radius: K.UI.light_round_px)
             (cell.viewWithTag(1)?.viewWithTag(11) as? UILabel)?.text = homie.name ?? "Homie"

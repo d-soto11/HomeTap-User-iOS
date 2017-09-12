@@ -84,6 +84,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         let service = self.services[indexPath.row]
         
         cellUI.uiUpdates = {(cell) in
+            cell.viewWithTag(100)?.clearShadows()
             cell.viewWithTag(100)?.addNormalShadow()
             cell.viewWithTag(100)?.roundCorners(radius: K.UI.light_round_px)
             

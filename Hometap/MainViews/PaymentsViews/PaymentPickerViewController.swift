@@ -59,6 +59,10 @@ class PaymentPickerViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        loadPaymentData()
+    }
+    
     override func viewDidLayoutSubviews() {
         self.payB.addNormalShadow()
         self.payB.roundCorners(radius: K.UI.round_px)

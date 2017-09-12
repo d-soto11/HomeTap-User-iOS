@@ -59,6 +59,7 @@ class LocationsViewController: UIViewController, UITableViewDataSource, UITableV
             
             cell_m.uiUpdates = {(cell) in
                 (cell.viewWithTag(1) as? UIButton)?.roundCorners(radius: K.UI.light_round_px)
+                (cell.viewWithTag(1) as? UIButton)?.clearShadows()
                 (cell.viewWithTag(1) as? UIButton)?.addLightShadow()
                 (cell.viewWithTag(1) as? UIButton)?.addTarget(self, action: #selector(self.newPlace), for: .touchUpInside)
             }
@@ -70,6 +71,7 @@ class LocationsViewController: UIViewController, UITableViewDataSource, UITableV
             
             cell_m.uiUpdates = {(cell) in
                 cell.viewWithTag(2)?.roundCorners(radius: K.UI.light_round_px)
+                cell.viewWithTag(2)?.clearShadows()
                 cell.viewWithTag(2)?.addNormalShadow()
                 (cell.viewWithTag(2)?.viewWithTag(10) as? UIImageView)?.image = place.apartament! ? UIImage(named: "iconApartment") : UIImage(named: "iconHouseBlack")
                 (cell.viewWithTag(2)?.viewWithTag(11) as? UILabel)?.text = place.name!

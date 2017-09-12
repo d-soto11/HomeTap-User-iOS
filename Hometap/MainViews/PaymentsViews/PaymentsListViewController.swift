@@ -65,6 +65,7 @@ class PaymentsListViewController: UIViewController, UITableViewDataSource, UITab
             let cell_m = tableView.dequeueReusableCell(withIdentifier: "addPaymentCell", for: indexPath) as! HTTableViewCell
             
             cell_m.uiUpdates = {(cell) in
+                (cell.viewWithTag(1) as? UIButton)?.clearShadows()
                 (cell.viewWithTag(1) as? UIButton)?.roundCorners(radius: K.UI.light_round_px)
                 (cell.viewWithTag(1) as? UIButton)?.addLightShadow()
                 (cell.viewWithTag(1) as? UIButton)?.addTarget(self, action: #selector(self.newPayment), for: .touchUpInside)

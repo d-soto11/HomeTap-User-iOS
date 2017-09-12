@@ -127,9 +127,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let service = K.User.client!.services_brief()![indexPath.row]
         
         cellUI.uiUpdates = {(cell) in
+            cell.viewWithTag(100)?.clearShadows()
             cell.viewWithTag(100)?.addNormalShadow()
             cell.viewWithTag(100)?.roundCorners(radius: K.UI.light_round_px)
             
+            cell.viewWithTag(2)?.clearShadows()
             cell.viewWithTag(2)?.addLightShadow()
             cell.viewWithTag(2)?.roundCorners(radius: K.UI.light_round_px)
             

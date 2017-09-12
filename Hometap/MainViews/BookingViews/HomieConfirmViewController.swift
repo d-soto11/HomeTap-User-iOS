@@ -146,6 +146,7 @@ class HomieConfirmViewController: UIViewController, UITableViewDataSource, UITab
         let comment = comments[indexPath.row]
         
         cellUI.uiUpdates = {(cell) in
+            cell.viewWithTag(1)?.clearShadows()
             cell.viewWithTag(1)?.addNormalShadow()
             (cell.viewWithTag(11) as? UILabel)?.text = comment.clientName
             (cell.viewWithTag(12) as? UILabel)?.text = comment.body
