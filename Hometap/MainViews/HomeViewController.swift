@@ -26,6 +26,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
         // Do any additional setup after loading the view.
+        self.bookingB.addTarget(self, action: #selector(self.startBooking), for: .touchUpInside)
+        self.bookingB2.addTarget(self, action: #selector(self.startBooking), for: .touchUpInside)
         
         Auth.auth().addStateDidChangeListener { auth, user in
             if user != nil {
@@ -39,8 +41,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         K.User.loadCachedServices()
                         self.reloadClientData()
                         K.User.checkNotifications()
-                        self.bookingB.addTarget(self, action: #selector(self.startBooking), for: .touchUpInside)
-                        self.bookingB2.addTarget(self, action: #selector(self.startBooking), for: .touchUpInside)
                         if let token = Firebase.Messaging.messaging().fcmToken {
                             K.User.client?.saveNotificationToken(token: token)
                         }

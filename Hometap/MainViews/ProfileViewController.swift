@@ -33,6 +33,14 @@ class ProfileViewController: UIViewController, ImagePickerDelegate, ProfileChang
         self.phoneB.addTarget(self, action: #selector(editInfo(sender:)), for: .touchUpInside)
         self.mailB.addTarget(self, action: #selector(editInfo(sender:)), for: .touchUpInside)
         
+        if !K.Network.network_available {
+            self.pictureB.isEnabled = false
+            self.nameB.isEnabled = false
+            self.phoneB.isEnabled = false
+            self.mailB.isEnabled = false
+            self.paymentB.isEnabled = false
+            self.creditsB.isEnabled = false
+        }
         
     }
     
@@ -47,6 +55,8 @@ class ProfileViewController: UIViewController, ImagePickerDelegate, ProfileChang
             self.nameB.setTitle(K.User.client!.name!, for: .normal)
             self.phoneB.setTitle(K.User.client!.phone!, for: .normal)
             self.mailB.setTitle(K.User.client!.email!, for: .normal)
+        } else {
+            self.showAlert(title: "Sin conexión", message: "No hemos podido cargar la información de tu perfil. Revisa tu conexión a Internet", closeButtonTitle: "Aceptar")
         }
     }
     

@@ -155,7 +155,7 @@ class BookingBriefViewController: UIViewController {
         if (service.state == nil) {
             self.service.state = 0
             PaymentPickerViewController.showPicker(service: service, parent: self)
-        } else if (service.state == 0) {
+        } else if service.state == 0 {
             // Cancel service
             service.state = -1
             service.save()

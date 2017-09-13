@@ -17,6 +17,8 @@ import GooglePlaces
 import DropDown
 import Stripe
 import UserNotifications
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
@@ -25,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
         // Override point for customization after application launch.
         // Configurar Firebase
         FirebaseApp.configure()
@@ -46,6 +47,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Private configurations
         // ...
         DropDown.startListeningToKeyboard()
+        
+        // Crashalytics
+        Fabric.with([Crashlytics.self])
         
         // Notifications configuration
         if #available(iOS 10.0, *) {

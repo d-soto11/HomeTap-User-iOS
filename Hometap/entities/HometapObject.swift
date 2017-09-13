@@ -11,7 +11,7 @@ import Firebase
 
 class HometapObject: NSObject {
     
-    public init(dict: [String: AnyObject]){
+    public init(dict: [String: AnyObject]) {
         original_dictionary = dict
         
         if let uid = dict["id"] {

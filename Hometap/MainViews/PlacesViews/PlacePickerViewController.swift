@@ -49,7 +49,7 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        K.User.client?.places(callback: { (place, total) in
+        let _ = K.User.client?.places(callback: { (place, total) in
             if place != nil {
                 self.places.append(place!)
                 if (self.places.count == total) {

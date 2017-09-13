@@ -21,21 +21,23 @@ class LocationsViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidAppear(_ animated: Bool) {
         MBProgressHUD.showAdded(to: self.locationsTable, animated: true)
-        self.places = []
-        Client.withID(id: K.User.client?.uid ?? "") { (client) in
-            K.User.client = client
-            K.User.client?.places(callback: { (place, total) in
-                if place != nil {
-                    self.places.append(place!)
-                    if (self.places.count == total) {
-                        self.locationsTable.reloadData()
-                        MBProgressHUD.hide(for: self.locationsTable, animated: true)
+        self.places = K.User.client?.places(callback: { (place, total) in
+            if place != nil {
+                for (i, p) in self.places.enumerated() {
+                    if p.uid! == place!.uid! {
+                        self.places.remove(at: i)
                     }
-                } else {
+                }
+                self.places.append(place!)
+                if (self.places.count == total) {
+                    self.locationsTable.reloadData()
                     MBProgressHUD.hide(for: self.locationsTable, animated: true)
                 }
-            })
-        }
+            } else {
+                MBProgressHUD.hide(for: self.locationsTable, animated: true)
+            }
+        }) ?? []
+        MBProgressHUD.hide(for: self.locationsTable, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -96,10 +98,14 @@ class LocationsViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func newPlace() {
-        let place = Place(dict: [:])
-        place.apartament = false
-        place.pets = false
-        PlaceEditorViewController.showEditor(place: place, parent: self)
+        if K.Network.network_available {
+            let place = Place(dict: [:])
+            place.apartament = false
+            place.pets = false
+            PlaceEditorViewController.showEditor(place: place, parent: self)
+        } else {
+            self.showAlert(title: "Espera", message: "No puedes agregar direcciones mientras estás en modo sin conexión.", closeButtonTitle: "Ok")
+        }
     }
 
 }

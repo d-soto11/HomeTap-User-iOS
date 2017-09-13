@@ -387,7 +387,7 @@ extension UIView {
         return anySubViewScrolling(view: self)
     }
     
-    private func anySubViewScrolling(view: UIView) -> Bool{
+    private func anySubViewScrolling(view: UIView) -> Bool {
         if let scroll = view as? UIScrollView {
             return scroll.isDragging || scroll.isDecelerating
         }

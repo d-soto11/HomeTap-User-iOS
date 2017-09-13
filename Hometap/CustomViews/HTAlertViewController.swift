@@ -15,7 +15,6 @@ class HTAlertViewController: UIViewController {
     @IBOutlet weak var confirmationB: UIButton!
     @IBOutlet weak var cancelB: UIButton!
     @IBOutlet weak var cancelHeigth: NSLayoutConstraint!
-    
     private var titleString: String!
     private var bodyString: String!
     private var acceptTitle: String!

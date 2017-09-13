@@ -44,8 +44,9 @@ class Client: User {
     
     var preferences: NSDictionary?
     var credits: Double?
+    public var local_places: [Place] = []
     
-    public func places(callback: @escaping (_ p: Place?, _ total: Int)->Void){
+    public func places(callback: @escaping (_ p: Place?, _ total: Int)->Void) -> [Place] {
         if let plcs = original_dictionary["places"] {
             if let plcsDict = plcs as? [String:AnyObject] {
                 let total = plcsDict.count
@@ -53,16 +54,32 @@ class Client: User {
                     if let place = place as? Bool {
                         if place {
                             Place.withID(id: idPlace, callback: {(place_loaded) in
-                                callback(place_loaded, total)
+                                if place_loaded == nil {
+                                    for p in self.local_places {
+                                        if p.uid == idPlace {
+                                            callback(p, total)
+                                        }
+                                    }
+                                } else {
+                                    callback(place_loaded, total)
+                                    var contained = false
+                                    for p in self.local_places {
+                                        contained = contained || (p.uid == idPlace)
+                                    }
+                                    if !contained {
+                                        self.local_places.append(place_loaded!)
+                                    }
+                                }
                             })
                         }
-                        
                     }
                 }
             }
         } else {
             callback(nil, 0)
         }
+        
+        return local_places
     }
     
     public func payments(callback: @escaping (_ p: PaymentCard?, _ total: Int)->Void){
@@ -102,10 +119,12 @@ class Client: User {
     
     public func savePlace(place: Place) {
         K.Database.ref().child("clients").child(self.uid!).child("places").child(place.uid!).setValue(true)
+        self.local_places.append(place)
     }
     
     public func removePlace(place: Place) {
         K.Database.ref().child("clients").child(self.uid!).child("places").child(place.uid!).removeValue()
+        K.User.reloadClient()
     }
     
     public func savePayment(payment: PaymentCard) {
