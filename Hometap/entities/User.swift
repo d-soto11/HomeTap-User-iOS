@@ -177,7 +177,7 @@ class User: HometapObject {
                 return history_brief
             }
         }
-        return nil
+        return history_brief.isEmpty ? nil : history_brief
     }
     
     public func history() -> [Service]? {

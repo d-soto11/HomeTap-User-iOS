@@ -157,14 +157,18 @@ class BookingBriefViewController: UIViewController {
             PaymentPickerViewController.showPicker(service: service, parent: self)
         } else if service.state == 0 {
             // Cancel service
-            service.state = -1
-            service.save()
-            let _ = service.homie(callback: { (h) in
-                self.service.briefName = h?.name ?? "Servicio cancelado"
-                self.service.briefPhoto = h?.photo ?? K.User.default_ph
-                K.User.client?.lastCanceledService = self.service
-            })
-            self.back(self)
+            HTAlertViewController.showHTAlert(title: "Cancelar servicio", body: "¿Estás seguro que deseas cancelar este servicio?", accpetTitle: "No", cancelTitle: "Si", confirmation: { 
+                
+            }, cancelation: { 
+                self.service.state = -1
+                self.service.save()
+                let _ = self.service.homie(callback: { (h) in
+                    self.service.briefName = h?.name ?? "Servicio cancelado"
+                    self.service.briefPhoto = h?.photo ?? K.User.default_ph
+                    K.User.client?.lastCanceledService = self.service
+                })
+                self.back(self)
+            }, parent: self)
         } else {
             K.Hometap.call()
         }

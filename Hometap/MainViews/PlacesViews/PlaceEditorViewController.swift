@@ -174,8 +174,12 @@ class PlaceEditorViewController: UIViewController, UITextFieldDelegate, GMSPlace
     }
     
     @IBAction func deletePlace(_ sender: Any) {
-        K.User.client?.removePlace(place: self.place)
-        self.back(self)
+        HTAlertViewController.showHTAlert(title: "Eliminar dirección", body: "¿Estás seguro de que deseas elminar esta dirección?", accpetTitle: "No", cancelTitle: "Sí", confirmation: { 
+            
+        }, cancelation: { 
+            K.User.client?.removePlace(place: self.place)
+            self.back(self)
+        }, parent: self)
     }
 
     // Place picker

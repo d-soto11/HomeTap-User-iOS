@@ -54,8 +54,12 @@ class EditPaymentViewController: UIViewController {
     }
     
     @IBAction func deletePayment(_ sender: Any) {
-        K.User.client?.removePayment(payment: self.card)
-        self.back(self)
+        HTAlertViewController.showHTAlert(title: "Eliminar medio de pago", body: "¿Estás seguro de que quieres eliminar este medio de pago?", accpetTitle: "No", cancelTitle: "Sí", confirmation: { 
+            
+        }, cancelation: { 
+            K.User.client?.removePayment(payment: self.card)
+            self.back(self)
+        }, parent: self)
     }
 
 }
