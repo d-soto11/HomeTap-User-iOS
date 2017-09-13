@@ -37,7 +37,9 @@ class LocationsViewController: UIViewController, UITableViewDataSource, UITableV
                 MBProgressHUD.hide(for: self.locationsTable, animated: true)
             }
         }) ?? []
-        MBProgressHUD.hide(for: self.locationsTable, animated: true)
+        if !K.Network.network_available {
+            MBProgressHUD.hide(for: self.locationsTable, animated: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {

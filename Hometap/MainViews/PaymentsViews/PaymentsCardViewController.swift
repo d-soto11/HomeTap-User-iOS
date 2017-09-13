@@ -207,12 +207,8 @@ class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
                 }
                 return true
             } else if ((textField.text?.characters.count) ?? 0 == 16) {
-                textField.text = string
-                self.cardNumber.text = string.inserting(separator: " ", every: 4)
-                stripeCard.number = string
-                let cardBrand = STPCardValidator.brand(forNumber: stripeCard.number!)
-                self.cardBrand.image = STPImageLibrary.brandImage(for: cardBrand)
-                return true
+                self.expirationText.becomeFirstResponder()
+                return false
             }
         case 23:
             if ((textField.text?.characters.count) ?? 0 < 5) {
@@ -223,8 +219,7 @@ class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
                 }
                 return false
             } else if ((textField.text?.characters.count) ?? 0 == 5) {
-                textField.text = string
-                self.cardExpiration.text = string.inserting(separator: "/", every: 2)
+                self.cvcText.becomeFirstResponder()
                 return true
             }
         case 24:
@@ -237,6 +232,8 @@ class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
                 return true
+            } else {
+                textField.resignFirstResponder()
             }
         default:
             return false
