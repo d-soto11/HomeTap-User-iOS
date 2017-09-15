@@ -22,7 +22,6 @@ class HTAlertViewController: UIViewController {
     private var confirmation: (()->Void)!
     private var cancelation: (()->Void)!
     private var persistent: Bool!
-    
     private var container: UIViewController!
     private var centerY: NSLayoutConstraint!
     

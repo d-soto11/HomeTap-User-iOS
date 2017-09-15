@@ -157,6 +157,7 @@ class SetUpViewController: UIViewController, ImagePickerDelegate, DatePickerDele
             
             let downloadURL = metadata.downloadURL()
             if let photo = downloadURL?.absoluteString {
+                K.User.client = Client(dict: [:])
                 K.User.client!.photo = photo
                 
                 mb.label.text = "Finalizando"
@@ -177,6 +178,7 @@ class SetUpViewController: UIViewController, ImagePickerDelegate, DatePickerDele
                 K.User.client!.votes = 1
                 K.User.client!.rating = 5.0
                 K.User.client!.gender = self.gender_options.index(of: self.genreField.text!)
+                K.User.client!.uid = local.uid
                 
                 K.User.client!.save()
                 
@@ -223,6 +225,7 @@ class SetUpViewController: UIViewController, ImagePickerDelegate, DatePickerDele
     func datePickerDidSelectDate(date: Date, string:String, tag:Int) {
         self.birthField.text = string
     }
+    
     // OptionPicker Delegate
     func optionPickerDidPickSubject(index:Int, selected:String, tag:Int) {
         self.genreField.text = selected

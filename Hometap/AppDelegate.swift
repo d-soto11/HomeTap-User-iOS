@@ -20,42 +20,39 @@ import UserNotifications
 import Fabric
 import Crashlytics
 
+import SwiftMonkeyPaws
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
 
     var window: UIWindow?
-
+    
+    var paws: MonkeyPaws?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         // Configurar Firebase
         FirebaseApp.configure()
-        
         // Configurar Google
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()!.options.clientID
-        
         // Configurar Facebook
          FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
         // Configuracion de GMaps
         GMSServices.provideAPIKey(K.Hometap.google_api_key)
         GMSPlacesClient.provideAPIKey(K.Hometap.google_api_key)
-        
         // Configuracion Stripe
         STPPaymentConfiguration.shared().publishableKey = K.Hometap.stripe_key
-        
         // Private configurations
         // ...
         DropDown.startListeningToKeyboard()
-        
         // Crashalytics
         Fabric.with([Crashlytics.self])
-        
+        // New Relic
+        NewRelic.start(withApplicationToken:K.Hometap.new_relic_key)
         // Notifications configuration
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
             UNUserNotificationCenter.current().delegate = self
-            
             let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
             UNUserNotificationCenter.current().requestAuthorization(
                 options: authOptions,
@@ -65,10 +62,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             application.registerUserNotificationSettings(settings)
         }
-        
         application.registerForRemoteNotifications()
         application.applicationIconBadgeNumber = 0
         
+        // Testing 
+        if CommandLine.arguments.contains("--MonkeyPaws") {
+            paws = MonkeyPaws(view: window!)
+        }
         
         return true
     }

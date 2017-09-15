@@ -22,8 +22,8 @@ class FavoriteSearchViewController: UIViewController {
     private var centerY: NSLayoutConstraint!
     
     private var results: [FavoriteSearchResult]!
-    private var confirmation: (()->Void)!
-    private var cancelation: (()->Void)!
+    private var confirmation: (() -> Void)!
+    private var cancelation: (() -> Void)!
     
     private var currentResult: Int! = -1
     

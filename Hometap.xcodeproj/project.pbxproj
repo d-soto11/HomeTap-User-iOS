@@ -35,6 +35,7 @@
 		438E331F1F657308005117AF /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438E331E1F657308005117AF /* Coupon.swift */; };
 		438E33221F659188005117AF /* HTAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438E33201F659188005117AF /* HTAlertViewController.swift */; };
 		438E33231F659188005117AF /* HTAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 438E33211F659188005117AF /* HTAlertViewController.xib */; };
+		439684641F69E73400CEC79B /* HometapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439684631F69E73400CEC79B /* HometapUITests.swift */; };
 		439F14021F195A1B009DABF8 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14011F195A1B009DABF8 /* Place.swift */; };
 		439F14041F19683F009DABF8 /* AdditionalServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14031F19683F009DABF8 /* AdditionalServices.swift */; };
 		439F14061F198574009DABF8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F14051F198574009DABF8 /* Product.swift */; };
@@ -123,8 +124,19 @@
 		43EF36E61F192B880013FA8A /* Homie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF36E51F192B880013FA8A /* Homie.swift */; };
 		43EF36E81F192C010013FA8A /* HometapObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF36E71F192C010013FA8A /* HometapObject.swift */; };
 		43EF36EA1F194F600013FA8A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF36E91F194F600013FA8A /* Service.swift */; };
+		B18C707A43073AF6E895AF2C /* Pods_HometapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA75FF002196ED901C41497 /* Pods_HometapUITests.framework */; };
 		D2AEE9A00BDCD00A6AE0B646 /* Pods_Hometap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DD91A8EF45F8D8BC4721D4 /* Pods_Hometap.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		439684661F69E73400CEC79B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43EF36AC1F16F9D70013FA8A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43EF36B31F16F9D70013FA8A;
+			remoteInfo = Hometap;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		41EE0E6489CEC26245E3FF96 /* Pods-Hometap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hometap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hometap/Pods-Hometap.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +169,10 @@
 		438E331E1F657308005117AF /* Coupon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Coupon.swift; path = entities/Coupon.swift; sourceTree = "<group>"; };
 		438E33201F659188005117AF /* HTAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTAlertViewController.swift; path = CustomViews/HTAlertViewController.swift; sourceTree = "<group>"; };
 		438E33211F659188005117AF /* HTAlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HTAlertViewController.xib; path = CustomViews/HTAlertViewController.xib; sourceTree = "<group>"; };
+		439684611F69E73400CEC79B /* HometapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HometapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		439684631F69E73400CEC79B /* HometapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HometapUITests.swift; sourceTree = "<group>"; };
+		439684651F69E73400CEC79B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4396846B1F69E91900CEC79B /* SwiftMonkey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftMonkey.framework; path = "Pods/../build/Debug-iphoneos/SwiftMonkey/SwiftMonkey.framework"; sourceTree = "<group>"; };
 		439F14011F195A1B009DABF8 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = entities/Place.swift; sourceTree = "<group>"; };
 		439F14031F19683F009DABF8 /* AdditionalServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdditionalServices.swift; path = entities/AdditionalServices.swift; sourceTree = "<group>"; };
 		439F14051F198574009DABF8 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Product.swift; path = entities/Product.swift; sourceTree = "<group>"; };
@@ -248,11 +264,22 @@
 		43EF36E51F192B880013FA8A /* Homie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Homie.swift; path = entities/Homie.swift; sourceTree = "<group>"; };
 		43EF36E71F192C010013FA8A /* HometapObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HometapObject.swift; path = entities/HometapObject.swift; sourceTree = "<group>"; };
 		43EF36E91F194F600013FA8A /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = entities/Service.swift; sourceTree = "<group>"; };
+		5123D1881D298401949BB947 /* Pods-HometapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HometapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HometapUITests/Pods-HometapUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7491B6E1CBB085A681C6E5F1 /* Pods-HometapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HometapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HometapUITests/Pods-HometapUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9BA75FF002196ED901C41497 /* Pods_HometapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HometapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4DD91A8EF45F8D8BC4721D4 /* Pods_Hometap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hometap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12207F516A8590C3EA62B6B /* Pods-Hometap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hometap.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hometap/Pods-Hometap.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4396845E1F69E73400CEC79B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B18C707A43073AF6E895AF2C /* Pods_HometapUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43EF36B11F16F9D70013FA8A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -267,7 +294,9 @@
 		165B4CCA16BBFBF31DE566DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4396846B1F69E91900CEC79B /* SwiftMonkey.framework */,
 				D4DD91A8EF45F8D8BC4721D4 /* Pods_Hometap.framework */,
+				9BA75FF002196ED901C41497 /* Pods_HometapUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -336,6 +365,15 @@
 				434E051A1F62128100214CD3 /* ServiceRatingViewController.swift */,
 			);
 			name = OtherViews;
+			sourceTree = "<group>";
+		};
+		439684621F69E73400CEC79B /* HometapUITests */ = {
+			isa = PBXGroup;
+			children = (
+				439684631F69E73400CEC79B /* HometapUITests.swift */,
+				439684651F69E73400CEC79B /* Info.plist */,
+			);
+			path = HometapUITests;
 			sourceTree = "<group>";
 		};
 		439F14091F1C3AE8009DABF8 /* assets */ = {
@@ -470,6 +508,7 @@
 			isa = PBXGroup;
 			children = (
 				43EF36B61F16F9D70013FA8A /* Hometap */,
+				439684621F69E73400CEC79B /* HometapUITests */,
 				43EF36B51F16F9D70013FA8A /* Products */,
 				680DBB1B8D961335B2705647 /* Pods */,
 				165B4CCA16BBFBF31DE566DE /* Frameworks */,
@@ -480,6 +519,7 @@
 			isa = PBXGroup;
 			children = (
 				43EF36B41F16F9D70013FA8A /* Hometap.app */,
+				439684611F69E73400CEC79B /* HometapUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -541,6 +581,8 @@
 			children = (
 				41EE0E6489CEC26245E3FF96 /* Pods-Hometap.debug.xcconfig */,
 				F12207F516A8590C3EA62B6B /* Pods-Hometap.release.xcconfig */,
+				5123D1881D298401949BB947 /* Pods-HometapUITests.debug.xcconfig */,
+				7491B6E1CBB085A681C6E5F1 /* Pods-HometapUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -548,6 +590,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		439684601F69E73400CEC79B /* HometapUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4396846A1F69E73400CEC79B /* Build configuration list for PBXNativeTarget "HometapUITests" */;
+			buildPhases = (
+				B53982C563EE907839F2B315 /* [CP] Check Pods Manifest.lock */,
+				4396845D1F69E73400CEC79B /* Sources */,
+				4396845E1F69E73400CEC79B /* Frameworks */,
+				4396845F1F69E73400CEC79B /* Resources */,
+				042E5FFC50D111FD8B5E0C2F /* [CP] Embed Pods Frameworks */,
+				97E4DE13482F01E2D0EE35F8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				439684671F69E73400CEC79B /* PBXTargetDependency */,
+			);
+			name = HometapUITests;
+			productName = HometapUITests;
+			productReference = 439684611F69E73400CEC79B /* HometapUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		43EF36B31F16F9D70013FA8A /* Hometap */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43EF36C61F16F9D70013FA8A /* Build configuration list for PBXNativeTarget "Hometap" */;
@@ -558,7 +621,8 @@
 				43EF36B21F16F9D70013FA8A /* Resources */,
 				57D189614B8DB2A2E5E23827 /* [CP] Embed Pods Frameworks */,
 				09EF6F5388FB57FFCB43A93E /* [CP] Copy Pods Resources */,
-				43A1CB391F6898CC009336C4 /* ShellScript */,
+				4396846D1F69FD6B00CEC79B /* ShellScript */,
+				AEC45D52C66713B4304B15C8 /* Tailor */,
 			);
 			buildRules = (
 			);
@@ -579,6 +643,12 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Tres Astronautas";
 				TargetAttributes = {
+					439684601F69E73400CEC79B = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = QBLL74FJC6;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 43EF36B31F16F9D70013FA8A;
+					};
 					43EF36B31F16F9D70013FA8A = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = QBLL74FJC6;
@@ -606,11 +676,19 @@
 			projectRoot = "";
 			targets = (
 				43EF36B31F16F9D70013FA8A /* Hometap */,
+				439684601F69E73400CEC79B /* HometapUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4396845F1F69E73400CEC79B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43EF36B21F16F9D70013FA8A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -688,6 +766,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		042E5FFC50D111FD8B5E0C2F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HometapUITests/Pods-HometapUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftMonkey/SwiftMonkey.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMonkey.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HometapUITests/Pods-HometapUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		09EF6F5388FB57FFCB43A93E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -709,7 +805,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hometap/Pods-Hometap-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		43A1CB391F6898CC009336C4 /* ShellScript */ = {
+		4396846D1F69FD6B00CEC79B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -720,7 +816,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 12a944dba2ef8609d33564f551bb99b9bafbfcee a17a25c158540ea276366c4771487f1fb858865bf63ba3d74cd8f58f119ebe2a";
+			shellScript = "SCRIPT=`/usr/bin/find \"${SRCROOT}\" -name newrelic_postbuild.sh | head -n 1`\n\n/bin/sh \"${SCRIPT}\" \"AA2dc717c812802b662ee25a6ae127325c597abfb3\"";
 		};
 		57D189614B8DB2A2E5E23827 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -750,6 +846,7 @@
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RestEssentials/RestEssentials.framework",
 				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMonkeyPaws/SwiftMonkeyPaws.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -775,11 +872,59 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReachabilitySwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RestEssentials.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMonkeyPaws.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hometap/Pods-Hometap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97E4DE13482F01E2D0EE35F8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HometapUITests/Pods-HometapUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AEC45D52C66713B4304B15C8 /* Tailor */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Tailor;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Analyze\" ]; then\nif hash tailor 2>/dev/null; then\ntailor\nelse\necho \"warning: Please install Tailor from https://tailor.sh\"\nfi\nfi";
+		};
+		B53982C563EE907839F2B315 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HometapUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CB4E92BCBB9EFAB2EC266CD4 /* [CP] Check Pods Manifest.lock */ = {
@@ -803,6 +948,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4396845D1F69E73400CEC79B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				439684641F69E73400CEC79B /* HometapUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43EF36B01F16F9D70013FA8A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -861,6 +1014,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		439684671F69E73400CEC79B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43EF36B31F16F9D70013FA8A /* Hometap */;
+			targetProxy = 439684661F69E73400CEC79B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		43EF36BB1F16F9D70013FA8A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -881,6 +1042,125 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		439684681F69E73400CEC79B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5123D1881D298401949BB947 /* Pods-HometapUITests.debug.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = QBLL74FJC6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SwiftMonkey",
+				);
+				INFOPLIST_FILE = HometapUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tresastronautas.HometapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Hometap;
+			};
+			name = Debug;
+		};
+		439684691F69E73400CEC79B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7491B6E1CBB085A681C6E5F1 /* Pods-HometapUITests.release.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = QBLL74FJC6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SwiftMonkey",
+				);
+				INFOPLIST_FILE = HometapUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tresastronautas.HometapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Hometap;
+			};
+			name = Release;
+		};
+		439684711F6A0DD100CEC79B /* Analyse */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALIDATE_PRODUCT = NO;
+			};
+			name = Analyse;
+		};
+		439684721F6A0DD100CEC79B /* Analyse */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F12207F516A8590C3EA62B6B /* Pods-Hometap.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Hometap/Hometap.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = QBLL74FJC6;
+				INFOPLIST_FILE = Hometap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tresastronautas.ios.hometap.user;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hometap/Hometap-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Analyse;
+		};
+		439684731F6A0DD100CEC79B /* Analyse */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7491B6E1CBB085A681C6E5F1 /* Pods-HometapUITests.release.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = QBLL74FJC6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SwiftMonkey",
+				);
+				INFOPLIST_FILE = HometapUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tresastronautas.HometapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Hometap;
+			};
+			name = Analyse;
+		};
 		43EF36C41F16F9D70013FA8A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -922,7 +1202,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -966,7 +1247,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1020,11 +1301,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4396846A1F69E73400CEC79B /* Build configuration list for PBXNativeTarget "HometapUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				439684681F69E73400CEC79B /* Debug */,
+				439684691F69E73400CEC79B /* Release */,
+				439684731F6A0DD100CEC79B /* Analyse */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		43EF36AF1F16F9D70013FA8A /* Build configuration list for PBXProject "Hometap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				43EF36C41F16F9D70013FA8A /* Debug */,
 				43EF36C51F16F9D70013FA8A /* Release */,
+				439684711F6A0DD100CEC79B /* Analyse */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1034,6 +1326,7 @@
 			buildConfigurations = (
 				43EF36C71F16F9D70013FA8A /* Debug */,
 				43EF36C81F16F9D70013FA8A /* Release */,
+				439684721F6A0DD100CEC79B /* Analyse */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

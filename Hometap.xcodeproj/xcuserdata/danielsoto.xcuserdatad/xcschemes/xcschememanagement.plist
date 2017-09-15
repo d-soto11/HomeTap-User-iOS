@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>HometapUITests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>31</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>439684601F69E73400CEC79B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>43EF36B31F16F9D70013FA8A</key>
 		<dict>
 			<key>primary</key>

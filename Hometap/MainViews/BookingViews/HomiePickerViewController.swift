@@ -131,7 +131,7 @@ class HomiePickerViewController: UIViewController {
                 let mb = MBProgressHUD.showAdded(to: v, animated: true)
                 
                 let same_day = (service.date! == block.date!.merge(time: block.startHour!))
-                if (!same_day) {
+                if !same_day {
                     v.viewWithTag(100)?.backgroundColor = K.UI.second_color
                 }
                 Homie.withID(id: block.homieID!, callback: { (homie) in

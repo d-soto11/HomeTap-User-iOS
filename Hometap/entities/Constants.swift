@@ -51,6 +51,7 @@ struct K {
         static let google_api_key:String = "AIzaSyDgKHIWf3dix_-npP89ww2SwVSutrwbeWo"
         static let stripe_key:String = "pk_test_0SmAvWdAgsSUtTqj0GMaNrZ2"
         static let callcenter: String = "3017303973"
+        static let new_relic_key: String = "AA2dc717c812802b662ee25a6ae127325c597abfb3"
         
         static func call() {
             guard let url = URL(string: "tel://\(K.Hometap.callcenter)") else { return }

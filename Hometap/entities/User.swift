@@ -58,9 +58,6 @@ class User: HometapObject {
     }
     
     override func save(route: String) {
-        if (self.uid != getCurrentUserUid()) {
-            return
-        }        
         if self.name != nil {
             original_dictionary["name"] = self.name as AnyObject
         }

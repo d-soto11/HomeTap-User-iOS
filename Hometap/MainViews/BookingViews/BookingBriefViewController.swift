@@ -152,7 +152,7 @@ class BookingBriefViewController: UIViewController {
     }
 
     @IBAction func done(_ sender: Any) {
-        if (service.state == nil) {
+        if service.state == nil {
             self.service.state = 0
             PaymentPickerViewController.showPicker(service: service, parent: self)
         } else if service.state == 0 {
