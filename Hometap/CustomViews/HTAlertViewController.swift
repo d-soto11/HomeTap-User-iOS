@@ -25,7 +25,14 @@ class HTAlertViewController: UIViewController {
     private var container: UIViewController!
     private var centerY: NSLayoutConstraint!
     
+    private static var alertOnView: Bool! = false
+    
     public class func showHTAlert(title: String, body: String = "", accpetTitle: String = "Aceptar", cancelTitle: String? = nil, confirmation: @escaping ()->Void = {() in}, cancelation: @ escaping ()->Void = {() in}, parent: UIViewController, persistent: Bool = false) {
+        
+        if HTAlertViewController.alertOnView {
+            return
+        }
+        
         let alert = HTAlertViewController(nibName: "HTAlertViewController", bundle: nil)
         
         let blackView = UIView()
@@ -33,6 +40,7 @@ class HTAlertViewController: UIViewController {
         blackView.backgroundColor = .black
         blackView.translatesAutoresizingMaskIntoConstraints = false
         blackView.alpha = 0
+        blackView.addGestureRecognizer(UITapGestureRecognizer(target: alert, action: #selector(bgtouch)))
         parent.view.insertSubview(blackView, aboveSubview: parent.view)
         
         let bc1 = NSLayoutConstraint(item: blackView, attribute: .leading, relatedBy: .equal, toItem: parent.view, attribute: .leading, multiplier: 1, constant: 0)
@@ -82,7 +90,12 @@ class HTAlertViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    public func bgtouch() {
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
+        HTAlertViewController.alertOnView = true
         self.titleLabel.text = self.titleString
         self.bodyLabel.text = self.bodyString
         self.confirmationB.setTitle(self.acceptTitle, for: .normal)
@@ -94,6 +107,10 @@ class HTAlertViewController: UIViewController {
                 self.view.layoutIfNeeded()
             })
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        HTAlertViewController.alertOnView = false
     }
     
     override func viewDidLayoutSubviews() {

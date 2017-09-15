@@ -290,7 +290,8 @@ extension Date {
     
     init?(fromString: String, withFormat: DateFormat) {
         let dtf = DateFormatter()
-        dtf.locale = Locale(identifier: "en_US")
+        dtf.locale = Locale(identifier: "en_US_POSIX")
+        dtf.timeZone = TimeZone(secondsFromGMT: 0)
         switch withFormat {
         case .Short:
             dtf.dateFormat = K.Helper.fb_date_short_format
@@ -340,7 +341,8 @@ extension Date {
     
     func toString(format: DateFormat) -> String? {
         let dtf = DateFormatter()
-        dtf.locale = Locale(identifier: "en_US")
+        dtf.locale = Locale(identifier: "en_US_POSIX")
+        dtf.timeZone = TimeZone(secondsFromGMT: 0)
         switch format {
         case .Short:
             dtf.dateFormat = K.Helper.fb_date_short_format
