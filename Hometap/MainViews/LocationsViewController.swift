@@ -24,7 +24,7 @@ class LocationsViewController: UIViewController, UITableViewDataSource, UITableV
         self.places = K.User.client?.places(callback: { (place, total) in
             if place != nil {
                 for (i, p) in self.places.enumerated() {
-                    if p.uid! == place!.uid! {
+                    if p.uid! == place!.uid! && i < self.places.count{
                         self.places.remove(at: i)
                     }
                 }
@@ -60,7 +60,6 @@ class LocationsViewController: UIViewController, UITableViewDataSource, UITableV
         // isLastCell
         if (indexPath.row == self.places.count) {
             let cell_m = tableView.dequeueReusableCell(withIdentifier: "addAddressCell", for: indexPath) as! HTTableViewCell
-            
             cell_m.uiUpdates = {(cell) in
                 (cell.viewWithTag(1) as? UIButton)?.roundCorners(radius: K.UI.light_round_px)
                 (cell.viewWithTag(1) as? UIButton)?.clearShadows()
@@ -72,10 +71,9 @@ class LocationsViewController: UIViewController, UITableViewDataSource, UITableV
         } else {
             let cell_m = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath) as! HTTableViewCell
             let place = places[indexPath.row]
-            
+
             cell_m.uiUpdates = {(cell) in
                 cell.viewWithTag(2)?.roundCorners(radius: K.UI.light_round_px)
-                cell.viewWithTag(2)?.clearShadows()
                 cell.viewWithTag(2)?.addNormalShadow()
                 (cell.viewWithTag(2)?.viewWithTag(10) as? UIImageView)?.image = place.apartament! ? UIImage(named: "iconApartment") : UIImage(named: "iconHouseBlack")
                 (cell.viewWithTag(2)?.viewWithTag(11) as? UILabel)?.text = place.name!
@@ -100,14 +98,10 @@ class LocationsViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func newPlace() {
-        if K.Network.network_available {
-            let place = Place(dict: [:])
-            place.apartament = false
-            place.pets = false
-            PlaceEditorViewController.showEditor(place: place, parent: self)
-        } else {
-            self.showAlert(title: "Espera", message: "No puedes agregar direcciones mientras estás en modo sin conexión.", closeButtonTitle: "Ok")
-        }
+        let place = Place(dict: [:])
+        place.apartament = false
+        place.pets = false
+        PlaceEditorViewController.showEditor(place: place, parent: self)
     }
 
 }

@@ -100,7 +100,7 @@ class User: HometapObject {
     var joined: Date?
     var gender: Int?
     var provider: AnyObject?
-    var photo: String?
+    var photo: String? = K.User.default_ph
     var email: String?
     var rating: Double?
     var phone: String?

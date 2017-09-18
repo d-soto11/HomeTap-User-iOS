@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17A360a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17A362a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -540,8 +540,8 @@
                             <constraint firstItem="GjW-B3-Obh" firstAttribute="centerX" secondItem="tcw-SB-vNd" secondAttribute="centerX" id="C8q-CD-lJy"/>
                             <constraint firstItem="mx7-0a-lc4" firstAttribute="top" secondItem="AxL-aP-gs3" secondAttribute="bottom" constant="25" id="Cbj-p5-KGw"/>
                             <constraint firstItem="foB-35-EbU" firstAttribute="top" secondItem="GjW-B3-Obh" secondAttribute="bottom" priority="950" constant="20" id="Cx5-Sb-Eoo"/>
-                            <constraint firstItem="4Sx-X1-dWR" firstAttribute="top" secondItem="q2v-iz-JaX" secondAttribute="bottom" constant="15" id="ECs-He-x6t"/>
                             <constraint firstItem="EIu-8z-kIp" firstAttribute="top" secondItem="foB-35-EbU" secondAttribute="top" id="Ed1-89-WSR"/>
+                            <constraint firstItem="4Sx-X1-dWR" firstAttribute="top" secondItem="tcw-SB-vNd" secondAttribute="top" constant="35" id="Fid-Kb-j6f"/>
                             <constraint firstItem="4Sx-X1-dWR" firstAttribute="centerY" secondItem="Aie-sO-Hrj" secondAttribute="centerY" id="M1y-7Q-jtm"/>
                             <constraint firstItem="foB-35-EbU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="GjW-B3-Obh" secondAttribute="bottom" constant="10" id="SIn-5w-IuM"/>
                             <constraint firstItem="AxL-aP-gs3" firstAttribute="top" secondItem="foB-35-EbU" secondAttribute="bottom" priority="950" constant="35" id="SRr-BT-lLy"/>
@@ -1063,9 +1063,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCz-0l-IfQ">
-                                <rect key="frame" x="296" y="29.5" width="48" height="31"/>
+                                <rect key="frame" x="297" y="29.5" width="47" height="31"/>
                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
-                                <state key="normal" title="Delete">
+                                <state key="normal" title="Borrar">
                                     <color key="titleColor" red="0.97647058819999999" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -1082,9 +1082,9 @@
                             <constraint firstItem="aH5-gt-vOA" firstAttribute="centerX" secondItem="YyY-M6-UpY" secondAttribute="centerX" id="7PB-xS-agn"/>
                             <constraint firstItem="VFW-ih-cjD" firstAttribute="trailing" secondItem="HhP-aq-Zqa" secondAttribute="trailing" id="ABD-49-1UG"/>
                             <constraint firstItem="aH5-gt-vOA" firstAttribute="leading" secondItem="YyY-M6-UpY" secondAttribute="leadingMargin" constant="20" id="CiI-Mv-ptb"/>
-                            <constraint firstItem="TBd-1L-eEo" firstAttribute="top" secondItem="Bot-Ll-mlI" secondAttribute="bottom" constant="15" id="J17-MZ-FVM"/>
                             <constraint firstItem="HhP-aq-Zqa" firstAttribute="top" secondItem="aH5-gt-vOA" secondAttribute="bottom" constant="30" id="Kiy-9s-hGM"/>
                             <constraint firstItem="aH5-gt-vOA" firstAttribute="top" secondItem="KbW-Cm-FyD" secondAttribute="bottom" constant="25" id="PNC-sr-VHe"/>
+                            <constraint firstItem="TBd-1L-eEo" firstAttribute="top" secondItem="YyY-M6-UpY" secondAttribute="top" constant="35" id="RXF-SG-nlh"/>
                             <constraint firstItem="TBd-1L-eEo" firstAttribute="centerY" secondItem="KbW-Cm-FyD" secondAttribute="centerY" id="W0p-ZB-GQt"/>
                             <constraint firstItem="HhP-aq-Zqa" firstAttribute="leading" secondItem="YyY-M6-UpY" secondAttribute="leadingMargin" constant="20" id="cdc-NT-uPF"/>
                             <constraint firstItem="BCz-0l-IfQ" firstAttribute="centerY" secondItem="TBd-1L-eEo" secondAttribute="centerY" id="e6C-4Q-UBl"/>
@@ -1118,6 +1118,6 @@
     </scenes>
     <resources>
         <image name="iconArrowComboBox.png" width="150" height="150"/>
-        <image name="iconArrowGreen.png" width="50" height="49"/>
+        <image name="iconArrowGreen.png" width="65" height="65"/>
     </resources>
 </document>

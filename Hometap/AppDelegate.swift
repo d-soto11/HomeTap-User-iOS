@@ -104,6 +104,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        if let u = K.User.client {
+            UserDefaults.standard.set(u.original_dictionary, forKey: K.User.savingKey)
+        }
     }
     
     func setStatusBarBackgroundColor(color: UIColor) {

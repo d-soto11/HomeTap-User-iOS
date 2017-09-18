@@ -51,7 +51,7 @@ class ProfileViewController: UIViewController, ImagePickerDelegate, ProfileChang
     
     override func viewDidAppear(_ animated: Bool) {
         if K.User.client == nil {
-            self.showAlert(title: "Sin conexión", message: "No hemos podido cargar la información de tu perfil. Revisa tu conexión a Internet", closeButtonTitle: "Aceptar")
+            K.MaterialTapBar.TapBar!.showAlert(title: "Sin conexión", message: "No hemos podido cargar la información de tu perfil. Revisa tu conexión a Internet", closeButtonTitle: "Aceptar")
         } else if self.nameB.title(for: .normal) == nil || self.nameB.title(for: .normal) == "" {
             self.pictureView.downloadedFrom(link: K.User.client!.photo!)
             self.nameB.setTitle(K.User.client!.name!, for: .normal)

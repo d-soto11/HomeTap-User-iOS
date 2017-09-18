@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import MBProgressHUD
+import GooglePlaces
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var bookingB: UIButton!
@@ -22,6 +23,25 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let placesClient = GMSPlacesClient()
+        
+        placesClient.currentPlace(callback: { (placeLikelihoodList, error) -> Void in
+            if let error = error {
+                print("Pick Place error: \(error.localizedDescription)")
+                return
+            }
+            
+            if let placeLikelihoodList = placeLikelihoodList {
+                for likelihood in placeLikelihoodList.likelihoods {
+                    let place = likelihood.place
+                    print("Current Place name \(place.name) at likelihood \(likelihood.likelihood)")
+                    print("Current Place address \(place.formattedAddress)")
+                    print("Current Place attributions \(place.attributions)")
+                    print("Current PlaceID \(place.placeID)")
+                }
+            }
+        })
         
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
@@ -67,7 +87,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if K.Network.network_available {
             BookingViewController.show(parent: self)
         } else {
-            self.showAlert(title: "Lo sentimos", message: "No puedes pedir servicios cuando estás en el modo sin conexión.", closeButtonTitle: "Aceptar")
+            K.MaterialTapBar.TapBar!.showAlert(title: "Lo sentimos", message: "No puedes pedir servicios cuando estás en el modo sin conexión.", closeButtonTitle: "Aceptar")
         }
     }
     

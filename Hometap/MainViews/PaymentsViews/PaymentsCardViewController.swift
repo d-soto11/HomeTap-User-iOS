@@ -193,6 +193,13 @@ class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let text = textField.text as NSString? {
+            let resultString = text.replacingCharacters(in: range, with: string)
+            if text.length > resultString.characters.count {
+                return true
+            }
+        }
+
         switch textField.tag {
         case 21:
             return ((textField.text?.characters.count) ?? 0 < 40)

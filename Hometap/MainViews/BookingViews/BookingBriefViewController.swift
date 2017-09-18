@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class BookingBriefViewController: UIViewController {
 
@@ -56,6 +57,8 @@ class BookingBriefViewController: UIViewController {
     }
     
     public func loadServiceData() {
+        
+        MBProgressHUD.showAdded(to: self.view, animated: false)
         
         if (service.state == nil) {
             self.completedView.alpha = 0
@@ -132,6 +135,8 @@ class BookingBriefViewController: UIViewController {
             self.priceView.alpha = 0
             self.doneB.setTitle("Llamar a Hometap", for: .normal)
         }
+        
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
     
     override func viewDidLayoutSubviews() {

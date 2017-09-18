@@ -117,6 +117,7 @@ struct K {
         static let default_ph: String = "https://firebasestorage.googleapis.com/v0/b/hometap-f173f.appspot.com/o/app_content%2Ficon_no_photo.png?alt=media&token=86491cbb-7c44-455d-bc4d-39ff8da3fc54"
         
         static var client:Client?
+        static let savingKey: String = "client_saved"
         
         public static func addCacheService(_ s: Service) {
             let _ = s.homie { (h) in

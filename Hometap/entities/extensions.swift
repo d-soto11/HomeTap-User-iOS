@@ -11,6 +11,10 @@ import UIKit
 import QuartzCore
 import MBProgressHUD
 
+struct UIViewControllerExtensionKeys {
+    static var animationsArray: UInt8 = 0
+}
+
 extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")
@@ -84,6 +88,20 @@ extension UIView {
 }
 
 extension UIViewController {
+    /*
+    private(set) var animationsArray: [()->Void] {
+        get {
+            guard let value = objc_getAssociatedObject(self, &UIViewControllerExtensionKeys.animationsArray) as? [()->Void] else {
+                return []
+            }
+            return value
+        }
+        set(newValue) {
+            objc_setAssociatedObject(self, &UIViewControllerExtensionKeys.animationsArray, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+ */
+    
     
     func showAlert(title:String, message:String, closeButtonTitle:String, special: Bool = true, persistent: Bool = false) {
         if special {
@@ -110,15 +128,15 @@ extension UIViewController {
         let keyboardRectangle = keyboardFrame.cgRectValue
         let keyboardHeight = keyboardRectangle.height
         
-        UIView.animate(withDuration: 0.3, animations: {
-            self.view.frame = CGRect(x: 0.0, y: (self.originalFrame().origin.y - (keyboardHeight*self.needsDisplacement())), width: (self.originalFrame().size.width), height: (self.originalFrame().size.height))
-        })
+        UIView.animate(withDuration: 0.3) { 
+             self.view.frame = CGRect(x: 0.0, y: (self.originalFrame().origin.y - (keyboardHeight*self.needsDisplacement())), width: (self.originalFrame().size.width), height: (self.originalFrame().size.height))
+        }
     }
     
     func keyboardWillHide(notification:NSNotification) {
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.3) { 
             self.view.frame = self.originalFrame()
-        })
+        }
     }
     
     func needsDisplacement() -> CGFloat {
@@ -142,6 +160,7 @@ extension UIViewController {
             kb[index].becomeFirstResponder()
         }
     }
+    
 }
 
 extension UIImageView {

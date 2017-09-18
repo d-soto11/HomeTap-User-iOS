@@ -119,11 +119,31 @@ class Client: User {
     
     public func savePlace(place: Place) {
         K.Database.ref().child("clients").child(self.uid!).child("places").child(place.uid!).setValue(true)
-        self.local_places.append(place)
+        var index = -1
+        for (i, p) in self.local_places.enumerated() {
+            if p.uid == place.uid {
+                index = i
+            }
+        }
+        if index > -1 {
+            self.local_places.remove(at: index)
+            self.local_places.insert(place, at: index)
+        } else {
+            self.local_places.append(place)
+        }
     }
     
     public func removePlace(place: Place) {
         K.Database.ref().child("clients").child(self.uid!).child("places").child(place.uid!).removeValue()
+        var index = -1
+        for (i, p) in self.local_places.enumerated() {
+            if p.uid == place.uid {
+                index = i
+            }
+        }
+        if index > -1 {
+            self.local_places.remove(at: index)
+        }
         K.User.reloadClient()
     }
     

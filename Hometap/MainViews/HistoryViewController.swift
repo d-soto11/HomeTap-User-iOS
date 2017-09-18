@@ -65,7 +65,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         if K.Network.network_available {
             BookingViewController.show(parent: self)
         } else {
-            self.showAlert(title: "Lo sentimos", message: "No puedes pedir servicios cuando estás en el modo sin conexión.", closeButtonTitle: "Aceptar")
+            K.MaterialTapBar.TapBar!.showAlert(title: "Lo sentimos", message: "No puedes pedir servicios cuando estás en el modo sin conexión.", closeButtonTitle: "Aceptar")
         }
     }
     
