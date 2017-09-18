@@ -35,6 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         FirebaseApp.configure()
         // Configurar Google
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()!.options.clientID
+        // Ask location
+        let locationManager = CLLocationManager()
+        locationManager.requestWhenInUseAuthorization()
         // Configurar Facebook
          FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         // Configuracion de GMaps

@@ -197,13 +197,17 @@ class PlaceEditorViewController: UIViewController, UITextFieldDelegate, GMSPlace
         present(placePicker, animated: true, completion: nil)
     }
     func placePicker(_ viewController: GMSPlacePickerViewController, didPick place: GMSPlace) {
-        // Dismiss the place picker, as it cannot dismiss itself.
-        viewController.dismiss(animated: true, completion: nil)
+        viewController.dismiss(animated: true, completion: {() in
+            if place.formattedAddress?.lowercased().range(of:"bogot") == nil {
+                self.showAlert(title: "Lo sentimos", message: "HomeTap aún no está disponible para esta ubicación, estamos trabajando fuertemente para llegar a tu zona. Sin embargo, puedes pedir servicios para Bogotá desde cualquier lugar del país.", closeButtonTitle: "Entendido")
+            } else {
+                self.addressText.text = place.formattedAddress
+                self.place.address = place.formattedAddress
+                self.place.lat = place.coordinate.latitude
+                self.place.lng = place.coordinate.longitude
+            }
+        })
         
-        self.addressText.text = place.formattedAddress
-        self.place.address = place.formattedAddress
-        self.place.lat = place.coordinate.latitude
-        self.place.lng = place.coordinate.longitude
     }
     
     func placePickerDidCancel(_ viewController: GMSPlacePickerViewController) {
