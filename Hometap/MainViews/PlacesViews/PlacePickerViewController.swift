@@ -36,10 +36,6 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
     
     let dropDown = DropDown()
     
-    var displaceKeyboard = false
-    var originalFR: CGRect = CGRect.zero
-    var keyboards_list: [UITextField] = []
-    
     public class func showPicker(service: Service, parent: UIViewController) {
         let st = UIStoryboard.init(name: "Places", bundle: nil)
         let picker = st.instantiateViewController(withIdentifier: "Picker") as! PlacePickerViewController
@@ -78,7 +74,7 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
                 self.configureDropDown()
             }
         })
-        keyboards_list = [nameText, addressText, towerText, interiorText, metersText, floorsText, roomsText, bathroomsText]
+        keyboards = [nameText, addressText, towerText, interiorText, metersText, floorsText, roomsText, bathroomsText]
         setUpSmartKeyboard()
     }
     
@@ -140,7 +136,7 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
         self.nextB.roundCorners(radius: K.UI.round_px)
         self.nextB.addNormalShadow()
         
-        self.originalFR = self.view.bounds
+        self.originalFrame = self.view.bounds
         
     }
     
@@ -160,7 +156,7 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
         self.currentPlaceLabel.text = places[0].name
     }
     
-    public func tooglePicker() {
+    @objc public func tooglePicker() {
         dropDown.show()
     }
 
@@ -270,48 +266,35 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
         print("No place selected")
     }
     
-    // UI Helpers
-    override func needsDisplacement() -> CGFloat {
-        return self.displaceKeyboard ? CGFloat(1) : CGFloat(0)
-    }
-    
-    override func originalFrame() -> CGRect {
-        return self.originalFR
-    }
-    
-    override func keyboards() -> [UITextField] {
-        return self.keyboards_list
-    }
-    
     public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         switch textField.tag {
         case 21:
-            self.displaceKeyboard = false
+            self.needsDisplacement = CGFloat(0)
             return true
         case 22:
             // Address picker
             self.clearKeyboards()
-            self.displaceKeyboard = false
+            self.needsDisplacement = CGFloat(0)
             self.pickPlace()
             return false
         case 23:
-            self.displaceKeyboard = true
+            self.needsDisplacement = CGFloat(1)
             return true
         case 24:
-            self.displaceKeyboard = true
+            self.needsDisplacement = CGFloat(1)
             return true
         case 25:
             textField.text = String(format: "%.0f", places[selected_index].area ?? 0)
-            self.displaceKeyboard = true
+            self.needsDisplacement = CGFloat(1)
             return true
         case 26:
-            self.displaceKeyboard = true
+            self.needsDisplacement = CGFloat(1)
             return true
         case 27:
-            self.displaceKeyboard = true
+            self.needsDisplacement = CGFloat(1)
             return true
         case 28:
-            self.displaceKeyboard = true
+            self.needsDisplacement = CGFloat(1)
             return true
         default:
             return true

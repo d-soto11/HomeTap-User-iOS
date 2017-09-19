@@ -97,7 +97,7 @@ class LocationsViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
-    func newPlace() {
+    @objc func newPlace() {
         let place = Place(dict: [:])
         place.apartament = false
         place.pets = false

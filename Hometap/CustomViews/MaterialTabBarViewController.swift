@@ -199,7 +199,7 @@ class MaterialTabBarViewController: UIViewController {
     
     
     
-    func respondToSwipeGesture(gesture: UIGestureRecognizer)
+    @objc func respondToSwipeGesture(gesture: UIGestureRecognizer)
     {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer
         {
@@ -245,7 +245,7 @@ class MaterialTabBarViewController: UIViewController {
         }
     }
     
-    public func hideSnack() {
+    @objc public func hideSnack() {
         self.snackHeigth.constant = 0
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()

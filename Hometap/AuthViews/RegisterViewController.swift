@@ -9,7 +9,6 @@
 import UIKit
 import MBProgressHUD
 import Firebase
-import Navajo_Swift
 
 class RegisterViewController: UIViewController, UITextFieldDelegate {
 
@@ -18,13 +17,10 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmPasswordField: UITextField!
     @IBOutlet weak var nextB: UIButton!
-    
-    var displaceKeyboard = false
-    var originalFR: CGRect = CGRect.zero
-    var keyboards_array: [UITextField] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        keyboards_array = [nameField, mailField, passwordField, confirmPasswordField]
+        keyboards = [nameField, mailField, passwordField, confirmPasswordField]
         setUpSmartKeyboard()
         // Do any additional setup after loading the view.
     }
@@ -39,7 +35,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         nextB.addNormalShadow()
         nextB.roundCorners(radius: K.UI.round_px)
         
-        self.originalFR = self.view.bounds
+        self.originalFrame = self.view.bounds
     }
     
     @IBAction func nextStep(_ sender: Any) {
@@ -68,16 +64,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             MBProgressHUD.hide(for: self.view, animated: true)
             showAlert(title: "Espera!", message: "Debes ingresar tu nombre", closeButtonTitle: "Entendido")
             return
-        }
-        
-        let strength = Navajo.strength(of: passwordField.text!)
-        switch strength {
-        case .weak, .veryWeak:
-            MBProgressHUD.hide(for: self.view, animated: true)
-            showAlert(title: "Espera!", message: "La contraseña que has escogido es muy débil. Trata de usar mayúsculas y minúsulas, o signos especiales (!?#.)", closeButtonTitle: "Entendido")
-            return
-        default:
-            break
         }
         
         guard confirmPasswordField.text == passwordField.text else {
@@ -109,33 +95,19 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     }
     
-    // UI Helpers
-    
-    override func needsDisplacement() -> CGFloat {
-        return self.displaceKeyboard ? CGFloat(1) : CGFloat(0)
-    }
-    
-    override func originalFrame() -> CGRect {
-        return self.originalFR
-    }
-    
-    override func keyboards() -> [UITextField] {
-        return keyboards_array
-    }
-    
     public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         switch textField.tag {
         case 1:
-            self.displaceKeyboard = false
+            self.needsDisplacement = CGFloat(0)
             return true
         case 2:
-            self.displaceKeyboard = false
+            self.needsDisplacement = CGFloat(0)
             return true
         case 3:
-            self.displaceKeyboard = false
+            self.needsDisplacement = CGFloat(0)
             return true
         case 4:
-            self.displaceKeyboard = false
+            self.needsDisplacement = CGFloat(0)
             return true
         default:
             return true

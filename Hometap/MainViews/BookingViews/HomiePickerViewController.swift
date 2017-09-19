@@ -157,7 +157,7 @@ class HomiePickerViewController: UIViewController {
         }
     }
     
-    public func selectHomie1() {
+    @objc public func selectHomie1() {
         let homie = loaded_homies[0]
         let block = blocks[0]
         service.blockID = block.uid
@@ -165,7 +165,7 @@ class HomiePickerViewController: UIViewController {
         HomieConfirmViewController.confirmHomie(service: self.service, homie: homie, parent: self)
     }
     
-    public func selectHomie2() {
+    @objc public func selectHomie2() {
         let homie = loaded_homies[1]
         let block = blocks[1]
         service.blockID = block.uid
@@ -173,7 +173,7 @@ class HomiePickerViewController: UIViewController {
         HomieConfirmViewController.confirmHomie(service: self.service, homie: homie, parent: self)
     }
     
-    public func selectHomie3() {
+    @objc public func selectHomie3() {
         let homie = loaded_homies[2]
         let block = blocks[2]
         service.blockID = block.uid

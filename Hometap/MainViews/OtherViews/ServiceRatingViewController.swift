@@ -123,7 +123,7 @@ class ServiceRatingViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    func toogleCompliment(sender: UIButton) {
+    @objc func toogleCompliment(sender: UIButton) {
         let tag = sender.tag
         if let index = self.compliments.index(forKey: "\(tag)") {
             self.compliments.remove(at: index)
@@ -239,7 +239,7 @@ class ServiceRatingViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    func hideKeyboard() {
+    @objc func hideKeyboard() {
         self.commentView.resignFirstResponder()
     }
     

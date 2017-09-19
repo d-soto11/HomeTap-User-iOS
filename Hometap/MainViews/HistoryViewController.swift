@@ -61,7 +61,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         
     }
     
-    public func startBooking() {
+    @objc public func startBooking() {
         if K.Network.network_available {
             BookingViewController.show(parent: self)
         } else {

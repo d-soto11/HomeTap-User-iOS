@@ -90,7 +90,7 @@ class HTAlertViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    public func bgtouch() {
+    @objc public func bgtouch() {
         
     }
     

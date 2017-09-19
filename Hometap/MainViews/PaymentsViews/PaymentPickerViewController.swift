@@ -89,7 +89,7 @@ class PaymentPickerViewController: UIViewController {
         }
     }
     
-    public func tooglePicker() {
+    @objc public func tooglePicker() {
         dropDown.show()
     }
     

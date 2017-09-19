@@ -27,11 +27,7 @@ class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var detailsEditView: UIView!
     
     
-    var displaceKeyboard = false
-    var originalFR: CGRect = CGRect.zero
-    var keyboards_list: [UITextField] = []
-    
-    var stripeCard: STPCard = STPCard()
+    var stripeCard: STPCardParams = STPCardParams()
     var dateExpString = ""
     
     var loaded_card: PaymentCard?
@@ -43,7 +39,7 @@ class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
         
         parent.view.insertSubview(cardView.view, aboveSubview: parent.view)
         cardView.view.frame = frame
-        cardView.originalFR = frame
+        cardView.originalFrame = frame
         cardView.loaded_card = card
         cardView.selecting = selecting
         parent.addChildViewController(cardView)
@@ -84,7 +80,7 @@ class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
                 self.loaded_card!.brand = "Otra"
             }
             self.loaded_card!.expiration = self.cardExpiration.text
-            self.loaded_card!.number = stcard.last4()
+            self.loaded_card!.number = stcard.last4
             self.loaded_card!.cvc = self.cardCVC.text
             callback(self.loaded_card!)
         }
@@ -98,7 +94,7 @@ class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        keyboards_list = [nameText, numberText, expirationText, cvcText]
+        keyboards = [nameText, numberText, expirationText, cvcText]
         setUpSmartKeyboard()
     }
     
@@ -142,38 +138,25 @@ class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    // UI Helpers
-    override func needsDisplacement() -> CGFloat {
-        return self.displaceKeyboard ? CGFloat(1) : CGFloat(0)
-    }
-    
-    override func originalFrame() -> CGRect {
-        return self.originalFR
-    }
-    
-    override func keyboards() -> [UITextField] {
-        return self.keyboards_list
-    }
-    
     override func keyboardWillDisplay(notification:NSNotification) {
         UIView.animate(withDuration: 0.3, animations: {
-            self.view.frame = CGRect(x: 0.0, y: 0, width: (self.originalFrame().size.width), height: (self.originalFrame().size.height))
+            self.view.frame = CGRect(x: 0.0, y: 0, width: (self.originalFrame.size.width), height: (self.originalFrame.size.height))
         })
     }
     
     public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         switch textField.tag {
         case 21:
-            self.displaceKeyboard = false
+            self.needsDisplacement = CGFloat(0)
             return true
         case 22:
-            self.displaceKeyboard = false
+            self.needsDisplacement = CGFloat(0)
             return true
         case 23:
-            self.displaceKeyboard = true
+            self.needsDisplacement = CGFloat(1)
             return true
         case 24:
-            self.displaceKeyboard = true
+            self.needsDisplacement = CGFloat(1)
             return true
         default:
             return true

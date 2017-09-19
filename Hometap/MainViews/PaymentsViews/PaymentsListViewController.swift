@@ -102,7 +102,7 @@ class PaymentsListViewController: UIViewController, UITableViewDataSource, UITab
         }
     }
     
-    func newPayment() {
+    @objc func newPayment() {
         AddPaymentViewController.add(parent: self)
     }
 

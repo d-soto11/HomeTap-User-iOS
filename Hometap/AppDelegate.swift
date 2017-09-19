@@ -20,15 +20,11 @@ import UserNotifications
 import Fabric
 import Crashlytics
 
-import SwiftMonkeyPaws
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
 
     var window: UIWindow?
     
-    var paws: MonkeyPaws?
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         // Configurar Firebase
@@ -67,11 +63,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         application.registerForRemoteNotifications()
         application.applicationIconBadgeNumber = 0
-        
-        // Testing 
-        if CommandLine.arguments.contains("--MonkeyPaws") {
-            paws = MonkeyPaws(view: window!)
-        }
         
         return true
     }

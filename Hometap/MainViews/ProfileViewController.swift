@@ -87,7 +87,7 @@ class ProfileViewController: UIViewController, ImagePickerDelegate, ProfileChang
         }
     }
     
-    func editProfilePicture() {
+    @objc func editProfilePicture() {
         var config = Configuration()
         config.settingsFont = UIFont(name: "Rubik", size: 15)!
         config.noCameraFont = UIFont(name: "Rubik", size: 25)!
@@ -118,7 +118,7 @@ class ProfileViewController: UIViewController, ImagePickerDelegate, ProfileChang
         self.present(imagePicker, animated: true, completion: nil)
     }
     
-    func editInfo(sender: UIButton) {
+    @objc func editInfo(sender: UIButton) {
         switch sender.tag {
         case 1:
             // Name

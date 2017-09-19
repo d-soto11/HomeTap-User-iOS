@@ -24,15 +24,11 @@ class SetUpViewController: UIViewController, ImagePickerDelegate, DatePickerDele
     @IBOutlet weak var genreField: UITextField!
     @IBOutlet weak var doneB: UIButton!
     
-    var displaceKeyboard = false
-    var originalFR: CGRect = CGRect.zero
-    var keyboards_list: [UITextField] = []
-    
     let gender_options = ["Masculino", "Femenino", "Otro"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        keyboards_list = [nameField, mailField, phoneField, birthField, genreField]
+        keyboards = [nameField, mailField, phoneField, birthField, genreField]
         setUpSmartKeyboard()
         
         MBProgressHUD.showAdded(to: self.view, animated: true)
@@ -65,7 +61,7 @@ class SetUpViewController: UIViewController, ImagePickerDelegate, DatePickerDele
         doneB.addNormalShadow()
         doneB.roundCorners(radius: K.UI.round_px)
         
-        self.originalFR = self.view.bounds
+        self.originalFrame = self.view.bounds
     }
 
     @IBAction func selectProfilePicture(_ sender: UIButton) {
@@ -232,28 +228,17 @@ class SetUpViewController: UIViewController, ImagePickerDelegate, DatePickerDele
     }
     
     // UI Helpers
-    override func needsDisplacement() -> CGFloat {
-        return self.displaceKeyboard ? CGFloat(1) : CGFloat(0)
-    }
-    
-    override func originalFrame() -> CGRect {
-        return self.originalFR
-    }
-    
-    override func keyboards() -> [UITextField] {
-        return self.keyboards_list
-    }
     
     public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         switch textField.tag {
         case 1:
-            self.displaceKeyboard = false
+            self.needsDisplacement = CGFloat(0)
             return true
         case 2:
-            self.displaceKeyboard = true
+            self.needsDisplacement = CGFloat(1)
             return true
         case 3:
-            self.displaceKeyboard = true
+            self.needsDisplacement = CGFloat(1)
             return true
         case 4:
             // Date Picker

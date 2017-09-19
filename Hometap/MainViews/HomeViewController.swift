@@ -64,7 +64,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         FavoritesViewController.showFavorites(parent: self)
     }
     
-    public func startBooking() {
+    @objc public func startBooking() {
         if K.Network.network_available {
             BookingViewController.show(parent: self)
         } else {

@@ -47,7 +47,7 @@ class BookingConfirmationViewController: UIViewController {
         
     }
     
-    func hideConfirmation() {
+    @objc func hideConfirmation() {
         UIView.animate(withDuration: 0.5) {
             self.view.alpha = 0
         }

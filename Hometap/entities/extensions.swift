@@ -88,10 +88,34 @@ extension UIView {
 }
 
 extension UIViewController {
-    /*
-    private(set) var animationsArray: [()->Void] {
+    
+    public var needsDisplacement: CGFloat {
         get {
-            guard let value = objc_getAssociatedObject(self, &UIViewControllerExtensionKeys.animationsArray) as? [()->Void] else {
+            guard let value = objc_getAssociatedObject(self, &UIViewControllerExtensionKeys.animationsArray) as? CGFloat else {
+                return CGFloat(0)
+            }
+            return value
+        }
+        set(newValue) {
+            objc_setAssociatedObject(self, &UIViewControllerExtensionKeys.animationsArray, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    public var originalFrame: CGRect {
+        get {
+            guard let value = objc_getAssociatedObject(self, &UIViewControllerExtensionKeys.animationsArray) as? CGRect else {
+                return CGRect.zero
+            }
+            return value
+        }
+        set(newValue) {
+            objc_setAssociatedObject(self, &UIViewControllerExtensionKeys.animationsArray, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    public var keyboards: [UITextField] {
+        get {
+            guard let value = objc_getAssociatedObject(self, &UIViewControllerExtensionKeys.animationsArray) as? [UITextField] else {
                 return []
             }
             return value
@@ -100,7 +124,6 @@ extension UIViewController {
             objc_setAssociatedObject(self, &UIViewControllerExtensionKeys.animationsArray, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
- */
     
     
     func showAlert(title:String, message:String, closeButtonTitle:String, special: Bool = true, persistent: Bool = false) {
@@ -122,42 +145,29 @@ extension UIViewController {
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clearKeyboards)))
     }
     
-    func keyboardWillDisplay(notification:NSNotification) {
+    @objc func keyboardWillDisplay(notification:NSNotification) {
         let userInfo:Dictionary = notification.userInfo!
         let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue
         let keyboardRectangle = keyboardFrame.cgRectValue
         let keyboardHeight = keyboardRectangle.height
         
         UIView.animate(withDuration: 0.3) { 
-             self.view.frame = CGRect(x: 0.0, y: (self.originalFrame().origin.y - (keyboardHeight*self.needsDisplacement())), width: (self.originalFrame().size.width), height: (self.originalFrame().size.height))
+             self.view.frame = CGRect(x: 0.0, y: (self.originalFrame.origin.y - (keyboardHeight*self.needsDisplacement)), width: (self.originalFrame.size.width), height: (self.originalFrame.size.height))
         }
     }
     
-    func keyboardWillHide(notification:NSNotification) {
+    @objc func keyboardWillHide(notification:NSNotification) {
         UIView.animate(withDuration: 0.3) { 
-            self.view.frame = self.originalFrame()
+            self.view.frame = self.originalFrame
         }
     }
     
-    func needsDisplacement() -> CGFloat {
-        return CGFloat(0)
-    }
-    
-    func originalFrame() -> CGRect {
-        return CGRect.zero
-    }
-    
-    func keyboards() -> [UITextField] {
-        return []
-    }
-    
-    func clearKeyboards(index: Int = -1) {
-        let kb = keyboards()
-        for k in kb {
+    @objc func clearKeyboards(index: Int = -1) {
+        for k in keyboards {
             k.resignFirstResponder()
         }
-        if (index > -1 && index < kb.count) {
-            kb[index].becomeFirstResponder()
+        if (index > -1 && index < keyboards.count) {
+            keyboards[index].becomeFirstResponder()
         }
     }
     
@@ -204,7 +214,7 @@ extension NSLayoutConstraint {
         NSLayoutConstraint.deactivate([self])
         
         let newConstraint = NSLayoutConstraint(
-            item: firstItem,
+            item: firstItem!,
             attribute: firstAttribute,
             relatedBy: relation,
             toItem: secondItem,
