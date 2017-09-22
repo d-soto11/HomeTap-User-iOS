@@ -8,7 +8,8 @@
 
 import UIKit
 import Stripe
-import MBProgressHUD
+import RestEssentials
+import Firebase
 
 class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
     
@@ -51,39 +52,132 @@ class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
     }
     
     func tokenizeCreditCard(callback: @escaping (PaymentCard?) -> ()) {
-        STPAPIClient.shared().createToken(withCard: self.stripeCard) { (token, error) in
-            guard let token = token, error == nil else {
-                callback(nil)
-                return
-            }
-            guard let stcard = token.card else {
-                callback(nil)
-                return
-            }
-            self.loaded_card = PaymentCard(dict: [:])
-            self.loaded_card!.uid = token.stripeID
-            self.loaded_card!.name = stcard.name
-            switch stcard.brand {
-            case .amex:
-                self.loaded_card!.brand = "Amex"
-            case .dinersClub:
-                self.loaded_card!.brand = "Diners Club"
-            case .discover:
-                self.loaded_card!.brand = "Discover"
-            case .JCB:
-                self.loaded_card!.brand = "JCB"
-            case .masterCard:
-                self.loaded_card!.brand = "Master Card"
-            case .visa:
-                self.loaded_card!.brand = "Visa"
-            case .unknown:
-                self.loaded_card!.brand = "Otra"
-            }
-            self.loaded_card!.expiration = self.cardExpiration.text
-            self.loaded_card!.number = stcard.last4
-            self.loaded_card!.cvc = self.cardCVC.text
-            callback(self.loaded_card!)
+        
+        guard self.stripeCard.name != nil else {
+            callback(nil)
+            return
         }
+        guard self.stripeCard.number != nil else {
+            callback(nil)
+            return
+        }
+        guard self.stripeCard.cvc != nil else {
+            callback(nil)
+            return
+        }
+        guard let url = RestController.make(urlString: "https://us-central1-hometap-f173f.cloudfunctions.net") else {
+            callback(nil)
+            return
+        }
+        
+        Auth.auth().currentUser?.getIDToken(completion: { (id, error) in
+            if id != nil {
+                var options = RestOptions()
+                let authToken = String(format: "Bearer %@", id!)
+                options.httpHeaders = ["Authorization": authToken]
+                
+                let dateString = String(format: "20%02d/%02d", self.stripeCard.expYear, self.stripeCard.expMonth)
+                var brandString = "CODENSA"
+                switch STPCardValidator.brand(forNumber: self.stripeCard.number!) {
+                case .amex:
+                    brandString = "AMEX"
+                case .dinersClub:
+                    brandString = "DINERS"
+                case .visa:
+                    brandString = "VISA"
+                case .masterCard:
+                    brandString = "MASTERCARD"
+                default:
+                    break
+                }
+                
+                let query: JSON = ["name": self.stripeCard.name!,
+                                   "number":self.stripeCard.number!,
+                                   "date": dateString,
+                                   "cvc": self.stripeCard.cvc!,
+                                   "brand": brandString]
+                
+                url.post(query, at: "tokenize", options: options) { (result, httpResponse) in
+                    if httpResponse?.statusCode == 200 {
+                        // Payment succesfull
+                        do {
+                            let json = try result.value()
+                            
+                            self.loaded_card = PaymentCard(dict: [:])
+                            self.loaded_card!.uid = json["token"].string!
+                            self.loaded_card!.name = json["name"].string!
+                            switch json["brand"].string! {
+                            case "AMEX":
+                                self.loaded_card!.brand = "Amex"
+                            case "DINERS":
+                                self.loaded_card!.brand = "Diners Club"
+                            case "CODENSA":
+                                self.loaded_card!.brand = "Codensa"
+                            case "MASTERCARD":
+                                self.loaded_card!.brand = "Master Card"
+                            case "VISA":
+                                self.loaded_card!.brand = "Visa"
+                            default:
+                                self.loaded_card!.brand = "Otra"
+                            }
+                            self.loaded_card!.expiration = self.cardExpiration.text
+                            self.loaded_card!.number = json["last4"].string!
+                            self.loaded_card!.cvc = self.cardCVC.text
+                            
+                            DispatchQueue.main.async {
+                                callback(self.loaded_card!)
+                            }
+                        } catch {
+                            DispatchQueue.main.async {
+                                callback(nil)
+                            }
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                           callback(nil)
+                        }
+                    }
+                }
+                
+            } else {
+                callback(nil)
+                return
+            }
+        })
+        
+//        STPAPIClient.shared().createToken(withCard: self.stripeCard) { (token, error) in
+//            guard let token = token, error == nil else {
+//                callback(nil)
+//                return
+//            }
+//            guard let stcard = token.card else {
+//                callback(nil)
+//                return
+//            }
+//            self.loaded_card = PaymentCard(dict: [:])
+//            self.loaded_card!.uid = token.stripeID
+//            self.loaded_card!.name = stcard.name
+//            switch stcard.brand {
+//            case .amex:
+//                self.loaded_card!.brand = "Amex"
+//            case .dinersClub:
+//                self.loaded_card!.brand = "Diners Club"
+//            case .discover:
+//                self.loaded_card!.brand = "Discover"
+//            case .JCB:
+//                self.loaded_card!.brand = "JCB"
+//            case .masterCard:
+//                self.loaded_card!.brand = "Master Card"
+//            case .visa:
+//                self.loaded_card!.brand = "Visa"
+//            case .unknown:
+//                self.loaded_card!.brand = "Otra"
+//            }
+//            self.loaded_card!.expiration = self.cardExpiration.text
+//            self.loaded_card!.number = stcard.last4
+//            self.loaded_card!.cvc = self.cardCVC.text
+//            callback(self.loaded_card!)
+//        }
     }
     
     func saveDetails() -> PaymentCard? {
