@@ -241,7 +241,7 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
             cell.viewWithTag(1)?.roundCorners(radius: K.UI.light_round_px)
             cell.viewWithTag(2)?.roundCorners(radius: 10)
             (cell.viewWithTag(1)?.viewWithTag(11) as? UILabel)?.text = service.name!
-            (cell.viewWithTag(2)?.viewWithTag(11) as? UILabel)?.text = String(format: "%.0fCOP", service.price!)
+            (cell.viewWithTag(2)?.viewWithTag(11) as? UILabel)?.text = String(format: "%.0f COP", service.price!)
             
             if (self.selected.contains(indexPath.row)) {
                 cell.viewWithTag(1)?.backgroundColor = K.UI.main_color

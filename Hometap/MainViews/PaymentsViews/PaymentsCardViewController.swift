@@ -44,6 +44,7 @@ class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
         cardView.loaded_card = card
         cardView.selecting = selecting
         parent.addChildViewController(cardView)
+//        cardView.parent = parent
         cardView.didMove(toParentViewController: parent)
         
         parent.view.addGestureRecognizer(UITapGestureRecognizer(target: cardView, action: #selector(clearKeyboards)))
@@ -188,8 +189,8 @@ class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        keyboards = [nameText, numberText, expirationText, cvcText]
-        setUpSmartKeyboard()
+        self.keyboards = [nameText, numberText, expirationText, cvcText]
+        self.setUpSmartKeyboard()
     }
     
     override func viewDidAppear(_ animated: Bool) {

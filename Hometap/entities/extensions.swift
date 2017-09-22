@@ -12,7 +12,9 @@ import QuartzCore
 import MBProgressHUD
 
 struct UIViewControllerExtensionKeys {
-    static var animationsArray: UInt8 = 0
+    static var originalFrame: UInt8 = 0
+    static var keyboards: UInt8 = 1
+    static var needs: UInt8 = 2
 }
 
 extension UIColor {
@@ -32,6 +34,7 @@ extension UIColor {
 extension UIView {
     
     func addNormalShadow() {
+        self.layoutIfNeeded()
         let shadowPath = UIBezierPath(rect: self.bounds)
         self.layer.masksToBounds = false
         self.layer.shadowColor = UIColor.black.cgColor
@@ -41,6 +44,7 @@ extension UIView {
     }
     
     func addInvertedShadow() {
+        self.layoutIfNeeded()
         let shadowPath = UIBezierPath(rect: self.bounds)
         self.layer.masksToBounds = false
         self.layer.shadowColor = UIColor.black.cgColor
@@ -50,6 +54,7 @@ extension UIView {
     }
     
     func addSpecialShadow(size: CGSize, opacitiy: Float = 0.15) {
+        self.layoutIfNeeded()
         let shadowPath = UIBezierPath(rect: self.bounds)
         self.layer.masksToBounds = false
         self.layer.shadowColor = UIColor.black.cgColor
@@ -59,6 +64,7 @@ extension UIView {
     }
     
     func addLightShadow() {
+        self.layoutIfNeeded()
         let shadowPath = UIBezierPath(rect: self.bounds)
         self.layer.masksToBounds = false
         self.layer.shadowColor = UIColor.black.cgColor
@@ -91,37 +97,37 @@ extension UIViewController {
     
     public var needsDisplacement: CGFloat {
         get {
-            guard let value = objc_getAssociatedObject(self, &UIViewControllerExtensionKeys.animationsArray) as? CGFloat else {
+            guard let value = objc_getAssociatedObject(self, &UIViewControllerExtensionKeys.needs) as? CGFloat else {
                 return CGFloat(0)
             }
             return value
         }
         set(newValue) {
-            objc_setAssociatedObject(self, &UIViewControllerExtensionKeys.animationsArray, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &UIViewControllerExtensionKeys.needs, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     
     public var originalFrame: CGRect {
         get {
-            guard let value = objc_getAssociatedObject(self, &UIViewControllerExtensionKeys.animationsArray) as? CGRect else {
+            guard let value = objc_getAssociatedObject(self, &UIViewControllerExtensionKeys.originalFrame) as? CGRect else {
                 return CGRect.zero
             }
             return value
         }
         set(newValue) {
-            objc_setAssociatedObject(self, &UIViewControllerExtensionKeys.animationsArray, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &UIViewControllerExtensionKeys.originalFrame, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     
     public var keyboards: [UITextField] {
         get {
-            guard let value = objc_getAssociatedObject(self, &UIViewControllerExtensionKeys.animationsArray) as? [UITextField] else {
+            guard let value = objc_getAssociatedObject(self, &UIViewControllerExtensionKeys.keyboards) as? [UITextField] else {
                 return []
             }
             return value
         }
         set(newValue) {
-            objc_setAssociatedObject(self, &UIViewControllerExtensionKeys.animationsArray, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &UIViewControllerExtensionKeys.keyboards, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     
