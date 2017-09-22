@@ -123,6 +123,8 @@ class Place: HometapObject {
     
     public func save() {
         let _ = self.prepareForSave()
+        print("saving:")
+        print(original_dictionary)
         super.save(route: "places")
     }
     

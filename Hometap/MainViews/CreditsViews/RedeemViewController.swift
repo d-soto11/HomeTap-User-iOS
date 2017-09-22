@@ -41,6 +41,12 @@ class RedeemViewController: UIViewController, UITextFieldDelegate {
         let mb = MBProgressHUD.showAdded(to: self.view, animated: true)
         mb.label.text = "Verificando cupón"
         if let coupon = self.ticketField.text, self.ticketField.text != "" {
+            guard !coupon.contains(".") && !coupon.contains("#") && !coupon.contains("$") &&
+            !coupon.contains("[") && !coupon.contains("]") else {
+                mb.hide(animated: true)
+                self.showError(err: "*No hemos encontrado registro de este código, intenta usar otro")
+                return
+            }
             Coupon.verify(coupon: coupon, callback: { (verified) in
                 mb.hide(animated: true)
                 if verified != nil {

@@ -118,6 +118,7 @@ class Client: User {
     }
     
     public func savePlace(place: Place) {
+        place.save()
         K.Database.ref().child("clients").child(self.uid!).child("places").child(place.uid!).setValue(true)
         var index = -1
         for (i, p) in self.local_places.enumerated() {

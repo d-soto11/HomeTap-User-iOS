@@ -25,6 +25,7 @@ class PlaceEditorViewController: UIViewController, UITextFieldDelegate, GMSPlace
     @IBOutlet weak var petsLabel: UILabel!
     @IBOutlet weak var saveB: UIButton!
     @IBOutlet weak var deleteB: UIButton!
+    @IBOutlet weak var wifiText: UITextField!
     
     private var place: Place!
     
@@ -36,7 +37,7 @@ class PlaceEditorViewController: UIViewController, UITextFieldDelegate, GMSPlace
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        keyboards = [nameText, addressText, towerText, interiorText, metersText, floorsText, roomsText, bathroomsText]
+        keyboards = [nameText, addressText, towerText, interiorText, metersText, floorsText, roomsText, bathroomsText, wifiText]
         setUpSmartKeyboard()
         self.deleteB.alpha = self.place.uid != nil ? 1 : 0
     }
@@ -53,6 +54,7 @@ class PlaceEditorViewController: UIViewController, UITextFieldDelegate, GMSPlace
         self.floorsText.text = place.floors != nil ? String(format: "%d", place.floors!) : ""
         self.roomsText.text = place.rooms != nil ? String(format: "%d", place.rooms!) : ""
         self.bathroomsText.text = place.bathrooms != nil ? String(format: "%d", place.bathrooms!) : ""
+        self.wifiText.text = place.wifi
         
         if place.apartament! {
             UIView.animate(withDuration: 0.5, animations: {
@@ -163,8 +165,7 @@ class PlaceEditorViewController: UIViewController, UITextFieldDelegate, GMSPlace
             self.showAlert(title: "¡Espera!", message: "Debes ingresar el número de baños de este lugar", closeButtonTitle: "Ok")
             return
         }
-        
-        place.save()
+        mb.hide(animated: true)
         K.User.client?.savePlace(place: place)
         self.back(self)
     }
@@ -253,7 +254,7 @@ class PlaceEditorViewController: UIViewController, UITextFieldDelegate, GMSPlace
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField.tag {
-        case 28:
+        case 29:
             textField.resignFirstResponder()
             return true
         default:
@@ -264,6 +265,13 @@ class PlaceEditorViewController: UIViewController, UITextFieldDelegate, GMSPlace
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let text = textField.text as NSString? {
+            let resultString = text.replacingCharacters(in: range, with: string)
+            if text.length > resultString.characters.count {
+                return true
+            }
+        }
+        
         switch textField.tag {
         case 21:
             return ((textField.text?.characters.count) ?? 0 < 20)
@@ -281,6 +289,8 @@ class PlaceEditorViewController: UIViewController, UITextFieldDelegate, GMSPlace
             return ((textField.text?.characters.count) ?? 0 < 3)
         case 28:
             return ((textField.text?.characters.count) ?? 0 < 3)
+        case 29:
+            return ((textField.text?.characters.count) ?? 0 < 40)
         default:
             return false
         }
@@ -322,6 +332,10 @@ class PlaceEditorViewController: UIViewController, UITextFieldDelegate, GMSPlace
                 self.showAlert(title: "Espera", message: "El número de baños que has ingresado no es válido", closeButtonTitle: "Ok")
                 return false
             }
+        case 29:
+            if textField.text != "", let wifi = textField.text {
+                self.place.wifi = wifi
+            }
         default:
             return true
         }
@@ -330,4 +344,7 @@ class PlaceEditorViewController: UIViewController, UITextFieldDelegate, GMSPlace
         return true
     }
 
+    @IBAction func wifiInfo(_ sender: Any) {
+        self.showAlert(title: "Clave WiFi", message: "Puedes proveerle la clave del WiFi a tu Homie si lo deseas para ayudarle a reducir su consumo de datos.", closeButtonTitle: "Entendido")
+    }
 }
