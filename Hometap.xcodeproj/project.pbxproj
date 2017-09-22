@@ -88,6 +88,14 @@
 		43DC564D1F1D2E5000C68B17 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC564C1F1D2E5000C68B17 /* ProfileViewController.swift */; };
 		43DC564F1F1D381200C68B17 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC564E1F1D381200C68B17 /* LocationsViewController.swift */; };
 		43DC56521F1D393800C68B17 /* HTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC56511F1D393800C68B17 /* HTTableViewCell.swift */; };
+		43E5F8871F74A58100844095 /* fridgeGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 43E5F8831F74A42400844095 /* fridgeGreen.png */; };
+		43E5F8881F74A58100844095 /* fridgeWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 43E5F8821F74A42400844095 /* fridgeWhite.png */; };
+		43E5F8891F74A58100844095 /* sofaCurtainsGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 43E5F8851F74A42500844095 /* sofaCurtainsGreen.png */; };
+		43E5F88A1F74A58100844095 /* sofaCurtainsWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 43E5F8801F74A42400844095 /* sofaCurtainsWhite.png */; };
+		43E5F88B1F74A58100844095 /* stoveWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 43E5F8811F74A42400844095 /* stoveWhite.png */; };
+		43E5F88C1F74A58100844095 /* wallDivisionGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 43E5F8861F74A42500844095 /* wallDivisionGreen.png */; };
+		43E5F88D1F74A58100844095 /* wallDivisionWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 43E5F8841F74A42500844095 /* wallDivisionWhite.png */; };
+		43E5F88F1F74A60100844095 /* stoveGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 43E5F88E1F74A5E800844095 /* stoveGreen.png */; };
 		43E707D21F53185900EBBEEF /* PaymentsCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E707D11F53185900EBBEEF /* PaymentsCardViewController.swift */; };
 		43E707D41F531F1D00EBBEEF /* AddPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E707D31F531F1D00EBBEEF /* AddPaymentViewController.swift */; };
 		43E707D61F53219C00EBBEEF /* PaymentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E707D51F53219C00EBBEEF /* PaymentsListViewController.swift */; };
@@ -126,14 +134,6 @@
 
 /* Begin PBXFileReference section */
 		41EE0E6489CEC26245E3FF96 /* Pods-Hometap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hometap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hometap/Pods-Hometap.debug.xcconfig"; sourceTree = "<group>"; };
-		43078C991F749FC1008C5E07 /* sofaCurtainsWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sofaCurtainsWhite.png; path = assets/sofaCurtainsWhite.png; sourceTree = "<group>"; };
-		43078C9A1F749FC2008C5E07 /* wallDivisionWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wallDivisionWhite.png; path = assets/wallDivisionWhite.png; sourceTree = "<group>"; };
-		43078C9B1F749FC3008C5E07 /* sofaCurtainsGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sofaCurtainsGreen.png; path = assets/sofaCurtainsGreen.png; sourceTree = "<group>"; };
-		43078C9C1F749FC5008C5E07 /* wallDivisionGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wallDivisionGreen.png; path = assets/wallDivisionGreen.png; sourceTree = "<group>"; };
-		43078C9D1F74A054008C5E07 /* stoveGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stoveGreen.png; path = assets/stoveGreen.png; sourceTree = "<group>"; };
-		43078C9E1F74A055008C5E07 /* stoveWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stoveWhite.png; path = assets/stoveWhite.png; sourceTree = "<group>"; };
-		43078C9F1F74A055008C5E07 /* fridgeWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fridgeWhite.png; path = assets/fridgeWhite.png; sourceTree = "<group>"; };
-		43078CA01F74A055008C5E07 /* fridgeGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fridgeGreen.png; path = assets/fridgeGreen.png; sourceTree = "<group>"; };
 		430B83701F1DDB7B007585F2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = AuthViews/LoginViewController.swift; sourceTree = "<group>"; };
 		4313C1E51F6448B700DBF27A /* Credits.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Credits.storyboard; path = MainViews/CreditsViews/Credits.storyboard; sourceTree = "<group>"; };
 		4313C1E71F644AC400DBF27A /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreditsViewController.swift; path = MainViews/CreditsViews/CreditsViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +219,14 @@
 		43DC564C1F1D2E5000C68B17 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = MainViews/ProfileViewController.swift; sourceTree = "<group>"; };
 		43DC564E1F1D381200C68B17 /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsViewController.swift; path = MainViews/LocationsViewController.swift; sourceTree = "<group>"; };
 		43DC56511F1D393800C68B17 /* HTTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTableViewCell.swift; path = CustomViews/HTTableViewCell.swift; sourceTree = "<group>"; };
+		43E5F8801F74A42400844095 /* sofaCurtainsWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sofaCurtainsWhite.png; path = assets/sofaCurtainsWhite.png; sourceTree = "<group>"; };
+		43E5F8811F74A42400844095 /* stoveWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stoveWhite.png; path = assets/stoveWhite.png; sourceTree = "<group>"; };
+		43E5F8821F74A42400844095 /* fridgeWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fridgeWhite.png; path = assets/fridgeWhite.png; sourceTree = "<group>"; };
+		43E5F8831F74A42400844095 /* fridgeGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fridgeGreen.png; path = assets/fridgeGreen.png; sourceTree = "<group>"; };
+		43E5F8841F74A42500844095 /* wallDivisionWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wallDivisionWhite.png; path = assets/wallDivisionWhite.png; sourceTree = "<group>"; };
+		43E5F8851F74A42500844095 /* sofaCurtainsGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sofaCurtainsGreen.png; path = assets/sofaCurtainsGreen.png; sourceTree = "<group>"; };
+		43E5F8861F74A42500844095 /* wallDivisionGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wallDivisionGreen.png; path = assets/wallDivisionGreen.png; sourceTree = "<group>"; };
+		43E5F88E1F74A5E800844095 /* stoveGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stoveGreen.png; path = assets/stoveGreen.png; sourceTree = "<group>"; };
 		43E707D11F53185900EBBEEF /* PaymentsCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentsCardViewController.swift; path = MainViews/PaymentsViews/PaymentsCardViewController.swift; sourceTree = "<group>"; };
 		43E707D31F531F1D00EBBEEF /* AddPaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddPaymentViewController.swift; path = MainViews/PaymentsViews/AddPaymentViewController.swift; sourceTree = "<group>"; };
 		43E707D51F53219C00EBBEEF /* PaymentsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentsListViewController.swift; path = MainViews/PaymentsViews/PaymentsListViewController.swift; sourceTree = "<group>"; };
@@ -380,23 +388,23 @@
 				439F14311F1C3E79009DABF8 /* iconNoPhotoSmall.png */,
 				439F14321F1C3E79009DABF8 /* iconProfileGreen.png */,
 				439F14331F1C3E79009DABF8 /* iconProfileGrey.png */,
-				43078CA01F74A055008C5E07 /* fridgeGreen.png */,
-				43078C9F1F74A055008C5E07 /* fridgeWhite.png */,
-				43078C9D1F74A054008C5E07 /* stoveGreen.png */,
-				43078C9E1F74A055008C5E07 /* stoveWhite.png */,
 				439F14341F1C3E79009DABF8 /* iconServiceBooked.png */,
 				434D5C521F48D8CF00C17541 /* iconArrowGreen.png */,
 				434D5C531F48D8CF00C17541 /* iconArrowWhite.png */,
 				439F14351F1C3E79009DABF8 /* iconServiceChecked.png */,
 				439F14381F1C3E79009DABF8 /* iconStarEmpty.png */,
-				43078C9B1F749FC3008C5E07 /* sofaCurtainsGreen.png */,
-				43078C991F749FC1008C5E07 /* sofaCurtainsWhite.png */,
-				43078C9C1F749FC5008C5E07 /* wallDivisionGreen.png */,
-				43078C9A1F749FC2008C5E07 /* wallDivisionWhite.png */,
 				439F14391F1C3E79009DABF8 /* iconStarFilled.png */,
 				439F14401F1C3E7A009DABF8 /* illustrationCreditCard.png */,
 				439F14411F1C3E7A009DABF8 /* illustrationGeneralService.png */,
 				439F14421F1C3E7A009DABF8 /* illustrationNoBookings.png */,
+				43E5F8831F74A42400844095 /* fridgeGreen.png */,
+				43E5F8821F74A42400844095 /* fridgeWhite.png */,
+				43E5F8851F74A42500844095 /* sofaCurtainsGreen.png */,
+				43E5F8801F74A42400844095 /* sofaCurtainsWhite.png */,
+				43E5F88E1F74A5E800844095 /* stoveGreen.png */,
+				43E5F8811F74A42400844095 /* stoveWhite.png */,
+				43E5F8861F74A42500844095 /* wallDivisionGreen.png */,
+				43E5F8841F74A42500844095 /* wallDivisionWhite.png */,
 				439F140A1F1C3AF0009DABF8 /* typo */,
 			);
 			name = assets;
@@ -672,6 +680,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43E5F88F1F74A60100844095 /* stoveGreen.png in Resources */,
+				43E5F8871F74A58100844095 /* fridgeGreen.png in Resources */,
+				43E5F8881F74A58100844095 /* fridgeWhite.png in Resources */,
+				43E5F8891F74A58100844095 /* sofaCurtainsGreen.png in Resources */,
+				43E5F88A1F74A58100844095 /* sofaCurtainsWhite.png in Resources */,
+				43E5F88B1F74A58100844095 /* stoveWhite.png in Resources */,
+				43E5F88C1F74A58100844095 /* wallDivisionGreen.png in Resources */,
+				43E5F88D1F74A58100844095 /* wallDivisionWhite.png in Resources */,
 				439F14501F1C3E7A009DABF8 /* iconHistoryGrey.png in Resources */,
 				439F14471F1C3E7A009DABF8 /* iconCreditCard.png in Resources */,
 				43EF36C21F16F9D70013FA8A /* LaunchScreen.storyboard in Resources */,

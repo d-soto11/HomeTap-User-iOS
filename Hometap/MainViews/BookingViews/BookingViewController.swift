@@ -251,7 +251,6 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
                 (cell.viewWithTag(2)?.viewWithTag(11) as? UILabel)?.textColor = .white
                 
                 (cell.viewWithTag(1)?.viewWithTag(10) as? UIImageView)?.image = UIImage(named: String(format: "%@White", service.icon!))
-                print(String(format: "%@White", service.icon!))
             } else {
                 cell.viewWithTag(1)?.backgroundColor = .white
                 cell.viewWithTag(2)?.backgroundColor = .white
@@ -260,7 +259,6 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
                 (cell.viewWithTag(2)?.viewWithTag(11) as? UILabel)?.textColor = K.UI.main_color
                 
                 (cell.viewWithTag(1)?.viewWithTag(10) as? UIImageView)?.image = UIImage(named: String(format: "%@Green", service.icon!))
-                print(String(format: "%@Green", service.icon!))
             }
         }
         cellUI.layoutIfNeeded()
