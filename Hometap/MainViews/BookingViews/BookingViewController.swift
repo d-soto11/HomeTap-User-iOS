@@ -54,9 +54,9 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
         let screenWidth = self.aditionalServicesCV.frame.size.width
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
-        layout.itemSize = CGSize(width: screenWidth/3, height: screenWidth*1.3/3)
+        layout.itemSize = CGSize(width: screenWidth/2, height: screenWidth*0.9/2)
         layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
+        layout.minimumLineSpacing = 20
         self.aditionalServicesCV.collectionViewLayout = layout
         
         self.commentsTextView.bordered(color: K.UI.select_box_color)
@@ -250,7 +250,8 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
                 (cell.viewWithTag(1)?.viewWithTag(11) as? UILabel)?.textColor = .white
                 (cell.viewWithTag(2)?.viewWithTag(11) as? UILabel)?.textColor = .white
                 
-                (cell.viewWithTag(1)?.viewWithTag(10) as? UIImageView)?.image = UIImage(named: String(format: "%@_white", service.icon!))
+                (cell.viewWithTag(1)?.viewWithTag(10) as? UIImageView)?.image = UIImage(named: String(format: "%@White", service.icon!))
+                print(String(format: "%@White", service.icon!))
             } else {
                 cell.viewWithTag(1)?.backgroundColor = .white
                 cell.viewWithTag(2)?.backgroundColor = .white
@@ -258,7 +259,8 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
                 (cell.viewWithTag(1)?.viewWithTag(11) as? UILabel)?.textColor = K.UI.main_color
                 (cell.viewWithTag(2)?.viewWithTag(11) as? UILabel)?.textColor = K.UI.main_color
                 
-                (cell.viewWithTag(1)?.viewWithTag(10) as? UIImageView)?.image = UIImage(named: String(format: "%@_green", service.icon!))
+                (cell.viewWithTag(1)?.viewWithTag(10) as? UIImageView)?.image = UIImage(named: String(format: "%@Green", service.icon!))
+                print(String(format: "%@Green", service.icon!))
             }
         }
         cellUI.layoutIfNeeded()
