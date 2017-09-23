@@ -398,6 +398,6 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
     }
 
     @IBAction func wifiInfo(_ sender: Any) {
-        self.showAlert(title: "Clave WiFi", message: "Puedes proveerle la clave del WiFi a tu Homie si lo deseas para ayudarle a reducir su consumo de datos.", closeButtonTitle: "Entendido")
+        self.showAlert(title: "Clave WiFi", message: "Puedes proveerle la clave del WiFi a tu Homie, si lo deseas, para ayudarle a reducir su consumo de datos.", closeButtonTitle: "Entendido")
     }
 }

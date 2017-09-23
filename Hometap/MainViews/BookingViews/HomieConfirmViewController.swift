@@ -32,6 +32,8 @@ class HomieConfirmViewController: UIViewController, UITableViewDataSource, UITab
     private let initialHeigth: CGFloat = 830
     private let initalCommentsHeigth: CGFloat = 200
     
+    private var initialLoad = true
+    
     public class func confirmHomie(service: Service, homie: Homie, parent: UIViewController) {
         let st = UIStoryboard.init(name: "Booking", bundle: nil)
         let confirm = st.instantiateViewController(withIdentifier: "ConfirmHomieView") as! HomieConfirmViewController
@@ -61,6 +63,11 @@ class HomieConfirmViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        if !initialLoad {
+            return
+        }
+        initialLoad = false
         
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
@@ -112,7 +119,6 @@ class HomieConfirmViewController: UIViewController, UITableViewDataSource, UITab
     @IBAction func confirmBooking(_ sender: Any) {
         MBProgressHUD.showAdded(to: self.view, animated: true)
         let _ = service.saveClientHomie(client: K.User.client!, homie: homie)
-        MBProgressHUD.hide(for: self.view, animated: true)
         MBProgressHUD.hide(for: self.view, animated: true)
         PlacePickerViewController.showPicker(service: self.service, parent: self)
     }

@@ -77,7 +77,6 @@
 		43A0B94E1F56033800ABB9F9 /* BookingConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A0B94D1F56033800ABB9F9 /* BookingConfirmationViewController.swift */; };
 		43AC4C861F23F18E007D638E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AC4C851F23F18E007D638E /* RegisterViewController.swift */; };
 		43AC4C881F23F19F007D638E /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AC4C871F23F19F007D638E /* SetUpViewController.swift */; };
-		43B610D21F1E77D2003425BD /* LOGO.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 43B610D11F1E77D2003425BD /* LOGO.bmp */; };
 		43B610D41F1E7D44003425BD /* photo-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 43B610D31F1E7D44003425BD /* photo-camera.png */; };
 		43B610D81F1E80C1003425BD /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = 43B610D61F1E80C1003425BD /* fb.png */; };
 		43B610D91F1E80C1003425BD /* google_c_b.png in Resources */ = {isa = PBXBuildFile; fileRef = 43B610D71F1E80C1003425BD /* google_c_b.png */; };
@@ -141,6 +140,7 @@
 		4319355B1F47963E005BB082 /* BookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookingViewController.swift; path = MainViews/BookingViews/BookingViewController.swift; sourceTree = "<group>"; };
 		4319355D1F4799A8005BB082 /* AppContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppContent.swift; path = entities/AppContent.swift; sourceTree = "<group>"; };
 		4319355F1F47A00C005BB082 /* HTCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTCollectionViewCell.swift; path = CustomViews/HTCollectionViewCell.swift; sourceTree = "<group>"; };
+		431E12C51F75CCF400E854F2 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = assets/icons/splash.png; sourceTree = "<group>"; };
 		4343932D1F315CFB00861426 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerViewController.swift; path = CustomViews/DatePickerViewController.swift; sourceTree = "<group>"; };
 		4343932E1F315CFB00861426 /* DatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DatePickerViewController.xib; path = CustomViews/DatePickerViewController.xib; sourceTree = "<group>"; };
 		434B66181F4B3988007CE9E2 /* Places.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Places.storyboard; path = MainViews/PlacesViews/Places.storyboard; sourceTree = "<group>"; };
@@ -208,7 +208,6 @@
 		43A0B94D1F56033800ABB9F9 /* BookingConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookingConfirmationViewController.swift; path = MainViews/BookingViews/BookingConfirmationViewController.swift; sourceTree = "<group>"; };
 		43AC4C851F23F18E007D638E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = AuthViews/RegisterViewController.swift; sourceTree = "<group>"; };
 		43AC4C871F23F19F007D638E /* SetUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetUpViewController.swift; path = AuthViews/SetUpViewController.swift; sourceTree = "<group>"; };
-		43B610D11F1E77D2003425BD /* LOGO.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = LOGO.bmp; path = assets/icons/LOGO.bmp; sourceTree = "<group>"; };
 		43B610D31F1E7D44003425BD /* photo-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "photo-camera.png"; path = "assets/photo-camera.png"; sourceTree = "<group>"; };
 		43B610D61F1E80C1003425BD /* fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fb.png; path = assets/social/fb.png; sourceTree = "<group>"; };
 		43B610D71F1E80C1003425BD /* google_c_b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = google_c_b.png; path = assets/social/google_c_b.png; sourceTree = "<group>"; };
@@ -464,7 +463,7 @@
 		43B610D01F1E77C9003425BD /* icons */ = {
 			isa = PBXGroup;
 			children = (
-				43B610D11F1E77D2003425BD /* LOGO.bmp */,
+				431E12C51F75CCF400E854F2 /* splash.png */,
 			);
 			name = icons;
 			sourceTree = "<group>";
@@ -733,7 +732,6 @@
 				439F14171F1C3B26009DABF8 /* Rubik-Bold.ttf in Resources */,
 				439F141D1F1C3B32009DABF8 /* Rubik-MediumItalic.ttf in Resources */,
 				439F141A1F1C3B2C009DABF8 /* Rubik-Light.ttf in Resources */,
-				43B610D21F1E77D2003425BD /* LOGO.bmp in Resources */,
 				439F14521F1C3E7A009DABF8 /* iconHouseGreen.png in Resources */,
 				439F14151F1C3B20009DABF8 /* Rubik-Black.ttf in Resources */,
 				43EF36BD1F16F9D70013FA8A /* Main.storyboard in Resources */,

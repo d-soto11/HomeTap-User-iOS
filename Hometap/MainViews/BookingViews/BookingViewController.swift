@@ -35,6 +35,8 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
     private var old_service: Service? = nil
     private var favoriteResult: FavoriteSearchResult? = nil
     
+    private var initial_load = true
+    
     public class func show(parent: UIViewController, old: Service? = nil, favorite: FavoriteSearchResult? = nil) {
         let st = UIStoryboard.init(name: "Booking", bundle: nil)
         let book = st.instantiateViewController(withIdentifier: "BookView") as! BookingViewController
@@ -68,6 +70,12 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        if !initial_load {
+            return
+        }
+        
+        initial_load = false
+        
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
         if favoriteResult != nil {

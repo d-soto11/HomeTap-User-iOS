@@ -2,13 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>HomeTap</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -40,13 +37,43 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>12a944dba2ef8609d33564f551bb99b9bafbfcee</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
+	<key>FacebookAppID</key>
+	<string>154461368451713</string>
+	<key>FacebookDisplayName</key>
+	<string>homie-prueba-3a</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Hometap solo utiliza la cámara cuando quieres cambiar tu foto de perfil.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Hometap utiliza tu ubicación para guardar el lugar al que llegará tu servicio.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Hometap utiliza tu ubicación para guardar el lugar al que llegará tu servicio.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Hometap utiliza tu ubicación para guardar el lugar al que llegará tu servicio.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Hometap solo utiliza la galería de fotos cuando quieres cambiar tu foto de perfil.</string>
@@ -77,30 +104,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>FacebookAppID</key>
-	<string>154461368451713</string>
-	<key>FacebookDisplayName</key>
-	<string>homie-prueba-3a</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>fbapi</string>
-		<string>fb-messenger-api</string>
-		<string>fbauth2</string>
-		<string>fbshareextension</string>
-	</array>
-    <key>Fabric</key>
-    <dict>
-        <key>APIKey</key>
-        <string>12a944dba2ef8609d33564f551bb99b9bafbfcee</string>
-        <key>Kits</key>
-        <array>
-            <dict>
-                <key>KitInfo</key>
-                <dict/>
-                <key>KitName</key>
-                <string>Crashlytics</string>
-            </dict>
-        </array>
-    </dict>
 </dict>
 </plist>
