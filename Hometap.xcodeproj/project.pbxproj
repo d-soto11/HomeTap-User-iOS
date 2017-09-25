@@ -609,6 +609,7 @@
 				09EF6F5388FB57FFCB43A93E /* [CP] Copy Pods Resources */,
 				4396846D1F69FD6B00CEC79B /* ShellScript */,
 				AEC45D52C66713B4304B15C8 /* Tailor */,
+				43E1CC781F798F83002B0CF6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -798,6 +799,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "SCRIPT=`/usr/bin/find \"${SRCROOT}\" -name newrelic_postbuild.sh | head -n 1`\n\n/bin/sh \"${SCRIPT}\" \"AA2dc717c812802b662ee25a6ae127325c597abfb3\"";
+		};
+		43E1CC781F798F83002B0CF6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 12a944dba2ef8609d33564f551bb99b9bafbfcee a17a25c158540ea276366c4771487f1fb858865bf63ba3d74cd8f58f119ebe2a";
 		};
 		57D189614B8DB2A2E5E23827 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
