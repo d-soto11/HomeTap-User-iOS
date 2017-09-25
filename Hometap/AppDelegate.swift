@@ -64,6 +64,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         application.registerForRemoteNotifications()
         application.applicationIconBadgeNumber = 0
         
+        if let u = UserDefaults.standard.dictionary(forKey: K.User.savingKey) as [String: AnyObject]? {
+            K.User.client = Client(dict: u)
+        }
+        
         return true
     }
     
