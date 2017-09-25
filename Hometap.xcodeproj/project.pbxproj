@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		430B83711F1DDB7B007585F2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B83701F1DDB7B007585F2 /* LoginViewController.swift */; };
+		4313A2811F77203D00D57D79 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 431E12C51F75CCF400E854F2 /* splash.png */; };
 		4313C1E61F6448B700DBF27A /* Credits.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4313C1E51F6448B700DBF27A /* Credits.storyboard */; };
 		4313C1E81F644AC400DBF27A /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4313C1E71F644AC400DBF27A /* CreditsViewController.swift */; };
 		4313C1EA1F644E5400DBF27A /* RedeemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4313C1E91F644E5400DBF27A /* RedeemViewController.swift */; };
@@ -679,6 +680,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4313A2811F77203D00D57D79 /* splash.png in Resources */,
 				43E5F88F1F74A60100844095 /* stoveGreen.png in Resources */,
 				43E5F8871F74A58100844095 /* fridgeGreen.png in Resources */,
 				43E5F8881F74A58100844095 /* fridgeWhite.png in Resources */,

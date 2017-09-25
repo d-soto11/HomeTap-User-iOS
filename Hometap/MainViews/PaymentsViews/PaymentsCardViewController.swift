@@ -107,20 +107,7 @@ class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
                             self.loaded_card = PaymentCard(dict: [:])
                             self.loaded_card!.uid = json["token"].string!
                             self.loaded_card!.name = json["name"].string!
-                            switch json["brand"].string! {
-                            case "AMEX":
-                                self.loaded_card!.brand = "Amex"
-                            case "DINERS":
-                                self.loaded_card!.brand = "Diners Club"
-                            case "CODENSA":
-                                self.loaded_card!.brand = "Codensa"
-                            case "MASTERCARD":
-                                self.loaded_card!.brand = "Master Card"
-                            case "VISA":
-                                self.loaded_card!.brand = "Visa"
-                            default:
-                                self.loaded_card!.brand = "Otra"
-                            }
+                            self.loaded_card!.brand = json["brand"].string!
                             self.loaded_card!.expiration = self.cardExpiration.text
                             self.loaded_card!.number = json["last4"].string!
                             self.loaded_card!.cvc = self.cardCVC.text
@@ -204,22 +191,16 @@ class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
             self.cardCVC.text = card.cvc
             
             switch card.brand! {
-            case "Amex":
+            case "AMEX":
                 self.cardBrand.image = STPImageLibrary.amexCardImage()
-            case "Diners Club":
+            case "DINERS":
                 self.cardBrand.image = STPImageLibrary.dinersClubCardImage()
-            case "Discover":
-                self.cardBrand.image = STPImageLibrary.discoverCardImage()
-            case "JCB":
-                self.cardBrand.image = STPImageLibrary.jcbCardImage()
-            case "Master Card":
+            case "MASTERCARD":
                 self.cardBrand.image = STPImageLibrary.masterCardCardImage()
-            case "Visa":
+            case "VISA":
                 self.cardBrand.image = STPImageLibrary.visaCardImage()
-            case "Otra":
-                self.cardBrand.image = STPImageLibrary.unknownCardCardImage()
             default:
-                break
+                self.cardBrand.image = STPImageLibrary.unknownCardCardImage()
             }
         }
     }

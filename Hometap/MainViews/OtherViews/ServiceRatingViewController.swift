@@ -125,13 +125,13 @@ class ServiceRatingViewController: UIViewController, UITextViewDelegate {
     
     @objc func toogleCompliment(sender: UIButton) {
         let tag = sender.tag
-        if let index = self.compliments.index(forKey: "\(tag)") {
+        if let index = self.compliments.index(forKey: "t\(tag)") {
             self.compliments.remove(at: index)
             (self.complimentView.viewWithTag(tag) as? UIButton)?.setTitleColor(K.UI.form_color, for: .normal)
             (self.complimentView.viewWithTag(tag) as? UIButton)?.backgroundColor = .white
             (self.complimentView.viewWithTag(tag) as? UIButton)?.bordered(color: K.UI.select_box_color)
         } else {
-            self.compliments["\(tag)"] = true
+            self.compliments["t\(tag)"] = true
             (self.complimentView.viewWithTag(tag) as? UIButton)?.setTitleColor(.white, for: .normal)
             (self.complimentView.viewWithTag(tag) as? UIButton)?.backgroundColor = K.UI.main_color
             (self.complimentView.viewWithTag(tag) as? UIButton)?.bordered(color: .clear)

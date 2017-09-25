@@ -166,6 +166,7 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
         if services.count > 0 {
             self.new_service.saveAdditionalServices(services: services)
         }
+        
         self.new_service.price = total
         self.new_service.time = total_time
         self.new_service.comments = self.commentsTextView.text ?? "Ninguno"
