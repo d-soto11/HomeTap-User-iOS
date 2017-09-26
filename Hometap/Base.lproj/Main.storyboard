@@ -92,6 +92,9 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="YDf-BN-LUN">
                                         <rect key="frame" x="0.0" y="0.0" width="54" height="17.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="Fqq-24-oUE"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
                                         <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -112,7 +115,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="juan@micorreo.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qe7-l7-xm4">
-                                        <rect key="frame" x="0.0" y="96" width="313" height="36"/>
+                                        <rect key="frame" x="0.0" y="96" width="313" height="36.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
@@ -121,13 +124,13 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celular" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Tjf-BY-f6S">
-                                        <rect key="frame" x="0.0" y="140" width="47" height="18"/>
+                                        <rect key="frame" x="0.0" y="140.5" width="47" height="18"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
                                         <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="300898972" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FGY-Ts-1oY">
-                                        <rect key="frame" x="0.0" y="166" width="313" height="36"/>
+                                        <rect key="frame" x="0.0" y="166.5" width="313" height="36"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
@@ -136,13 +139,13 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha de Nacimiento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="DbW-UB-DU5">
-                                        <rect key="frame" x="0.0" y="210" width="143" height="18"/>
+                                        <rect key="frame" x="0.0" y="210.5" width="143" height="17.5"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
                                         <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="28/07/1995" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9xk-xH-EVi">
-                                        <rect key="frame" x="0.0" y="236" width="313" height="36"/>
+                                        <rect key="frame" x="0.0" y="236" width="313" height="36.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -151,13 +154,13 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Género" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Rmi-0E-6g8">
-                                        <rect key="frame" x="0.0" y="280" width="49.5" height="17.5"/>
+                                        <rect key="frame" x="0.0" y="280.5" width="49.5" height="17.5"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
                                         <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="-----" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mUo-jG-tHT">
-                                        <rect key="frame" x="0.0" y="305.5" width="313" height="36.5"/>
+                                        <rect key="frame" x="0.0" y="306" width="313" height="36"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -522,7 +525,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tus direcciones" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XzZ-Fn-0An">
-                                <rect key="frame" x="125.5" y="35" width="125.5" height="21"/>
+                                <rect key="frame" x="125" y="35" width="125.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                 <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -870,7 +873,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Historial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETy-gz-HgE">
-                                <rect key="frame" x="155.5" y="35" width="66" height="21"/>
+                                <rect key="frame" x="154.5" y="35" width="66" height="21"/>
                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                 <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1212,7 +1215,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cambia tu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRM-pW-rY1">
-                                <rect key="frame" x="146.5" y="35" width="83.5" height="21"/>
+                                <rect key="frame" x="146" y="35" width="83.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                 <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

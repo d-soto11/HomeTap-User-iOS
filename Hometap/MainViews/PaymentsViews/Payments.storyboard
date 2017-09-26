@@ -110,7 +110,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Revisa tu medio de pago" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYE-7Z-Ruh">
-                                <rect key="frame" x="87.5" y="50" width="201" height="21"/>
+                                <rect key="frame" x="87" y="50" width="201" height="21"/>
                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                 <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -200,16 +200,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kKx-Ds-641">
-                                <rect key="frame" x="36" y="86" width="303.5" height="40"/>
+                                <rect key="frame" x="36" y="86" width="303" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nuevo medio de pago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="XRa-UZ-wPz">
-                                        <rect key="frame" x="15" y="5" width="246.5" height="30"/>
+                                        <rect key="frame" x="15" y="5" width="246" height="30"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
                                         <color key="textColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconArrowComboBox.png" translatesAutoresizingMaskIntoConstraints="NO" id="lVV-lM-Ti5">
-                                        <rect key="frame" x="271.5" y="8" width="24" height="24"/>
+                                        <rect key="frame" x="271" y="8" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="lVV-lM-Ti5" secondAttribute="height" multiplier="1:1" id="KGK-kG-c6v"/>
                                         </constraints>
@@ -227,7 +227,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elije tu medio de pago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahX-ip-mhJ">
-                                <rect key="frame" x="98.5" y="40" width="180" height="21"/>
+                                <rect key="frame" x="98" y="40" width="180" height="21"/>
                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
                                 <color key="textColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -237,7 +237,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIH-Ui-vZr">
-                                <rect key="frame" x="107" y="607" width="160" height="40"/>
+                                <rect key="frame" x="107.5" y="607" width="160" height="40"/>
                                 <color key="backgroundColor" red="0.72941176470000002" green="0.81568627449999997" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dIH-Ui-vZr" secondAttribute="height" multiplier="80:20" id="BLh-bh-hKC"/>
