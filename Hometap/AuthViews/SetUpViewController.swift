@@ -123,10 +123,8 @@ class SetUpViewController: UIViewController, ImagePickerDelegate, DatePickerDele
             return
         }
         
-        guard birthField.text != "" else {
-            MBProgressHUD.hide(for: self.view, animated: true)
-            showAlert(title: "Espera!", message: "Debes seleccionar tu fecha de nacimiento", closeButtonTitle: "Entendido")
-            return
+        if birthField.text == "" {
+            birthField.text = Date().toString(format: .Custom("dd-MM-yyyy"))
         }
         
         if genreField.text == "" {
