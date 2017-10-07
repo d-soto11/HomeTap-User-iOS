@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 import MBProgressHUD
-import GooglePlaces
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var bookingB: UIButton!
@@ -88,21 +87,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidAppear(_ animated: Bool) {
         self.reloadClientData()
         self.view.layoutIfNeeded()
-        
-        let placesClient = GMSPlacesClient()
-
-        placesClient.currentPlace(callback: { (placeLikelihoodList, error) -> Void in
-            if let error = error {
-                print("Pick Place error: \(error.localizedDescription)")
-                return
-            }
-
-            if let place = placeLikelihoodList?.likelihoods[0].place {
-                if place.formattedAddress?.lowercased().range(of:"bogot") == nil {
-                    K.MaterialTapBar.TapBar!.showAlert(title: "Lo sentimos", message: "HomeTap aún no está disponible para tu ciudad, estamos trabajando fuertemente para llegar a tu zona. Sin embargo, puedes pedir servicios para Bogotá desde cualquier lugar del país.", closeButtonTitle: "Entendido")
-                }
-            }
-        })
     }
     
     private func reloadClientData() {

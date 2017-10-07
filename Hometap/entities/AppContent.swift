@@ -11,7 +11,7 @@ import Firebase
 
 class AppContent: NSObject {
     
-    public class func loadAppContent(callback: @escaping () -> Void) {
+    public class func loadAppContent(callback: @escaping () -> Void = {}) {
         K.Database.ref().child("appContent").observeSingleEvent(of: .value, with: { (snapshot) in
             if let dict = snapshot.value as? [String: AnyObject] {
                 K.Hometap.app_content = AppContent(dict: dict)
@@ -20,8 +20,10 @@ class AppContent: NSObject {
         })
     }
     
+    
     public init(dict: [String: AnyObject]){
         self.original_dictionary = dict
+        K.Hometap.callcenter = dict["tel2"] as! String
     }
     var original_dictionary: [String: AnyObject]
     

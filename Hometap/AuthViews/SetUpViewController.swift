@@ -13,7 +13,7 @@ import JModalController
 import MBProgressHUD
 import Firebase
 
-class SetUpViewController: UIViewController, ImagePickerDelegate, DatePickerDelegate, OptionPickerDelegate{
+class SetUpViewController: UIViewController, ImagePickerDelegate, DatePickerDelegate, OptionPickerDelegate, UITextFieldDelegate{
 
     @IBOutlet weak var profileContainer: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -29,6 +29,7 @@ class SetUpViewController: UIViewController, ImagePickerDelegate, DatePickerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         keyboards = [nameField, mailField, phoneField, birthField, genreField]
+        
         setUpSmartKeyboard()
         
         MBProgressHUD.showAdded(to: self.view, animated: true)

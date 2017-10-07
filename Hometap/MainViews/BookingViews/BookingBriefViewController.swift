@@ -90,7 +90,7 @@ class BookingBriefViewController: UIViewController {
         let _ = service.homie { (homie) in
             if homie != nil {
                 self.homiePhoto.downloadedFrom(link: homie!.photo!)
-                self.homieName.text = homie!.name!
+                self.homieName.text = homie!.name ?? ""
             }
         }
         

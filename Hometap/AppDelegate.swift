@@ -31,9 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         FirebaseApp.configure()
         // Configurar Google
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()!.options.clientID
-        // Ask location
-        let locationManager = CLLocationManager()
-        locationManager.requestWhenInUseAuthorization()
         // Configurar Facebook
          FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         // Configuracion de GMaps
@@ -67,6 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         if let u = UserDefaults.standard.dictionary(forKey: K.User.savingKey) as [String: AnyObject]? {
             K.User.client = Client(dict: u)
         }
+        
+        AppContent.loadAppContent()
         
         return true
     }
