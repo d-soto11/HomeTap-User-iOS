@@ -226,10 +226,15 @@ class BookingViewController: UIViewController, UITextFieldDelegate, UICollection
     // TextView
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+        }
         let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
         let numberOfChars = newText.characters.count
         return numberOfChars < 150;
     }
+    
+    
     
     // Aditional Services:
     

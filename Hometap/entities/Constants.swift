@@ -9,31 +9,29 @@
 import Foundation
 import Firebase
 import JModalController
-import ReachabilitySwift
+import Reachability
 
 struct K {
     struct Network {
         static var network_available:Bool = true
-        static var reachability = Reachability()!
+        static var reachability = Reachability()
         
         static public func startNetworkUpdates() {
-            reachability.whenReachable = { reachability in
-                network_available = true
-                DispatchQueue.main.async {
-                    K.MaterialTapBar.TapBar?.hideSnack()
-                }
-            }
-            reachability.whenUnreachable = { reachability in
-                network_available = false
-                DispatchQueue.main.async {
-                    K.MaterialTapBar.TapBar?.showSnack(message: "Estás en modo sin conexión", permanent: true)
-                }
-            }
-            do {
-                try reachability.startNotifier()
-            } catch {
-                print("Unable to start notifier")
-            }
+//            reachability.reachableBlock = { reachability in
+//                network_available = true
+//                DispatchQueue.main.async {
+//                    K.MaterialTapBar.TapBar?.hideSnack()
+//                }
+//            }
+//
+//            reachability.unreachableBlock = { reachability in
+//                network_available = false
+//                DispatchQueue.main.async {
+//                    K.MaterialTapBar.TapBar?.showSnack(message: "Estás en modo sin conexión", permanent: true)
+//                }
+//            }
+//
+//            reachability.startNotifier()
         }
         
     }

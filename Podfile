@@ -27,7 +27,7 @@ target 'Hometap' do
   pod 'RestEssentials'
   pod 'DropDown'
   pod 'Stripe'
-  pod 'ReachabilitySwift'
+  pod 'Reachability'
   pod 'Cosmos'
   pod 'Fabric'
   pod 'Crashlytics'
@@ -38,5 +38,5 @@ target 'HometapUITests' do
     # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
     use_frameworks!
     
-    pod 'SwiftMonkey', '~> 1.0'
+    # pod 'SwiftMonkey'
 end

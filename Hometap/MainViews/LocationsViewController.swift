@@ -13,7 +13,7 @@ class LocationsViewController: UIViewController, UITableViewDataSource, UITableV
     
     @IBOutlet weak var locationsTable: UITableView!
     public var places: [Place] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -37,6 +37,9 @@ class LocationsViewController: UIViewController, UITableViewDataSource, UITableV
                 MBProgressHUD.hide(for: self.locationsTable, animated: true)
             }
         }) ?? []
+        if K.User.client == nil {
+            MBProgressHUD.hide(for: self.locationsTable, animated: true)
+        }
         if !K.Network.network_available {
             MBProgressHUD.hide(for: self.locationsTable, animated: true)
         }

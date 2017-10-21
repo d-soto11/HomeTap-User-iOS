@@ -51,7 +51,7 @@ class AddPaymentViewController: UIViewController {
         loadedCardView?.tokenizeCreditCard(callback: { (card) in
             mb.hide(animated: true)
             guard card != nil else {
-                self.showAlert(title: "Lo sentimos", message: "No hemos podido verificar tu tarheta. Intenta de nuevo.", closeButtonTitle: "Entendido")
+                self.showAlert(title: "Lo sentimos", message: "No hemos podido verificar tu tarjeta. Intenta de nuevo.", closeButtonTitle: "Entendido")
                 return
             }
             K.User.client!.savePayment(payment: card!)

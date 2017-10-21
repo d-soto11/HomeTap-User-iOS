@@ -95,7 +95,7 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
         self.bathroomsText.text = place.bathrooms != nil ? String(format: "%d", place.bathrooms!) : ""
         self.wifiText.text = place.wifi
         
-        if place.apartament! {
+        if place.apartament ?? false {
             UIView.animate(withDuration: 0.5, animations: {
                 self.floorsText.superview?.alpha = 0
                 self.towerText.superview?.alpha = 1
@@ -115,7 +115,7 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
             })
         }
         
-        if place.pets! {
+        if place.pets ?? false {
             UIView.animate(withDuration: 0.5, animations: {
                 self.petsLabel.text = "Si"
                 self.petsLabel.textColor = K.UI.main_color
@@ -199,28 +199,33 @@ class PlacePickerViewController: UIViewController, UITextFieldDelegate, GMSPlace
             self.showAlert(title: "¡Espera!", message: "Debes ingresar la dirección de este lugar", closeButtonTitle: "Ok")
             return
         }
-        guard place.interior != nil else {
-            mb.hide(animated: true)
-            self.showAlert(title: "¡Espera!", message: "Debes ingresar el número de casa/apartamento", closeButtonTitle: "Ok")
-            return
-        }
+        
         guard place.area != nil else {
             mb.hide(animated: true)
             self.showAlert(title: "¡Espera!", message: "Debes ingresar el área de este lugar", closeButtonTitle: "Ok")
             return
         }
-        if !place.apartament! {
+        
+        if !(place.apartament ?? false) {
             guard place.floors != nil else {
                 mb.hide(animated: true)
                 self.showAlert(title: "¡Espera!", message: "Debes ingresar el número de pisos de esta casa", closeButtonTitle: "Ok")
                 return
             }
+        } else {
+            guard place.interior != nil else {
+                mb.hide(animated: true)
+                self.showAlert(title: "¡Espera!", message: "Debes ingresar el número de apartamento", closeButtonTitle: "Ok")
+                return
+            }
         }
+        
         guard place.rooms != nil else {
             mb.hide(animated: true)
             self.showAlert(title: "¡Espera!", message: "Debes ingresar el número de habitaciones de este lugar", closeButtonTitle: "Ok")
             return
         }
+        
         guard place.bathrooms != nil else {
             mb.hide(animated: true)
             self.showAlert(title: "¡Espera!", message: "Debes ingresar el número de baños de este lugar", closeButtonTitle: "Ok")

@@ -103,16 +103,14 @@ class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
                         // Payment succesfull
                         do {
                             let json = try result.value()
-                            
-                            self.loaded_card = PaymentCard(dict: [:])
-                            self.loaded_card!.uid = json["token"].string!
-                            self.loaded_card!.name = json["name"].string!
-                            self.loaded_card!.brand = json["brand"].string!
-                            self.loaded_card!.expiration = self.cardExpiration.text
-                            self.loaded_card!.number = json["last4"].string!
-                            self.loaded_card!.cvc = self.cardCVC.text
-                            
                             DispatchQueue.main.async {
+                                self.loaded_card = PaymentCard(dict: [:])
+                                self.loaded_card!.uid = json["token"].string!
+                                self.loaded_card!.name = json["name"].string!
+                                self.loaded_card!.brand = json["brand"].string!
+                                self.loaded_card!.expiration = self.cardExpiration.text
+                                self.loaded_card!.number = json["last4"].string!
+                                self.loaded_card!.cvc = self.cardCVC.text
                                 callback(self.loaded_card!)
                             }
                         } catch {
@@ -296,6 +294,7 @@ class PaymentsCardViewController: UIViewController, UITextFieldDelegate {
                     for _ in txtAfterUpdate.characters {
                         self.cardCVC.text = String(format: "%@%@", self.cardCVC.text!, "*")
                     }
+                    stripeCard.cvc = txtAfterUpdate
                 }
                 return true
             } else {

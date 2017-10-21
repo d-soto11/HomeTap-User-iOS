@@ -89,8 +89,7 @@ class SetUpViewController: UIViewController, ImagePickerDelegate, DatePickerDele
         
         config.mainColor = .white
         
-        let imagePicker = ImagePickerController()
-        imagePicker.configuration = config
+        let imagePicker = ImagePickerController(configuration: config)
         imagePicker.delegate = self
         
         self.present(imagePicker, animated: true, completion: nil)
