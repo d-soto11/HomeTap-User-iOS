@@ -15,6 +15,7 @@
 		4319355C1F47963E005BB082 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4319355B1F47963E005BB082 /* BookingViewController.swift */; };
 		4319355E1F4799A8005BB082 /* AppContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4319355D1F4799A8005BB082 /* AppContent.swift */; };
 		431935601F47A00C005BB082 /* HTCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4319355F1F47A00C005BB082 /* HTCollectionViewCell.swift */; };
+		4338D84D1FB0C7F50048A66B /* payu.png in Resources */ = {isa = PBXBuildFile; fileRef = 4338D84C1FB0C7E80048A66B /* payu.png */; };
 		4343932F1F315CFB00861426 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343932D1F315CFB00861426 /* DatePickerViewController.swift */; };
 		434393301F315CFB00861426 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4343932E1F315CFB00861426 /* DatePickerViewController.xib */; };
 		434B66191F4B3988007CE9E2 /* Places.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434B66181F4B3988007CE9E2 /* Places.storyboard */; };
@@ -143,6 +144,7 @@
 		4319355D1F4799A8005BB082 /* AppContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppContent.swift; path = entities/AppContent.swift; sourceTree = "<group>"; };
 		4319355F1F47A00C005BB082 /* HTCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTCollectionViewCell.swift; path = CustomViews/HTCollectionViewCell.swift; sourceTree = "<group>"; };
 		431E12C51F75CCF400E854F2 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = assets/icons/splash.png; sourceTree = "<group>"; };
+		4338D84C1FB0C7E80048A66B /* payu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = payu.png; sourceTree = "<group>"; };
 		4343932D1F315CFB00861426 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerViewController.swift; path = CustomViews/DatePickerViewController.swift; sourceTree = "<group>"; };
 		4343932E1F315CFB00861426 /* DatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DatePickerViewController.xib; path = CustomViews/DatePickerViewController.xib; sourceTree = "<group>"; };
 		434B66181F4B3988007CE9E2 /* Places.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Places.storyboard; path = MainViews/PlacesViews/Places.storyboard; sourceTree = "<group>"; };
@@ -329,6 +331,15 @@
 			name = BookingViews;
 			sourceTree = "<group>";
 		};
+		4338D84B1FB0C7E80048A66B /* other */ = {
+			isa = PBXGroup;
+			children = (
+				4338D84C1FB0C7E80048A66B /* payu.png */,
+			);
+			name = other;
+			path = assets/other;
+			sourceTree = "<group>";
+		};
 		434B66171F4B394C007CE9E2 /* PlacesViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +385,7 @@
 		439F14091F1C3AE8009DABF8 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				4338D84B1FB0C7E80048A66B /* other */,
 				43B610D51F1E80B3003425BD /* social */,
 				43B610D01F1E77C9003425BD /* icons */,
 				439F141F1F1C3E79009DABF8 /* iconAddService.png */,
@@ -746,6 +758,7 @@
 				439F14641F1C3E7A009DABF8 /* illustrationCreditCard.png in Resources */,
 				439F14551F1C3E7A009DABF8 /* iconNoPhotoSmall.png in Resources */,
 				439F14511F1C3E7A009DABF8 /* iconHouseBlack.png in Resources */,
+				4338D84D1FB0C7F50048A66B /* payu.png in Resources */,
 				434B66191F4B3988007CE9E2 /* Places.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1139,6 +1152,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Hometap/Hometap.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QBLL74FJC6;
 				INFOPLIST_FILE = Hometap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1284,6 +1298,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Hometap/Hometap.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QBLL74FJC6;
 				INFOPLIST_FILE = Hometap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1428,6 +1443,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Hometap/Hometap.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QBLL74FJC6;
 				INFOPLIST_FILE = Hometap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

@@ -95,6 +95,10 @@ class SetUpViewController: UIViewController, ImagePickerDelegate, DatePickerDele
         self.present(imagePicker, animated: true, completion: nil)
     }
     
+    @IBAction func terms(_ sender: Any) {
+        UIApplication.shared.openURL(URL(string: "https://hometap.com.co/terms.pdf")!)
+    }
+    
     @IBAction func done(_ sender: Any) {
         let mb = MBProgressHUD.showAdded(to: self.view, animated: true)
         
