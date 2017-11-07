@@ -13,7 +13,7 @@ import Firebase
 import RestEssentials
 
 class PaymentPickerViewController: UIViewController {
-
+    
     @IBOutlet weak var paymentPicker: UIView!
     @IBOutlet weak var currentPayment: UILabel!
     @IBOutlet weak var cardView: UIView!
@@ -55,7 +55,7 @@ class PaymentPickerViewController: UIViewController {
                 self.configureDropDown()
             }
         })
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -67,7 +67,7 @@ class PaymentPickerViewController: UIViewController {
         self.payB.addNormalShadow()
         self.payB.roundCorners(radius: K.UI.round_px)
     }
-
+    
     public func configureDropDown() {
         dropDown.anchorView = self.paymentPicker
         dropDown.dismissMode = .onTap
@@ -109,7 +109,7 @@ class PaymentPickerViewController: UIViewController {
             self.saveLabel.alpha = 1
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -118,7 +118,7 @@ class PaymentPickerViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
         self.service.state = nil
     }
-
+    
     @IBAction func toogleSavingPayment(_ sender: Any) {
         save_payment = !save_payment
         if save_payment {
@@ -166,6 +166,13 @@ class PaymentPickerViewController: UIViewController {
                                     mb.hide(animated: true)
                                     BookingConfirmationViewController.confirm(service: self.service, parent: self)
                                 }
+                            } else if httpResponse?.statusCode == 201 {
+                                HTAlertViewController.showHTAlert(title: "Pago pendiente", body: "Tu entidad bancaria está procesando el pago. Por el momento hemos reservado tu servicio. Te avisaremos cuando recibamos tu pago.", accpetTitle: "Genial", confirmation: {
+                                    DispatchQueue.main.async {
+                                        mb.hide(animated: true)
+                                        BookingConfirmationViewController.confirm(service: self.service, parent: self)
+                                    }
+                                }, parent: self)
                             } else {
                                 DispatchQueue.main.async {
                                     mb.hide(animated: true)
@@ -211,6 +218,13 @@ class PaymentPickerViewController: UIViewController {
                                             mb.hide(animated: true)
                                             BookingConfirmationViewController.confirm(service: self.service, parent: self)
                                         }
+                                    } else if httpResponse?.statusCode == 201 {
+                                        HTAlertViewController.showHTAlert(title: "Pago pendiente", body: "Tu entidad bancaria está procesando el pago. Por el momento hemos reservado tu servicio. Te avisaremos cuando recibamos tu pago.", accpetTitle: "Genial", confirmation: {
+                                            DispatchQueue.main.async {
+                                                mb.hide(animated: true)
+                                                BookingConfirmationViewController.confirm(service: self.service, parent: self)
+                                            }
+                                        }, parent: self)
                                     } else {
                                         DispatchQueue.main.async {
                                             mb.hide(animated: true)
@@ -239,6 +253,13 @@ class PaymentPickerViewController: UIViewController {
                                             mb.hide(animated: true)
                                             BookingConfirmationViewController.confirm(service: self.service, parent: self)
                                         }
+                                    } else if httpResponse?.statusCode == 201 {
+                                        HTAlertViewController.showHTAlert(title: "Pago pendiente", body: "Tu entidad bancaria está procesando el pago. Por el momento hemos reservado tu servicio. Te avisaremos cuando recibamos tu pago.", accpetTitle: "Genial", confirmation: {
+                                            DispatchQueue.main.async {
+                                                mb.hide(animated: true)
+                                                BookingConfirmationViewController.confirm(service: self.service, parent: self)
+                                            }
+                                        }, parent: self)
                                     } else {
                                         DispatchQueue.main.async {
                                             mb.hide(animated: true)
@@ -265,5 +286,5 @@ class PaymentPickerViewController: UIViewController {
         
         
     }
-
+    
 }
